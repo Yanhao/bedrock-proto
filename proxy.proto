@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package bedrock.proxy;
+option cc_generic_services = true;
+
+enum Error {
+    OK = 0;
+
+    UNKNOWN = 255;
+}
+
+message BedRockKvGetRequest {
+    bytes key = 1;
+}
+
+message BedRockKvGetResponse {
+    bytes value = 1;
+    Error err = 255;
+}
+
+message BedRockKvSetRequest {
+    bytes key = 1;
+    bytes value = 2;
+}
+
+message BedRockKvSetResponse {
+    Error err = 255;
+}
+
+message BedRockKvDeleteRequest {
+    bytes key = 1;
+}
+
+message BedRockKvDeleteResponse {
+    Error err = 255;
+}
+
+service ProxyService {
+    rpc BedRockKvSet(BedRockKvSetRequest) returns (BedRockKvSetRequest);
+    rpc BedRockKvGet(BedRockKvGetRequest) returns (BedRockKvGetRequest);
+    rpc BedRockKvDelete(BedRockKvDeleteRequest) returns (BedRockKvDeleteResponse);
+}
