@@ -1,0 +1,11 @@
+image: debian/sid
+packages:
+  - golang-go
+sources:
+  - https://git.sr.ht/~moyanhao/bedrock-proto
+tasks:
+  - setup: |
+      cd bedrock-proto
+  - build: |
+      cd bedrock-proto
+      make
