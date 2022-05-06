@@ -68,6 +68,13 @@ message DeleteStorageRequest {
 message DeleteStorageResponse {
 }
 
+message UndeleteStorageRequest {
+    uint64 id = 1;
+}
+
+message UndeleteStorageResponse {
+}
+
 message RenameStorageRequest {
     uint64 id = 1;
     string new_name = 2;
@@ -92,19 +99,18 @@ message GetStoragesRequest {
 
 message GetStoragesResponse {
     repeated Storage storages = 1;
-
 }
 
 message ShardRange {
     uint64 start_shard_id = 1;
     uint64 offset = 2;
-
 }
 
 message RouteRecord {
     uint64 shard_id = 1;
     repeated string addrs = 2;
 }
+
 message ShardList {
     repeated uint64 shard_ids = 1;
 }
@@ -171,13 +177,14 @@ message ShardInfoResponse {
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
+    rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
+
     rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse);
     rpc DeleteStorage (DeleteStorageRequest) returns (DeleteStorageResponse);
+    rpc UndeleteStorage (UndeleteStorageRequest) returns (UndeleteStorageResponse);
     rpc RenameStorage (RenameStorageRequest) returns (RenameStorageResponse);
     rpc ResizeStorage (ResizeStorageRequest) returns (ResizeStorageResponse);
     rpc GetStorages (GetStoragesRequest) returns (GetStoragesResponse);
-
-    rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
 
     rpc AddDataServer (AddDataServerRequest) returns (AddDataServerResponse);
     rpc RemoveDataServer (RemoveDataServerRequest) returns (RemoveDataServerResponse);
