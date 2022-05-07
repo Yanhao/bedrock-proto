@@ -50,7 +50,7 @@ struct TableStruct_metaserver_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[35]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[39]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,12 @@ extern AddDataServerRequestDefaultTypeInternal _AddDataServerRequest_default_ins
 class AddDataServerResponse;
 struct AddDataServerResponseDefaultTypeInternal;
 extern AddDataServerResponseDefaultTypeInternal _AddDataServerResponse_default_instance_;
+class CreateShardRequest;
+struct CreateShardRequestDefaultTypeInternal;
+extern CreateShardRequestDefaultTypeInternal _CreateShardRequest_default_instance_;
+class CreateShardResponse;
+struct CreateShardResponseDefaultTypeInternal;
+extern CreateShardResponseDefaultTypeInternal _CreateShardResponse_default_instance_;
 class CreateStorageRequest;
 struct CreateStorageRequestDefaultTypeInternal;
 extern CreateStorageRequestDefaultTypeInternal _CreateStorageRequest_default_instance_;
@@ -116,6 +122,12 @@ extern RemoveDataServerRequestDefaultTypeInternal _RemoveDataServerRequest_defau
 class RemoveDataServerResponse;
 struct RemoveDataServerResponseDefaultTypeInternal;
 extern RemoveDataServerResponseDefaultTypeInternal _RemoveDataServerResponse_default_instance_;
+class RemoveShardRequest;
+struct RemoveShardRequestDefaultTypeInternal;
+extern RemoveShardRequestDefaultTypeInternal _RemoveShardRequest_default_instance_;
+class RemoveShardResponse;
+struct RemoveShardResponseDefaultTypeInternal;
+extern RemoveShardResponseDefaultTypeInternal _RemoveShardResponse_default_instance_;
 class RenameStorageRequest;
 struct RenameStorageRequestDefaultTypeInternal;
 extern RenameStorageRequestDefaultTypeInternal _RenameStorageRequest_default_instance_;
@@ -169,6 +181,8 @@ extern UpdateDataServerResponseDefaultTypeInternal _UpdateDataServerResponse_def
 PROTOBUF_NAMESPACE_OPEN
 template<> ::bedrock::metaserver::AddDataServerRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::AddDataServerRequest>(Arena*);
 template<> ::bedrock::metaserver::AddDataServerResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::AddDataServerResponse>(Arena*);
+template<> ::bedrock::metaserver::CreateShardRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::CreateShardRequest>(Arena*);
+template<> ::bedrock::metaserver::CreateShardResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::CreateShardResponse>(Arena*);
 template<> ::bedrock::metaserver::CreateStorageRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::CreateStorageRequest>(Arena*);
 template<> ::bedrock::metaserver::CreateStorageResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::CreateStorageResponse>(Arena*);
 template<> ::bedrock::metaserver::DataServer* Arena::CreateMaybeMessage<::bedrock::metaserver::DataServer>(Arena*);
@@ -186,6 +200,8 @@ template<> ::bedrock::metaserver::ListDataServerRequest* Arena::CreateMaybeMessa
 template<> ::bedrock::metaserver::ListDataServerResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::ListDataServerResponse>(Arena*);
 template<> ::bedrock::metaserver::RemoveDataServerRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::RemoveDataServerRequest>(Arena*);
 template<> ::bedrock::metaserver::RemoveDataServerResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::RemoveDataServerResponse>(Arena*);
+template<> ::bedrock::metaserver::RemoveShardRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::RemoveShardRequest>(Arena*);
+template<> ::bedrock::metaserver::RemoveShardResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::RemoveShardResponse>(Arena*);
 template<> ::bedrock::metaserver::RenameStorageRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::RenameStorageRequest>(Arena*);
 template<> ::bedrock::metaserver::RenameStorageResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::RenameStorageResponse>(Arena*);
 template<> ::bedrock::metaserver::Replicate* Arena::CreateMaybeMessage<::bedrock::metaserver::Replicate>(Arena*);
@@ -1674,6 +1690,556 @@ class CreateStorageResponse final :
 };
 // -------------------------------------------------------------------
 
+class CreateShardRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.metaserver.CreateShardRequest) */ {
+ public:
+  inline CreateShardRequest() : CreateShardRequest(nullptr) {}
+  ~CreateShardRequest() override;
+  explicit constexpr CreateShardRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateShardRequest(const CreateShardRequest& from);
+  CreateShardRequest(CreateShardRequest&& from) noexcept
+    : CreateShardRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateShardRequest& operator=(const CreateShardRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateShardRequest& operator=(CreateShardRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateShardRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateShardRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateShardRequest*>(
+               &_CreateShardRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(CreateShardRequest& a, CreateShardRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateShardRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateShardRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CreateShardRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CreateShardRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateShardRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateShardRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateShardRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.CreateShardRequest";
+  }
+  protected:
+  explicit CreateShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kShardIdFieldNumber = 1,
+    kStorageIdFieldNumber = 2,
+  };
+  // uint64 shard_id = 1;
+  void clear_shard_id();
+  uint64_t shard_id() const;
+  void set_shard_id(uint64_t value);
+  private:
+  uint64_t _internal_shard_id() const;
+  void _internal_set_shard_id(uint64_t value);
+  public:
+
+  // uint64 storage_id = 2;
+  void clear_storage_id();
+  uint64_t storage_id() const;
+  void set_storage_id(uint64_t value);
+  private:
+  uint64_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.CreateShardRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t shard_id_;
+  uint64_t storage_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_metaserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateShardResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:bedrock.metaserver.CreateShardResponse) */ {
+ public:
+  inline CreateShardResponse() : CreateShardResponse(nullptr) {}
+  explicit constexpr CreateShardResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateShardResponse(const CreateShardResponse& from);
+  CreateShardResponse(CreateShardResponse&& from) noexcept
+    : CreateShardResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateShardResponse& operator=(const CreateShardResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateShardResponse& operator=(CreateShardResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateShardResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateShardResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateShardResponse*>(
+               &_CreateShardResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(CreateShardResponse& a, CreateShardResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateShardResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateShardResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CreateShardResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CreateShardResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const CreateShardResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const CreateShardResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.CreateShardResponse";
+  }
+  protected:
+  explicit CreateShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.CreateShardResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_metaserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RemoveShardRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.metaserver.RemoveShardRequest) */ {
+ public:
+  inline RemoveShardRequest() : RemoveShardRequest(nullptr) {}
+  ~RemoveShardRequest() override;
+  explicit constexpr RemoveShardRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RemoveShardRequest(const RemoveShardRequest& from);
+  RemoveShardRequest(RemoveShardRequest&& from) noexcept
+    : RemoveShardRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RemoveShardRequest& operator=(const RemoveShardRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RemoveShardRequest& operator=(RemoveShardRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RemoveShardRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RemoveShardRequest* internal_default_instance() {
+    return reinterpret_cast<const RemoveShardRequest*>(
+               &_RemoveShardRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(RemoveShardRequest& a, RemoveShardRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RemoveShardRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RemoveShardRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RemoveShardRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RemoveShardRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RemoveShardRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const RemoveShardRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RemoveShardRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.RemoveShardRequest";
+  }
+  protected:
+  explicit RemoveShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kShardIdFieldNumber = 1,
+    kStorageIdFieldNumber = 2,
+  };
+  // uint64 shard_id = 1;
+  void clear_shard_id();
+  uint64_t shard_id() const;
+  void set_shard_id(uint64_t value);
+  private:
+  uint64_t _internal_shard_id() const;
+  void _internal_set_shard_id(uint64_t value);
+  public:
+
+  // uint64 storage_id = 2;
+  void clear_storage_id();
+  uint64_t storage_id() const;
+  void set_storage_id(uint64_t value);
+  private:
+  uint64_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.RemoveShardRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t shard_id_;
+  uint64_t storage_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_metaserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RemoveShardResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:bedrock.metaserver.RemoveShardResponse) */ {
+ public:
+  inline RemoveShardResponse() : RemoveShardResponse(nullptr) {}
+  explicit constexpr RemoveShardResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RemoveShardResponse(const RemoveShardResponse& from);
+  RemoveShardResponse(RemoveShardResponse&& from) noexcept
+    : RemoveShardResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RemoveShardResponse& operator=(const RemoveShardResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RemoveShardResponse& operator=(RemoveShardResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RemoveShardResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RemoveShardResponse* internal_default_instance() {
+    return reinterpret_cast<const RemoveShardResponse*>(
+               &_RemoveShardResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(RemoveShardResponse& a, RemoveShardResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RemoveShardResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RemoveShardResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RemoveShardResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RemoveShardResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const RemoveShardResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const RemoveShardResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.RemoveShardResponse";
+  }
+  protected:
+  explicit RemoveShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.RemoveShardResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_metaserver_2eproto;
+};
+// -------------------------------------------------------------------
+
 class DeleteStorageRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.metaserver.DeleteStorageRequest) */ {
  public:
@@ -1722,7 +2288,7 @@ class DeleteStorageRequest final :
                &_DeleteStorageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(DeleteStorageRequest& a, DeleteStorageRequest& b) {
     a.Swap(&b);
@@ -1889,7 +2455,7 @@ class DeleteStorageResponse final :
                &_DeleteStorageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(DeleteStorageResponse& a, DeleteStorageResponse& b) {
     a.Swap(&b);
@@ -2008,7 +2574,7 @@ class UndeleteStorageRequest final :
                &_UndeleteStorageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(UndeleteStorageRequest& a, UndeleteStorageRequest& b) {
     a.Swap(&b);
@@ -2153,7 +2719,7 @@ class UndeleteStorageResponse final :
                &_UndeleteStorageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(UndeleteStorageResponse& a, UndeleteStorageResponse& b) {
     a.Swap(&b);
@@ -2272,7 +2838,7 @@ class RenameStorageRequest final :
                &_RenameStorageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(RenameStorageRequest& a, RenameStorageRequest& b) {
     a.Swap(&b);
@@ -2433,7 +2999,7 @@ class RenameStorageResponse final :
                &_RenameStorageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   friend void swap(RenameStorageResponse& a, RenameStorageResponse& b) {
     a.Swap(&b);
@@ -2552,7 +3118,7 @@ class ResizeStorageRequest final :
                &_ResizeStorageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   friend void swap(ResizeStorageRequest& a, ResizeStorageRequest& b) {
     a.Swap(&b);
@@ -2719,7 +3285,7 @@ class ResizeStorageResponse final :
                &_ResizeStorageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(ResizeStorageResponse& a, ResizeStorageResponse& b) {
     a.Swap(&b);
@@ -2838,7 +3404,7 @@ class GetStoragesRequest final :
                &_GetStoragesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(GetStoragesRequest& a, GetStoragesRequest& b) {
     a.Swap(&b);
@@ -3024,7 +3590,7 @@ class GetStoragesResponse final :
                &_GetStoragesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(GetStoragesResponse& a, GetStoragesResponse& b) {
     a.Swap(&b);
@@ -3179,7 +3745,7 @@ class ShardRange final :
                &_ShardRange_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    22;
 
   friend void swap(ShardRange& a, ShardRange& b) {
     a.Swap(&b);
@@ -3336,7 +3902,7 @@ class RouteRecord final :
                &_RouteRecord_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(RouteRecord& a, RouteRecord& b) {
     a.Swap(&b);
@@ -3508,7 +4074,7 @@ class ShardList final :
                &_ShardList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(ShardList& a, ShardList& b) {
     a.Swap(&b);
@@ -3674,7 +4240,7 @@ class GetShardRoutesRequest final :
                &_GetShardRoutesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    25;
 
   friend void swap(GetShardRoutesRequest& a, GetShardRoutesRequest& b) {
     a.Swap(&b);
@@ -3882,7 +4448,7 @@ class GetShardRoutesResponse final :
                &_GetShardRoutesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   friend void swap(GetShardRoutesResponse& a, GetShardRoutesResponse& b) {
     a.Swap(&b);
@@ -4037,7 +4603,7 @@ class GetShardRoutesByStorageRequest final :
                &_GetShardRoutesByStorageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   friend void swap(GetShardRoutesByStorageRequest& a, GetShardRoutesByStorageRequest& b) {
     a.Swap(&b);
@@ -4203,7 +4769,7 @@ class GetShardRoutesByStorageResponse final :
                &_GetShardRoutesByStorageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   friend void swap(GetShardRoutesByStorageResponse& a, GetShardRoutesByStorageResponse& b) {
     a.Swap(&b);
@@ -4389,7 +4955,7 @@ class AddDataServerRequest final :
                &_AddDataServerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    29;
 
   friend void swap(AddDataServerRequest& a, AddDataServerRequest& b) {
     a.Swap(&b);
@@ -4539,7 +5105,7 @@ class AddDataServerResponse final :
                &_AddDataServerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    30;
 
   friend void swap(AddDataServerResponse& a, AddDataServerResponse& b) {
     a.Swap(&b);
@@ -4658,7 +5224,7 @@ class RemoveDataServerRequest final :
                &_RemoveDataServerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   friend void swap(RemoveDataServerRequest& a, RemoveDataServerRequest& b) {
     a.Swap(&b);
@@ -4808,7 +5374,7 @@ class RemoveDataServerResponse final :
                &_RemoveDataServerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   friend void swap(RemoveDataServerResponse& a, RemoveDataServerResponse& b) {
     a.Swap(&b);
@@ -4926,7 +5492,7 @@ class ListDataServerRequest final :
                &_ListDataServerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   friend void swap(ListDataServerRequest& a, ListDataServerRequest& b) {
     a.Swap(&b);
@@ -5045,7 +5611,7 @@ class ListDataServerResponse final :
                &_ListDataServerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    34;
 
   friend void swap(ListDataServerResponse& a, ListDataServerResponse& b) {
     a.Swap(&b);
@@ -5199,7 +5765,7 @@ class UpdateDataServerRequest final :
                &_UpdateDataServerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    35;
 
   friend void swap(UpdateDataServerRequest& a, UpdateDataServerRequest& b) {
     a.Swap(&b);
@@ -5317,7 +5883,7 @@ class UpdateDataServerResponse final :
                &_UpdateDataServerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    36;
 
   friend void swap(UpdateDataServerResponse& a, UpdateDataServerResponse& b) {
     a.Swap(&b);
@@ -5436,7 +6002,7 @@ class ShardInfoRequest final :
                &_ShardInfoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    37;
 
   friend void swap(ShardInfoRequest& a, ShardInfoRequest& b) {
     a.Swap(&b);
@@ -5582,7 +6148,7 @@ class ShardInfoResponse final :
                &_ShardInfoResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    38;
 
   friend void swap(ShardInfoResponse& a, ShardInfoResponse& b) {
     a.Swap(&b);
@@ -5710,6 +6276,18 @@ class MetaService : public ::PROTOBUF_NAMESPACE_ID::Service {
                        const ::bedrock::metaserver::GetShardRoutesRequest* request,
                        ::bedrock::metaserver::GetShardRoutesResponse* response,
                        ::google::protobuf::Closure* done);
+  virtual void ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::ShardInfoRequest* request,
+                       ::bedrock::metaserver::ShardInfoResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void CreateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::CreateShardRequest* request,
+                       ::bedrock::metaserver::CreateShardResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::RemoveShardRequest* request,
+                       ::bedrock::metaserver::RemoveShardRequest* response,
+                       ::google::protobuf::Closure* done);
   virtual void CreateStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::CreateStorageRequest* request,
                        ::bedrock::metaserver::CreateStorageResponse* response,
@@ -5750,10 +6328,6 @@ class MetaService : public ::PROTOBUF_NAMESPACE_ID::Service {
                        const ::bedrock::metaserver::UpdateDataServerRequest* request,
                        ::bedrock::metaserver::UpdateDataServerResponse* response,
                        ::google::protobuf::Closure* done);
-  virtual void ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::bedrock::metaserver::ShardInfoRequest* request,
-                       ::bedrock::metaserver::ShardInfoResponse* response,
-                       ::google::protobuf::Closure* done);
 
   // implements Service ----------------------------------------------
 
@@ -5790,6 +6364,18 @@ class MetaService_Stub : public MetaService {
   void GetShardRoutes(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::GetShardRoutesRequest* request,
                        ::bedrock::metaserver::GetShardRoutesResponse* response,
+                       ::google::protobuf::Closure* done);
+  void ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::ShardInfoRequest* request,
+                       ::bedrock::metaserver::ShardInfoResponse* response,
+                       ::google::protobuf::Closure* done);
+  void CreateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::CreateShardRequest* request,
+                       ::bedrock::metaserver::CreateShardResponse* response,
+                       ::google::protobuf::Closure* done);
+  void RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::RemoveShardRequest* request,
+                       ::bedrock::metaserver::RemoveShardRequest* response,
                        ::google::protobuf::Closure* done);
   void CreateStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::CreateStorageRequest* request,
@@ -5830,10 +6416,6 @@ class MetaService_Stub : public MetaService {
   void UpdateDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::UpdateDataServerRequest* request,
                        ::bedrock::metaserver::UpdateDataServerResponse* response,
-                       ::google::protobuf::Closure* done);
-  void ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::bedrock::metaserver::ShardInfoRequest* request,
-                       ::bedrock::metaserver::ShardInfoResponse* response,
                        ::google::protobuf::Closure* done);
  private:
   ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel_;
@@ -7169,6 +7751,102 @@ inline void CreateStorageResponse::set_id(uint64_t value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateStorageResponse.id)
 }
+
+// -------------------------------------------------------------------
+
+// CreateShardRequest
+
+// uint64 shard_id = 1;
+inline void CreateShardRequest::clear_shard_id() {
+  shard_id_ = uint64_t{0u};
+}
+inline uint64_t CreateShardRequest::_internal_shard_id() const {
+  return shard_id_;
+}
+inline uint64_t CreateShardRequest::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.CreateShardRequest.shard_id)
+  return _internal_shard_id();
+}
+inline void CreateShardRequest::_internal_set_shard_id(uint64_t value) {
+  
+  shard_id_ = value;
+}
+inline void CreateShardRequest::set_shard_id(uint64_t value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateShardRequest.shard_id)
+}
+
+// uint64 storage_id = 2;
+inline void CreateShardRequest::clear_storage_id() {
+  storage_id_ = uint64_t{0u};
+}
+inline uint64_t CreateShardRequest::_internal_storage_id() const {
+  return storage_id_;
+}
+inline uint64_t CreateShardRequest::storage_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.CreateShardRequest.storage_id)
+  return _internal_storage_id();
+}
+inline void CreateShardRequest::_internal_set_storage_id(uint64_t value) {
+  
+  storage_id_ = value;
+}
+inline void CreateShardRequest::set_storage_id(uint64_t value) {
+  _internal_set_storage_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateShardRequest.storage_id)
+}
+
+// -------------------------------------------------------------------
+
+// CreateShardResponse
+
+// -------------------------------------------------------------------
+
+// RemoveShardRequest
+
+// uint64 shard_id = 1;
+inline void RemoveShardRequest::clear_shard_id() {
+  shard_id_ = uint64_t{0u};
+}
+inline uint64_t RemoveShardRequest::_internal_shard_id() const {
+  return shard_id_;
+}
+inline uint64_t RemoveShardRequest::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.RemoveShardRequest.shard_id)
+  return _internal_shard_id();
+}
+inline void RemoveShardRequest::_internal_set_shard_id(uint64_t value) {
+  
+  shard_id_ = value;
+}
+inline void RemoveShardRequest::set_shard_id(uint64_t value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.RemoveShardRequest.shard_id)
+}
+
+// uint64 storage_id = 2;
+inline void RemoveShardRequest::clear_storage_id() {
+  storage_id_ = uint64_t{0u};
+}
+inline uint64_t RemoveShardRequest::_internal_storage_id() const {
+  return storage_id_;
+}
+inline uint64_t RemoveShardRequest::storage_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.RemoveShardRequest.storage_id)
+  return _internal_storage_id();
+}
+inline void RemoveShardRequest::_internal_set_storage_id(uint64_t value) {
+  
+  storage_id_ = value;
+}
+inline void RemoveShardRequest::set_storage_id(uint64_t value) {
+  _internal_set_storage_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.RemoveShardRequest.storage_id)
+}
+
+// -------------------------------------------------------------------
+
+// RemoveShardResponse
 
 // -------------------------------------------------------------------
 
@@ -8623,6 +9301,14 @@ inline void ShardInfoResponse::set_allocated_shard(::bedrock::metaserver::Shard*
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

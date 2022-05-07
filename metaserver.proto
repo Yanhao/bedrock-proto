@@ -59,6 +59,22 @@ message CreateStorageResponse {
     uint64 id = 1;
 }
 
+message CreateShardRequest {
+    uint64 shard_id = 1;
+    uint64 storage_id = 2;
+}
+
+message CreateShardResponse {
+}
+
+message RemoveShardRequest {
+    uint64 shard_id = 1;
+    uint64 storage_id = 2;
+}
+
+message RemoveShardResponse {
+}
+
 message DeleteStorageRequest {
     uint64 id = 1;
     bool real_delete = 2;
@@ -178,6 +194,10 @@ service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
     rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
+    rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
+    rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
+    rpc RemoveShard(RemoveShardRequest) returns (RemoveShardRequest);
+    // rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
 
     rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse);
     rpc DeleteStorage (DeleteStorageRequest) returns (DeleteStorageResponse);
@@ -190,6 +210,4 @@ service MetaService {
     rpc RemoveDataServer (RemoveDataServerRequest) returns (RemoveDataServerResponse);
     rpc ListDataServer (ListDataServerRequest) returns (ListDataServerResponse);
     rpc UpdateDataServer (UpdateDataServerRequest) returns (UpdateDataServerResponse);
-
-    rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
 }

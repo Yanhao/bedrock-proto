@@ -21,6 +21,9 @@ const _ = grpc.SupportPackageIsVersion7
 type MetaServiceClient interface {
 	HeartBeat(ctx context.Context, in *HeartBeatRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	GetShardRoutes(ctx context.Context, in *GetShardRoutesRequest, opts ...grpc.CallOption) (*GetShardRoutesResponse, error)
+	ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error)
+	CreateShard(ctx context.Context, in *CreateShardRequest, opts ...grpc.CallOption) (*CreateShardResponse, error)
+	RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardRequest, error)
 	CreateStorage(ctx context.Context, in *CreateStorageRequest, opts ...grpc.CallOption) (*CreateStorageResponse, error)
 	DeleteStorage(ctx context.Context, in *DeleteStorageRequest, opts ...grpc.CallOption) (*DeleteStorageResponse, error)
 	UndeleteStorage(ctx context.Context, in *UndeleteStorageRequest, opts ...grpc.CallOption) (*UndeleteStorageResponse, error)
@@ -31,7 +34,6 @@ type MetaServiceClient interface {
 	RemoveDataServer(ctx context.Context, in *RemoveDataServerRequest, opts ...grpc.CallOption) (*RemoveDataServerResponse, error)
 	ListDataServer(ctx context.Context, in *ListDataServerRequest, opts ...grpc.CallOption) (*ListDataServerResponse, error)
 	UpdateDataServer(ctx context.Context, in *UpdateDataServerRequest, opts ...grpc.CallOption) (*UpdateDataServerResponse, error)
-	ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error)
 }
 
 type metaServiceClient struct {
@@ -54,6 +56,33 @@ func (c *metaServiceClient) HeartBeat(ctx context.Context, in *HeartBeatRequest,
 func (c *metaServiceClient) GetShardRoutes(ctx context.Context, in *GetShardRoutesRequest, opts ...grpc.CallOption) (*GetShardRoutesResponse, error) {
 	out := new(GetShardRoutesResponse)
 	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/GetShardRoutes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *metaServiceClient) ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error) {
+	out := new(ShardInfoResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/ShardInfo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *metaServiceClient) CreateShard(ctx context.Context, in *CreateShardRequest, opts ...grpc.CallOption) (*CreateShardResponse, error) {
+	out := new(CreateShardResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/CreateShard", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *metaServiceClient) RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardRequest, error) {
+	out := new(RemoveShardRequest)
+	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/RemoveShard", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,21 +179,15 @@ func (c *metaServiceClient) UpdateDataServer(ctx context.Context, in *UpdateData
 	return out, nil
 }
 
-func (c *metaServiceClient) ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error) {
-	out := new(ShardInfoResponse)
-	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/ShardInfo", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // MetaServiceServer is the server API for MetaService service.
 // All implementations must embed UnimplementedMetaServiceServer
 // for forward compatibility
 type MetaServiceServer interface {
 	HeartBeat(context.Context, *HeartBeatRequest) (*emptypb.Empty, error)
 	GetShardRoutes(context.Context, *GetShardRoutesRequest) (*GetShardRoutesResponse, error)
+	ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error)
+	CreateShard(context.Context, *CreateShardRequest) (*CreateShardResponse, error)
+	RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardRequest, error)
 	CreateStorage(context.Context, *CreateStorageRequest) (*CreateStorageResponse, error)
 	DeleteStorage(context.Context, *DeleteStorageRequest) (*DeleteStorageResponse, error)
 	UndeleteStorage(context.Context, *UndeleteStorageRequest) (*UndeleteStorageResponse, error)
@@ -175,7 +198,6 @@ type MetaServiceServer interface {
 	RemoveDataServer(context.Context, *RemoveDataServerRequest) (*RemoveDataServerResponse, error)
 	ListDataServer(context.Context, *ListDataServerRequest) (*ListDataServerResponse, error)
 	UpdateDataServer(context.Context, *UpdateDataServerRequest) (*UpdateDataServerResponse, error)
-	ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error)
 	mustEmbedUnimplementedMetaServiceServer()
 }
 
@@ -188,6 +210,15 @@ func (UnimplementedMetaServiceServer) HeartBeat(context.Context, *HeartBeatReque
 }
 func (UnimplementedMetaServiceServer) GetShardRoutes(context.Context, *GetShardRoutesRequest) (*GetShardRoutesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetShardRoutes not implemented")
+}
+func (UnimplementedMetaServiceServer) ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShardInfo not implemented")
+}
+func (UnimplementedMetaServiceServer) CreateShard(context.Context, *CreateShardRequest) (*CreateShardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateShard not implemented")
+}
+func (UnimplementedMetaServiceServer) RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardRequest, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveShard not implemented")
 }
 func (UnimplementedMetaServiceServer) CreateStorage(context.Context, *CreateStorageRequest) (*CreateStorageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStorage not implemented")
@@ -218,9 +249,6 @@ func (UnimplementedMetaServiceServer) ListDataServer(context.Context, *ListDataS
 }
 func (UnimplementedMetaServiceServer) UpdateDataServer(context.Context, *UpdateDataServerRequest) (*UpdateDataServerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataServer not implemented")
-}
-func (UnimplementedMetaServiceServer) ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ShardInfo not implemented")
 }
 func (UnimplementedMetaServiceServer) mustEmbedUnimplementedMetaServiceServer() {}
 
@@ -267,6 +295,60 @@ func _MetaService_GetShardRoutes_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MetaServiceServer).GetShardRoutes(ctx, req.(*GetShardRoutesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MetaService_ShardInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShardInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MetaServiceServer).ShardInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.metaserver.MetaService/ShardInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MetaServiceServer).ShardInfo(ctx, req.(*ShardInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MetaService_CreateShard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateShardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MetaServiceServer).CreateShard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.metaserver.MetaService/CreateShard",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MetaServiceServer).CreateShard(ctx, req.(*CreateShardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MetaService_RemoveShard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveShardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MetaServiceServer).RemoveShard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.metaserver.MetaService/RemoveShard",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MetaServiceServer).RemoveShard(ctx, req.(*RemoveShardRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -451,24 +533,6 @@ func _MetaService_UpdateDataServer_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MetaService_ShardInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ShardInfoRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MetaServiceServer).ShardInfo(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/bedrock.metaserver.MetaService/ShardInfo",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MetaServiceServer).ShardInfo(ctx, req.(*ShardInfoRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // MetaService_ServiceDesc is the grpc.ServiceDesc for MetaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -483,6 +547,18 @@ var MetaService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetShardRoutes",
 			Handler:    _MetaService_GetShardRoutes_Handler,
+		},
+		{
+			MethodName: "ShardInfo",
+			Handler:    _MetaService_ShardInfo_Handler,
+		},
+		{
+			MethodName: "CreateShard",
+			Handler:    _MetaService_CreateShard_Handler,
+		},
+		{
+			MethodName: "RemoveShard",
+			Handler:    _MetaService_RemoveShard_Handler,
 		},
 		{
 			MethodName: "CreateStorage",
@@ -523,10 +599,6 @@ var MetaService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateDataServer",
 			Handler:    _MetaService_UpdateDataServer_Handler,
-		},
-		{
-			MethodName: "ShardInfo",
-			Handler:    _MetaService_ShardInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

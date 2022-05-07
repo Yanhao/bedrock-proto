@@ -131,6 +131,54 @@ struct CreateStorageResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateStorageResponseDefaultTypeInternal _CreateStorageResponse_default_instance_;
+constexpr CreateShardRequest::CreateShardRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : shard_id_(uint64_t{0u})
+  , storage_id_(uint64_t{0u}){}
+struct CreateShardRequestDefaultTypeInternal {
+  constexpr CreateShardRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateShardRequestDefaultTypeInternal() {}
+  union {
+    CreateShardRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateShardRequestDefaultTypeInternal _CreateShardRequest_default_instance_;
+constexpr CreateShardResponse::CreateShardResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct CreateShardResponseDefaultTypeInternal {
+  constexpr CreateShardResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateShardResponseDefaultTypeInternal() {}
+  union {
+    CreateShardResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateShardResponseDefaultTypeInternal _CreateShardResponse_default_instance_;
+constexpr RemoveShardRequest::RemoveShardRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : shard_id_(uint64_t{0u})
+  , storage_id_(uint64_t{0u}){}
+struct RemoveShardRequestDefaultTypeInternal {
+  constexpr RemoveShardRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RemoveShardRequestDefaultTypeInternal() {}
+  union {
+    RemoveShardRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveShardRequestDefaultTypeInternal _RemoveShardRequest_default_instance_;
+constexpr RemoveShardResponse::RemoveShardResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct RemoveShardResponseDefaultTypeInternal {
+  constexpr RemoveShardResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RemoveShardResponseDefaultTypeInternal() {}
+  union {
+    RemoveShardResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveShardResponseDefaultTypeInternal _RemoveShardResponse_default_instance_;
 constexpr DeleteStorageRequest::DeleteStorageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(uint64_t{0u})
@@ -462,7 +510,7 @@ struct ShardInfoResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ShardInfoResponseDefaultTypeInternal _ShardInfoResponse_default_instance_;
 }  // namespace metaserver
 }  // namespace bedrock
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_metaserver_2eproto[35];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_metaserver_2eproto[39];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_metaserver_2eproto = nullptr;
 static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* file_level_service_descriptors_metaserver_2eproto[1];
 
@@ -540,6 +588,34 @@ const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageResponse, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, storage_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, storage_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -744,33 +820,37 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 53, -1, -1, sizeof(::bedrock::metaserver::HeartBeatResponse)},
   { 59, -1, -1, sizeof(::bedrock::metaserver::CreateStorageRequest)},
   { 66, -1, -1, sizeof(::bedrock::metaserver::CreateStorageResponse)},
-  { 73, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageRequest)},
-  { 82, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageResponse)},
-  { 88, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageRequest)},
-  { 95, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageResponse)},
-  { 101, -1, -1, sizeof(::bedrock::metaserver::RenameStorageRequest)},
-  { 109, -1, -1, sizeof(::bedrock::metaserver::RenameStorageResponse)},
-  { 115, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageRequest)},
-  { 124, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageResponse)},
-  { 130, -1, -1, sizeof(::bedrock::metaserver::GetStoragesRequest)},
-  { 138, -1, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
-  { 145, -1, -1, sizeof(::bedrock::metaserver::ShardRange)},
-  { 153, -1, -1, sizeof(::bedrock::metaserver::RouteRecord)},
-  { 161, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
-  { 168, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
-  { 178, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
-  { 185, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
-  { 193, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
-  { 202, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
-  { 209, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
-  { 215, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
-  { 222, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
-  { 228, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
-  { 234, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
-  { 241, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
-  { 247, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
-  { 253, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
-  { 260, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
+  { 73, -1, -1, sizeof(::bedrock::metaserver::CreateShardRequest)},
+  { 81, -1, -1, sizeof(::bedrock::metaserver::CreateShardResponse)},
+  { 87, -1, -1, sizeof(::bedrock::metaserver::RemoveShardRequest)},
+  { 95, -1, -1, sizeof(::bedrock::metaserver::RemoveShardResponse)},
+  { 101, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageRequest)},
+  { 110, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageResponse)},
+  { 116, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageRequest)},
+  { 123, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageResponse)},
+  { 129, -1, -1, sizeof(::bedrock::metaserver::RenameStorageRequest)},
+  { 137, -1, -1, sizeof(::bedrock::metaserver::RenameStorageResponse)},
+  { 143, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageRequest)},
+  { 152, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageResponse)},
+  { 158, -1, -1, sizeof(::bedrock::metaserver::GetStoragesRequest)},
+  { 166, -1, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
+  { 173, -1, -1, sizeof(::bedrock::metaserver::ShardRange)},
+  { 181, -1, -1, sizeof(::bedrock::metaserver::RouteRecord)},
+  { 189, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
+  { 196, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
+  { 206, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
+  { 213, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
+  { 221, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
+  { 230, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
+  { 237, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
+  { 243, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
+  { 250, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
+  { 256, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
+  { 262, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
+  { 269, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
+  { 275, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
+  { 281, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
+  { 288, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -782,6 +862,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_HeartBeatResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateStorageRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateShardRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateShardResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RemoveShardRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RemoveShardResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_DeleteStorageRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_DeleteStorageResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_UndeleteStorageRequest_default_instance_),
@@ -833,79 +917,88 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "\022\r\n\005addrs\030\001 \003(\t\" \n\020HeartBeatRequest\022\014\n\004a"
   "ddr\030\001 \001(\t\"\023\n\021HeartBeatResponse\"$\n\024Create"
   "StorageRequest\022\014\n\004name\030\001 \001(\t\"#\n\025CreateSt"
-  "orageResponse\022\n\n\002id\030\001 \001(\004\"N\n\024DeleteStora"
-  "geRequest\022\n\n\002id\030\001 \001(\004\022\023\n\013real_delete\030\002 \001"
-  "(\010\022\025\n\rrecycle_after\030\003 \001(\004\"\027\n\025DeleteStora"
-  "geResponse\"$\n\026UndeleteStorageRequest\022\n\n\002"
-  "id\030\001 \001(\004\"\031\n\027UndeleteStorageResponse\"4\n\024R"
-  "enameStorageRequest\022\n\n\002id\030\001 \001(\004\022\020\n\010new_n"
-  "ame\030\002 \001(\t\"\027\n\025RenameStorageResponse\"M\n\024Re"
-  "sizeStorageRequest\022\n\n\002id\030\001 \001(\004\022\020\n\010new_si"
-  "ze\030\002 \001(\004\022\027\n\017new_shard_count\030\003 \001(\004\"\027\n\025Res"
-  "izeStorageResponse\"0\n\022GetStoragesRequest"
-  "\022\013\n\003ids\030\001 \003(\004\022\r\n\005names\030\002 \003(\t\"D\n\023GetStora"
-  "gesResponse\022-\n\010storages\030\001 \003(\0132\033.bedrock."
-  "metaserver.Storage\"4\n\nShardRange\022\026\n\016star"
-  "t_shard_id\030\001 \001(\004\022\016\n\006offset\030\002 \001(\004\".\n\013Rout"
-  "eRecord\022\020\n\010shard_id\030\001 \001(\004\022\r\n\005addrs\030\002 \003(\t"
-  "\"\036\n\tShardList\022\021\n\tshard_ids\030\001 \003(\004\"\275\001\n\025Get"
-  "ShardRoutesRequest\0224\n\013shards_list\030\001 \001(\0132"
-  "\035.bedrock.metaserver.ShardListH\000\0225\n\013shar"
-  "d_range\030\002 \001(\0132\036.bedrock.metaserver.Shard"
-  "RangeH\000\022-\n\ttimestamp\030\003 \001(\0132\032.google.prot"
-  "obuf.TimestampB\010\n\006shards\"I\n\026GetShardRout"
-  "esResponse\022/\n\006routes\030\001 \003(\0132\037.bedrock.met"
-  "aserver.RouteRecord\"c\n\036GetShardRoutesByS"
-  "torageRequest\022\022\n\nstorage_id\030\001 \001(\004\022-\n\ttim"
-  "estamp\030\002 \001(\0132\032.google.protobuf.Timestamp"
-  "\"\222\001\n\037GetShardRoutesByStorageResponse\022/\n\006"
-  "routes\030\001 \003(\0132\037.bedrock.metaserver.RouteR"
-  "ecord\022-\n\ttimestamp\030\002 \001(\0132\032.google.protob"
-  "uf.Timestamp\022\017\n\007is_full\030\003 \001(\010\"$\n\024AddData"
-  "ServerRequest\022\014\n\004addr\030\001 \001(\t\"\027\n\025AddDataSe"
-  "rverResponse\"\'\n\027RemoveDataServerRequest\022"
-  "\014\n\004addr\030\001 \001(\t\"\032\n\030RemoveDataServerRespons"
-  "e\"\027\n\025ListDataServerRequest\"N\n\026ListDataSe"
-  "rverResponse\0224\n\014data_servers\030\001 \003(\0132\036.bed"
-  "rock.metaserver.DataServer\"\031\n\027UpdateData"
-  "ServerRequest\"\032\n\030UpdateDataServerRespons"
-  "e\"\036\n\020ShardInfoRequest\022\n\n\002id\030\001 \001(\004\"=\n\021Sha"
-  "rdInfoResponse\022(\n\005shard\030\001 \001(\0132\031.bedrock."
-  "metaserver.Shard2\254\n\n\013MetaService\022I\n\tHear"
-  "tBeat\022$.bedrock.metaserver.HeartBeatRequ"
-  "est\032\026.google.protobuf.Empty\022g\n\016GetShardR"
-  "outes\022).bedrock.metaserver.GetShardRoute"
-  "sRequest\032*.bedrock.metaserver.GetShardRo"
-  "utesResponse\022d\n\rCreateStorage\022(.bedrock."
-  "metaserver.CreateStorageRequest\032).bedroc"
-  "k.metaserver.CreateStorageResponse\022d\n\rDe"
-  "leteStorage\022(.bedrock.metaserver.DeleteS"
-  "torageRequest\032).bedrock.metaserver.Delet"
-  "eStorageResponse\022j\n\017UndeleteStorage\022*.be"
-  "drock.metaserver.UndeleteStorageRequest\032"
-  "+.bedrock.metaserver.UndeleteStorageResp"
-  "onse\022d\n\rRenameStorage\022(.bedrock.metaserv"
-  "er.RenameStorageRequest\032).bedrock.metase"
-  "rver.RenameStorageResponse\022d\n\rResizeStor"
-  "age\022(.bedrock.metaserver.ResizeStorageRe"
-  "quest\032).bedrock.metaserver.ResizeStorage"
-  "Response\022^\n\013GetStorages\022&.bedrock.metase"
-  "rver.GetStoragesRequest\032\'.bedrock.metase"
-  "rver.GetStoragesResponse\022d\n\rAddDataServe"
-  "r\022(.bedrock.metaserver.AddDataServerRequ"
-  "est\032).bedrock.metaserver.AddDataServerRe"
-  "sponse\022m\n\020RemoveDataServer\022+.bedrock.met"
-  "aserver.RemoveDataServerRequest\032,.bedroc"
-  "k.metaserver.RemoveDataServerResponse\022g\n"
-  "\016ListDataServer\022).bedrock.metaserver.Lis"
-  "tDataServerRequest\032*.bedrock.metaserver."
-  "ListDataServerResponse\022m\n\020UpdateDataServ"
-  "er\022+.bedrock.metaserver.UpdateDataServer"
-  "Request\032,.bedrock.metaserver.UpdateDataS"
-  "erverResponse\022X\n\tShardInfo\022$.bedrock.met"
-  "aserver.ShardInfoRequest\032%.bedrock.metas"
-  "erver.ShardInfoResponseB,Z\'sr.ht/moyanha"
-  "o/bedrock-metaserver/proto\200\001\001b\006proto3"
+  "orageResponse\022\n\n\002id\030\001 \001(\004\":\n\022CreateShard"
+  "Request\022\020\n\010shard_id\030\001 \001(\004\022\022\n\nstorage_id\030"
+  "\002 \001(\004\"\025\n\023CreateShardResponse\":\n\022RemoveSh"
+  "ardRequest\022\020\n\010shard_id\030\001 \001(\004\022\022\n\nstorage_"
+  "id\030\002 \001(\004\"\025\n\023RemoveShardResponse\"N\n\024Delet"
+  "eStorageRequest\022\n\n\002id\030\001 \001(\004\022\023\n\013real_dele"
+  "te\030\002 \001(\010\022\025\n\rrecycle_after\030\003 \001(\004\"\027\n\025Delet"
+  "eStorageResponse\"$\n\026UndeleteStorageReque"
+  "st\022\n\n\002id\030\001 \001(\004\"\031\n\027UndeleteStorageRespons"
+  "e\"4\n\024RenameStorageRequest\022\n\n\002id\030\001 \001(\004\022\020\n"
+  "\010new_name\030\002 \001(\t\"\027\n\025RenameStorageResponse"
+  "\"M\n\024ResizeStorageRequest\022\n\n\002id\030\001 \001(\004\022\020\n\010"
+  "new_size\030\002 \001(\004\022\027\n\017new_shard_count\030\003 \001(\004\""
+  "\027\n\025ResizeStorageResponse\"0\n\022GetStoragesR"
+  "equest\022\013\n\003ids\030\001 \003(\004\022\r\n\005names\030\002 \003(\t\"D\n\023Ge"
+  "tStoragesResponse\022-\n\010storages\030\001 \003(\0132\033.be"
+  "drock.metaserver.Storage\"4\n\nShardRange\022\026"
+  "\n\016start_shard_id\030\001 \001(\004\022\016\n\006offset\030\002 \001(\004\"."
+  "\n\013RouteRecord\022\020\n\010shard_id\030\001 \001(\004\022\r\n\005addrs"
+  "\030\002 \003(\t\"\036\n\tShardList\022\021\n\tshard_ids\030\001 \003(\004\"\275"
+  "\001\n\025GetShardRoutesRequest\0224\n\013shards_list\030"
+  "\001 \001(\0132\035.bedrock.metaserver.ShardListH\000\0225"
+  "\n\013shard_range\030\002 \001(\0132\036.bedrock.metaserver"
+  ".ShardRangeH\000\022-\n\ttimestamp\030\003 \001(\0132\032.googl"
+  "e.protobuf.TimestampB\010\n\006shards\"I\n\026GetSha"
+  "rdRoutesResponse\022/\n\006routes\030\001 \003(\0132\037.bedro"
+  "ck.metaserver.RouteRecord\"c\n\036GetShardRou"
+  "tesByStorageRequest\022\022\n\nstorage_id\030\001 \001(\004\022"
+  "-\n\ttimestamp\030\002 \001(\0132\032.google.protobuf.Tim"
+  "estamp\"\222\001\n\037GetShardRoutesByStorageRespon"
+  "se\022/\n\006routes\030\001 \003(\0132\037.bedrock.metaserver."
+  "RouteRecord\022-\n\ttimestamp\030\002 \001(\0132\032.google."
+  "protobuf.Timestamp\022\017\n\007is_full\030\003 \001(\010\"$\n\024A"
+  "ddDataServerRequest\022\014\n\004addr\030\001 \001(\t\"\027\n\025Add"
+  "DataServerResponse\"\'\n\027RemoveDataServerRe"
+  "quest\022\014\n\004addr\030\001 \001(\t\"\032\n\030RemoveDataServerR"
+  "esponse\"\027\n\025ListDataServerRequest\"N\n\026List"
+  "DataServerResponse\0224\n\014data_servers\030\001 \003(\013"
+  "2\036.bedrock.metaserver.DataServer\"\031\n\027Upda"
+  "teDataServerRequest\"\032\n\030UpdateDataServerR"
+  "esponse\"\036\n\020ShardInfoRequest\022\n\n\002id\030\001 \001(\004\""
+  "=\n\021ShardInfoResponse\022(\n\005shard\030\001 \001(\0132\031.be"
+  "drock.metaserver.Shard2\353\013\n\013MetaService\022I"
+  "\n\tHeartBeat\022$.bedrock.metaserver.HeartBe"
+  "atRequest\032\026.google.protobuf.Empty\022g\n\016Get"
+  "ShardRoutes\022).bedrock.metaserver.GetShar"
+  "dRoutesRequest\032*.bedrock.metaserver.GetS"
+  "hardRoutesResponse\022X\n\tShardInfo\022$.bedroc"
+  "k.metaserver.ShardInfoRequest\032%.bedrock."
+  "metaserver.ShardInfoResponse\022^\n\013CreateSh"
+  "ard\022&.bedrock.metaserver.CreateShardRequ"
+  "est\032\'.bedrock.metaserver.CreateShardResp"
+  "onse\022]\n\013RemoveShard\022&.bedrock.metaserver"
+  ".RemoveShardRequest\032&.bedrock.metaserver"
+  ".RemoveShardRequest\022d\n\rCreateStorage\022(.b"
+  "edrock.metaserver.CreateStorageRequest\032)"
+  ".bedrock.metaserver.CreateStorageRespons"
+  "e\022d\n\rDeleteStorage\022(.bedrock.metaserver."
+  "DeleteStorageRequest\032).bedrock.metaserve"
+  "r.DeleteStorageResponse\022j\n\017UndeleteStora"
+  "ge\022*.bedrock.metaserver.UndeleteStorageR"
+  "equest\032+.bedrock.metaserver.UndeleteStor"
+  "ageResponse\022d\n\rRenameStorage\022(.bedrock.m"
+  "etaserver.RenameStorageRequest\032).bedrock"
+  ".metaserver.RenameStorageResponse\022d\n\rRes"
+  "izeStorage\022(.bedrock.metaserver.ResizeSt"
+  "orageRequest\032).bedrock.metaserver.Resize"
+  "StorageResponse\022^\n\013GetStorages\022&.bedrock"
+  ".metaserver.GetStoragesRequest\032\'.bedrock"
+  ".metaserver.GetStoragesResponse\022d\n\rAddDa"
+  "taServer\022(.bedrock.metaserver.AddDataSer"
+  "verRequest\032).bedrock.metaserver.AddDataS"
+  "erverResponse\022m\n\020RemoveDataServer\022+.bedr"
+  "ock.metaserver.RemoveDataServerRequest\032,"
+  ".bedrock.metaserver.RemoveDataServerResp"
+  "onse\022g\n\016ListDataServer\022).bedrock.metaser"
+  "ver.ListDataServerRequest\032*.bedrock.meta"
+  "server.ListDataServerResponse\022m\n\020UpdateD"
+  "ataServer\022+.bedrock.metaserver.UpdateDat"
+  "aServerRequest\032,.bedrock.metaserver.Upda"
+  "teDataServerResponseB,Z\'sr.ht/moyanhao/b"
+  "edrock-metaserver/proto\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -913,8 +1006,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_metaserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_metaserver_2eproto = {
-  false, false, 3757, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
-  &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 35,
+  false, false, 4114, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
+  &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 39,
   schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
   file_level_metadata_metaserver_2eproto, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
 };
@@ -3036,6 +3129,508 @@ void CreateStorageResponse::InternalSwap(CreateStorageResponse* other) {
 
 // ===================================================================
 
+class CreateShardRequest::_Internal {
+ public:
+};
+
+CreateShardRequest::CreateShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.CreateShardRequest)
+}
+CreateShardRequest::CreateShardRequest(const CreateShardRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&shard_id_, &from.shard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
+    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateShardRequest)
+}
+
+inline void CreateShardRequest::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&shard_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
+    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+}
+
+CreateShardRequest::~CreateShardRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.CreateShardRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void CreateShardRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CreateShardRequest::ArenaDtor(void* object) {
+  CreateShardRequest* _this = reinterpret_cast< CreateShardRequest* >(object);
+  (void)_this;
+}
+void CreateShardRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void CreateShardRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void CreateShardRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.CreateShardRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&shard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CreateShardRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 shard_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 storage_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CreateShardRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.CreateShardRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+  }
+
+  // uint64 storage_id = 2;
+  if (this->_internal_storage_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.CreateShardRequest)
+  return target;
+}
+
+size_t CreateShardRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.CreateShardRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  }
+
+  // uint64 storage_id = 2;
+  if (this->_internal_storage_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateShardRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CreateShardRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateShardRequest::GetClassData() const { return &_class_data_; }
+
+void CreateShardRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<CreateShardRequest *>(to)->MergeFrom(
+      static_cast<const CreateShardRequest &>(from));
+}
+
+
+void CreateShardRequest::MergeFrom(const CreateShardRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateShardRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_shard_id() != 0) {
+    _internal_set_shard_id(from._internal_shard_id());
+  }
+  if (from._internal_storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateShardRequest::CopyFrom(const CreateShardRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.CreateShardRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateShardRequest::IsInitialized() const {
+  return true;
+}
+
+void CreateShardRequest::InternalSwap(CreateShardRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CreateShardRequest, storage_id_)
+      + sizeof(CreateShardRequest::storage_id_)
+      - PROTOBUF_FIELD_OFFSET(CreateShardRequest, shard_id_)>(
+          reinterpret_cast<char*>(&shard_id_),
+          reinterpret_cast<char*>(&other->shard_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateShardRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
+      file_level_metadata_metaserver_2eproto[8]);
+}
+
+// ===================================================================
+
+class CreateShardResponse::_Internal {
+ public:
+};
+
+CreateShardResponse::CreateShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.CreateShardResponse)
+}
+CreateShardResponse::CreateShardResponse(const CreateShardResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateShardResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateShardResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateShardResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateShardResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
+      file_level_metadata_metaserver_2eproto[9]);
+}
+
+// ===================================================================
+
+class RemoveShardRequest::_Internal {
+ public:
+};
+
+RemoveShardRequest::RemoveShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RemoveShardRequest)
+}
+RemoveShardRequest::RemoveShardRequest(const RemoveShardRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&shard_id_, &from.shard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
+    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveShardRequest)
+}
+
+inline void RemoveShardRequest::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&shard_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
+    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+}
+
+RemoveShardRequest::~RemoveShardRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.RemoveShardRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void RemoveShardRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void RemoveShardRequest::ArenaDtor(void* object) {
+  RemoveShardRequest* _this = reinterpret_cast< RemoveShardRequest* >(object);
+  (void)_this;
+}
+void RemoveShardRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RemoveShardRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RemoveShardRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RemoveShardRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&shard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RemoveShardRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 shard_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 storage_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* RemoveShardRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RemoveShardRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+  }
+
+  // uint64 storage_id = 2;
+  if (this->_internal_storage_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RemoveShardRequest)
+  return target;
+}
+
+size_t RemoveShardRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RemoveShardRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  }
+
+  // uint64 storage_id = 2;
+  if (this->_internal_storage_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoveShardRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RemoveShardRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveShardRequest::GetClassData() const { return &_class_data_; }
+
+void RemoveShardRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RemoveShardRequest *>(to)->MergeFrom(
+      static_cast<const RemoveShardRequest &>(from));
+}
+
+
+void RemoveShardRequest::MergeFrom(const RemoveShardRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveShardRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_shard_id() != 0) {
+    _internal_set_shard_id(from._internal_shard_id());
+  }
+  if (from._internal_storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RemoveShardRequest::CopyFrom(const RemoveShardRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.RemoveShardRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveShardRequest::IsInitialized() const {
+  return true;
+}
+
+void RemoveShardRequest::InternalSwap(RemoveShardRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RemoveShardRequest, storage_id_)
+      + sizeof(RemoveShardRequest::storage_id_)
+      - PROTOBUF_FIELD_OFFSET(RemoveShardRequest, shard_id_)>(
+          reinterpret_cast<char*>(&shard_id_),
+          reinterpret_cast<char*>(&other->shard_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemoveShardRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
+      file_level_metadata_metaserver_2eproto[10]);
+}
+
+// ===================================================================
+
+class RemoveShardResponse::_Internal {
+ public:
+};
+
+RemoveShardResponse::RemoveShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RemoveShardResponse)
+}
+RemoveShardResponse::RemoveShardResponse(const RemoveShardResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveShardResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoveShardResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveShardResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemoveShardResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
+      file_level_metadata_metaserver_2eproto[11]);
+}
+
+// ===================================================================
+
 class DeleteStorageRequest::_Internal {
  public:
 };
@@ -3265,7 +3860,7 @@ void DeleteStorageRequest::InternalSwap(DeleteStorageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteStorageRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[8]);
+      file_level_metadata_metaserver_2eproto[12]);
 }
 
 // ===================================================================
@@ -3304,7 +3899,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteStorageResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteStorageResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[9]);
+      file_level_metadata_metaserver_2eproto[13]);
 }
 
 // ===================================================================
@@ -3482,7 +4077,7 @@ void UndeleteStorageRequest::InternalSwap(UndeleteStorageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UndeleteStorageRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[10]);
+      file_level_metadata_metaserver_2eproto[14]);
 }
 
 // ===================================================================
@@ -3521,7 +4116,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UndeleteStorageResponse::GetCl
 ::PROTOBUF_NAMESPACE_ID::Metadata UndeleteStorageResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[11]);
+      file_level_metadata_metaserver_2eproto[15]);
 }
 
 // ===================================================================
@@ -3750,7 +4345,7 @@ void RenameStorageRequest::InternalSwap(RenameStorageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RenameStorageRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[12]);
+      file_level_metadata_metaserver_2eproto[16]);
 }
 
 // ===================================================================
@@ -3789,7 +4384,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RenameStorageResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata RenameStorageResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[13]);
+      file_level_metadata_metaserver_2eproto[17]);
 }
 
 // ===================================================================
@@ -4023,7 +4618,7 @@ void ResizeStorageRequest::InternalSwap(ResizeStorageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeStorageRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[14]);
+      file_level_metadata_metaserver_2eproto[18]);
 }
 
 // ===================================================================
@@ -4062,7 +4657,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResizeStorageResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeStorageResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[15]);
+      file_level_metadata_metaserver_2eproto[19]);
 }
 
 // ===================================================================
@@ -4292,7 +4887,7 @@ void GetStoragesRequest::InternalSwap(GetStoragesRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetStoragesRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[16]);
+      file_level_metadata_metaserver_2eproto[20]);
 }
 
 // ===================================================================
@@ -4477,7 +5072,7 @@ void GetStoragesResponse::InternalSwap(GetStoragesResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetStoragesResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[17]);
+      file_level_metadata_metaserver_2eproto[21]);
 }
 
 // ===================================================================
@@ -4689,7 +5284,7 @@ void ShardRange::InternalSwap(ShardRange* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardRange::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[18]);
+      file_level_metadata_metaserver_2eproto[22]);
 }
 
 // ===================================================================
@@ -4905,7 +5500,7 @@ void RouteRecord::InternalSwap(RouteRecord* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RouteRecord::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[19]);
+      file_level_metadata_metaserver_2eproto[23]);
 }
 
 // ===================================================================
@@ -5097,7 +5692,7 @@ void ShardList::InternalSwap(ShardList* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardList::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[20]);
+      file_level_metadata_metaserver_2eproto[24]);
 }
 
 // ===================================================================
@@ -5446,7 +6041,7 @@ void GetShardRoutesRequest::InternalSwap(GetShardRoutesRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[21]);
+      file_level_metadata_metaserver_2eproto[25]);
 }
 
 // ===================================================================
@@ -5631,7 +6226,7 @@ void GetShardRoutesResponse::InternalSwap(GetShardRoutesResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[22]);
+      file_level_metadata_metaserver_2eproto[26]);
 }
 
 // ===================================================================
@@ -5864,7 +6459,7 @@ void GetShardRoutesByStorageRequest::InternalSwap(GetShardRoutesByStorageRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesByStorageRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[23]);
+      file_level_metadata_metaserver_2eproto[27]);
 }
 
 // ===================================================================
@@ -6130,7 +6725,7 @@ void GetShardRoutesByStorageResponse::InternalSwap(GetShardRoutesByStorageRespon
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesByStorageResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[24]);
+      file_level_metadata_metaserver_2eproto[28]);
 }
 
 // ===================================================================
@@ -6333,7 +6928,7 @@ void AddDataServerRequest::InternalSwap(AddDataServerRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AddDataServerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[25]);
+      file_level_metadata_metaserver_2eproto[29]);
 }
 
 // ===================================================================
@@ -6372,7 +6967,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddDataServerResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata AddDataServerResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[26]);
+      file_level_metadata_metaserver_2eproto[30]);
 }
 
 // ===================================================================
@@ -6575,7 +7170,7 @@ void RemoveDataServerRequest::InternalSwap(RemoveDataServerRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveDataServerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[27]);
+      file_level_metadata_metaserver_2eproto[31]);
 }
 
 // ===================================================================
@@ -6614,7 +7209,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveDataServerResponse::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveDataServerResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[28]);
+      file_level_metadata_metaserver_2eproto[32]);
 }
 
 // ===================================================================
@@ -6653,7 +7248,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListDataServerRequest::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata ListDataServerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[29]);
+      file_level_metadata_metaserver_2eproto[33]);
 }
 
 // ===================================================================
@@ -6838,7 +7433,7 @@ void ListDataServerResponse::InternalSwap(ListDataServerResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListDataServerResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[30]);
+      file_level_metadata_metaserver_2eproto[34]);
 }
 
 // ===================================================================
@@ -6877,7 +7472,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateDataServerRequest::GetCl
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateDataServerRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[31]);
+      file_level_metadata_metaserver_2eproto[35]);
 }
 
 // ===================================================================
@@ -6916,7 +7511,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateDataServerResponse::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateDataServerResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[32]);
+      file_level_metadata_metaserver_2eproto[36]);
 }
 
 // ===================================================================
@@ -7094,7 +7689,7 @@ void ShardInfoRequest::InternalSwap(ShardInfoRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardInfoRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[33]);
+      file_level_metadata_metaserver_2eproto[37]);
 }
 
 // ===================================================================
@@ -7289,7 +7884,7 @@ void ShardInfoResponse::InternalSwap(ShardInfoResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardInfoResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[34]);
+      file_level_metadata_metaserver_2eproto[38]);
 }
 
 // ===================================================================
@@ -7318,6 +7913,30 @@ void MetaService::GetShardRoutes(::PROTOBUF_NAMESPACE_ID::RpcController* control
                          ::bedrock::metaserver::GetShardRoutesResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method GetShardRoutes() not implemented.");
+  done->Run();
+}
+
+void MetaService::ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::metaserver::ShardInfoRequest*,
+                         ::bedrock::metaserver::ShardInfoResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method ShardInfo() not implemented.");
+  done->Run();
+}
+
+void MetaService::CreateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::metaserver::CreateShardRequest*,
+                         ::bedrock::metaserver::CreateShardResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method CreateShard() not implemented.");
+  done->Run();
+}
+
+void MetaService::RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::metaserver::RemoveShardRequest*,
+                         ::bedrock::metaserver::RemoveShardRequest*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method RemoveShard() not implemented.");
   done->Run();
 }
 
@@ -7401,14 +8020,6 @@ void MetaService::UpdateDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* contr
   done->Run();
 }
 
-void MetaService::ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                         const ::bedrock::metaserver::ShardInfoRequest*,
-                         ::bedrock::metaserver::ShardInfoResponse*,
-                         ::google::protobuf::Closure* done) {
-  controller->SetFailed("Method ShardInfo() not implemented.");
-  done->Run();
-}
-
 void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method,
                              ::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                              const ::PROTOBUF_NAMESPACE_ID::Message* request,
@@ -7433,6 +8044,30 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
              done);
       break;
     case 2:
+      ShardInfo(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::ShardInfoRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::ShardInfoResponse*>(
+                 response),
+             done);
+      break;
+    case 3:
+      CreateShard(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::CreateShardRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::CreateShardResponse*>(
+                 response),
+             done);
+      break;
+    case 4:
+      RemoveShard(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::RemoveShardRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::RemoveShardRequest*>(
+                 response),
+             done);
+      break;
+    case 5:
       CreateStorage(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::CreateStorageRequest*>(
                  request),
@@ -7440,7 +8075,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 3:
+    case 6:
       DeleteStorage(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::DeleteStorageRequest*>(
                  request),
@@ -7448,7 +8083,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 4:
+    case 7:
       UndeleteStorage(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::UndeleteStorageRequest*>(
                  request),
@@ -7456,7 +8091,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 5:
+    case 8:
       RenameStorage(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::RenameStorageRequest*>(
                  request),
@@ -7464,7 +8099,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 6:
+    case 9:
       ResizeStorage(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::ResizeStorageRequest*>(
                  request),
@@ -7472,7 +8107,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 7:
+    case 10:
       GetStorages(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::GetStoragesRequest*>(
                  request),
@@ -7480,7 +8115,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 8:
+    case 11:
       AddDataServer(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::AddDataServerRequest*>(
                  request),
@@ -7488,7 +8123,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 9:
+    case 12:
       RemoveDataServer(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::RemoveDataServerRequest*>(
                  request),
@@ -7496,7 +8131,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 10:
+    case 13:
       ListDataServer(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::ListDataServerRequest*>(
                  request),
@@ -7504,19 +8139,11 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 11:
+    case 14:
       UpdateDataServer(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::UpdateDataServerRequest*>(
                  request),
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::UpdateDataServerResponse*>(
-                 response),
-             done);
-      break;
-    case 12:
-      ShardInfo(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::ShardInfoRequest*>(
-                 request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::ShardInfoResponse*>(
                  response),
              done);
       break;
@@ -7535,27 +8162,31 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MetaService::GetRequestPrototype(
     case 1:
       return ::bedrock::metaserver::GetShardRoutesRequest::default_instance();
     case 2:
-      return ::bedrock::metaserver::CreateStorageRequest::default_instance();
-    case 3:
-      return ::bedrock::metaserver::DeleteStorageRequest::default_instance();
-    case 4:
-      return ::bedrock::metaserver::UndeleteStorageRequest::default_instance();
-    case 5:
-      return ::bedrock::metaserver::RenameStorageRequest::default_instance();
-    case 6:
-      return ::bedrock::metaserver::ResizeStorageRequest::default_instance();
-    case 7:
-      return ::bedrock::metaserver::GetStoragesRequest::default_instance();
-    case 8:
-      return ::bedrock::metaserver::AddDataServerRequest::default_instance();
-    case 9:
-      return ::bedrock::metaserver::RemoveDataServerRequest::default_instance();
-    case 10:
-      return ::bedrock::metaserver::ListDataServerRequest::default_instance();
-    case 11:
-      return ::bedrock::metaserver::UpdateDataServerRequest::default_instance();
-    case 12:
       return ::bedrock::metaserver::ShardInfoRequest::default_instance();
+    case 3:
+      return ::bedrock::metaserver::CreateShardRequest::default_instance();
+    case 4:
+      return ::bedrock::metaserver::RemoveShardRequest::default_instance();
+    case 5:
+      return ::bedrock::metaserver::CreateStorageRequest::default_instance();
+    case 6:
+      return ::bedrock::metaserver::DeleteStorageRequest::default_instance();
+    case 7:
+      return ::bedrock::metaserver::UndeleteStorageRequest::default_instance();
+    case 8:
+      return ::bedrock::metaserver::RenameStorageRequest::default_instance();
+    case 9:
+      return ::bedrock::metaserver::ResizeStorageRequest::default_instance();
+    case 10:
+      return ::bedrock::metaserver::GetStoragesRequest::default_instance();
+    case 11:
+      return ::bedrock::metaserver::AddDataServerRequest::default_instance();
+    case 12:
+      return ::bedrock::metaserver::RemoveDataServerRequest::default_instance();
+    case 13:
+      return ::bedrock::metaserver::ListDataServerRequest::default_instance();
+    case 14:
+      return ::bedrock::metaserver::UpdateDataServerRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -7572,27 +8203,31 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MetaService::GetResponsePrototype(
     case 1:
       return ::bedrock::metaserver::GetShardRoutesResponse::default_instance();
     case 2:
-      return ::bedrock::metaserver::CreateStorageResponse::default_instance();
-    case 3:
-      return ::bedrock::metaserver::DeleteStorageResponse::default_instance();
-    case 4:
-      return ::bedrock::metaserver::UndeleteStorageResponse::default_instance();
-    case 5:
-      return ::bedrock::metaserver::RenameStorageResponse::default_instance();
-    case 6:
-      return ::bedrock::metaserver::ResizeStorageResponse::default_instance();
-    case 7:
-      return ::bedrock::metaserver::GetStoragesResponse::default_instance();
-    case 8:
-      return ::bedrock::metaserver::AddDataServerResponse::default_instance();
-    case 9:
-      return ::bedrock::metaserver::RemoveDataServerResponse::default_instance();
-    case 10:
-      return ::bedrock::metaserver::ListDataServerResponse::default_instance();
-    case 11:
-      return ::bedrock::metaserver::UpdateDataServerResponse::default_instance();
-    case 12:
       return ::bedrock::metaserver::ShardInfoResponse::default_instance();
+    case 3:
+      return ::bedrock::metaserver::CreateShardResponse::default_instance();
+    case 4:
+      return ::bedrock::metaserver::RemoveShardRequest::default_instance();
+    case 5:
+      return ::bedrock::metaserver::CreateStorageResponse::default_instance();
+    case 6:
+      return ::bedrock::metaserver::DeleteStorageResponse::default_instance();
+    case 7:
+      return ::bedrock::metaserver::UndeleteStorageResponse::default_instance();
+    case 8:
+      return ::bedrock::metaserver::RenameStorageResponse::default_instance();
+    case 9:
+      return ::bedrock::metaserver::ResizeStorageResponse::default_instance();
+    case 10:
+      return ::bedrock::metaserver::GetStoragesResponse::default_instance();
+    case 11:
+      return ::bedrock::metaserver::AddDataServerResponse::default_instance();
+    case 12:
+      return ::bedrock::metaserver::RemoveDataServerResponse::default_instance();
+    case 13:
+      return ::bedrock::metaserver::ListDataServerResponse::default_instance();
+    case 14:
+      return ::bedrock::metaserver::UpdateDataServerResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -7625,81 +8260,95 @@ void MetaService_Stub::GetShardRoutes(::PROTOBUF_NAMESPACE_ID::RpcController* co
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
 }
+void MetaService_Stub::ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::metaserver::ShardInfoRequest* request,
+                              ::bedrock::metaserver::ShardInfoResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(2),
+                       controller, request, response, done);
+}
+void MetaService_Stub::CreateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::metaserver::CreateShardRequest* request,
+                              ::bedrock::metaserver::CreateShardResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(3),
+                       controller, request, response, done);
+}
+void MetaService_Stub::RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::metaserver::RemoveShardRequest* request,
+                              ::bedrock::metaserver::RemoveShardRequest* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(4),
+                       controller, request, response, done);
+}
 void MetaService_Stub::CreateStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::CreateStorageRequest* request,
                               ::bedrock::metaserver::CreateStorageResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(2),
+  channel_->CallMethod(descriptor()->method(5),
                        controller, request, response, done);
 }
 void MetaService_Stub::DeleteStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::DeleteStorageRequest* request,
                               ::bedrock::metaserver::DeleteStorageResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(3),
+  channel_->CallMethod(descriptor()->method(6),
                        controller, request, response, done);
 }
 void MetaService_Stub::UndeleteStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::UndeleteStorageRequest* request,
                               ::bedrock::metaserver::UndeleteStorageResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(4),
+  channel_->CallMethod(descriptor()->method(7),
                        controller, request, response, done);
 }
 void MetaService_Stub::RenameStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::RenameStorageRequest* request,
                               ::bedrock::metaserver::RenameStorageResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(5),
+  channel_->CallMethod(descriptor()->method(8),
                        controller, request, response, done);
 }
 void MetaService_Stub::ResizeStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::ResizeStorageRequest* request,
                               ::bedrock::metaserver::ResizeStorageResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(6),
+  channel_->CallMethod(descriptor()->method(9),
                        controller, request, response, done);
 }
 void MetaService_Stub::GetStorages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::GetStoragesRequest* request,
                               ::bedrock::metaserver::GetStoragesResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(7),
+  channel_->CallMethod(descriptor()->method(10),
                        controller, request, response, done);
 }
 void MetaService_Stub::AddDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::AddDataServerRequest* request,
                               ::bedrock::metaserver::AddDataServerResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(8),
+  channel_->CallMethod(descriptor()->method(11),
                        controller, request, response, done);
 }
 void MetaService_Stub::RemoveDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::RemoveDataServerRequest* request,
                               ::bedrock::metaserver::RemoveDataServerResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(9),
+  channel_->CallMethod(descriptor()->method(12),
                        controller, request, response, done);
 }
 void MetaService_Stub::ListDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::ListDataServerRequest* request,
                               ::bedrock::metaserver::ListDataServerResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(10),
+  channel_->CallMethod(descriptor()->method(13),
                        controller, request, response, done);
 }
 void MetaService_Stub::UpdateDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::UpdateDataServerRequest* request,
                               ::bedrock::metaserver::UpdateDataServerResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(11),
-                       controller, request, response, done);
-}
-void MetaService_Stub::ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                              const ::bedrock::metaserver::ShardInfoRequest* request,
-                              ::bedrock::metaserver::ShardInfoResponse* response,
-                              ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(12),
+  channel_->CallMethod(descriptor()->method(14),
                        controller, request, response, done);
 }
 
@@ -7730,6 +8379,18 @@ template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateStorageRequest* Arena:
 }
 template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateStorageResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateShardRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateShardRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateShardRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateShardResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateShardResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateShardResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveShardRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveShardRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::metaserver::RemoveShardRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveShardResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveShardResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::metaserver::RemoveShardResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DeleteStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::DeleteStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::DeleteStorageRequest >(arena);
