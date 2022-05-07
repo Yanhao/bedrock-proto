@@ -41,10 +41,13 @@ message PullShardDataRequest {
 }
 message PullShardDataResponse {
 }
+
 message TransferShardRequest {
 }
+
 message TransferShardResponse {
 }
+
 message AddShardReplicaRequest {
 }
 message AddShardReplicaResponse {
@@ -53,10 +56,15 @@ message DeleteShardReplicaRequest {
 }
 message DeleteShardReplicaResponse {
 }
+
 message TransferShardLeaderRequest {
+    uint64 shard_id = 1;
+    repeated string replicates = 2;
 }
+
 message TransferShardLeaderResponse {
 }
+
 message LockShardRequest {
 }
 message LockShardResponse {
@@ -134,12 +142,13 @@ service DataService {
     // rpc TransferShard(TransferShardRequest) returns (TransferShardResponse);
     // rpc AddShardReplica(AddShardReplicaRequest) returns (AddShardReplicaResponse);
     // rpc DeleteShardReplica(DeleteShardReplicaRequest) returns (DeleteShardReplicaResponse);
-    // rpc TransferShardLeader(TransferShardLeaderRequest) returns (TransferShardLeaderResponse);
+    rpc TransferShardLeader(TransferShardLeaderRequest) returns (TransferShardLeaderResponse);
     // rpc LockShard(LockShardRequest) returns (LockShardResponse);
     // rpc UnlockShard(UnlockShardRequest) returns (UnlockShardResponse);
 
     rpc ShardRead(ShardReadRequest) returns (ShardReadResponse);
     rpc ShardWrite(ShardWriteRequest) returns (ShardWriteResponse);
+
     rpc ShardAppendLog(ShardAppendLogRequest) returns (ShardAppendLogResponse);
     rpc ShardInstallSnapshot(stream ShardInstallSnapshotRequest) returns (ShardInstallSnapshotResponse);
 

@@ -2282,9 +2282,10 @@ class DeleteShardReplicaResponse final :
 // -------------------------------------------------------------------
 
 class TransferShardLeaderRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:bedrock.dataserver.TransferShardLeaderRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.TransferShardLeaderRequest) */ {
  public:
   inline TransferShardLeaderRequest() : TransferShardLeaderRequest(nullptr) {}
+  ~TransferShardLeaderRequest() override;
   explicit constexpr TransferShardLeaderRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   TransferShardLeaderRequest(const TransferShardLeaderRequest& from);
@@ -2357,15 +2358,27 @@ class TransferShardLeaderRequest final :
   TransferShardLeaderRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<TransferShardLeaderRequest>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const TransferShardLeaderRequest& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const TransferShardLeaderRequest& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TransferShardLeaderRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TransferShardLeaderRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransferShardLeaderRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -2376,6 +2389,8 @@ class TransferShardLeaderRequest final :
   explicit TransferShardLeaderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -2387,6 +2402,43 @@ class TransferShardLeaderRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kReplicatesFieldNumber = 2,
+    kShardIdFieldNumber = 1,
+  };
+  // repeated string replicates = 2;
+  int replicates_size() const;
+  private:
+  int _internal_replicates_size() const;
+  public:
+  void clear_replicates();
+  const std::string& replicates(int index) const;
+  std::string* mutable_replicates(int index);
+  void set_replicates(int index, const std::string& value);
+  void set_replicates(int index, std::string&& value);
+  void set_replicates(int index, const char* value);
+  void set_replicates(int index, const char* value, size_t size);
+  std::string* add_replicates();
+  void add_replicates(const std::string& value);
+  void add_replicates(std::string&& value);
+  void add_replicates(const char* value);
+  void add_replicates(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& replicates() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_replicates();
+  private:
+  const std::string& _internal_replicates(int index) const;
+  std::string* _internal_add_replicates();
+  public:
+
+  // uint64 shard_id = 1;
+  void clear_shard_id();
+  uint64_t shard_id() const;
+  void set_shard_id(uint64_t value);
+  private:
+  uint64_t _internal_shard_id() const;
+  void _internal_set_shard_id(uint64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.dataserver.TransferShardLeaderRequest)
  private:
   class _Internal;
@@ -2394,6 +2446,8 @@ class TransferShardLeaderRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> replicates_;
+  uint64_t shard_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dataserver_2eproto;
 };
@@ -5351,6 +5405,10 @@ class DataService : public ::PROTOBUF_NAMESPACE_ID::Service {
                        const ::bedrock::dataserver::DeleteShardRequest* request,
                        ::PROTOBUF_NAMESPACE_ID::Empty* response,
                        ::google::protobuf::Closure* done);
+  virtual void TransferShardLeader(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::TransferShardLeaderRequest* request,
+                       ::bedrock::dataserver::TransferShardLeaderResponse* response,
+                       ::google::protobuf::Closure* done);
   virtual void ShardRead(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::ShardReadRequest* request,
                        ::bedrock::dataserver::ShardReadResponse* response,
@@ -5403,6 +5461,10 @@ class DataService_Stub : public DataService {
   void DeleteShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::DeleteShardRequest* request,
                        ::PROTOBUF_NAMESPACE_ID::Empty* response,
+                       ::google::protobuf::Closure* done);
+  void TransferShardLeader(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::TransferShardLeaderRequest* request,
+                       ::bedrock::dataserver::TransferShardLeaderResponse* response,
                        ::google::protobuf::Closure* done);
   void ShardRead(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::ShardReadRequest* request,
@@ -5945,6 +6007,101 @@ inline void DeleteShardRequest::set_shard_id(uint64_t value) {
 // -------------------------------------------------------------------
 
 // TransferShardLeaderRequest
+
+// uint64 shard_id = 1;
+inline void TransferShardLeaderRequest::clear_shard_id() {
+  shard_id_ = uint64_t{0u};
+}
+inline uint64_t TransferShardLeaderRequest::_internal_shard_id() const {
+  return shard_id_;
+}
+inline uint64_t TransferShardLeaderRequest::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.TransferShardLeaderRequest.shard_id)
+  return _internal_shard_id();
+}
+inline void TransferShardLeaderRequest::_internal_set_shard_id(uint64_t value) {
+  
+  shard_id_ = value;
+}
+inline void TransferShardLeaderRequest::set_shard_id(uint64_t value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.TransferShardLeaderRequest.shard_id)
+}
+
+// repeated string replicates = 2;
+inline int TransferShardLeaderRequest::_internal_replicates_size() const {
+  return replicates_.size();
+}
+inline int TransferShardLeaderRequest::replicates_size() const {
+  return _internal_replicates_size();
+}
+inline void TransferShardLeaderRequest::clear_replicates() {
+  replicates_.Clear();
+}
+inline std::string* TransferShardLeaderRequest::add_replicates() {
+  std::string* _s = _internal_add_replicates();
+  // @@protoc_insertion_point(field_add_mutable:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+  return _s;
+}
+inline const std::string& TransferShardLeaderRequest::_internal_replicates(int index) const {
+  return replicates_.Get(index);
+}
+inline const std::string& TransferShardLeaderRequest::replicates(int index) const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+  return _internal_replicates(index);
+}
+inline std::string* TransferShardLeaderRequest::mutable_replicates(int index) {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+  return replicates_.Mutable(index);
+}
+inline void TransferShardLeaderRequest::set_replicates(int index, const std::string& value) {
+  replicates_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline void TransferShardLeaderRequest::set_replicates(int index, std::string&& value) {
+  replicates_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline void TransferShardLeaderRequest::set_replicates(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  replicates_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline void TransferShardLeaderRequest::set_replicates(int index, const char* value, size_t size) {
+  replicates_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline std::string* TransferShardLeaderRequest::_internal_add_replicates() {
+  return replicates_.Add();
+}
+inline void TransferShardLeaderRequest::add_replicates(const std::string& value) {
+  replicates_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline void TransferShardLeaderRequest::add_replicates(std::string&& value) {
+  replicates_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline void TransferShardLeaderRequest::add_replicates(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  replicates_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline void TransferShardLeaderRequest::add_replicates(const char* value, size_t size) {
+  replicates_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+TransferShardLeaderRequest::replicates() const {
+  // @@protoc_insertion_point(field_list:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+  return replicates_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+TransferShardLeaderRequest::mutable_replicates() {
+  // @@protoc_insertion_point(field_mutable_list:bedrock.dataserver.TransferShardLeaderRequest.replicates)
+  return &replicates_;
+}
 
 // -------------------------------------------------------------------
 
