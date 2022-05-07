@@ -5,6 +5,8 @@ option cc_generic_services = true;
 
 enum Error {
     OK = 0;
+    NO_SUCH_KEY = 1;
+    INVLIAD_PARAMETERS = 2;
 
     UNKNOWN = 255;
 }
@@ -15,6 +17,7 @@ message BedRockKvGetRequest {
 
 message BedRockKvGetResponse {
     bytes value = 1;
+
     Error err = 255;
 }
 

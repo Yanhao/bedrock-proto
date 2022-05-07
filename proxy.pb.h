@@ -90,6 +90,8 @@ namespace proxy {
 
 enum Error : int {
   OK = 0,
+  NO_SUCH_KEY = 1,
+  INVLIAD_PARAMETERS = 2,
   UNKNOWN = 255,
   Error_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   Error_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()

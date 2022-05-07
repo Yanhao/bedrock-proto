@@ -174,20 +174,21 @@ const char descriptor_table_protodef_proxy_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "kKvSetResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.p"
   "roxy.Error\"%\n\026BedRockKvDeleteRequest\022\013\n\003"
   "key\030\001 \001(\014\"=\n\027BedRockKvDeleteResponse\022\"\n\003"
-  "err\030\377\001 \001(\0162\024.bedrock.proxy.Error*\035\n\005Erro"
-  "r\022\006\n\002OK\020\000\022\014\n\007UNKNOWN\020\377\0012\240\002\n\014ProxyService"
-  "\022V\n\014BedRockKvSet\022\".bedrock.proxy.BedRock"
-  "KvSetRequest\032\".bedrock.proxy.BedRockKvSe"
-  "tRequest\022V\n\014BedRockKvGet\022\".bedrock.proxy"
-  ".BedRockKvGetRequest\032\".bedrock.proxy.Bed"
-  "RockKvGetRequest\022`\n\017BedRockKvDelete\022%.be"
-  "drock.proxy.BedRockKvDeleteRequest\032&.bed"
-  "rock.proxy.BedRockKvDeleteResponseB\003\200\001\001b"
-  "\006proto3"
+  "err\030\377\001 \001(\0162\024.bedrock.proxy.Error*F\n\005Erro"
+  "r\022\006\n\002OK\020\000\022\017\n\013NO_SUCH_KEY\020\001\022\026\n\022INVLIAD_PA"
+  "RAMETERS\020\002\022\014\n\007UNKNOWN\020\377\0012\240\002\n\014ProxyServic"
+  "e\022V\n\014BedRockKvSet\022\".bedrock.proxy.BedRoc"
+  "kKvSetRequest\032\".bedrock.proxy.BedRockKvS"
+  "etRequest\022V\n\014BedRockKvGet\022\".bedrock.prox"
+  "y.BedRockKvGetRequest\032\".bedrock.proxy.Be"
+  "dRockKvGetRequest\022`\n\017BedRockKvDelete\022%.b"
+  "edrock.proxy.BedRockKvDeleteRequest\032&.be"
+  "drock.proxy.BedRockKvDeleteResponseB\003\200\001\001"
+  "b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proxy_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proxy_2eproto = {
-  false, false, 687, descriptor_table_protodef_proxy_2eproto, "proxy.proto", 
+  false, false, 728, descriptor_table_protodef_proxy_2eproto, "proxy.proto", 
   &descriptor_table_proxy_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_proxy_2eproto::offsets,
   file_level_metadata_proxy_2eproto, file_level_enum_descriptors_proxy_2eproto, file_level_service_descriptors_proxy_2eproto,
@@ -207,6 +208,8 @@ const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Error_descriptor() {
 bool Error_IsValid(int value) {
   switch (value) {
     case 0:
+    case 1:
+    case 2:
     case 255:
       return true;
     default:
