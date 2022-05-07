@@ -882,9 +882,9 @@ const char descriptor_table_protodef_dataserver_2eproto[] PROTOBUF_SECTION_VARIA
   "aserver.ShardAppendLogResponse\022{\n\024ShardI"
   "nstallSnapshot\022/.bedrock.dataserver.Shar"
   "dInstallSnapshotRequest\0320.bedrock.datase"
-  "rver.ShardInstallSnapshotResponse(\001B,Z\'s"
-  "r.ht/moyanhao/bedrock-metaserver/proto\200\001"
-  "\001b\006proto3"
+  "rver.ShardInstallSnapshotResponse(\001B1Z,s"
+  "r.ht/moyanhao/bedrock-metaserver/dataser"
+  "ver\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_dataserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -892,7 +892,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_dataserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dataserver_2eproto = {
-  false, false, 2409, descriptor_table_protodef_dataserver_2eproto, "dataserver.proto", 
+  false, false, 2414, descriptor_table_protodef_dataserver_2eproto, "dataserver.proto", 
   &descriptor_table_dataserver_2eproto_once, descriptor_table_dataserver_2eproto_deps, 2, 39,
   schemas, file_default_instances, TableStruct_dataserver_2eproto::offsets,
   file_level_metadata_dataserver_2eproto, file_level_enum_descriptors_dataserver_2eproto, file_level_service_descriptors_dataserver_2eproto,

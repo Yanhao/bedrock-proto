@@ -997,8 +997,8 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "server.ListDataServerResponse\022m\n\020UpdateD"
   "ataServer\022+.bedrock.metaserver.UpdateDat"
   "aServerRequest\032,.bedrock.metaserver.Upda"
-  "teDataServerResponseB,Z\'sr.ht/moyanhao/b"
-  "edrock-metaserver/proto\200\001\001b\006proto3"
+  "teDataServerResponseB.Z)sr.ht/moyanhao/b"
+  "edrock-metaserver/service\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -1006,7 +1006,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_metaserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_metaserver_2eproto = {
-  false, false, 4114, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
+  false, false, 4116, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
   &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 39,
   schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
   file_level_metadata_metaserver_2eproto, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
