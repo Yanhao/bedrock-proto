@@ -6296,7 +6296,7 @@ class MetaService : public ::PROTOBUF_NAMESPACE_ID::Service {
                        ::google::protobuf::Closure* done);
   virtual void RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::RemoveShardRequest* request,
-                       ::bedrock::metaserver::RemoveShardRequest* response,
+                       ::bedrock::metaserver::RemoveShardResponse* response,
                        ::google::protobuf::Closure* done);
   virtual void CreateStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::CreateStorageRequest* request,
@@ -6385,7 +6385,7 @@ class MetaService_Stub : public MetaService {
                        ::google::protobuf::Closure* done);
   void RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::RemoveShardRequest* request,
-                       ::bedrock::metaserver::RemoveShardRequest* response,
+                       ::bedrock::metaserver::RemoveShardResponse* response,
                        ::google::protobuf::Closure* done);
   void CreateStorage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::CreateStorageRequest* request,

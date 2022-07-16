@@ -959,7 +959,7 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "teDataServerRequest\"\032\n\030UpdateDataServerR"
   "esponse\"\036\n\020ShardInfoRequest\022\n\n\002id\030\001 \001(\004\""
   "=\n\021ShardInfoResponse\022(\n\005shard\030\001 \001(\0132\031.be"
-  "drock.metaserver.Shard2\353\013\n\013MetaService\022I"
+  "drock.metaserver.Shard2\354\013\n\013MetaService\022I"
   "\n\tHeartBeat\022$.bedrock.metaserver.HeartBe"
   "atRequest\032\026.google.protobuf.Empty\022g\n\016Get"
   "ShardRoutes\022).bedrock.metaserver.GetShar"
@@ -969,36 +969,36 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "metaserver.ShardInfoResponse\022^\n\013CreateSh"
   "ard\022&.bedrock.metaserver.CreateShardRequ"
   "est\032\'.bedrock.metaserver.CreateShardResp"
-  "onse\022]\n\013RemoveShard\022&.bedrock.metaserver"
-  ".RemoveShardRequest\032&.bedrock.metaserver"
-  ".RemoveShardRequest\022d\n\rCreateStorage\022(.b"
-  "edrock.metaserver.CreateStorageRequest\032)"
-  ".bedrock.metaserver.CreateStorageRespons"
-  "e\022d\n\rDeleteStorage\022(.bedrock.metaserver."
-  "DeleteStorageRequest\032).bedrock.metaserve"
-  "r.DeleteStorageResponse\022j\n\017UndeleteStora"
-  "ge\022*.bedrock.metaserver.UndeleteStorageR"
-  "equest\032+.bedrock.metaserver.UndeleteStor"
-  "ageResponse\022d\n\rRenameStorage\022(.bedrock.m"
-  "etaserver.RenameStorageRequest\032).bedrock"
-  ".metaserver.RenameStorageResponse\022d\n\rRes"
-  "izeStorage\022(.bedrock.metaserver.ResizeSt"
-  "orageRequest\032).bedrock.metaserver.Resize"
-  "StorageResponse\022^\n\013GetStorages\022&.bedrock"
-  ".metaserver.GetStoragesRequest\032\'.bedrock"
-  ".metaserver.GetStoragesResponse\022d\n\rAddDa"
-  "taServer\022(.bedrock.metaserver.AddDataSer"
-  "verRequest\032).bedrock.metaserver.AddDataS"
-  "erverResponse\022m\n\020RemoveDataServer\022+.bedr"
-  "ock.metaserver.RemoveDataServerRequest\032,"
-  ".bedrock.metaserver.RemoveDataServerResp"
-  "onse\022g\n\016ListDataServer\022).bedrock.metaser"
-  "ver.ListDataServerRequest\032*.bedrock.meta"
-  "server.ListDataServerResponse\022m\n\020UpdateD"
-  "ataServer\022+.bedrock.metaserver.UpdateDat"
-  "aServerRequest\032,.bedrock.metaserver.Upda"
-  "teDataServerResponseB.Z)sr.ht/moyanhao/b"
-  "edrock-metaserver/service\200\001\001b\006proto3"
+  "onse\022^\n\013RemoveShard\022&.bedrock.metaserver"
+  ".RemoveShardRequest\032\'.bedrock.metaserver"
+  ".RemoveShardResponse\022d\n\rCreateStorage\022(."
+  "bedrock.metaserver.CreateStorageRequest\032"
+  ").bedrock.metaserver.CreateStorageRespon"
+  "se\022d\n\rDeleteStorage\022(.bedrock.metaserver"
+  ".DeleteStorageRequest\032).bedrock.metaserv"
+  "er.DeleteStorageResponse\022j\n\017UndeleteStor"
+  "age\022*.bedrock.metaserver.UndeleteStorage"
+  "Request\032+.bedrock.metaserver.UndeleteSto"
+  "rageResponse\022d\n\rRenameStorage\022(.bedrock."
+  "metaserver.RenameStorageRequest\032).bedroc"
+  "k.metaserver.RenameStorageResponse\022d\n\rRe"
+  "sizeStorage\022(.bedrock.metaserver.ResizeS"
+  "torageRequest\032).bedrock.metaserver.Resiz"
+  "eStorageResponse\022^\n\013GetStorages\022&.bedroc"
+  "k.metaserver.GetStoragesRequest\032\'.bedroc"
+  "k.metaserver.GetStoragesResponse\022d\n\rAddD"
+  "ataServer\022(.bedrock.metaserver.AddDataSe"
+  "rverRequest\032).bedrock.metaserver.AddData"
+  "ServerResponse\022m\n\020RemoveDataServer\022+.bed"
+  "rock.metaserver.RemoveDataServerRequest\032"
+  ",.bedrock.metaserver.RemoveDataServerRes"
+  "ponse\022g\n\016ListDataServer\022).bedrock.metase"
+  "rver.ListDataServerRequest\032*.bedrock.met"
+  "aserver.ListDataServerResponse\022m\n\020Update"
+  "DataServer\022+.bedrock.metaserver.UpdateDa"
+  "taServerRequest\032,.bedrock.metaserver.Upd"
+  "ateDataServerResponseB.Z)sr.ht/moyanhao/"
+  "bedrock-metaserver/service\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -1006,7 +1006,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_metaserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_metaserver_2eproto = {
-  false, false, 4116, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
+  false, false, 4117, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
   &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 39,
   schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
   file_level_metadata_metaserver_2eproto, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
@@ -7988,7 +7988,7 @@ void MetaService::CreateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller
 
 void MetaService::RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                          const ::bedrock::metaserver::RemoveShardRequest*,
-                         ::bedrock::metaserver::RemoveShardRequest*,
+                         ::bedrock::metaserver::RemoveShardResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method RemoveShard() not implemented.");
   done->Run();
@@ -8117,7 +8117,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
       RemoveShard(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::RemoveShardRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::RemoveShardRequest*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::RemoveShardResponse*>(
                  response),
              done);
       break;
@@ -8261,7 +8261,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MetaService::GetResponsePrototype(
     case 3:
       return ::bedrock::metaserver::CreateShardResponse::default_instance();
     case 4:
-      return ::bedrock::metaserver::RemoveShardRequest::default_instance();
+      return ::bedrock::metaserver::RemoveShardResponse::default_instance();
     case 5:
       return ::bedrock::metaserver::CreateStorageResponse::default_instance();
     case 6:
@@ -8330,7 +8330,7 @@ void MetaService_Stub::CreateShard(::PROTOBUF_NAMESPACE_ID::RpcController* contr
 }
 void MetaService_Stub::RemoveShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::RemoveShardRequest* request,
-                              ::bedrock::metaserver::RemoveShardRequest* response,
+                              ::bedrock::metaserver::RemoveShardResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(4),
                        controller, request, response, done);

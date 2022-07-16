@@ -23,7 +23,7 @@ type MetaServiceClient interface {
 	GetShardRoutes(ctx context.Context, in *GetShardRoutesRequest, opts ...grpc.CallOption) (*GetShardRoutesResponse, error)
 	ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error)
 	CreateShard(ctx context.Context, in *CreateShardRequest, opts ...grpc.CallOption) (*CreateShardResponse, error)
-	RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardRequest, error)
+	RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardResponse, error)
 	CreateStorage(ctx context.Context, in *CreateStorageRequest, opts ...grpc.CallOption) (*CreateStorageResponse, error)
 	DeleteStorage(ctx context.Context, in *DeleteStorageRequest, opts ...grpc.CallOption) (*DeleteStorageResponse, error)
 	UndeleteStorage(ctx context.Context, in *UndeleteStorageRequest, opts ...grpc.CallOption) (*UndeleteStorageResponse, error)
@@ -80,8 +80,8 @@ func (c *metaServiceClient) CreateShard(ctx context.Context, in *CreateShardRequ
 	return out, nil
 }
 
-func (c *metaServiceClient) RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardRequest, error) {
-	out := new(RemoveShardRequest)
+func (c *metaServiceClient) RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardResponse, error) {
+	out := new(RemoveShardResponse)
 	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/RemoveShard", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -187,7 +187,7 @@ type MetaServiceServer interface {
 	GetShardRoutes(context.Context, *GetShardRoutesRequest) (*GetShardRoutesResponse, error)
 	ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error)
 	CreateShard(context.Context, *CreateShardRequest) (*CreateShardResponse, error)
-	RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardRequest, error)
+	RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardResponse, error)
 	CreateStorage(context.Context, *CreateStorageRequest) (*CreateStorageResponse, error)
 	DeleteStorage(context.Context, *DeleteStorageRequest) (*DeleteStorageResponse, error)
 	UndeleteStorage(context.Context, *UndeleteStorageRequest) (*UndeleteStorageResponse, error)
@@ -217,7 +217,7 @@ func (UnimplementedMetaServiceServer) ShardInfo(context.Context, *ShardInfoReque
 func (UnimplementedMetaServiceServer) CreateShard(context.Context, *CreateShardRequest) (*CreateShardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateShard not implemented")
 }
-func (UnimplementedMetaServiceServer) RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardRequest, error) {
+func (UnimplementedMetaServiceServer) RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveShard not implemented")
 }
 func (UnimplementedMetaServiceServer) CreateStorage(context.Context, *CreateStorageRequest) (*CreateStorageResponse, error) {

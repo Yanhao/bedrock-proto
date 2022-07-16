@@ -196,7 +196,7 @@ service MetaService {
     rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
-    rpc RemoveShard(RemoveShardRequest) returns (RemoveShardRequest);
+    rpc RemoveShard(RemoveShardRequest) returns (RemoveShardResponse);
     // rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
 
     rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse);
