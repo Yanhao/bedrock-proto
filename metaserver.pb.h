@@ -854,14 +854,42 @@ class DataServer final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kIpFieldNumber = 1,
+    kPortFieldNumber = 2,
     kStatusFieldNumber = 6,
     kIdcFieldNumber = 7,
     kLastHeartbeatTsFieldNumber = 5,
-    kIpFieldNumber = 1,
-    kPortFieldNumber = 2,
     kCapacityFieldNumber = 3,
     kFreeFieldNumber = 4,
   };
+  // string ip = 1;
+  void clear_ip();
+  const std::string& ip() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ip(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ip();
+  PROTOBUF_NODISCARD std::string* release_ip();
+  void set_allocated_ip(std::string* ip);
+  private:
+  const std::string& _internal_ip() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ip(const std::string& value);
+  std::string* _internal_mutable_ip();
+  public:
+
+  // string port = 2;
+  void clear_port();
+  const std::string& port() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_port(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_port();
+  PROTOBUF_NODISCARD std::string* release_port();
+  void set_allocated_port(std::string* port);
+  private:
+  const std::string& _internal_port() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_port(const std::string& value);
+  std::string* _internal_mutable_port();
+  public:
+
   // string status = 6;
   void clear_status();
   const std::string& status() const;
@@ -908,24 +936,6 @@ class DataServer final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* last_heartbeat_ts);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_last_heartbeat_ts();
 
-  // uint32 ip = 1;
-  void clear_ip();
-  uint32_t ip() const;
-  void set_ip(uint32_t value);
-  private:
-  uint32_t _internal_ip() const;
-  void _internal_set_ip(uint32_t value);
-  public:
-
-  // uint32 port = 2;
-  void clear_port();
-  uint32_t port() const;
-  void set_port(uint32_t value);
-  private:
-  uint32_t _internal_port() const;
-  void _internal_set_port(uint32_t value);
-  public:
-
   // uint64 capacity = 3;
   void clear_capacity();
   uint64_t capacity() const;
@@ -951,11 +961,11 @@ class DataServer final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr idc_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* last_heartbeat_ts_;
-  uint32_t ip_;
-  uint32_t port_;
   uint64_t capacity_;
   uint64_t free_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7267,44 +7277,106 @@ inline void Shard::set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Times
 
 // DataServer
 
-// uint32 ip = 1;
+// string ip = 1;
 inline void DataServer::clear_ip() {
-  ip_ = 0u;
+  ip_.ClearToEmpty();
 }
-inline uint32_t DataServer::_internal_ip() const {
-  return ip_;
-}
-inline uint32_t DataServer::ip() const {
+inline const std::string& DataServer::ip() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.DataServer.ip)
   return _internal_ip();
 }
-inline void DataServer::_internal_set_ip(uint32_t value) {
-  
-  ip_ = value;
-}
-inline void DataServer::set_ip(uint32_t value) {
-  _internal_set_ip(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DataServer::set_ip(ArgT0&& arg0, ArgT... args) {
+ 
+ ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:bedrock.metaserver.DataServer.ip)
 }
+inline std::string* DataServer::mutable_ip() {
+  std::string* _s = _internal_mutable_ip();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.DataServer.ip)
+  return _s;
+}
+inline const std::string& DataServer::_internal_ip() const {
+  return ip_.Get();
+}
+inline void DataServer::_internal_set_ip(const std::string& value) {
+  
+  ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DataServer::_internal_mutable_ip() {
+  
+  return ip_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DataServer::release_ip() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.DataServer.ip)
+  return ip_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DataServer::set_allocated_ip(std::string* ip) {
+  if (ip != nullptr) {
+    
+  } else {
+    
+  }
+  ip_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ip,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (ip_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    ip_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.DataServer.ip)
+}
 
-// uint32 port = 2;
+// string port = 2;
 inline void DataServer::clear_port() {
-  port_ = 0u;
+  port_.ClearToEmpty();
 }
-inline uint32_t DataServer::_internal_port() const {
-  return port_;
-}
-inline uint32_t DataServer::port() const {
+inline const std::string& DataServer::port() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.DataServer.port)
   return _internal_port();
 }
-inline void DataServer::_internal_set_port(uint32_t value) {
-  
-  port_ = value;
-}
-inline void DataServer::set_port(uint32_t value) {
-  _internal_set_port(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DataServer::set_port(ArgT0&& arg0, ArgT... args) {
+ 
+ port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:bedrock.metaserver.DataServer.port)
+}
+inline std::string* DataServer::mutable_port() {
+  std::string* _s = _internal_mutable_port();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.DataServer.port)
+  return _s;
+}
+inline const std::string& DataServer::_internal_port() const {
+  return port_.Get();
+}
+inline void DataServer::_internal_set_port(const std::string& value) {
+  
+  port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* DataServer::_internal_mutable_port() {
+  
+  return port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DataServer::release_port() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.DataServer.port)
+  return port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DataServer::set_allocated_port(std::string* port) {
+  if (port != nullptr) {
+    
+  } else {
+    
+  }
+  port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), port,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.DataServer.port)
 }
 
 // uint64 capacity = 3;

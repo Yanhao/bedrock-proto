@@ -31,8 +31,8 @@ message Shard {
 }
 
 message DataServer {
-    uint32 ip = 1;
-    uint32 port = 2;
+    string ip = 1;
+    string port = 2;
     uint64 capacity = 3;
     uint64 free = 4;
     google.protobuf.Timestamp last_heartbeat_ts = 5;

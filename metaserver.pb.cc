@@ -56,11 +56,11 @@ struct ShardDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ShardDefaultTypeInternal _Shard_default_instance_;
 constexpr DataServer::DataServer(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : ip_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , idc_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , last_heartbeat_ts_(nullptr)
-  , ip_(0u)
-  , port_(0u)
   , capacity_(uint64_t{0u})
   , free_(uint64_t{0u}){}
 struct DataServerDefaultTypeInternal {
@@ -910,7 +910,7 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "ate_ts\030\007 \001(\0132\032.google.protobuf.Timestamp"
   "\022\016\n\006leader\030\010 \001(\t\0224\n\020leader_change_ts\030\t \001"
   "(\0132\032.google.protobuf.Timestamp\"\232\001\n\nDataS"
-  "erver\022\n\n\002ip\030\001 \001(\r\022\014\n\004port\030\002 \001(\r\022\020\n\010capac"
+  "erver\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\020\n\010capac"
   "ity\030\003 \001(\004\022\014\n\004free\030\004 \001(\004\0225\n\021last_heartbea"
   "t_ts\030\005 \001(\0132\032.google.protobuf.Timestamp\022\016"
   "\n\006status\030\006 \001(\t\022\013\n\003idc\030\007 \001(\t\"\032\n\tReplicate"
@@ -1940,6 +1940,22 @@ DataServer::DataServer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DataServer::DataServer(const DataServer& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    ip_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ip().empty()) {
+    ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ip(), 
+      GetArenaForAllocation());
+  }
+  port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_port().empty()) {
+    port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port(), 
+      GetArenaForAllocation());
+  }
   status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1961,13 +1977,21 @@ DataServer::DataServer(const DataServer& from)
   } else {
     last_heartbeat_ts_ = nullptr;
   }
-  ::memcpy(&ip_, &from.ip_,
+  ::memcpy(&capacity_, &from.capacity_,
     static_cast<size_t>(reinterpret_cast<char*>(&free_) -
-    reinterpret_cast<char*>(&ip_)) + sizeof(free_));
+    reinterpret_cast<char*>(&capacity_)) + sizeof(free_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.DataServer)
 }
 
 inline void DataServer::SharedCtor() {
+ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ip_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1991,6 +2015,8 @@ DataServer::~DataServer() {
 
 inline void DataServer::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   idc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete last_heartbeat_ts_;
@@ -2012,15 +2038,17 @@ void DataServer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ip_.ClearToEmpty();
+  port_.ClearToEmpty();
   status_.ClearToEmpty();
   idc_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && last_heartbeat_ts_ != nullptr) {
     delete last_heartbeat_ts_;
   }
   last_heartbeat_ts_ = nullptr;
-  ::memset(&ip_, 0, static_cast<size_t>(
+  ::memset(&capacity_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&free_) -
-      reinterpret_cast<char*>(&ip_)) + sizeof(free_));
+      reinterpret_cast<char*>(&capacity_)) + sizeof(free_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2030,18 +2058,22 @@ const char* DataServer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 ip = 1;
+      // string ip = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          ip_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_ip();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.DataServer.ip"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 port = 2;
+      // string port = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_port();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.DataServer.port"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2119,16 +2151,24 @@ uint8_t* DataServer::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 ip = 1;
-  if (this->_internal_ip() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_ip(), target);
+  // string ip = 1;
+  if (!this->_internal_ip().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ip().data(), static_cast<int>(this->_internal_ip().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "bedrock.metaserver.DataServer.ip");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_ip(), target);
   }
 
-  // uint32 port = 2;
-  if (this->_internal_port() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_port(), target);
+  // string port = 2;
+  if (!this->_internal_port().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_port().data(), static_cast<int>(this->_internal_port().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "bedrock.metaserver.DataServer.port");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_port(), target);
   }
 
   // uint64 capacity = 3;
@@ -2187,6 +2227,20 @@ size_t DataServer::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string ip = 1;
+  if (!this->_internal_ip().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ip());
+  }
+
+  // string port = 2;
+  if (!this->_internal_port().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_port());
+  }
+
   // string status = 6;
   if (!this->_internal_status().empty()) {
     total_size += 1 +
@@ -2206,16 +2260,6 @@ size_t DataServer::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *last_heartbeat_ts_);
-  }
-
-  // uint32 ip = 1;
-  if (this->_internal_ip() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_ip());
-  }
-
-  // uint32 port = 2;
-  if (this->_internal_port() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_port());
   }
 
   // uint64 capacity = 3;
@@ -2250,6 +2294,12 @@ void DataServer::MergeFrom(const DataServer& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_ip().empty()) {
+    _internal_set_ip(from._internal_ip());
+  }
+  if (!from._internal_port().empty()) {
+    _internal_set_port(from._internal_port());
+  }
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
@@ -2258,12 +2308,6 @@ void DataServer::MergeFrom(const DataServer& from) {
   }
   if (from._internal_has_last_heartbeat_ts()) {
     _internal_mutable_last_heartbeat_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_last_heartbeat_ts());
-  }
-  if (from._internal_ip() != 0) {
-    _internal_set_ip(from._internal_ip());
-  }
-  if (from._internal_port() != 0) {
-    _internal_set_port(from._internal_port());
   }
   if (from._internal_capacity() != 0) {
     _internal_set_capacity(from._internal_capacity());
@@ -2290,6 +2334,16 @@ void DataServer::InternalSwap(DataServer* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ip_, lhs_arena,
+      &other->ip_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &port_, lhs_arena,
+      &other->port_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &status_, lhs_arena,
