@@ -24,7 +24,7 @@ constexpr Storage::Storage(
   , owner_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , deleted_ts_(nullptr)
   , create_ts_(nullptr)
-  , id_(uint64_t{0u}){}
+  , id_(0u){}
 struct StorageDefaultTypeInternal {
   constexpr StorageDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -42,8 +42,8 @@ constexpr Shard::Shard(
   , deleted_ts_(nullptr)
   , create_ts_(nullptr)
   , leader_change_ts_(nullptr)
-  , id_(uint64_t{0u})
-  , storage_id_(uint64_t{0u})
+  , isn_(0u)
+  , storage_id_(0u)
   , is_deleted_(false){}
 struct ShardDefaultTypeInternal {
   constexpr ShardDefaultTypeInternal()
@@ -133,8 +133,8 @@ struct CreateStorageResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateStorageResponseDefaultTypeInternal _CreateStorageResponse_default_instance_;
 constexpr CreateShardRequest::CreateShardRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : shard_id_(uint64_t{0u})
-  , storage_id_(uint64_t{0u}){}
+  : storage_id_(0u)
+  , shard_isn_(0u){}
 struct CreateShardRequestDefaultTypeInternal {
   constexpr CreateShardRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -157,8 +157,8 @@ struct CreateShardResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateShardResponseDefaultTypeInternal _CreateShardResponse_default_instance_;
 constexpr RemoveShardRequest::RemoveShardRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : shard_id_(uint64_t{0u})
-  , storage_id_(uint64_t{0u}){}
+  : storage_id_(0u)
+  , shard_isn_(0u){}
 struct RemoveShardRequestDefaultTypeInternal {
   constexpr RemoveShardRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -181,9 +181,9 @@ struct RemoveShardResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveShardResponseDefaultTypeInternal _RemoveShardResponse_default_instance_;
 constexpr DeleteStorageRequest::DeleteStorageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(uint64_t{0u})
-  , recycle_after_(uint64_t{0u})
-  , real_delete_(false){}
+  : id_(0u)
+  , real_delete_(false)
+  , recycle_after_(uint64_t{0u}){}
 struct DeleteStorageRequestDefaultTypeInternal {
   constexpr DeleteStorageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -206,7 +206,7 @@ struct DeleteStorageResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteStorageResponseDefaultTypeInternal _DeleteStorageResponse_default_instance_;
 constexpr UndeleteStorageRequest::UndeleteStorageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(uint64_t{0u}){}
+  : id_(0u){}
 struct UndeleteStorageRequestDefaultTypeInternal {
   constexpr UndeleteStorageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -230,7 +230,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UndeleteStorageResponseDefaultT
 constexpr RenameStorageRequest::RenameStorageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : new_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(uint64_t{0u}){}
+  , id_(0u){}
 struct RenameStorageRequestDefaultTypeInternal {
   constexpr RenameStorageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -253,9 +253,9 @@ struct RenameStorageResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RenameStorageResponseDefaultTypeInternal _RenameStorageResponse_default_instance_;
 constexpr ResizeStorageRequest::ResizeStorageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(uint64_t{0u})
-  , new_size_(uint64_t{0u})
-  , new_shard_count_(uint64_t{0u}){}
+  : new_size_(uint64_t{0u})
+  , new_shard_count_(uint64_t{0u})
+  , id_(0u){}
 struct ResizeStorageRequestDefaultTypeInternal {
   constexpr ResizeStorageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -369,7 +369,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetShardRoutesResponseDefaultTy
 constexpr GetShardRoutesByStorageRequest::GetShardRoutesByStorageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : timestamp_(nullptr)
-  , storage_id_(uint64_t{0u}){}
+  , storage_id_(0u){}
 struct GetShardRoutesByStorageRequestDefaultTypeInternal {
   constexpr GetShardRoutesByStorageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -532,7 +532,7 @@ const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, isn_),
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, storage_id_),
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, replica_update_ts_),
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, replicates_),
@@ -594,8 +594,8 @@ const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, shard_id_),
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, shard_isn_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -608,8 +608,8 @@ const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, shard_id_),
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, shard_isn_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -899,106 +899,106 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "\n\020metaserver.proto\022\022bedrock.metaserver\032\033"
   "google/protobuf/empty.proto\032\037google/prot"
   "obuf/timestamp.proto\"\221\001\n\007Storage\022\n\n\002id\030\001"
-  " \001(\004\022\014\n\004name\030\002 \001(\t\022.\n\ndeleted_ts\030\003 \001(\0132\032"
+  " \001(\r\022\014\n\004name\030\002 \001(\t\022.\n\ndeleted_ts\030\003 \001(\0132\032"
   ".google.protobuf.Timestamp\022-\n\tcreate_ts\030"
   "\004 \001(\0132\032.google.protobuf.Timestamp\022\r\n\005own"
-  "er\030\005 \001(\t\"\253\002\n\005Shard\022\n\n\002id\030\001 \001(\004\022\022\n\nstorag"
-  "e_id\030\002 \001(\004\0225\n\021replica_update_ts\030\003 \001(\0132\032."
-  "google.protobuf.Timestamp\022\022\n\nreplicates\030"
-  "\004 \003(\t\022\022\n\nis_deleted\030\005 \001(\010\022.\n\ndeleted_ts\030"
-  "\006 \001(\0132\032.google.protobuf.Timestamp\022-\n\tcre"
-  "ate_ts\030\007 \001(\0132\032.google.protobuf.Timestamp"
-  "\022\016\n\006leader\030\010 \001(\t\0224\n\020leader_change_ts\030\t \001"
-  "(\0132\032.google.protobuf.Timestamp\"\232\001\n\nDataS"
-  "erver\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\020\n\010capac"
-  "ity\030\003 \001(\004\022\014\n\004free\030\004 \001(\004\0225\n\021last_heartbea"
-  "t_ts\030\005 \001(\0132\032.google.protobuf.Timestamp\022\016"
-  "\n\006status\030\006 \001(\t\022\013\n\003idc\030\007 \001(\t\"\032\n\tReplicate"
-  "\022\r\n\005addrs\030\001 \003(\t\" \n\020HeartBeatRequest\022\014\n\004a"
-  "ddr\030\001 \001(\t\"\023\n\021HeartBeatResponse\"$\n\024Create"
-  "StorageRequest\022\014\n\004name\030\001 \001(\t\"#\n\025CreateSt"
-  "orageResponse\022\n\n\002id\030\001 \001(\004\":\n\022CreateShard"
-  "Request\022\020\n\010shard_id\030\001 \001(\004\022\022\n\nstorage_id\030"
-  "\002 \001(\004\"\025\n\023CreateShardResponse\":\n\022RemoveSh"
-  "ardRequest\022\020\n\010shard_id\030\001 \001(\004\022\022\n\nstorage_"
-  "id\030\002 \001(\004\"\025\n\023RemoveShardResponse\"N\n\024Delet"
-  "eStorageRequest\022\n\n\002id\030\001 \001(\004\022\023\n\013real_dele"
-  "te\030\002 \001(\010\022\025\n\rrecycle_after\030\003 \001(\004\"\027\n\025Delet"
-  "eStorageResponse\"$\n\026UndeleteStorageReque"
-  "st\022\n\n\002id\030\001 \001(\004\"\031\n\027UndeleteStorageRespons"
-  "e\"4\n\024RenameStorageRequest\022\n\n\002id\030\001 \001(\004\022\020\n"
-  "\010new_name\030\002 \001(\t\"\027\n\025RenameStorageResponse"
-  "\"M\n\024ResizeStorageRequest\022\n\n\002id\030\001 \001(\004\022\020\n\010"
-  "new_size\030\002 \001(\004\022\027\n\017new_shard_count\030\003 \001(\004\""
-  "\027\n\025ResizeStorageResponse\"0\n\022GetStoragesR"
-  "equest\022\013\n\003ids\030\001 \003(\004\022\r\n\005names\030\002 \003(\t\"D\n\023Ge"
-  "tStoragesResponse\022-\n\010storages\030\001 \003(\0132\033.be"
-  "drock.metaserver.Storage\"4\n\nShardRange\022\026"
-  "\n\016start_shard_id\030\001 \001(\004\022\016\n\006offset\030\002 \001(\004\"."
-  "\n\013RouteRecord\022\020\n\010shard_id\030\001 \001(\004\022\r\n\005addrs"
-  "\030\002 \003(\t\"\036\n\tShardList\022\021\n\tshard_ids\030\001 \003(\004\"\275"
-  "\001\n\025GetShardRoutesRequest\0224\n\013shards_list\030"
-  "\001 \001(\0132\035.bedrock.metaserver.ShardListH\000\0225"
-  "\n\013shard_range\030\002 \001(\0132\036.bedrock.metaserver"
-  ".ShardRangeH\000\022-\n\ttimestamp\030\003 \001(\0132\032.googl"
-  "e.protobuf.TimestampB\010\n\006shards\"I\n\026GetSha"
-  "rdRoutesResponse\022/\n\006routes\030\001 \003(\0132\037.bedro"
-  "ck.metaserver.RouteRecord\"c\n\036GetShardRou"
-  "tesByStorageRequest\022\022\n\nstorage_id\030\001 \001(\004\022"
-  "-\n\ttimestamp\030\002 \001(\0132\032.google.protobuf.Tim"
-  "estamp\"\222\001\n\037GetShardRoutesByStorageRespon"
-  "se\022/\n\006routes\030\001 \003(\0132\037.bedrock.metaserver."
-  "RouteRecord\022-\n\ttimestamp\030\002 \001(\0132\032.google."
-  "protobuf.Timestamp\022\017\n\007is_full\030\003 \001(\010\"$\n\024A"
-  "ddDataServerRequest\022\014\n\004addr\030\001 \001(\t\"\027\n\025Add"
-  "DataServerResponse\"\'\n\027RemoveDataServerRe"
-  "quest\022\014\n\004addr\030\001 \001(\t\"\032\n\030RemoveDataServerR"
-  "esponse\"\027\n\025ListDataServerRequest\"N\n\026List"
-  "DataServerResponse\0224\n\014data_servers\030\001 \003(\013"
-  "2\036.bedrock.metaserver.DataServer\"\031\n\027Upda"
-  "teDataServerRequest\"\032\n\030UpdateDataServerR"
-  "esponse\"\036\n\020ShardInfoRequest\022\n\n\002id\030\001 \001(\004\""
-  "=\n\021ShardInfoResponse\022(\n\005shard\030\001 \001(\0132\031.be"
-  "drock.metaserver.Shard2\354\013\n\013MetaService\022I"
-  "\n\tHeartBeat\022$.bedrock.metaserver.HeartBe"
-  "atRequest\032\026.google.protobuf.Empty\022g\n\016Get"
-  "ShardRoutes\022).bedrock.metaserver.GetShar"
-  "dRoutesRequest\032*.bedrock.metaserver.GetS"
-  "hardRoutesResponse\022X\n\tShardInfo\022$.bedroc"
-  "k.metaserver.ShardInfoRequest\032%.bedrock."
-  "metaserver.ShardInfoResponse\022^\n\013CreateSh"
-  "ard\022&.bedrock.metaserver.CreateShardRequ"
-  "est\032\'.bedrock.metaserver.CreateShardResp"
-  "onse\022^\n\013RemoveShard\022&.bedrock.metaserver"
-  ".RemoveShardRequest\032\'.bedrock.metaserver"
-  ".RemoveShardResponse\022d\n\rCreateStorage\022(."
-  "bedrock.metaserver.CreateStorageRequest\032"
-  ").bedrock.metaserver.CreateStorageRespon"
-  "se\022d\n\rDeleteStorage\022(.bedrock.metaserver"
-  ".DeleteStorageRequest\032).bedrock.metaserv"
-  "er.DeleteStorageResponse\022j\n\017UndeleteStor"
-  "age\022*.bedrock.metaserver.UndeleteStorage"
-  "Request\032+.bedrock.metaserver.UndeleteSto"
-  "rageResponse\022d\n\rRenameStorage\022(.bedrock."
-  "metaserver.RenameStorageRequest\032).bedroc"
-  "k.metaserver.RenameStorageResponse\022d\n\rRe"
-  "sizeStorage\022(.bedrock.metaserver.ResizeS"
-  "torageRequest\032).bedrock.metaserver.Resiz"
-  "eStorageResponse\022^\n\013GetStorages\022&.bedroc"
-  "k.metaserver.GetStoragesRequest\032\'.bedroc"
-  "k.metaserver.GetStoragesResponse\022d\n\rAddD"
-  "ataServer\022(.bedrock.metaserver.AddDataSe"
-  "rverRequest\032).bedrock.metaserver.AddData"
-  "ServerResponse\022m\n\020RemoveDataServer\022+.bed"
-  "rock.metaserver.RemoveDataServerRequest\032"
-  ",.bedrock.metaserver.RemoveDataServerRes"
-  "ponse\022g\n\016ListDataServer\022).bedrock.metase"
-  "rver.ListDataServerRequest\032*.bedrock.met"
-  "aserver.ListDataServerResponse\022m\n\020Update"
-  "DataServer\022+.bedrock.metaserver.UpdateDa"
-  "taServerRequest\032,.bedrock.metaserver.Upd"
-  "ateDataServerResponseB.Z)sr.ht/moyanhao/"
-  "bedrock-metaserver/service\200\001\001b\006proto3"
+  "er\030\005 \001(\t\"\254\002\n\005Shard\022\013\n\003isn\030\001 \001(\r\022\022\n\nstora"
+  "ge_id\030\002 \001(\r\0225\n\021replica_update_ts\030\003 \001(\0132\032"
+  ".google.protobuf.Timestamp\022\022\n\nreplicates"
+  "\030\004 \003(\t\022\022\n\nis_deleted\030\005 \001(\010\022.\n\ndeleted_ts"
+  "\030\006 \001(\0132\032.google.protobuf.Timestamp\022-\n\tcr"
+  "eate_ts\030\007 \001(\0132\032.google.protobuf.Timestam"
+  "p\022\016\n\006leader\030\010 \001(\t\0224\n\020leader_change_ts\030\t "
+  "\001(\0132\032.google.protobuf.Timestamp\"\232\001\n\nData"
+  "Server\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\020\n\010capa"
+  "city\030\003 \001(\004\022\014\n\004free\030\004 \001(\004\0225\n\021last_heartbe"
+  "at_ts\030\005 \001(\0132\032.google.protobuf.Timestamp\022"
+  "\016\n\006status\030\006 \001(\t\022\013\n\003idc\030\007 \001(\t\"\032\n\tReplicat"
+  "e\022\r\n\005addrs\030\001 \003(\t\" \n\020HeartBeatRequest\022\014\n\004"
+  "addr\030\001 \001(\t\"\023\n\021HeartBeatResponse\"$\n\024Creat"
+  "eStorageRequest\022\014\n\004name\030\001 \001(\t\"#\n\025CreateS"
+  "torageResponse\022\n\n\002id\030\001 \001(\004\";\n\022CreateShar"
+  "dRequest\022\022\n\nstorage_id\030\001 \001(\r\022\021\n\tshard_is"
+  "n\030\002 \001(\r\"\025\n\023CreateShardResponse\";\n\022Remove"
+  "ShardRequest\022\022\n\nstorage_id\030\001 \001(\r\022\021\n\tshar"
+  "d_isn\030\002 \001(\r\"\025\n\023RemoveShardResponse\"N\n\024De"
+  "leteStorageRequest\022\n\n\002id\030\001 \001(\r\022\023\n\013real_d"
+  "elete\030\002 \001(\010\022\025\n\rrecycle_after\030\003 \001(\004\"\027\n\025De"
+  "leteStorageResponse\"$\n\026UndeleteStorageRe"
+  "quest\022\n\n\002id\030\001 \001(\r\"\031\n\027UndeleteStorageResp"
+  "onse\"4\n\024RenameStorageRequest\022\n\n\002id\030\001 \001(\r"
+  "\022\020\n\010new_name\030\002 \001(\t\"\027\n\025RenameStorageRespo"
+  "nse\"M\n\024ResizeStorageRequest\022\n\n\002id\030\001 \001(\r\022"
+  "\020\n\010new_size\030\002 \001(\004\022\027\n\017new_shard_count\030\003 \001"
+  "(\004\"\027\n\025ResizeStorageResponse\"0\n\022GetStorag"
+  "esRequest\022\013\n\003ids\030\001 \003(\r\022\r\n\005names\030\002 \003(\t\"D\n"
+  "\023GetStoragesResponse\022-\n\010storages\030\001 \003(\0132\033"
+  ".bedrock.metaserver.Storage\"4\n\nShardRang"
+  "e\022\026\n\016start_shard_id\030\001 \001(\004\022\016\n\006offset\030\002 \001("
+  "\004\".\n\013RouteRecord\022\020\n\010shard_id\030\001 \001(\004\022\r\n\005ad"
+  "drs\030\002 \003(\t\"\036\n\tShardList\022\021\n\tshard_ids\030\001 \003("
+  "\004\"\275\001\n\025GetShardRoutesRequest\0224\n\013shards_li"
+  "st\030\001 \001(\0132\035.bedrock.metaserver.ShardListH"
+  "\000\0225\n\013shard_range\030\002 \001(\0132\036.bedrock.metaser"
+  "ver.ShardRangeH\000\022-\n\ttimestamp\030\003 \001(\0132\032.go"
+  "ogle.protobuf.TimestampB\010\n\006shards\"I\n\026Get"
+  "ShardRoutesResponse\022/\n\006routes\030\001 \003(\0132\037.be"
+  "drock.metaserver.RouteRecord\"c\n\036GetShard"
+  "RoutesByStorageRequest\022\022\n\nstorage_id\030\001 \001"
+  "(\r\022-\n\ttimestamp\030\002 \001(\0132\032.google.protobuf."
+  "Timestamp\"\222\001\n\037GetShardRoutesByStorageRes"
+  "ponse\022/\n\006routes\030\001 \003(\0132\037.bedrock.metaserv"
+  "er.RouteRecord\022-\n\ttimestamp\030\002 \001(\0132\032.goog"
+  "le.protobuf.Timestamp\022\017\n\007is_full\030\003 \001(\010\"$"
+  "\n\024AddDataServerRequest\022\014\n\004addr\030\001 \001(\t\"\027\n\025"
+  "AddDataServerResponse\"\'\n\027RemoveDataServe"
+  "rRequest\022\014\n\004addr\030\001 \001(\t\"\032\n\030RemoveDataServ"
+  "erResponse\"\027\n\025ListDataServerRequest\"N\n\026L"
+  "istDataServerResponse\0224\n\014data_servers\030\001 "
+  "\003(\0132\036.bedrock.metaserver.DataServer\"\031\n\027U"
+  "pdateDataServerRequest\"\032\n\030UpdateDataServ"
+  "erResponse\"\036\n\020ShardInfoRequest\022\n\n\002id\030\001 \001"
+  "(\004\"=\n\021ShardInfoResponse\022(\n\005shard\030\001 \001(\0132\031"
+  ".bedrock.metaserver.Shard2\354\013\n\013MetaServic"
+  "e\022I\n\tHeartBeat\022$.bedrock.metaserver.Hear"
+  "tBeatRequest\032\026.google.protobuf.Empty\022g\n\016"
+  "GetShardRoutes\022).bedrock.metaserver.GetS"
+  "hardRoutesRequest\032*.bedrock.metaserver.G"
+  "etShardRoutesResponse\022X\n\tShardInfo\022$.bed"
+  "rock.metaserver.ShardInfoRequest\032%.bedro"
+  "ck.metaserver.ShardInfoResponse\022^\n\013Creat"
+  "eShard\022&.bedrock.metaserver.CreateShardR"
+  "equest\032\'.bedrock.metaserver.CreateShardR"
+  "esponse\022^\n\013RemoveShard\022&.bedrock.metaser"
+  "ver.RemoveShardRequest\032\'.bedrock.metaser"
+  "ver.RemoveShardResponse\022d\n\rCreateStorage"
+  "\022(.bedrock.metaserver.CreateStorageReque"
+  "st\032).bedrock.metaserver.CreateStorageRes"
+  "ponse\022d\n\rDeleteStorage\022(.bedrock.metaser"
+  "ver.DeleteStorageRequest\032).bedrock.metas"
+  "erver.DeleteStorageResponse\022j\n\017UndeleteS"
+  "torage\022*.bedrock.metaserver.UndeleteStor"
+  "ageRequest\032+.bedrock.metaserver.Undelete"
+  "StorageResponse\022d\n\rRenameStorage\022(.bedro"
+  "ck.metaserver.RenameStorageRequest\032).bed"
+  "rock.metaserver.RenameStorageResponse\022d\n"
+  "\rResizeStorage\022(.bedrock.metaserver.Resi"
+  "zeStorageRequest\032).bedrock.metaserver.Re"
+  "sizeStorageResponse\022^\n\013GetStorages\022&.bed"
+  "rock.metaserver.GetStoragesRequest\032\'.bed"
+  "rock.metaserver.GetStoragesResponse\022d\n\rA"
+  "ddDataServer\022(.bedrock.metaserver.AddDat"
+  "aServerRequest\032).bedrock.metaserver.AddD"
+  "ataServerResponse\022m\n\020RemoveDataServer\022+."
+  "bedrock.metaserver.RemoveDataServerReque"
+  "st\032,.bedrock.metaserver.RemoveDataServer"
+  "Response\022g\n\016ListDataServer\022).bedrock.met"
+  "aserver.ListDataServerRequest\032*.bedrock."
+  "metaserver.ListDataServerResponse\022m\n\020Upd"
+  "ateDataServer\022+.bedrock.metaserver.Updat"
+  "eDataServerRequest\032,.bedrock.metaserver."
+  "UpdateDataServerResponseB.Z)sr.ht/moyanh"
+  "ao/bedrock-metaserver/service\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -1006,7 +1006,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_metaserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_metaserver_2eproto = {
-  false, false, 4117, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
+  false, false, 4120, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 
   &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 39,
   schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
   file_level_metadata_metaserver_2eproto, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
@@ -1146,7 +1146,7 @@ void Storage::Clear() {
     delete create_ts_;
   }
   create_ts_ = nullptr;
-  id_ = uint64_t{0u};
+  id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1156,10 +1156,10 @@ const char* Storage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1229,10 +1229,10 @@ uint8_t* Storage::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // string name = 2;
@@ -1315,9 +1315,9 @@ size_t Storage::ByteSizeLong() const {
         *create_ts_);
   }
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1492,9 +1492,9 @@ Shard::Shard(const Shard& from)
   } else {
     leader_change_ts_ = nullptr;
   }
-  ::memcpy(&id_, &from.id_,
+  ::memcpy(&isn_, &from.isn_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_deleted_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(is_deleted_));
+    reinterpret_cast<char*>(&isn_)) + sizeof(is_deleted_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.Shard)
 }
 
@@ -1559,9 +1559,9 @@ void Shard::Clear() {
     delete leader_change_ts_;
   }
   leader_change_ts_ = nullptr;
-  ::memset(&id_, 0, static_cast<size_t>(
+  ::memset(&isn_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_deleted_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(is_deleted_));
+      reinterpret_cast<char*>(&isn_)) + sizeof(is_deleted_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1571,18 +1571,18 @@ const char* Shard::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 id = 1;
+      // uint32 isn = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint64 storage_id = 2;
+      // uint32 storage_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1681,16 +1681,16 @@ uint8_t* Shard::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 id = 1;
-  if (this->_internal_id() != 0) {
+  // uint32 isn = 1;
+  if (this->_internal_isn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_isn(), target);
   }
 
-  // uint64 storage_id = 2;
+  // uint32 storage_id = 2;
   if (this->_internal_storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_storage_id(), target);
   }
 
   // .google.protobuf.Timestamp replica_update_ts = 3;
@@ -1810,14 +1810,14 @@ size_t Shard::ByteSizeLong() const {
         *leader_change_ts_);
   }
 
-  // uint64 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+  // uint32 isn = 1;
+  if (this->_internal_isn() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_isn());
   }
 
-  // uint64 storage_id = 2;
+  // uint32 storage_id = 2;
   if (this->_internal_storage_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
   }
 
   // bool is_deleted = 5;
@@ -1863,8 +1863,8 @@ void Shard::MergeFrom(const Shard& from) {
   if (from._internal_has_leader_change_ts()) {
     _internal_mutable_leader_change_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_leader_change_ts());
   }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
+  if (from._internal_isn() != 0) {
+    _internal_set_isn(from._internal_isn());
   }
   if (from._internal_storage_id() != 0) {
     _internal_set_storage_id(from._internal_storage_id());
@@ -3199,17 +3199,17 @@ CreateShardRequest::CreateShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CreateShardRequest::CreateShardRequest(const CreateShardRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&shard_id_, &from.shard_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
-    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  ::memcpy(&storage_id_, &from.storage_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&shard_isn_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateShardRequest)
 }
 
 inline void CreateShardRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&shard_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
-    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+    reinterpret_cast<char*>(&storage_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&shard_isn_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
 }
 
 CreateShardRequest::~CreateShardRequest() {
@@ -3239,9 +3239,9 @@ void CreateShardRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&shard_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&storage_id_) -
-      reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_isn_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3251,18 +3251,18 @@ const char* CreateShardRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 shard_id = 1;
+      // uint32 storage_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint64 storage_id = 2;
+      // uint32 shard_isn = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3296,16 +3296,16 @@ uint8_t* CreateShardRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
-  }
-
-  // uint64 storage_id = 2;
+  // uint32 storage_id = 1;
   if (this->_internal_storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+  }
+
+  // uint32 shard_isn = 2;
+  if (this->_internal_shard_isn() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_shard_isn(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3324,14 +3324,14 @@ size_t CreateShardRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  // uint32 storage_id = 1;
+  if (this->_internal_storage_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
   }
 
-  // uint64 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
+  // uint32 shard_isn = 2;
+  if (this->_internal_shard_isn() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_shard_isn());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3356,11 +3356,11 @@ void CreateShardRequest::MergeFrom(const CreateShardRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_shard_id() != 0) {
-    _internal_set_shard_id(from._internal_shard_id());
-  }
   if (from._internal_storage_id() != 0) {
     _internal_set_storage_id(from._internal_storage_id());
+  }
+  if (from._internal_shard_isn() != 0) {
+    _internal_set_shard_isn(from._internal_shard_isn());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3380,11 +3380,11 @@ void CreateShardRequest::InternalSwap(CreateShardRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CreateShardRequest, storage_id_)
-      + sizeof(CreateShardRequest::storage_id_)
-      - PROTOBUF_FIELD_OFFSET(CreateShardRequest, shard_id_)>(
-          reinterpret_cast<char*>(&shard_id_),
-          reinterpret_cast<char*>(&other->shard_id_));
+      PROTOBUF_FIELD_OFFSET(CreateShardRequest, shard_isn_)
+      + sizeof(CreateShardRequest::shard_isn_)
+      - PROTOBUF_FIELD_OFFSET(CreateShardRequest, storage_id_)>(
+          reinterpret_cast<char*>(&storage_id_),
+          reinterpret_cast<char*>(&other->storage_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateShardRequest::GetMetadata() const {
@@ -3450,17 +3450,17 @@ RemoveShardRequest::RemoveShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 RemoveShardRequest::RemoveShardRequest(const RemoveShardRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&shard_id_, &from.shard_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
-    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  ::memcpy(&storage_id_, &from.storage_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&shard_isn_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveShardRequest)
 }
 
 inline void RemoveShardRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&shard_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
-    reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+    reinterpret_cast<char*>(&storage_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&shard_isn_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
 }
 
 RemoveShardRequest::~RemoveShardRequest() {
@@ -3490,9 +3490,9 @@ void RemoveShardRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&shard_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&storage_id_) -
-      reinterpret_cast<char*>(&shard_id_)) + sizeof(storage_id_));
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_isn_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3502,18 +3502,18 @@ const char* RemoveShardRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 shard_id = 1;
+      // uint32 storage_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint64 storage_id = 2;
+      // uint32 shard_isn = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3547,16 +3547,16 @@ uint8_t* RemoveShardRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
-  }
-
-  // uint64 storage_id = 2;
+  // uint32 storage_id = 1;
   if (this->_internal_storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+  }
+
+  // uint32 shard_isn = 2;
+  if (this->_internal_shard_isn() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_shard_isn(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3575,14 +3575,14 @@ size_t RemoveShardRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  // uint32 storage_id = 1;
+  if (this->_internal_storage_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
   }
 
-  // uint64 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
+  // uint32 shard_isn = 2;
+  if (this->_internal_shard_isn() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_shard_isn());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3607,11 +3607,11 @@ void RemoveShardRequest::MergeFrom(const RemoveShardRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_shard_id() != 0) {
-    _internal_set_shard_id(from._internal_shard_id());
-  }
   if (from._internal_storage_id() != 0) {
     _internal_set_storage_id(from._internal_storage_id());
+  }
+  if (from._internal_shard_isn() != 0) {
+    _internal_set_shard_isn(from._internal_shard_isn());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3631,11 +3631,11 @@ void RemoveShardRequest::InternalSwap(RemoveShardRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RemoveShardRequest, storage_id_)
-      + sizeof(RemoveShardRequest::storage_id_)
-      - PROTOBUF_FIELD_OFFSET(RemoveShardRequest, shard_id_)>(
-          reinterpret_cast<char*>(&shard_id_),
-          reinterpret_cast<char*>(&other->shard_id_));
+      PROTOBUF_FIELD_OFFSET(RemoveShardRequest, shard_isn_)
+      + sizeof(RemoveShardRequest::shard_isn_)
+      - PROTOBUF_FIELD_OFFSET(RemoveShardRequest, storage_id_)>(
+          reinterpret_cast<char*>(&storage_id_),
+          reinterpret_cast<char*>(&other->storage_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveShardRequest::GetMetadata() const {
@@ -3702,16 +3702,16 @@ DeleteStorageRequest::DeleteStorageRequest(const DeleteStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&real_delete_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(real_delete_));
+    static_cast<size_t>(reinterpret_cast<char*>(&recycle_after_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(recycle_after_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.DeleteStorageRequest)
 }
 
 inline void DeleteStorageRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&real_delete_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(real_delete_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&recycle_after_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(recycle_after_));
 }
 
 DeleteStorageRequest::~DeleteStorageRequest() {
@@ -3742,8 +3742,8 @@ void DeleteStorageRequest::Clear() {
   (void) cached_has_bits;
 
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&real_delete_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(real_delete_));
+      reinterpret_cast<char*>(&recycle_after_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(recycle_after_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3753,10 +3753,10 @@ const char* DeleteStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3806,10 +3806,10 @@ uint8_t* DeleteStorageRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // bool real_delete = 2;
@@ -3840,19 +3840,19 @@ size_t DeleteStorageRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
-  }
-
-  // uint64 recycle_after = 3;
-  if (this->_internal_recycle_after() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_recycle_after());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
   }
 
   // bool real_delete = 2;
   if (this->_internal_real_delete() != 0) {
     total_size += 1 + 1;
+  }
+
+  // uint64 recycle_after = 3;
+  if (this->_internal_recycle_after() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_recycle_after());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3880,11 +3880,11 @@ void DeleteStorageRequest::MergeFrom(const DeleteStorageRequest& from) {
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
   }
-  if (from._internal_recycle_after() != 0) {
-    _internal_set_recycle_after(from._internal_recycle_after());
-  }
   if (from._internal_real_delete() != 0) {
     _internal_set_real_delete(from._internal_real_delete());
+  }
+  if (from._internal_recycle_after() != 0) {
+    _internal_set_recycle_after(from._internal_recycle_after());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3904,8 +3904,8 @@ void DeleteStorageRequest::InternalSwap(DeleteStorageRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, real_delete_)
-      + sizeof(DeleteStorageRequest::real_delete_)
+      PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, recycle_after_)
+      + sizeof(DeleteStorageRequest::recycle_after_)
       - PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, id_)>(
           reinterpret_cast<char*>(&id_),
           reinterpret_cast<char*>(&other->id_));
@@ -3979,7 +3979,7 @@ UndeleteStorageRequest::UndeleteStorageRequest(const UndeleteStorageRequest& fro
 }
 
 inline void UndeleteStorageRequest::SharedCtor() {
-id_ = uint64_t{0u};
+id_ = 0u;
 }
 
 UndeleteStorageRequest::~UndeleteStorageRequest() {
@@ -4009,7 +4009,7 @@ void UndeleteStorageRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = uint64_t{0u};
+  id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4019,10 +4019,10 @@ const char* UndeleteStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4056,10 +4056,10 @@ uint8_t* UndeleteStorageRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4078,9 +4078,9 @@ size_t UndeleteStorageRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4208,7 +4208,7 @@ new_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   new_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-id_ = uint64_t{0u};
+id_ = 0u;
 }
 
 RenameStorageRequest::~RenameStorageRequest() {
@@ -4240,7 +4240,7 @@ void RenameStorageRequest::Clear() {
   (void) cached_has_bits;
 
   new_name_.ClearToEmpty();
-  id_ = uint64_t{0u};
+  id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4250,10 +4250,10 @@ const char* RenameStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4297,10 +4297,10 @@ uint8_t* RenameStorageRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // string new_name = 2;
@@ -4336,9 +4336,9 @@ size_t RenameStorageRequest::ByteSizeLong() const {
         this->_internal_new_name());
   }
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4459,17 +4459,17 @@ ResizeStorageRequest::ResizeStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 ResizeStorageRequest::ResizeStorageRequest(const ResizeStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&new_shard_count_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(new_shard_count_));
+  ::memcpy(&new_size_, &from.new_size_,
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&new_size_)) + sizeof(id_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ResizeStorageRequest)
 }
 
 inline void ResizeStorageRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&new_shard_count_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(new_shard_count_));
+    reinterpret_cast<char*>(&new_size_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&new_size_)) + sizeof(id_));
 }
 
 ResizeStorageRequest::~ResizeStorageRequest() {
@@ -4499,9 +4499,9 @@ void ResizeStorageRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&new_shard_count_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(new_shard_count_));
+  ::memset(&new_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&new_size_)) + sizeof(id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4511,10 +4511,10 @@ const char* ResizeStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4564,10 +4564,10 @@ uint8_t* ResizeStorageRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // uint64 new_size = 2;
@@ -4598,11 +4598,6 @@ size_t ResizeStorageRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
-  }
-
   // uint64 new_size = 2;
   if (this->_internal_new_size() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_new_size());
@@ -4611,6 +4606,11 @@ size_t ResizeStorageRequest::ByteSizeLong() const {
   // uint64 new_shard_count = 3;
   if (this->_internal_new_shard_count() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_new_shard_count());
+  }
+
+  // uint32 id = 1;
+  if (this->_internal_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4635,14 +4635,14 @@ void ResizeStorageRequest::MergeFrom(const ResizeStorageRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
   if (from._internal_new_size() != 0) {
     _internal_set_new_size(from._internal_new_size());
   }
   if (from._internal_new_shard_count() != 0) {
     _internal_set_new_shard_count(from._internal_new_shard_count());
+  }
+  if (from._internal_id() != 0) {
+    _internal_set_id(from._internal_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4662,11 +4662,11 @@ void ResizeStorageRequest::InternalSwap(ResizeStorageRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, new_shard_count_)
-      + sizeof(ResizeStorageRequest::new_shard_count_)
-      - PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, id_)
+      + sizeof(ResizeStorageRequest::id_)
+      - PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, new_size_)>(
+          reinterpret_cast<char*>(&new_size_),
+          reinterpret_cast<char*>(&other->new_size_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeStorageRequest::GetMetadata() const {
@@ -4780,13 +4780,13 @@ const char* GetStoragesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated uint64 ids = 1;
+      // repeated uint32 ids = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt64Parser(_internal_mutable_ids(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          _internal_add_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4835,11 +4835,11 @@ uint8_t* GetStoragesRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated uint64 ids = 1;
+  // repeated uint32 ids = 1;
   {
     int byte_size = _ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteUInt64Packed(
+      target = stream->WriteUInt32Packed(
           1, _internal_ids(), byte_size, target);
     }
   }
@@ -4870,10 +4870,10 @@ size_t GetStoragesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated uint64 ids = 1;
+  // repeated uint32 ids = 1;
   {
     size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      UInt64Size(this->ids_);
+      UInt32Size(this->ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
@@ -6360,7 +6360,7 @@ void GetShardRoutesByStorageRequest::Clear() {
     delete timestamp_;
   }
   timestamp_ = nullptr;
-  storage_id_ = uint64_t{0u};
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6370,10 +6370,10 @@ const char* GetShardRoutesByStorageRequest::_InternalParse(const char* ptr, ::PR
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 storage_id = 1;
+      // uint32 storage_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6415,10 +6415,10 @@ uint8_t* GetShardRoutesByStorageRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 storage_id = 1;
+  // uint32 storage_id = 1;
   if (this->_internal_storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // .google.protobuf.Timestamp timestamp = 2;
@@ -6452,9 +6452,9 @@ size_t GetShardRoutesByStorageRequest::ByteSizeLong() const {
         *timestamp_);
   }
 
-  // uint64 storage_id = 1;
+  // uint32 storage_id = 1;
   if (this->_internal_storage_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);

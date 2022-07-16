@@ -9,7 +9,7 @@ package bedrock.metaserver;
 option cc_generic_services = true;
 
 message Storage {
-    uint64 id = 1;
+    uint32 id = 1;
     string name = 2;
 
     google.protobuf.Timestamp deleted_ts = 3;
@@ -19,8 +19,8 @@ message Storage {
 }
 
 message Shard {
-    uint64 id = 1;
-    uint64 storage_id = 2;
+    uint32 isn = 1;
+    uint32 storage_id = 2;
     google.protobuf.Timestamp  replica_update_ts = 3;
     repeated string replicates = 4;
     bool is_deleted = 5;
@@ -60,23 +60,23 @@ message CreateStorageResponse {
 }
 
 message CreateShardRequest {
-    uint64 shard_id = 1;
-    uint64 storage_id = 2;
+    uint32 storage_id = 1;
+    uint32 shard_isn = 2;
 }
 
 message CreateShardResponse {
 }
 
 message RemoveShardRequest {
-    uint64 shard_id = 1;
-    uint64 storage_id = 2;
+    uint32 storage_id = 1;
+    uint32 shard_isn = 2;
 }
 
 message RemoveShardResponse {
 }
 
 message DeleteStorageRequest {
-    uint64 id = 1;
+    uint32 id = 1;
     bool real_delete = 2;
     uint64 recycle_after = 3; // in minutes
 }
@@ -85,14 +85,14 @@ message DeleteStorageResponse {
 }
 
 message UndeleteStorageRequest {
-    uint64 id = 1;
+    uint32 id = 1;
 }
 
 message UndeleteStorageResponse {
 }
 
 message RenameStorageRequest {
-    uint64 id = 1;
+    uint32 id = 1;
     string new_name = 2;
 }
 
@@ -100,7 +100,7 @@ message RenameStorageResponse {
 }
 
 message ResizeStorageRequest {
-    uint64 id = 1;
+    uint32 id = 1;
     uint64 new_size = 2;
     uint64 new_shard_count = 3;
 }
@@ -109,7 +109,7 @@ message ResizeStorageResponse {
 }
 
 message GetStoragesRequest {
-    repeated uint64 ids = 1;
+    repeated uint32 ids = 1;
     repeated string names = 2;
 }
 
@@ -145,7 +145,7 @@ message GetShardRoutesResponse {
 }
 
 message GetShardRoutesByStorageRequest {
-    uint64 storage_id = 1;
+    uint32 storage_id = 1;
     google.protobuf.Timestamp timestamp = 2;
 }
 

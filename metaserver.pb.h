@@ -416,13 +416,13 @@ class Storage final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_create_ts();
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   void clear_id();
-  uint64_t id() const;
-  void set_id(uint64_t value);
+  uint32_t id() const;
+  void set_id(uint32_t value);
   private:
-  uint64_t _internal_id() const;
-  void _internal_set_id(uint64_t value);
+  uint32_t _internal_id() const;
+  void _internal_set_id(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.Storage)
@@ -436,7 +436,7 @@ class Storage final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* deleted_ts_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts_;
-  uint64_t id_;
+  uint32_t id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -570,7 +570,7 @@ class Shard final :
     kDeletedTsFieldNumber = 6,
     kCreateTsFieldNumber = 7,
     kLeaderChangeTsFieldNumber = 9,
-    kIdFieldNumber = 1,
+    kIsnFieldNumber = 1,
     kStorageIdFieldNumber = 2,
     kIsDeletedFieldNumber = 5,
   };
@@ -684,22 +684,22 @@ class Shard final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_leader_change_ts();
 
-  // uint64 id = 1;
-  void clear_id();
-  uint64_t id() const;
-  void set_id(uint64_t value);
+  // uint32 isn = 1;
+  void clear_isn();
+  uint32_t isn() const;
+  void set_isn(uint32_t value);
   private:
-  uint64_t _internal_id() const;
-  void _internal_set_id(uint64_t value);
+  uint32_t _internal_isn() const;
+  void _internal_set_isn(uint32_t value);
   public:
 
-  // uint64 storage_id = 2;
+  // uint32 storage_id = 2;
   void clear_storage_id();
-  uint64_t storage_id() const;
-  void set_storage_id(uint64_t value);
+  uint32_t storage_id() const;
+  void set_storage_id(uint32_t value);
   private:
-  uint64_t _internal_storage_id() const;
-  void _internal_set_storage_id(uint64_t value);
+  uint32_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint32_t value);
   public:
 
   // bool is_deleted = 5;
@@ -724,8 +724,8 @@ class Shard final :
   ::PROTOBUF_NAMESPACE_ID::Timestamp* deleted_ts_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts_;
-  uint64_t id_;
-  uint64_t storage_id_;
+  uint32_t isn_;
+  uint32_t storage_id_;
   bool is_deleted_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
@@ -1822,25 +1822,25 @@ class CreateShardRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kShardIdFieldNumber = 1,
-    kStorageIdFieldNumber = 2,
+    kStorageIdFieldNumber = 1,
+    kShardIsnFieldNumber = 2,
   };
-  // uint64 shard_id = 1;
-  void clear_shard_id();
-  uint64_t shard_id() const;
-  void set_shard_id(uint64_t value);
+  // uint32 storage_id = 1;
+  void clear_storage_id();
+  uint32_t storage_id() const;
+  void set_storage_id(uint32_t value);
   private:
-  uint64_t _internal_shard_id() const;
-  void _internal_set_shard_id(uint64_t value);
+  uint32_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint32_t value);
   public:
 
-  // uint64 storage_id = 2;
-  void clear_storage_id();
-  uint64_t storage_id() const;
-  void set_storage_id(uint64_t value);
+  // uint32 shard_isn = 2;
+  void clear_shard_isn();
+  uint32_t shard_isn() const;
+  void set_shard_isn(uint32_t value);
   private:
-  uint64_t _internal_storage_id() const;
-  void _internal_set_storage_id(uint64_t value);
+  uint32_t _internal_shard_isn() const;
+  void _internal_set_shard_isn(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.CreateShardRequest)
@@ -1850,8 +1850,8 @@ class CreateShardRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t shard_id_;
-  uint64_t storage_id_;
+  uint32_t storage_id_;
+  uint32_t shard_isn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -2097,25 +2097,25 @@ class RemoveShardRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kShardIdFieldNumber = 1,
-    kStorageIdFieldNumber = 2,
+    kStorageIdFieldNumber = 1,
+    kShardIsnFieldNumber = 2,
   };
-  // uint64 shard_id = 1;
-  void clear_shard_id();
-  uint64_t shard_id() const;
-  void set_shard_id(uint64_t value);
+  // uint32 storage_id = 1;
+  void clear_storage_id();
+  uint32_t storage_id() const;
+  void set_storage_id(uint32_t value);
   private:
-  uint64_t _internal_shard_id() const;
-  void _internal_set_shard_id(uint64_t value);
+  uint32_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint32_t value);
   public:
 
-  // uint64 storage_id = 2;
-  void clear_storage_id();
-  uint64_t storage_id() const;
-  void set_storage_id(uint64_t value);
+  // uint32 shard_isn = 2;
+  void clear_shard_isn();
+  uint32_t shard_isn() const;
+  void set_shard_isn(uint32_t value);
   private:
-  uint64_t _internal_storage_id() const;
-  void _internal_set_storage_id(uint64_t value);
+  uint32_t _internal_shard_isn() const;
+  void _internal_set_shard_isn(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.RemoveShardRequest)
@@ -2125,8 +2125,8 @@ class RemoveShardRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t shard_id_;
-  uint64_t storage_id_;
+  uint32_t storage_id_;
+  uint32_t shard_isn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -2373,25 +2373,16 @@ class DeleteStorageRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
-    kRecycleAfterFieldNumber = 3,
     kRealDeleteFieldNumber = 2,
+    kRecycleAfterFieldNumber = 3,
   };
-  // uint64 id = 1;
+  // uint32 id = 1;
   void clear_id();
-  uint64_t id() const;
-  void set_id(uint64_t value);
+  uint32_t id() const;
+  void set_id(uint32_t value);
   private:
-  uint64_t _internal_id() const;
-  void _internal_set_id(uint64_t value);
-  public:
-
-  // uint64 recycle_after = 3;
-  void clear_recycle_after();
-  uint64_t recycle_after() const;
-  void set_recycle_after(uint64_t value);
-  private:
-  uint64_t _internal_recycle_after() const;
-  void _internal_set_recycle_after(uint64_t value);
+  uint32_t _internal_id() const;
+  void _internal_set_id(uint32_t value);
   public:
 
   // bool real_delete = 2;
@@ -2403,6 +2394,15 @@ class DeleteStorageRequest final :
   void _internal_set_real_delete(bool value);
   public:
 
+  // uint64 recycle_after = 3;
+  void clear_recycle_after();
+  uint64_t recycle_after() const;
+  void set_recycle_after(uint64_t value);
+  private:
+  uint64_t _internal_recycle_after() const;
+  void _internal_set_recycle_after(uint64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.DeleteStorageRequest)
  private:
   class _Internal;
@@ -2410,9 +2410,9 @@ class DeleteStorageRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t id_;
-  uint64_t recycle_after_;
+  uint32_t id_;
   bool real_delete_;
+  uint64_t recycle_after_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -2660,13 +2660,13 @@ class UndeleteStorageRequest final :
   enum : int {
     kIdFieldNumber = 1,
   };
-  // uint64 id = 1;
+  // uint32 id = 1;
   void clear_id();
-  uint64_t id() const;
-  void set_id(uint64_t value);
+  uint32_t id() const;
+  void set_id(uint32_t value);
   private:
-  uint64_t _internal_id() const;
-  void _internal_set_id(uint64_t value);
+  uint32_t _internal_id() const;
+  void _internal_set_id(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.UndeleteStorageRequest)
@@ -2676,7 +2676,7 @@ class UndeleteStorageRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t id_;
+  uint32_t id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -2939,13 +2939,13 @@ class RenameStorageRequest final :
   std::string* _internal_mutable_new_name();
   public:
 
-  // uint64 id = 1;
+  // uint32 id = 1;
   void clear_id();
-  uint64_t id() const;
-  void set_id(uint64_t value);
+  uint32_t id() const;
+  void set_id(uint32_t value);
   private:
-  uint64_t _internal_id() const;
-  void _internal_set_id(uint64_t value);
+  uint32_t _internal_id() const;
+  void _internal_set_id(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.RenameStorageRequest)
@@ -2956,7 +2956,7 @@ class RenameStorageRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr new_name_;
-  uint64_t id_;
+  uint32_t id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -3202,19 +3202,10 @@ class ResizeStorageRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
     kNewSizeFieldNumber = 2,
     kNewShardCountFieldNumber = 3,
+    kIdFieldNumber = 1,
   };
-  // uint64 id = 1;
-  void clear_id();
-  uint64_t id() const;
-  void set_id(uint64_t value);
-  private:
-  uint64_t _internal_id() const;
-  void _internal_set_id(uint64_t value);
-  public:
-
   // uint64 new_size = 2;
   void clear_new_size();
   uint64_t new_size() const;
@@ -3233,6 +3224,15 @@ class ResizeStorageRequest final :
   void _internal_set_new_shard_count(uint64_t value);
   public:
 
+  // uint32 id = 1;
+  void clear_id();
+  uint32_t id() const;
+  void set_id(uint32_t value);
+  private:
+  uint32_t _internal_id() const;
+  void _internal_set_id(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.ResizeStorageRequest)
  private:
   class _Internal;
@@ -3240,9 +3240,9 @@ class ResizeStorageRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t id_;
   uint64_t new_size_;
   uint64_t new_shard_count_;
+  uint32_t id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -3491,26 +3491,26 @@ class GetStoragesRequest final :
     kIdsFieldNumber = 1,
     kNamesFieldNumber = 2,
   };
-  // repeated uint64 ids = 1;
+  // repeated uint32 ids = 1;
   int ids_size() const;
   private:
   int _internal_ids_size() const;
   public:
   void clear_ids();
   private:
-  uint64_t _internal_ids(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+  uint32_t _internal_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
       _internal_ids() const;
-  void _internal_add_ids(uint64_t value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+  void _internal_add_ids(uint32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
       _internal_mutable_ids();
   public:
-  uint64_t ids(int index) const;
-  void set_ids(int index, uint64_t value);
-  void add_ids(uint64_t value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+  uint32_t ids(int index) const;
+  void set_ids(int index, uint32_t value);
+  void add_ids(uint32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
       ids() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
       mutable_ids();
 
   // repeated string names = 2;
@@ -3544,7 +3544,7 @@ class GetStoragesRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t > ids_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > ids_;
   mutable std::atomic<int> _ids_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> names_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4708,13 +4708,13 @@ class GetShardRoutesByStorageRequest final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* timestamp);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_timestamp();
 
-  // uint64 storage_id = 1;
+  // uint32 storage_id = 1;
   void clear_storage_id();
-  uint64_t storage_id() const;
-  void set_storage_id(uint64_t value);
+  uint32_t storage_id() const;
+  void set_storage_id(uint32_t value);
   private:
-  uint64_t _internal_storage_id() const;
-  void _internal_set_storage_id(uint64_t value);
+  uint32_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.GetShardRoutesByStorageRequest)
@@ -4725,7 +4725,7 @@ class GetShardRoutesByStorageRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* timestamp_;
-  uint64_t storage_id_;
+  uint32_t storage_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_metaserver_2eproto;
 };
@@ -6445,22 +6445,22 @@ class MetaService_Stub : public MetaService {
 #endif  // __GNUC__
 // Storage
 
-// uint64 id = 1;
+// uint32 id = 1;
 inline void Storage::clear_id() {
-  id_ = uint64_t{0u};
+  id_ = 0u;
 }
-inline uint64_t Storage::_internal_id() const {
+inline uint32_t Storage::_internal_id() const {
   return id_;
 }
-inline uint64_t Storage::id() const {
+inline uint32_t Storage::id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.Storage.id)
   return _internal_id();
 }
-inline void Storage::_internal_set_id(uint64_t value) {
+inline void Storage::_internal_set_id(uint32_t value) {
   
   id_ = value;
 }
-inline void Storage::set_id(uint64_t value) {
+inline void Storage::set_id(uint32_t value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.Storage.id)
 }
@@ -6743,42 +6743,42 @@ inline void Storage::set_allocated_owner(std::string* owner) {
 
 // Shard
 
-// uint64 id = 1;
-inline void Shard::clear_id() {
-  id_ = uint64_t{0u};
+// uint32 isn = 1;
+inline void Shard::clear_isn() {
+  isn_ = 0u;
 }
-inline uint64_t Shard::_internal_id() const {
-  return id_;
+inline uint32_t Shard::_internal_isn() const {
+  return isn_;
 }
-inline uint64_t Shard::id() const {
-  // @@protoc_insertion_point(field_get:bedrock.metaserver.Shard.id)
-  return _internal_id();
+inline uint32_t Shard::isn() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.Shard.isn)
+  return _internal_isn();
 }
-inline void Shard::_internal_set_id(uint64_t value) {
+inline void Shard::_internal_set_isn(uint32_t value) {
   
-  id_ = value;
+  isn_ = value;
 }
-inline void Shard::set_id(uint64_t value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:bedrock.metaserver.Shard.id)
+inline void Shard::set_isn(uint32_t value) {
+  _internal_set_isn(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.Shard.isn)
 }
 
-// uint64 storage_id = 2;
+// uint32 storage_id = 2;
 inline void Shard::clear_storage_id() {
-  storage_id_ = uint64_t{0u};
+  storage_id_ = 0u;
 }
-inline uint64_t Shard::_internal_storage_id() const {
+inline uint32_t Shard::_internal_storage_id() const {
   return storage_id_;
 }
-inline uint64_t Shard::storage_id() const {
+inline uint32_t Shard::storage_id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.Shard.storage_id)
   return _internal_storage_id();
 }
-inline void Shard::_internal_set_storage_id(uint64_t value) {
+inline void Shard::_internal_set_storage_id(uint32_t value) {
   
   storage_id_ = value;
 }
-inline void Shard::set_storage_id(uint64_t value) {
+inline void Shard::set_storage_id(uint32_t value) {
   _internal_set_storage_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.Shard.storage_id)
 }
@@ -7828,44 +7828,44 @@ inline void CreateStorageResponse::set_id(uint64_t value) {
 
 // CreateShardRequest
 
-// uint64 shard_id = 1;
-inline void CreateShardRequest::clear_shard_id() {
-  shard_id_ = uint64_t{0u};
-}
-inline uint64_t CreateShardRequest::_internal_shard_id() const {
-  return shard_id_;
-}
-inline uint64_t CreateShardRequest::shard_id() const {
-  // @@protoc_insertion_point(field_get:bedrock.metaserver.CreateShardRequest.shard_id)
-  return _internal_shard_id();
-}
-inline void CreateShardRequest::_internal_set_shard_id(uint64_t value) {
-  
-  shard_id_ = value;
-}
-inline void CreateShardRequest::set_shard_id(uint64_t value) {
-  _internal_set_shard_id(value);
-  // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateShardRequest.shard_id)
-}
-
-// uint64 storage_id = 2;
+// uint32 storage_id = 1;
 inline void CreateShardRequest::clear_storage_id() {
-  storage_id_ = uint64_t{0u};
+  storage_id_ = 0u;
 }
-inline uint64_t CreateShardRequest::_internal_storage_id() const {
+inline uint32_t CreateShardRequest::_internal_storage_id() const {
   return storage_id_;
 }
-inline uint64_t CreateShardRequest::storage_id() const {
+inline uint32_t CreateShardRequest::storage_id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.CreateShardRequest.storage_id)
   return _internal_storage_id();
 }
-inline void CreateShardRequest::_internal_set_storage_id(uint64_t value) {
+inline void CreateShardRequest::_internal_set_storage_id(uint32_t value) {
   
   storage_id_ = value;
 }
-inline void CreateShardRequest::set_storage_id(uint64_t value) {
+inline void CreateShardRequest::set_storage_id(uint32_t value) {
   _internal_set_storage_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateShardRequest.storage_id)
+}
+
+// uint32 shard_isn = 2;
+inline void CreateShardRequest::clear_shard_isn() {
+  shard_isn_ = 0u;
+}
+inline uint32_t CreateShardRequest::_internal_shard_isn() const {
+  return shard_isn_;
+}
+inline uint32_t CreateShardRequest::shard_isn() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.CreateShardRequest.shard_isn)
+  return _internal_shard_isn();
+}
+inline void CreateShardRequest::_internal_set_shard_isn(uint32_t value) {
+  
+  shard_isn_ = value;
+}
+inline void CreateShardRequest::set_shard_isn(uint32_t value) {
+  _internal_set_shard_isn(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateShardRequest.shard_isn)
 }
 
 // -------------------------------------------------------------------
@@ -7876,44 +7876,44 @@ inline void CreateShardRequest::set_storage_id(uint64_t value) {
 
 // RemoveShardRequest
 
-// uint64 shard_id = 1;
-inline void RemoveShardRequest::clear_shard_id() {
-  shard_id_ = uint64_t{0u};
-}
-inline uint64_t RemoveShardRequest::_internal_shard_id() const {
-  return shard_id_;
-}
-inline uint64_t RemoveShardRequest::shard_id() const {
-  // @@protoc_insertion_point(field_get:bedrock.metaserver.RemoveShardRequest.shard_id)
-  return _internal_shard_id();
-}
-inline void RemoveShardRequest::_internal_set_shard_id(uint64_t value) {
-  
-  shard_id_ = value;
-}
-inline void RemoveShardRequest::set_shard_id(uint64_t value) {
-  _internal_set_shard_id(value);
-  // @@protoc_insertion_point(field_set:bedrock.metaserver.RemoveShardRequest.shard_id)
-}
-
-// uint64 storage_id = 2;
+// uint32 storage_id = 1;
 inline void RemoveShardRequest::clear_storage_id() {
-  storage_id_ = uint64_t{0u};
+  storage_id_ = 0u;
 }
-inline uint64_t RemoveShardRequest::_internal_storage_id() const {
+inline uint32_t RemoveShardRequest::_internal_storage_id() const {
   return storage_id_;
 }
-inline uint64_t RemoveShardRequest::storage_id() const {
+inline uint32_t RemoveShardRequest::storage_id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.RemoveShardRequest.storage_id)
   return _internal_storage_id();
 }
-inline void RemoveShardRequest::_internal_set_storage_id(uint64_t value) {
+inline void RemoveShardRequest::_internal_set_storage_id(uint32_t value) {
   
   storage_id_ = value;
 }
-inline void RemoveShardRequest::set_storage_id(uint64_t value) {
+inline void RemoveShardRequest::set_storage_id(uint32_t value) {
   _internal_set_storage_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.RemoveShardRequest.storage_id)
+}
+
+// uint32 shard_isn = 2;
+inline void RemoveShardRequest::clear_shard_isn() {
+  shard_isn_ = 0u;
+}
+inline uint32_t RemoveShardRequest::_internal_shard_isn() const {
+  return shard_isn_;
+}
+inline uint32_t RemoveShardRequest::shard_isn() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.RemoveShardRequest.shard_isn)
+  return _internal_shard_isn();
+}
+inline void RemoveShardRequest::_internal_set_shard_isn(uint32_t value) {
+  
+  shard_isn_ = value;
+}
+inline void RemoveShardRequest::set_shard_isn(uint32_t value) {
+  _internal_set_shard_isn(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.RemoveShardRequest.shard_isn)
 }
 
 // -------------------------------------------------------------------
@@ -7924,22 +7924,22 @@ inline void RemoveShardRequest::set_storage_id(uint64_t value) {
 
 // DeleteStorageRequest
 
-// uint64 id = 1;
+// uint32 id = 1;
 inline void DeleteStorageRequest::clear_id() {
-  id_ = uint64_t{0u};
+  id_ = 0u;
 }
-inline uint64_t DeleteStorageRequest::_internal_id() const {
+inline uint32_t DeleteStorageRequest::_internal_id() const {
   return id_;
 }
-inline uint64_t DeleteStorageRequest::id() const {
+inline uint32_t DeleteStorageRequest::id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.DeleteStorageRequest.id)
   return _internal_id();
 }
-inline void DeleteStorageRequest::_internal_set_id(uint64_t value) {
+inline void DeleteStorageRequest::_internal_set_id(uint32_t value) {
   
   id_ = value;
 }
-inline void DeleteStorageRequest::set_id(uint64_t value) {
+inline void DeleteStorageRequest::set_id(uint32_t value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.DeleteStorageRequest.id)
 }
@@ -7992,22 +7992,22 @@ inline void DeleteStorageRequest::set_recycle_after(uint64_t value) {
 
 // UndeleteStorageRequest
 
-// uint64 id = 1;
+// uint32 id = 1;
 inline void UndeleteStorageRequest::clear_id() {
-  id_ = uint64_t{0u};
+  id_ = 0u;
 }
-inline uint64_t UndeleteStorageRequest::_internal_id() const {
+inline uint32_t UndeleteStorageRequest::_internal_id() const {
   return id_;
 }
-inline uint64_t UndeleteStorageRequest::id() const {
+inline uint32_t UndeleteStorageRequest::id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.UndeleteStorageRequest.id)
   return _internal_id();
 }
-inline void UndeleteStorageRequest::_internal_set_id(uint64_t value) {
+inline void UndeleteStorageRequest::_internal_set_id(uint32_t value) {
   
   id_ = value;
 }
-inline void UndeleteStorageRequest::set_id(uint64_t value) {
+inline void UndeleteStorageRequest::set_id(uint32_t value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.UndeleteStorageRequest.id)
 }
@@ -8020,22 +8020,22 @@ inline void UndeleteStorageRequest::set_id(uint64_t value) {
 
 // RenameStorageRequest
 
-// uint64 id = 1;
+// uint32 id = 1;
 inline void RenameStorageRequest::clear_id() {
-  id_ = uint64_t{0u};
+  id_ = 0u;
 }
-inline uint64_t RenameStorageRequest::_internal_id() const {
+inline uint32_t RenameStorageRequest::_internal_id() const {
   return id_;
 }
-inline uint64_t RenameStorageRequest::id() const {
+inline uint32_t RenameStorageRequest::id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.RenameStorageRequest.id)
   return _internal_id();
 }
-inline void RenameStorageRequest::_internal_set_id(uint64_t value) {
+inline void RenameStorageRequest::_internal_set_id(uint32_t value) {
   
   id_ = value;
 }
-inline void RenameStorageRequest::set_id(uint64_t value) {
+inline void RenameStorageRequest::set_id(uint32_t value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.RenameStorageRequest.id)
 }
@@ -8099,22 +8099,22 @@ inline void RenameStorageRequest::set_allocated_new_name(std::string* new_name) 
 
 // ResizeStorageRequest
 
-// uint64 id = 1;
+// uint32 id = 1;
 inline void ResizeStorageRequest::clear_id() {
-  id_ = uint64_t{0u};
+  id_ = 0u;
 }
-inline uint64_t ResizeStorageRequest::_internal_id() const {
+inline uint32_t ResizeStorageRequest::_internal_id() const {
   return id_;
 }
-inline uint64_t ResizeStorageRequest::id() const {
+inline uint32_t ResizeStorageRequest::id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.ResizeStorageRequest.id)
   return _internal_id();
 }
-inline void ResizeStorageRequest::_internal_set_id(uint64_t value) {
+inline void ResizeStorageRequest::_internal_set_id(uint32_t value) {
   
   id_ = value;
 }
-inline void ResizeStorageRequest::set_id(uint64_t value) {
+inline void ResizeStorageRequest::set_id(uint32_t value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.ResizeStorageRequest.id)
 }
@@ -8167,7 +8167,7 @@ inline void ResizeStorageRequest::set_new_shard_count(uint64_t value) {
 
 // GetStoragesRequest
 
-// repeated uint64 ids = 1;
+// repeated uint32 ids = 1;
 inline int GetStoragesRequest::_internal_ids_size() const {
   return ids_.size();
 }
@@ -8177,38 +8177,38 @@ inline int GetStoragesRequest::ids_size() const {
 inline void GetStoragesRequest::clear_ids() {
   ids_.Clear();
 }
-inline uint64_t GetStoragesRequest::_internal_ids(int index) const {
+inline uint32_t GetStoragesRequest::_internal_ids(int index) const {
   return ids_.Get(index);
 }
-inline uint64_t GetStoragesRequest::ids(int index) const {
+inline uint32_t GetStoragesRequest::ids(int index) const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.GetStoragesRequest.ids)
   return _internal_ids(index);
 }
-inline void GetStoragesRequest::set_ids(int index, uint64_t value) {
+inline void GetStoragesRequest::set_ids(int index, uint32_t value) {
   ids_.Set(index, value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.GetStoragesRequest.ids)
 }
-inline void GetStoragesRequest::_internal_add_ids(uint64_t value) {
+inline void GetStoragesRequest::_internal_add_ids(uint32_t value) {
   ids_.Add(value);
 }
-inline void GetStoragesRequest::add_ids(uint64_t value) {
+inline void GetStoragesRequest::add_ids(uint32_t value) {
   _internal_add_ids(value);
   // @@protoc_insertion_point(field_add:bedrock.metaserver.GetStoragesRequest.ids)
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
 GetStoragesRequest::_internal_ids() const {
   return ids_;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
 GetStoragesRequest::ids() const {
   // @@protoc_insertion_point(field_list:bedrock.metaserver.GetStoragesRequest.ids)
   return _internal_ids();
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
 GetStoragesRequest::_internal_mutable_ids() {
   return &ids_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
 GetStoragesRequest::mutable_ids() {
   // @@protoc_insertion_point(field_mutable_list:bedrock.metaserver.GetStoragesRequest.ids)
   return _internal_mutable_ids();
@@ -8822,22 +8822,22 @@ GetShardRoutesResponse::routes() const {
 
 // GetShardRoutesByStorageRequest
 
-// uint64 storage_id = 1;
+// uint32 storage_id = 1;
 inline void GetShardRoutesByStorageRequest::clear_storage_id() {
-  storage_id_ = uint64_t{0u};
+  storage_id_ = 0u;
 }
-inline uint64_t GetShardRoutesByStorageRequest::_internal_storage_id() const {
+inline uint32_t GetShardRoutesByStorageRequest::_internal_storage_id() const {
   return storage_id_;
 }
-inline uint64_t GetShardRoutesByStorageRequest::storage_id() const {
+inline uint32_t GetShardRoutesByStorageRequest::storage_id() const {
   // @@protoc_insertion_point(field_get:bedrock.metaserver.GetShardRoutesByStorageRequest.storage_id)
   return _internal_storage_id();
 }
-inline void GetShardRoutesByStorageRequest::_internal_set_storage_id(uint64_t value) {
+inline void GetShardRoutesByStorageRequest::_internal_set_storage_id(uint32_t value) {
   
   storage_id_ = value;
 }
-inline void GetShardRoutesByStorageRequest::set_storage_id(uint64_t value) {
+inline void GetShardRoutesByStorageRequest::set_storage_id(uint32_t value) {
   _internal_set_storage_id(value);
   // @@protoc_insertion_point(field_set:bedrock.metaserver.GetShardRoutesByStorageRequest.storage_id)
 }
