@@ -100,7 +100,8 @@ message ShardAppendLogRequest {
     }
 
     uint64 shard_id = 1;
-    repeated Entry entries =2;
+    google.protobuf.Timestamp leader_change_ts = 2;
+    repeated Entry entries = 3;
 }
 
 message ShardAppendLogResponse {
