@@ -3538,9 +3538,10 @@ class ShardWriteRequest final :
 // -------------------------------------------------------------------
 
 class ShardWriteResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:bedrock.dataserver.ShardWriteResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.ShardWriteResponse) */ {
  public:
   inline ShardWriteResponse() : ShardWriteResponse(nullptr) {}
+  ~ShardWriteResponse() override;
   explicit PROTOBUF_CONSTEXPR ShardWriteResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   ShardWriteResponse(const ShardWriteResponse& from);
@@ -3613,15 +3614,29 @@ class ShardWriteResponse final :
   ShardWriteResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<ShardWriteResponse>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const ShardWriteResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ShardWriteResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ShardWriteResponse& from) {
+    ShardWriteResponse::MergeImpl(*this, from);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const ShardWriteResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
-  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ShardWriteResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -3642,6 +3657,18 @@ class ShardWriteResponse final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kNotLeaderFieldNumber = 1,
+  };
+  // bool not_leader = 1;
+  void clear_not_leader();
+  bool not_leader() const;
+  void set_not_leader(bool value);
+  private:
+  bool _internal_not_leader() const;
+  void _internal_set_not_leader(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.dataserver.ShardWriteResponse)
  private:
   class _Internal;
@@ -3650,7 +3677,10 @@ class ShardWriteResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    bool not_leader_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
+  union { Impl_ _impl_; };
   friend struct ::TableStruct_dataserver_2eproto;
 };
 // -------------------------------------------------------------------
@@ -6416,6 +6446,26 @@ inline void ShardWriteRequest::set_allocated_value(std::string* value) {
 // -------------------------------------------------------------------
 
 // ShardWriteResponse
+
+// bool not_leader = 1;
+inline void ShardWriteResponse::clear_not_leader() {
+  _impl_.not_leader_ = false;
+}
+inline bool ShardWriteResponse::_internal_not_leader() const {
+  return _impl_.not_leader_;
+}
+inline bool ShardWriteResponse::not_leader() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardWriteResponse.not_leader)
+  return _internal_not_leader();
+}
+inline void ShardWriteResponse::_internal_set_not_leader(bool value) {
+  
+  _impl_.not_leader_ = value;
+}
+inline void ShardWriteResponse::set_not_leader(bool value) {
+  _internal_set_not_leader(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardWriteResponse.not_leader)
+}
 
 // -------------------------------------------------------------------
 

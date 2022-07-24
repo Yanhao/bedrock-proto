@@ -87,6 +87,7 @@ message ShardWriteRequest {
     bytes value = 3;
 }
 message ShardWriteResponse {
+    bool not_leader = 1;
 }
 
 message ShardAppendLogRequest {

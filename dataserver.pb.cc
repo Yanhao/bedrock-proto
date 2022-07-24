@@ -320,7 +320,9 @@ struct ShardWriteRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardWriteRequestDefaultTypeInternal _ShardWriteRequest_default_instance_;
 PROTOBUF_CONSTEXPR ShardWriteResponse::ShardWriteResponse(
-    ::_pbi::ConstantInitialized) {}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.not_leader_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ShardWriteResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ShardWriteResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -667,6 +669,7 @@ const uint32_t TableStruct_dataserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardWriteResponse, _impl_.not_leader_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardAppendLogRequest_Entry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -784,19 +787,19 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 150, -1, -1, sizeof(::bedrock::dataserver::ShardReadResponse)},
   { 157, -1, -1, sizeof(::bedrock::dataserver::ShardWriteRequest)},
   { 166, -1, -1, sizeof(::bedrock::dataserver::ShardWriteResponse)},
-  { 172, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest_Entry)},
-  { 182, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest)},
-  { 191, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogResponse)},
-  { 199, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotRequest)},
-  { 207, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotResponse)},
-  { 213, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaRequest)},
-  { 219, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaResponse)},
-  { 225, -1, -1, sizeof(::bedrock::dataserver::ShardRepairRequest)},
-  { 231, -1, -1, sizeof(::bedrock::dataserver::ShardRepairResponse)},
-  { 237, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinRequest)},
-  { 243, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinResponse)},
-  { 249, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveRequest)},
-  { 255, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveResponse)},
+  { 173, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest_Entry)},
+  { 183, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest)},
+  { 192, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogResponse)},
+  { 200, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotRequest)},
+  { 208, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotResponse)},
+  { 214, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaRequest)},
+  { 220, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaResponse)},
+  { 226, -1, -1, sizeof(::bedrock::dataserver::ShardRepairRequest)},
+  { 232, -1, -1, sizeof(::bedrock::dataserver::ShardRepairResponse)},
+  { 238, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinRequest)},
+  { 244, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinResponse)},
+  { 250, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveRequest)},
+  { 256, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -868,43 +871,43 @@ const char descriptor_table_protodef_dataserver_2eproto[] PROTOBUF_SECTION_VARIA
   "\"1\n\020ShardReadRequest\022\020\n\010shard_id\030\001 \001(\004\022\013"
   "\n\003key\030\002 \001(\014\"\"\n\021ShardReadResponse\022\r\n\005valu"
   "e\030\001 \001(\014\"A\n\021ShardWriteRequest\022\020\n\010shard_id"
-  "\030\001 \001(\004\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"\024\n\022Sh"
-  "ardWriteResponse\"\341\001\n\025ShardAppendLogReque"
-  "st\022\020\n\010shard_id\030\001 \001(\004\0224\n\020leader_change_ts"
-  "\030\002 \001(\0132\032.google.protobuf.Timestamp\022@\n\007en"
-  "tries\030\003 \003(\0132/.bedrock.dataserver.ShardAp"
-  "pendLogRequest.Entry\032>\n\005Entry\022\n\n\002op\030\001 \001("
-  "\t\022\r\n\005index\030\002 \001(\004\022\013\n\003key\030\003 \001(\014\022\r\n\005value\030\004"
-  " \001(\014\"K\n\026ShardAppendLogResponse\022\025\n\ris_old"
-  "_leader\030\001 \001(\010\022\032\n\022last_applied_index\030\002 \001("
-  "\004\"C\n\033ShardInstallSnapshotRequest\022\020\n\010shar"
-  "d_id\030\001 \001(\004\022\022\n\ndata_piece\030\002 \001(\014\"\036\n\034ShardI"
-  "nstallSnapshotResponse\"\032\n\030ShardWriteRepl"
-  "icaRequest\"\033\n\031ShardWriteReplicaResponse\""
-  "\024\n\022ShardRepairRequest\"\025\n\023ShardRepairResp"
-  "onse\"\027\n\025DataServerJoinRequest\"\030\n\026DataSer"
-  "verJoinResponse\"\030\n\026DataServerLeaveReques"
-  "t\"\031\n\027DataServerLeaveResponse2\321\005\n\013DataSer"
-  "vice\022^\n\013CreateShard\022&.bedrock.dataserver"
-  ".CreateShardRequest\032\'.bedrock.dataserver"
-  ".CreateShardResponse\022M\n\013DeleteShard\022&.be"
-  "drock.dataserver.DeleteShardRequest\032\026.go"
-  "ogle.protobuf.Empty\022v\n\023TransferShardLead"
-  "er\022..bedrock.dataserver.TransferShardLea"
-  "derRequest\032/.bedrock.dataserver.Transfer"
-  "ShardLeaderResponse\022X\n\tShardRead\022$.bedro"
-  "ck.dataserver.ShardReadRequest\032%.bedrock"
-  ".dataserver.ShardReadResponse\022[\n\nShardWr"
-  "ite\022%.bedrock.dataserver.ShardWriteReque"
-  "st\032&.bedrock.dataserver.ShardWriteRespon"
-  "se\022g\n\016ShardAppendLog\022).bedrock.dataserve"
-  "r.ShardAppendLogRequest\032*.bedrock.datase"
-  "rver.ShardAppendLogResponse\022{\n\024ShardInst"
-  "allSnapshot\022/.bedrock.dataserver.ShardIn"
-  "stallSnapshotRequest\0320.bedrock.dataserve"
-  "r.ShardInstallSnapshotResponse(\001B1Z,sr.h"
-  "t/moyanhao/bedrock-metaserver/dataserver"
-  "\200\001\001b\006proto3"
+  "\030\001 \001(\004\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"(\n\022Sh"
+  "ardWriteResponse\022\022\n\nnot_leader\030\001 \001(\010\"\341\001\n"
+  "\025ShardAppendLogRequest\022\020\n\010shard_id\030\001 \001(\004"
+  "\0224\n\020leader_change_ts\030\002 \001(\0132\032.google.prot"
+  "obuf.Timestamp\022@\n\007entries\030\003 \003(\0132/.bedroc"
+  "k.dataserver.ShardAppendLogRequest.Entry"
+  "\032>\n\005Entry\022\n\n\002op\030\001 \001(\t\022\r\n\005index\030\002 \001(\004\022\013\n\003"
+  "key\030\003 \001(\014\022\r\n\005value\030\004 \001(\014\"K\n\026ShardAppendL"
+  "ogResponse\022\025\n\ris_old_leader\030\001 \001(\010\022\032\n\022las"
+  "t_applied_index\030\002 \001(\004\"C\n\033ShardInstallSna"
+  "pshotRequest\022\020\n\010shard_id\030\001 \001(\004\022\022\n\ndata_p"
+  "iece\030\002 \001(\014\"\036\n\034ShardInstallSnapshotRespon"
+  "se\"\032\n\030ShardWriteReplicaRequest\"\033\n\031ShardW"
+  "riteReplicaResponse\"\024\n\022ShardRepairReques"
+  "t\"\025\n\023ShardRepairResponse\"\027\n\025DataServerJo"
+  "inRequest\"\030\n\026DataServerJoinResponse\"\030\n\026D"
+  "ataServerLeaveRequest\"\031\n\027DataServerLeave"
+  "Response2\321\005\n\013DataService\022^\n\013CreateShard\022"
+  "&.bedrock.dataserver.CreateShardRequest\032"
+  "\'.bedrock.dataserver.CreateShardResponse"
+  "\022M\n\013DeleteShard\022&.bedrock.dataserver.Del"
+  "eteShardRequest\032\026.google.protobuf.Empty\022"
+  "v\n\023TransferShardLeader\022..bedrock.dataser"
+  "ver.TransferShardLeaderRequest\032/.bedrock"
+  ".dataserver.TransferShardLeaderResponse\022"
+  "X\n\tShardRead\022$.bedrock.dataserver.ShardR"
+  "eadRequest\032%.bedrock.dataserver.ShardRea"
+  "dResponse\022[\n\nShardWrite\022%.bedrock.datase"
+  "rver.ShardWriteRequest\032&.bedrock.dataser"
+  "ver.ShardWriteResponse\022g\n\016ShardAppendLog"
+  "\022).bedrock.dataserver.ShardAppendLogRequ"
+  "est\032*.bedrock.dataserver.ShardAppendLogR"
+  "esponse\022{\n\024ShardInstallSnapshot\022/.bedroc"
+  "k.dataserver.ShardInstallSnapshotRequest"
+  "\0320.bedrock.dataserver.ShardInstallSnapsh"
+  "otResponse(\001B1Z,sr.ht/moyanhao/bedrock-m"
+  "etaserver/dataserver\200\001\001b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dataserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -912,7 +915,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dataserver_2eproto_
 };
 static ::_pbi::once_flag descriptor_table_dataserver_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dataserver_2eproto = {
-    false, false, 2491, descriptor_table_protodef_dataserver_2eproto,
+    false, false, 2511, descriptor_table_protodef_dataserver_2eproto,
     "dataserver.proto",
     &descriptor_table_dataserver_2eproto_once, descriptor_table_dataserver_2eproto_deps, 2, 39,
     schemas, file_default_instances, TableStruct_dataserver_2eproto::offsets,
@@ -3227,31 +3230,169 @@ class ShardWriteResponse::_Internal {
 
 ShardWriteResponse::ShardWriteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:bedrock.dataserver.ShardWriteResponse)
 }
 ShardWriteResponse::ShardWriteResponse(const ShardWriteResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   ShardWriteResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.not_leader_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.not_leader_ = from._impl_.not_leader_;
   // @@protoc_insertion_point(copy_constructor:bedrock.dataserver.ShardWriteResponse)
 }
 
+inline void ShardWriteResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.not_leader_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
 
+ShardWriteResponse::~ShardWriteResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.dataserver.ShardWriteResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
 
+inline void ShardWriteResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
 
+void ShardWriteResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ShardWriteResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.dataserver.ShardWriteResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.not_leader_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ShardWriteResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool not_leader = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.not_leader_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ShardWriteResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.dataserver.ShardWriteResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool not_leader = 1;
+  if (this->_internal_not_leader() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_not_leader(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.dataserver.ShardWriteResponse)
+  return target;
+}
+
+size_t ShardWriteResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.dataserver.ShardWriteResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool not_leader = 1;
+  if (this->_internal_not_leader() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardWriteResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ShardWriteResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardWriteResponse::GetClassData() const { return &_class_data_; }
 
 
+void ShardWriteResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ShardWriteResponse*>(&to_msg);
+  auto& from = static_cast<const ShardWriteResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.dataserver.ShardWriteResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (from._internal_not_leader() != 0) {
+    _this->_internal_set_not_leader(from._internal_not_leader());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void ShardWriteResponse::CopyFrom(const ShardWriteResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.dataserver.ShardWriteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool ShardWriteResponse::IsInitialized() const {
+  return true;
+}
 
+void ShardWriteResponse::InternalSwap(ShardWriteResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.not_leader_, other->_impl_.not_leader_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardWriteResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
