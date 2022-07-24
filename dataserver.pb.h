@@ -4162,15 +4162,25 @@ class ShardAppendLogResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLastAppliedIndexFieldNumber = 1,
+    kLastAppliedIndexFieldNumber = 2,
+    kIsOldLeaderFieldNumber = 1,
   };
-  // uint64 last_applied_index = 1;
+  // uint64 last_applied_index = 2;
   void clear_last_applied_index();
   uint64_t last_applied_index() const;
   void set_last_applied_index(uint64_t value);
   private:
   uint64_t _internal_last_applied_index() const;
   void _internal_set_last_applied_index(uint64_t value);
+  public:
+
+  // bool is_old_leader = 1;
+  void clear_is_old_leader();
+  bool is_old_leader() const;
+  void set_is_old_leader(bool value);
+  private:
+  bool _internal_is_old_leader() const;
+  void _internal_set_is_old_leader(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:bedrock.dataserver.ShardAppendLogResponse)
@@ -4182,6 +4192,7 @@ class ShardAppendLogResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     uint64_t last_applied_index_;
+    bool is_old_leader_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6733,7 +6744,27 @@ ShardAppendLogRequest::entries() const {
 
 // ShardAppendLogResponse
 
-// uint64 last_applied_index = 1;
+// bool is_old_leader = 1;
+inline void ShardAppendLogResponse::clear_is_old_leader() {
+  _impl_.is_old_leader_ = false;
+}
+inline bool ShardAppendLogResponse::_internal_is_old_leader() const {
+  return _impl_.is_old_leader_;
+}
+inline bool ShardAppendLogResponse::is_old_leader() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardAppendLogResponse.is_old_leader)
+  return _internal_is_old_leader();
+}
+inline void ShardAppendLogResponse::_internal_set_is_old_leader(bool value) {
+  
+  _impl_.is_old_leader_ = value;
+}
+inline void ShardAppendLogResponse::set_is_old_leader(bool value) {
+  _internal_set_is_old_leader(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardAppendLogResponse.is_old_leader)
+}
+
+// uint64 last_applied_index = 2;
 inline void ShardAppendLogResponse::clear_last_applied_index() {
   _impl_.last_applied_index_ = uint64_t{0u};
 }

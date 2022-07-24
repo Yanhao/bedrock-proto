@@ -105,7 +105,8 @@ message ShardAppendLogRequest {
 }
 
 message ShardAppendLogResponse {
-    uint64 last_applied_index = 1;
+    bool is_old_leader = 1;
+    uint64 last_applied_index = 2;
 }
 
 
