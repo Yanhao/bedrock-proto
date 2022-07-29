@@ -12,7 +12,8 @@ enum Error {
 }
 
 message BedRockKvGetRequest {
-    bytes key = 1;
+    uint32 storage_id = 1;
+    bytes key = 2;
 }
 
 message BedRockKvGetResponse {
@@ -22,8 +23,9 @@ message BedRockKvGetResponse {
 }
 
 message BedRockKvSetRequest {
-    bytes key = 1;
-    bytes value = 2;
+    uint32 storage_id = 1;
+    bytes key = 2;
+    bytes value = 3;
 }
 
 message BedRockKvSetResponse {
@@ -31,7 +33,8 @@ message BedRockKvSetResponse {
 }
 
 message BedRockKvDeleteRequest {
-    bytes key = 1;
+    uint32 storage_id = 1;
+    bytes key = 2;
 }
 
 message BedRockKvDeleteResponse {
