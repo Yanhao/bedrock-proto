@@ -119,6 +119,9 @@ extern ShardInstallSnapshotRequestDefaultTypeInternal _ShardInstallSnapshotReque
 class ShardInstallSnapshotResponse;
 struct ShardInstallSnapshotResponseDefaultTypeInternal;
 extern ShardInstallSnapshotResponseDefaultTypeInternal _ShardInstallSnapshotResponse_default_instance_;
+class ShardMeta;
+struct ShardMetaDefaultTypeInternal;
+extern ShardMetaDefaultTypeInternal _ShardMeta_default_instance_;
 class ShardReadRequest;
 struct ShardReadRequestDefaultTypeInternal;
 extern ShardReadRequestDefaultTypeInternal _ShardReadRequest_default_instance_;
@@ -193,6 +196,7 @@ template<> ::bedrock::dataserver::ShardAppendLogRequest_Entry* Arena::CreateMayb
 template<> ::bedrock::dataserver::ShardAppendLogResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardAppendLogResponse>(Arena*);
 template<> ::bedrock::dataserver::ShardInstallSnapshotRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardInstallSnapshotRequest>(Arena*);
 template<> ::bedrock::dataserver::ShardInstallSnapshotResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardInstallSnapshotResponse>(Arena*);
+template<> ::bedrock::dataserver::ShardMeta* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardMeta>(Arena*);
 template<> ::bedrock::dataserver::ShardReadRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardReadRequest>(Arena*);
 template<> ::bedrock::dataserver::ShardReadResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardReadResponse>(Arena*);
 template<> ::bedrock::dataserver::ShardRepairRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardRepairRequest>(Arena*);
@@ -214,6 +218,278 @@ namespace bedrock {
 namespace dataserver {
 
 // ===================================================================
+
+class ShardMeta final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.ShardMeta) */ {
+ public:
+  inline ShardMeta() : ShardMeta(nullptr) {}
+  ~ShardMeta() override;
+  explicit PROTOBUF_CONSTEXPR ShardMeta(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ShardMeta(const ShardMeta& from);
+  ShardMeta(ShardMeta&& from) noexcept
+    : ShardMeta() {
+    *this = ::std::move(from);
+  }
+
+  inline ShardMeta& operator=(const ShardMeta& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ShardMeta& operator=(ShardMeta&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ShardMeta& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ShardMeta* internal_default_instance() {
+    return reinterpret_cast<const ShardMeta*>(
+               &_ShardMeta_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(ShardMeta& a, ShardMeta& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ShardMeta* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ShardMeta* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ShardMeta* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ShardMeta>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ShardMeta& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ShardMeta& from) {
+    ShardMeta::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ShardMeta* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.ShardMeta";
+  }
+  protected:
+  explicit ShardMeta(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReplicatesFieldNumber = 4,
+    kLeaderFieldNumber = 7,
+    kCreateTsFieldNumber = 3,
+    kReplicatesUpdateTsFieldNumber = 5,
+    kLeaderChangeTsFieldNumber = 8,
+    kShardIdFieldNumber = 1,
+    kStorageIdFieldNumber = 2,
+    kIsLeaderFieldNumber = 6,
+  };
+  // repeated string replicates = 4;
+  int replicates_size() const;
+  private:
+  int _internal_replicates_size() const;
+  public:
+  void clear_replicates();
+  const std::string& replicates(int index) const;
+  std::string* mutable_replicates(int index);
+  void set_replicates(int index, const std::string& value);
+  void set_replicates(int index, std::string&& value);
+  void set_replicates(int index, const char* value);
+  void set_replicates(int index, const char* value, size_t size);
+  std::string* add_replicates();
+  void add_replicates(const std::string& value);
+  void add_replicates(std::string&& value);
+  void add_replicates(const char* value);
+  void add_replicates(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& replicates() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_replicates();
+  private:
+  const std::string& _internal_replicates(int index) const;
+  std::string* _internal_add_replicates();
+  public:
+
+  // string leader = 7;
+  void clear_leader();
+  const std::string& leader() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_leader(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_leader();
+  PROTOBUF_NODISCARD std::string* release_leader();
+  void set_allocated_leader(std::string* leader);
+  private:
+  const std::string& _internal_leader() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_leader(const std::string& value);
+  std::string* _internal_mutable_leader();
+  public:
+
+  // .google.protobuf.Timestamp create_ts = 3;
+  bool has_create_ts() const;
+  private:
+  bool _internal_has_create_ts() const;
+  public:
+  void clear_create_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& create_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_create_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_create_ts();
+  void set_allocated_create_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_create_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_create_ts();
+  public:
+  void unsafe_arena_set_allocated_create_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_create_ts();
+
+  // .google.protobuf.Timestamp replicates_update_ts = 5;
+  bool has_replicates_update_ts() const;
+  private:
+  bool _internal_has_replicates_update_ts() const;
+  public:
+  void clear_replicates_update_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& replicates_update_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_replicates_update_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_replicates_update_ts();
+  void set_allocated_replicates_update_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* replicates_update_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_replicates_update_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_replicates_update_ts();
+  public:
+  void unsafe_arena_set_allocated_replicates_update_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* replicates_update_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_replicates_update_ts();
+
+  // .google.protobuf.Timestamp leader_change_ts = 8;
+  bool has_leader_change_ts() const;
+  private:
+  bool _internal_has_leader_change_ts() const;
+  public:
+  void clear_leader_change_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_leader_change_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_leader_change_ts();
+  void set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_leader_change_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_leader_change_ts();
+  public:
+  void unsafe_arena_set_allocated_leader_change_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_leader_change_ts();
+
+  // uint64 shard_id = 1;
+  void clear_shard_id();
+  uint64_t shard_id() const;
+  void set_shard_id(uint64_t value);
+  private:
+  uint64_t _internal_shard_id() const;
+  void _internal_set_shard_id(uint64_t value);
+  public:
+
+  // uint64 storage_id = 2;
+  void clear_storage_id();
+  uint64_t storage_id() const;
+  void set_storage_id(uint64_t value);
+  private:
+  uint64_t _internal_storage_id() const;
+  void _internal_set_storage_id(uint64_t value);
+  public:
+
+  // bool is_leader = 6;
+  void clear_is_leader();
+  bool is_leader() const;
+  void set_is_leader(bool value);
+  private:
+  bool _internal_is_leader() const;
+  void _internal_set_is_leader(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.ShardMeta)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> replicates_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr leader_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* replicates_update_ts_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts_;
+    uint64_t shard_id_;
+    uint64_t storage_id_;
+    bool is_leader_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
 
 class SplitShardRequest final :
     public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:bedrock.dataserver.SplitShardRequest) */ {
@@ -262,7 +538,7 @@ class SplitShardRequest final :
                &_SplitShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(SplitShardRequest& a, SplitShardRequest& b) {
     a.Swap(&b);
@@ -380,7 +656,7 @@ class SplitShardResponse final :
                &_SplitShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(SplitShardResponse& a, SplitShardResponse& b) {
     a.Swap(&b);
@@ -498,7 +774,7 @@ class MergeShardRequest final :
                &_MergeShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(MergeShardRequest& a, MergeShardRequest& b) {
     a.Swap(&b);
@@ -616,7 +892,7 @@ class MergeShardResponse final :
                &_MergeShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(MergeShardResponse& a, MergeShardResponse& b) {
     a.Swap(&b);
@@ -735,7 +1011,7 @@ class CreateShardRequest final :
                &_CreateShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(CreateShardRequest& a, CreateShardRequest& b) {
     a.Swap(&b);
@@ -995,7 +1271,7 @@ class CreateShardResponse final :
                &_CreateShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(CreateShardResponse& a, CreateShardResponse& b) {
     a.Swap(&b);
@@ -1114,7 +1390,7 @@ class DeleteShardRequest final :
                &_DeleteShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(DeleteShardRequest& a, DeleteShardRequest& b) {
     a.Swap(&b);
@@ -1261,7 +1537,7 @@ class DeleteShardResponse final :
                &_DeleteShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(DeleteShardResponse& a, DeleteShardResponse& b) {
     a.Swap(&b);
@@ -1379,7 +1655,7 @@ class PullShardDataRequest final :
                &_PullShardDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(PullShardDataRequest& a, PullShardDataRequest& b) {
     a.Swap(&b);
@@ -1497,7 +1773,7 @@ class PullShardDataResponse final :
                &_PullShardDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(PullShardDataResponse& a, PullShardDataResponse& b) {
     a.Swap(&b);
@@ -1615,7 +1891,7 @@ class TransferShardRequest final :
                &_TransferShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(TransferShardRequest& a, TransferShardRequest& b) {
     a.Swap(&b);
@@ -1733,7 +2009,7 @@ class TransferShardResponse final :
                &_TransferShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(TransferShardResponse& a, TransferShardResponse& b) {
     a.Swap(&b);
@@ -1851,7 +2127,7 @@ class AddShardReplicaRequest final :
                &_AddShardReplicaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(AddShardReplicaRequest& a, AddShardReplicaRequest& b) {
     a.Swap(&b);
@@ -1969,7 +2245,7 @@ class AddShardReplicaResponse final :
                &_AddShardReplicaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(AddShardReplicaResponse& a, AddShardReplicaResponse& b) {
     a.Swap(&b);
@@ -2087,7 +2363,7 @@ class DeleteShardReplicaRequest final :
                &_DeleteShardReplicaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(DeleteShardReplicaRequest& a, DeleteShardReplicaRequest& b) {
     a.Swap(&b);
@@ -2205,7 +2481,7 @@ class DeleteShardReplicaResponse final :
                &_DeleteShardReplicaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(DeleteShardReplicaResponse& a, DeleteShardReplicaResponse& b) {
     a.Swap(&b);
@@ -2324,7 +2600,7 @@ class TransferShardLeaderRequest final :
                &_TransferShardLeaderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(TransferShardLeaderRequest& a, TransferShardLeaderRequest& b) {
     a.Swap(&b);
@@ -2497,7 +2773,7 @@ class TransferShardLeaderResponse final :
                &_TransferShardLeaderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(TransferShardLeaderResponse& a, TransferShardLeaderResponse& b) {
     a.Swap(&b);
@@ -2615,7 +2891,7 @@ class LockShardRequest final :
                &_LockShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(LockShardRequest& a, LockShardRequest& b) {
     a.Swap(&b);
@@ -2733,7 +3009,7 @@ class LockShardResponse final :
                &_LockShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(LockShardResponse& a, LockShardResponse& b) {
     a.Swap(&b);
@@ -2851,7 +3127,7 @@ class UnlockShardRequest final :
                &_UnlockShardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(UnlockShardRequest& a, UnlockShardRequest& b) {
     a.Swap(&b);
@@ -2969,7 +3245,7 @@ class UnlockShardResponse final :
                &_UnlockShardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(UnlockShardResponse& a, UnlockShardResponse& b) {
     a.Swap(&b);
@@ -3088,7 +3364,7 @@ class ShardReadRequest final :
                &_ShardReadRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(ShardReadRequest& a, ShardReadRequest& b) {
     a.Swap(&b);
@@ -3252,7 +3528,7 @@ class ShardReadResponse final :
                &_ShardReadResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(ShardReadResponse& a, ShardReadResponse& b) {
     a.Swap(&b);
@@ -3405,7 +3681,7 @@ class ShardWriteRequest final :
                &_ShardWriteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(ShardWriteRequest& a, ShardWriteRequest& b) {
     a.Swap(&b);
@@ -3585,7 +3861,7 @@ class ShardWriteResponse final :
                &_ShardWriteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(ShardWriteResponse& a, ShardWriteResponse& b) {
     a.Swap(&b);
@@ -3733,7 +4009,7 @@ class ShardAppendLogRequest_Entry final :
                &_ShardAppendLogRequest_Entry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(ShardAppendLogRequest_Entry& a, ShardAppendLogRequest_Entry& b) {
     a.Swap(&b);
@@ -3929,7 +4205,7 @@ class ShardAppendLogRequest final :
                &_ShardAppendLogRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(ShardAppendLogRequest& a, ShardAppendLogRequest& b) {
     a.Swap(&b);
@@ -4119,7 +4395,7 @@ class ShardAppendLogResponse final :
                &_ShardAppendLogResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(ShardAppendLogResponse& a, ShardAppendLogResponse& b) {
     a.Swap(&b);
@@ -4278,7 +4554,7 @@ class ShardInstallSnapshotRequest final :
                &_ShardInstallSnapshotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(ShardInstallSnapshotRequest& a, ShardInstallSnapshotRequest& b) {
     a.Swap(&b);
@@ -4441,7 +4717,7 @@ class ShardInstallSnapshotResponse final :
                &_ShardInstallSnapshotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(ShardInstallSnapshotResponse& a, ShardInstallSnapshotResponse& b) {
     a.Swap(&b);
@@ -4559,7 +4835,7 @@ class ShardWriteReplicaRequest final :
                &_ShardWriteReplicaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(ShardWriteReplicaRequest& a, ShardWriteReplicaRequest& b) {
     a.Swap(&b);
@@ -4677,7 +4953,7 @@ class ShardWriteReplicaResponse final :
                &_ShardWriteReplicaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(ShardWriteReplicaResponse& a, ShardWriteReplicaResponse& b) {
     a.Swap(&b);
@@ -4795,7 +5071,7 @@ class ShardRepairRequest final :
                &_ShardRepairRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(ShardRepairRequest& a, ShardRepairRequest& b) {
     a.Swap(&b);
@@ -4913,7 +5189,7 @@ class ShardRepairResponse final :
                &_ShardRepairResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(ShardRepairResponse& a, ShardRepairResponse& b) {
     a.Swap(&b);
@@ -5031,7 +5307,7 @@ class DataServerJoinRequest final :
                &_DataServerJoinRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(DataServerJoinRequest& a, DataServerJoinRequest& b) {
     a.Swap(&b);
@@ -5149,7 +5425,7 @@ class DataServerJoinResponse final :
                &_DataServerJoinResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(DataServerJoinResponse& a, DataServerJoinResponse& b) {
     a.Swap(&b);
@@ -5267,7 +5543,7 @@ class DataServerLeaveRequest final :
                &_DataServerLeaveRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(DataServerLeaveRequest& a, DataServerLeaveRequest& b) {
     a.Swap(&b);
@@ -5385,7 +5661,7 @@ class DataServerLeaveResponse final :
                &_DataServerLeaveResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   friend void swap(DataServerLeaveResponse& a, DataServerLeaveResponse& b) {
     a.Swap(&b);
@@ -5570,6 +5846,450 @@ class DataService_Stub : public DataService {
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// ShardMeta
+
+// uint64 shard_id = 1;
+inline void ShardMeta::clear_shard_id() {
+  _impl_.shard_id_ = uint64_t{0u};
+}
+inline uint64_t ShardMeta::_internal_shard_id() const {
+  return _impl_.shard_id_;
+}
+inline uint64_t ShardMeta::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.shard_id)
+  return _internal_shard_id();
+}
+inline void ShardMeta::_internal_set_shard_id(uint64_t value) {
+  
+  _impl_.shard_id_ = value;
+}
+inline void ShardMeta::set_shard_id(uint64_t value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.shard_id)
+}
+
+// uint64 storage_id = 2;
+inline void ShardMeta::clear_storage_id() {
+  _impl_.storage_id_ = uint64_t{0u};
+}
+inline uint64_t ShardMeta::_internal_storage_id() const {
+  return _impl_.storage_id_;
+}
+inline uint64_t ShardMeta::storage_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.storage_id)
+  return _internal_storage_id();
+}
+inline void ShardMeta::_internal_set_storage_id(uint64_t value) {
+  
+  _impl_.storage_id_ = value;
+}
+inline void ShardMeta::set_storage_id(uint64_t value) {
+  _internal_set_storage_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.storage_id)
+}
+
+// .google.protobuf.Timestamp create_ts = 3;
+inline bool ShardMeta::_internal_has_create_ts() const {
+  return this != internal_default_instance() && _impl_.create_ts_ != nullptr;
+}
+inline bool ShardMeta::has_create_ts() const {
+  return _internal_has_create_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ShardMeta::_internal_create_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.create_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ShardMeta::create_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.create_ts)
+  return _internal_create_ts();
+}
+inline void ShardMeta::unsafe_arena_set_allocated_create_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.create_ts_);
+  }
+  _impl_.create_ts_ = create_ts;
+  if (create_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.ShardMeta.create_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::release_create_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.create_ts_;
+  _impl_.create_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::unsafe_arena_release_create_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.ShardMeta.create_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.create_ts_;
+  _impl_.create_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::_internal_mutable_create_ts() {
+  
+  if (_impl_.create_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.create_ts_ = p;
+  }
+  return _impl_.create_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::mutable_create_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_create_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardMeta.create_ts)
+  return _msg;
+}
+inline void ShardMeta::set_allocated_create_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.create_ts_);
+  }
+  if (create_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(create_ts));
+    if (message_arena != submessage_arena) {
+      create_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, create_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.create_ts_ = create_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardMeta.create_ts)
+}
+
+// repeated string replicates = 4;
+inline int ShardMeta::_internal_replicates_size() const {
+  return _impl_.replicates_.size();
+}
+inline int ShardMeta::replicates_size() const {
+  return _internal_replicates_size();
+}
+inline void ShardMeta::clear_replicates() {
+  _impl_.replicates_.Clear();
+}
+inline std::string* ShardMeta::add_replicates() {
+  std::string* _s = _internal_add_replicates();
+  // @@protoc_insertion_point(field_add_mutable:bedrock.dataserver.ShardMeta.replicates)
+  return _s;
+}
+inline const std::string& ShardMeta::_internal_replicates(int index) const {
+  return _impl_.replicates_.Get(index);
+}
+inline const std::string& ShardMeta::replicates(int index) const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.replicates)
+  return _internal_replicates(index);
+}
+inline std::string* ShardMeta::mutable_replicates(int index) {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardMeta.replicates)
+  return _impl_.replicates_.Mutable(index);
+}
+inline void ShardMeta::set_replicates(int index, const std::string& value) {
+  _impl_.replicates_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.replicates)
+}
+inline void ShardMeta::set_replicates(int index, std::string&& value) {
+  _impl_.replicates_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.replicates)
+}
+inline void ShardMeta::set_replicates(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.replicates_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.ShardMeta.replicates)
+}
+inline void ShardMeta::set_replicates(int index, const char* value, size_t size) {
+  _impl_.replicates_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.ShardMeta.replicates)
+}
+inline std::string* ShardMeta::_internal_add_replicates() {
+  return _impl_.replicates_.Add();
+}
+inline void ShardMeta::add_replicates(const std::string& value) {
+  _impl_.replicates_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:bedrock.dataserver.ShardMeta.replicates)
+}
+inline void ShardMeta::add_replicates(std::string&& value) {
+  _impl_.replicates_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:bedrock.dataserver.ShardMeta.replicates)
+}
+inline void ShardMeta::add_replicates(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.replicates_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:bedrock.dataserver.ShardMeta.replicates)
+}
+inline void ShardMeta::add_replicates(const char* value, size_t size) {
+  _impl_.replicates_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:bedrock.dataserver.ShardMeta.replicates)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+ShardMeta::replicates() const {
+  // @@protoc_insertion_point(field_list:bedrock.dataserver.ShardMeta.replicates)
+  return _impl_.replicates_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+ShardMeta::mutable_replicates() {
+  // @@protoc_insertion_point(field_mutable_list:bedrock.dataserver.ShardMeta.replicates)
+  return &_impl_.replicates_;
+}
+
+// .google.protobuf.Timestamp replicates_update_ts = 5;
+inline bool ShardMeta::_internal_has_replicates_update_ts() const {
+  return this != internal_default_instance() && _impl_.replicates_update_ts_ != nullptr;
+}
+inline bool ShardMeta::has_replicates_update_ts() const {
+  return _internal_has_replicates_update_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ShardMeta::_internal_replicates_update_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.replicates_update_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ShardMeta::replicates_update_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.replicates_update_ts)
+  return _internal_replicates_update_ts();
+}
+inline void ShardMeta::unsafe_arena_set_allocated_replicates_update_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* replicates_update_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.replicates_update_ts_);
+  }
+  _impl_.replicates_update_ts_ = replicates_update_ts;
+  if (replicates_update_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.ShardMeta.replicates_update_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::release_replicates_update_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.replicates_update_ts_;
+  _impl_.replicates_update_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::unsafe_arena_release_replicates_update_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.ShardMeta.replicates_update_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.replicates_update_ts_;
+  _impl_.replicates_update_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::_internal_mutable_replicates_update_ts() {
+  
+  if (_impl_.replicates_update_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.replicates_update_ts_ = p;
+  }
+  return _impl_.replicates_update_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::mutable_replicates_update_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_replicates_update_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardMeta.replicates_update_ts)
+  return _msg;
+}
+inline void ShardMeta::set_allocated_replicates_update_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* replicates_update_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.replicates_update_ts_);
+  }
+  if (replicates_update_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(replicates_update_ts));
+    if (message_arena != submessage_arena) {
+      replicates_update_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, replicates_update_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.replicates_update_ts_ = replicates_update_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardMeta.replicates_update_ts)
+}
+
+// bool is_leader = 6;
+inline void ShardMeta::clear_is_leader() {
+  _impl_.is_leader_ = false;
+}
+inline bool ShardMeta::_internal_is_leader() const {
+  return _impl_.is_leader_;
+}
+inline bool ShardMeta::is_leader() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.is_leader)
+  return _internal_is_leader();
+}
+inline void ShardMeta::_internal_set_is_leader(bool value) {
+  
+  _impl_.is_leader_ = value;
+}
+inline void ShardMeta::set_is_leader(bool value) {
+  _internal_set_is_leader(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.is_leader)
+}
+
+// string leader = 7;
+inline void ShardMeta::clear_leader() {
+  _impl_.leader_.ClearToEmpty();
+}
+inline const std::string& ShardMeta::leader() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.leader)
+  return _internal_leader();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ShardMeta::set_leader(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.leader_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.leader)
+}
+inline std::string* ShardMeta::mutable_leader() {
+  std::string* _s = _internal_mutable_leader();
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardMeta.leader)
+  return _s;
+}
+inline const std::string& ShardMeta::_internal_leader() const {
+  return _impl_.leader_.Get();
+}
+inline void ShardMeta::_internal_set_leader(const std::string& value) {
+  
+  _impl_.leader_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ShardMeta::_internal_mutable_leader() {
+  
+  return _impl_.leader_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ShardMeta::release_leader() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.ShardMeta.leader)
+  return _impl_.leader_.Release();
+}
+inline void ShardMeta::set_allocated_leader(std::string* leader) {
+  if (leader != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.leader_.SetAllocated(leader, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.leader_.IsDefault()) {
+    _impl_.leader_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardMeta.leader)
+}
+
+// .google.protobuf.Timestamp leader_change_ts = 8;
+inline bool ShardMeta::_internal_has_leader_change_ts() const {
+  return this != internal_default_instance() && _impl_.leader_change_ts_ != nullptr;
+}
+inline bool ShardMeta::has_leader_change_ts() const {
+  return _internal_has_leader_change_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ShardMeta::_internal_leader_change_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.leader_change_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ShardMeta::leader_change_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.leader_change_ts)
+  return _internal_leader_change_ts();
+}
+inline void ShardMeta::unsafe_arena_set_allocated_leader_change_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.leader_change_ts_);
+  }
+  _impl_.leader_change_ts_ = leader_change_ts;
+  if (leader_change_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.ShardMeta.leader_change_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::release_leader_change_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.leader_change_ts_;
+  _impl_.leader_change_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::unsafe_arena_release_leader_change_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.ShardMeta.leader_change_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.leader_change_ts_;
+  _impl_.leader_change_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::_internal_mutable_leader_change_ts() {
+  
+  if (_impl_.leader_change_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.leader_change_ts_ = p;
+  }
+  return _impl_.leader_change_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ShardMeta::mutable_leader_change_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_leader_change_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardMeta.leader_change_ts)
+  return _msg;
+}
+inline void ShardMeta::set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.leader_change_ts_);
+  }
+  if (leader_change_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(leader_change_ts));
+    if (message_arena != submessage_arena) {
+      leader_change_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, leader_change_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.leader_change_ts_ = leader_change_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardMeta.leader_change_ts)
+}
+
+// -------------------------------------------------------------------
+
 // SplitShardRequest
 
 // -------------------------------------------------------------------
@@ -6947,6 +7667,8 @@ inline void ShardInstallSnapshotRequest::set_allocated_data_piece(std::string* d
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

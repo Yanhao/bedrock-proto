@@ -8,6 +8,17 @@ option go_package = "sr.ht/moyanhao/bedrock-metaserver/dataserver";
 package bedrock.dataserver;
 option cc_generic_services = true;
 
+message ShardMeta {
+    uint64 shard_id = 1;
+    uint64 storage_id = 2;
+    google.protobuf.Timestamp create_ts = 3;
+    repeated string replicates = 4;
+    google.protobuf.Timestamp replicates_update_ts = 5;
+    bool is_leader = 6;
+    string leader = 7;
+    google.protobuf.Timestamp leader_change_ts = 8; // TODO: maybe we should use term, not ts here
+}
+
 message SplitShardRequest {
 }
 message SplitShardResponse {
