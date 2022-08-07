@@ -347,6 +347,7 @@ class ShardMeta final :
     kLeaderChangeTsFieldNumber = 8,
     kShardIdFieldNumber = 1,
     kStorageIdFieldNumber = 2,
+    kLastWalIndexFieldNumber = 9,
     kIsLeaderFieldNumber = 6,
   };
   // repeated string replicates = 4;
@@ -459,6 +460,15 @@ class ShardMeta final :
   void _internal_set_storage_id(uint64_t value);
   public:
 
+  // uint64 last_wal_index = 9;
+  void clear_last_wal_index();
+  uint64_t last_wal_index() const;
+  void set_last_wal_index(uint64_t value);
+  private:
+  uint64_t _internal_last_wal_index() const;
+  void _internal_set_last_wal_index(uint64_t value);
+  public:
+
   // bool is_leader = 6;
   void clear_is_leader();
   bool is_leader() const;
@@ -483,6 +493,7 @@ class ShardMeta final :
     ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts_;
     uint64_t shard_id_;
     uint64_t storage_id_;
+    uint64_t last_wal_index_;
     bool is_leader_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -4629,6 +4640,7 @@ class ShardInstallSnapshotRequest final :
   enum : int {
     kDataPieceFieldNumber = 2,
     kShardIdFieldNumber = 1,
+    kLastWalIndexFieldNumber = 3,
   };
   // bytes data_piece = 2;
   void clear_data_piece();
@@ -4653,6 +4665,15 @@ class ShardInstallSnapshotRequest final :
   void _internal_set_shard_id(uint64_t value);
   public:
 
+  // uint64 last_wal_index = 3;
+  void clear_last_wal_index();
+  uint64_t last_wal_index() const;
+  void set_last_wal_index(uint64_t value);
+  private:
+  uint64_t _internal_last_wal_index() const;
+  void _internal_set_last_wal_index(uint64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.dataserver.ShardInstallSnapshotRequest)
  private:
   class _Internal;
@@ -4663,6 +4684,7 @@ class ShardInstallSnapshotRequest final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_piece_;
     uint64_t shard_id_;
+    uint64_t last_wal_index_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6288,6 +6310,26 @@ inline void ShardMeta::set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::T
   // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardMeta.leader_change_ts)
 }
 
+// uint64 last_wal_index = 9;
+inline void ShardMeta::clear_last_wal_index() {
+  _impl_.last_wal_index_ = uint64_t{0u};
+}
+inline uint64_t ShardMeta::_internal_last_wal_index() const {
+  return _impl_.last_wal_index_;
+}
+inline uint64_t ShardMeta::last_wal_index() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardMeta.last_wal_index)
+  return _internal_last_wal_index();
+}
+inline void ShardMeta::_internal_set_last_wal_index(uint64_t value) {
+  
+  _impl_.last_wal_index_ = value;
+}
+inline void ShardMeta::set_last_wal_index(uint64_t value) {
+  _internal_set_last_wal_index(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardMeta.last_wal_index)
+}
+
 // -------------------------------------------------------------------
 
 // SplitShardRequest
@@ -7626,6 +7668,26 @@ inline void ShardInstallSnapshotRequest::set_allocated_data_piece(std::string* d
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardInstallSnapshotRequest.data_piece)
+}
+
+// uint64 last_wal_index = 3;
+inline void ShardInstallSnapshotRequest::clear_last_wal_index() {
+  _impl_.last_wal_index_ = uint64_t{0u};
+}
+inline uint64_t ShardInstallSnapshotRequest::_internal_last_wal_index() const {
+  return _impl_.last_wal_index_;
+}
+inline uint64_t ShardInstallSnapshotRequest::last_wal_index() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardInstallSnapshotRequest.last_wal_index)
+  return _internal_last_wal_index();
+}
+inline void ShardInstallSnapshotRequest::_internal_set_last_wal_index(uint64_t value) {
+  
+  _impl_.last_wal_index_ = value;
+}
+inline void ShardInstallSnapshotRequest::set_last_wal_index(uint64_t value) {
+  _internal_set_last_wal_index(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardInstallSnapshotRequest.last_wal_index)
 }
 
 // -------------------------------------------------------------------

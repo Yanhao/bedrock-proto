@@ -17,6 +17,7 @@ message ShardMeta {
     bool is_leader = 6;
     string leader = 7;
     google.protobuf.Timestamp leader_change_ts = 8; // TODO: maybe we should use term, not ts here
+    uint64 last_wal_index = 9;
 }
 
 message SplitShardRequest {
@@ -125,6 +126,7 @@ message ShardAppendLogResponse {
 message ShardInstallSnapshotRequest {
     uint64 shard_id = 1;
     bytes data_piece = 2;
+    uint64 last_wal_index = 3;
 }
 
 message ShardInstallSnapshotResponse {
