@@ -2685,6 +2685,7 @@ class TransferShardLeaderRequest final :
 
   enum : int {
     kReplicatesFieldNumber = 2,
+    kLeaderChangeTsFieldNumber = 3,
     kShardIdFieldNumber = 1,
   };
   // repeated string replicates = 2;
@@ -2711,6 +2712,24 @@ class TransferShardLeaderRequest final :
   std::string* _internal_add_replicates();
   public:
 
+  // .google.protobuf.Timestamp leader_change_ts = 3;
+  bool has_leader_change_ts() const;
+  private:
+  bool _internal_has_leader_change_ts() const;
+  public:
+  void clear_leader_change_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_leader_change_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_leader_change_ts();
+  void set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_leader_change_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_leader_change_ts();
+  public:
+  void unsafe_arena_set_allocated_leader_change_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_leader_change_ts();
+
   // uint64 shard_id = 1;
   void clear_shard_id();
   uint64_t shard_id() const;
@@ -2729,6 +2748,7 @@ class TransferShardLeaderRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> replicates_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts_;
     uint64_t shard_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -6931,6 +6951,91 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 TransferShardLeaderRequest::mutable_replicates() {
   // @@protoc_insertion_point(field_mutable_list:bedrock.dataserver.TransferShardLeaderRequest.replicates)
   return &_impl_.replicates_;
+}
+
+// .google.protobuf.Timestamp leader_change_ts = 3;
+inline bool TransferShardLeaderRequest::_internal_has_leader_change_ts() const {
+  return this != internal_default_instance() && _impl_.leader_change_ts_ != nullptr;
+}
+inline bool TransferShardLeaderRequest::has_leader_change_ts() const {
+  return _internal_has_leader_change_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TransferShardLeaderRequest::_internal_leader_change_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.leader_change_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TransferShardLeaderRequest::leader_change_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.TransferShardLeaderRequest.leader_change_ts)
+  return _internal_leader_change_ts();
+}
+inline void TransferShardLeaderRequest::unsafe_arena_set_allocated_leader_change_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.leader_change_ts_);
+  }
+  _impl_.leader_change_ts_ = leader_change_ts;
+  if (leader_change_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.TransferShardLeaderRequest.leader_change_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TransferShardLeaderRequest::release_leader_change_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.leader_change_ts_;
+  _impl_.leader_change_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TransferShardLeaderRequest::unsafe_arena_release_leader_change_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.TransferShardLeaderRequest.leader_change_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.leader_change_ts_;
+  _impl_.leader_change_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TransferShardLeaderRequest::_internal_mutable_leader_change_ts() {
+  
+  if (_impl_.leader_change_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.leader_change_ts_ = p;
+  }
+  return _impl_.leader_change_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TransferShardLeaderRequest::mutable_leader_change_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_leader_change_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.TransferShardLeaderRequest.leader_change_ts)
+  return _msg;
+}
+inline void TransferShardLeaderRequest::set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.leader_change_ts_);
+  }
+  if (leader_change_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(leader_change_ts));
+    if (message_arena != submessage_arena) {
+      leader_change_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, leader_change_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.leader_change_ts_ = leader_change_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.TransferShardLeaderRequest.leader_change_ts)
 }
 
 // -------------------------------------------------------------------
