@@ -10,14 +10,13 @@ option cc_generic_services = true;
 
 message ShardMeta {
     uint64 shard_id = 1;
-    uint64 storage_id = 2;
-    google.protobuf.Timestamp create_ts = 3;
-    repeated string replicates = 4;
-    google.protobuf.Timestamp replicates_update_ts = 5;
-    bool is_leader = 6;
-    string leader = 7;
-    google.protobuf.Timestamp leader_change_ts = 8; // TODO: maybe we should use term, not ts here
-    uint64 last_wal_index = 9;
+    google.protobuf.Timestamp create_ts = 2;
+    repeated string replicates = 3;
+    google.protobuf.Timestamp replicates_update_ts = 4;
+    bool is_leader = 5;
+    string leader = 6;
+    google.protobuf.Timestamp leader_change_ts = 7; // TODO: maybe we should use term, not ts here
+    uint64 last_wal_index = 8;
 }
 
 message SplitShardRequest {
@@ -31,15 +30,14 @@ message MergeShardResponse {
 
 message CreateShardRequest {
     uint64 shard_id = 1;
-    uint64 storage_id = 2;
 
-    google.protobuf.Timestamp create_ts = 3;
+    google.protobuf.Timestamp create_ts = 2;
 
-    repeated string replicates = 4;
-    google.protobuf.Timestamp  replica_update_ts = 5;
+    repeated string replicates = 3;
+    google.protobuf.Timestamp  replica_update_ts = 4;
 
-    string leader = 6;
-    google.protobuf.Timestamp leader_change_ts = 7;
+    string leader = 5;
+    google.protobuf.Timestamp leader_change_ts = 6;
 }
 
 message CreateShardResponse {
@@ -49,6 +47,22 @@ message DeleteShardRequest {
 }
 message DeleteShardResponse {
 }
+
+message ShardInfoRequest {
+    uint64 shard_id = 1;
+}
+
+message ShardInfoResponse {
+    uint64 shard_id = 1;
+    google.protobuf.Timestamp create_ts = 2;
+    repeated string replicates = 3;
+    google.protobuf.Timestamp replicates_update_ts = 4;
+    bool is_leader = 5;
+    string leader = 6;
+    google.protobuf.Timestamp leader_change_ts = 7; // TODO: maybe we should use term, not ts here
+    uint64 last_wal_index = 8;
+}
+
 message PullShardDataRequest {
 }
 message PullShardDataResponse {
@@ -155,6 +169,7 @@ service DataService {
     // rpc MergeShard(MergeShardRequest) returns (MergeShardResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
     rpc DeleteShard(DeleteShardRequest) returns (google.protobuf.Empty);
+    rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
     // rpc PullShardData(PullShardDataRequest) returns (PullShardDataResponse);
     // rpc TransferShard(TransferShardRequest) returns (TransferShardResponse);
     // rpc AddShardReplica(AddShardReplicaRequest) returns (AddShardReplicaResponse);

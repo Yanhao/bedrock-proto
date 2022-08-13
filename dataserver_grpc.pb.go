@@ -23,6 +23,7 @@ type DataServiceClient interface {
 	// rpc MergeShard(MergeShardRequest) returns (MergeShardResponse);
 	CreateShard(ctx context.Context, in *CreateShardRequest, opts ...grpc.CallOption) (*CreateShardResponse, error)
 	DeleteShard(ctx context.Context, in *DeleteShardRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error)
 	// rpc PullShardData(PullShardDataRequest) returns (PullShardDataResponse);
 	// rpc TransferShard(TransferShardRequest) returns (TransferShardResponse);
 	// rpc AddShardReplica(AddShardReplicaRequest) returns (AddShardReplicaResponse);
@@ -54,6 +55,15 @@ func (c *dataServiceClient) CreateShard(ctx context.Context, in *CreateShardRequ
 func (c *dataServiceClient) DeleteShard(ctx context.Context, in *DeleteShardRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/DeleteShard", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error) {
+	out := new(ShardInfoResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/ShardInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,6 +148,7 @@ type DataServiceServer interface {
 	// rpc MergeShard(MergeShardRequest) returns (MergeShardResponse);
 	CreateShard(context.Context, *CreateShardRequest) (*CreateShardResponse, error)
 	DeleteShard(context.Context, *DeleteShardRequest) (*emptypb.Empty, error)
+	ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error)
 	// rpc PullShardData(PullShardDataRequest) returns (PullShardDataResponse);
 	// rpc TransferShard(TransferShardRequest) returns (TransferShardResponse);
 	// rpc AddShardReplica(AddShardReplicaRequest) returns (AddShardReplicaResponse);
@@ -159,6 +170,9 @@ func (UnimplementedDataServiceServer) CreateShard(context.Context, *CreateShardR
 }
 func (UnimplementedDataServiceServer) DeleteShard(context.Context, *DeleteShardRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteShard not implemented")
+}
+func (UnimplementedDataServiceServer) ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShardInfo not implemented")
 }
 func (UnimplementedDataServiceServer) TransferShardLeader(context.Context, *TransferShardLeaderRequest) (*TransferShardLeaderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TransferShardLeader not implemented")
@@ -220,6 +234,24 @@ func _DataService_DeleteShard_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).DeleteShard(ctx, req.(*DeleteShardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_ShardInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShardInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).ShardInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/ShardInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).ShardInfo(ctx, req.(*ShardInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -336,6 +368,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteShard",
 			Handler:    _DataService_DeleteShard_Handler,
+		},
+		{
+			MethodName: "ShardInfo",
+			Handler:    _DataService_ShardInfo_Handler,
 		},
 		{
 			MethodName: "TransferShardLeader",

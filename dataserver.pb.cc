@@ -30,7 +30,6 @@ PROTOBUF_CONSTEXPR ShardMeta::ShardMeta(
   , /*decltype(_impl_.replicates_update_ts_)*/nullptr
   , /*decltype(_impl_.leader_change_ts_)*/nullptr
   , /*decltype(_impl_.shard_id_)*/uint64_t{0u}
-  , /*decltype(_impl_.storage_id_)*/uint64_t{0u}
   , /*decltype(_impl_.last_wal_index_)*/uint64_t{0u}
   , /*decltype(_impl_.is_leader_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -95,7 +94,6 @@ PROTOBUF_CONSTEXPR CreateShardRequest::CreateShardRequest(
   , /*decltype(_impl_.replica_update_ts_)*/nullptr
   , /*decltype(_impl_.leader_change_ts_)*/nullptr
   , /*decltype(_impl_.shard_id_)*/uint64_t{0u}
-  , /*decltype(_impl_.storage_id_)*/uint64_t{0u}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CreateShardRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CreateShardRequestDefaultTypeInternal()
@@ -141,6 +139,39 @@ struct DeleteShardResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteShardResponseDefaultTypeInternal _DeleteShardResponse_default_instance_;
+PROTOBUF_CONSTEXPR ShardInfoRequest::ShardInfoRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.shard_id_)*/uint64_t{0u}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ShardInfoRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ShardInfoRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ShardInfoRequestDefaultTypeInternal() {}
+  union {
+    ShardInfoRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardInfoRequestDefaultTypeInternal _ShardInfoRequest_default_instance_;
+PROTOBUF_CONSTEXPR ShardInfoResponse::ShardInfoResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.replicates_)*/{}
+  , /*decltype(_impl_.leader_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.create_ts_)*/nullptr
+  , /*decltype(_impl_.replicates_update_ts_)*/nullptr
+  , /*decltype(_impl_.leader_change_ts_)*/nullptr
+  , /*decltype(_impl_.shard_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.last_wal_index_)*/uint64_t{0u}
+  , /*decltype(_impl_.is_leader_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ShardInfoResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ShardInfoResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ShardInfoResponseDefaultTypeInternal() {}
+  union {
+    ShardInfoResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardInfoResponseDefaultTypeInternal _ShardInfoResponse_default_instance_;
 PROTOBUF_CONSTEXPR PullShardDataRequest::PullShardDataRequest(
     ::_pbi::ConstantInitialized) {}
 struct PullShardDataRequestDefaultTypeInternal {
@@ -515,7 +546,7 @@ struct DataServerLeaveResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DataServerLeaveResponseDefaultTypeInternal _DataServerLeaveResponse_default_instance_;
 }  // namespace dataserver
 }  // namespace bedrock
-static ::_pb::Metadata file_level_metadata_dataserver_2eproto[40];
+static ::_pb::Metadata file_level_metadata_dataserver_2eproto[42];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_dataserver_2eproto = nullptr;
 static const ::_pb::ServiceDescriptor* file_level_service_descriptors_dataserver_2eproto[1];
 
@@ -527,7 +558,6 @@ const uint32_t TableStruct_dataserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardMeta, _impl_.shard_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardMeta, _impl_.storage_id_),
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardMeta, _impl_.create_ts_),
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardMeta, _impl_.replicates_),
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardMeta, _impl_.replicates_update_ts_),
@@ -566,7 +596,6 @@ const uint32_t TableStruct_dataserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::CreateShardRequest, _impl_.shard_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::CreateShardRequest, _impl_.storage_id_),
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::CreateShardRequest, _impl_.create_ts_),
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::CreateShardRequest, _impl_.replicates_),
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::CreateShardRequest, _impl_.replica_update_ts_),
@@ -591,6 +620,27 @@ const uint32_t TableStruct_dataserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoRequest, _impl_.shard_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.create_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.replicates_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.replicates_update_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.is_leader_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.leader_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.leader_change_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::ShardInfoResponse, _impl_.last_wal_index_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::dataserver::PullShardDataRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -802,45 +852,47 @@ const uint32_t TableStruct_dataserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::bedrock::dataserver::ShardMeta)},
-  { 15, -1, -1, sizeof(::bedrock::dataserver::SplitShardRequest)},
-  { 21, -1, -1, sizeof(::bedrock::dataserver::SplitShardResponse)},
-  { 27, -1, -1, sizeof(::bedrock::dataserver::MergeShardRequest)},
-  { 33, -1, -1, sizeof(::bedrock::dataserver::MergeShardResponse)},
-  { 39, -1, -1, sizeof(::bedrock::dataserver::CreateShardRequest)},
-  { 52, -1, -1, sizeof(::bedrock::dataserver::CreateShardResponse)},
-  { 58, -1, -1, sizeof(::bedrock::dataserver::DeleteShardRequest)},
-  { 65, -1, -1, sizeof(::bedrock::dataserver::DeleteShardResponse)},
-  { 71, -1, -1, sizeof(::bedrock::dataserver::PullShardDataRequest)},
-  { 77, -1, -1, sizeof(::bedrock::dataserver::PullShardDataResponse)},
-  { 83, -1, -1, sizeof(::bedrock::dataserver::TransferShardRequest)},
-  { 89, -1, -1, sizeof(::bedrock::dataserver::TransferShardResponse)},
-  { 95, -1, -1, sizeof(::bedrock::dataserver::AddShardReplicaRequest)},
-  { 101, -1, -1, sizeof(::bedrock::dataserver::AddShardReplicaResponse)},
-  { 107, -1, -1, sizeof(::bedrock::dataserver::DeleteShardReplicaRequest)},
-  { 113, -1, -1, sizeof(::bedrock::dataserver::DeleteShardReplicaResponse)},
-  { 119, -1, -1, sizeof(::bedrock::dataserver::TransferShardLeaderRequest)},
-  { 128, -1, -1, sizeof(::bedrock::dataserver::TransferShardLeaderResponse)},
-  { 134, -1, -1, sizeof(::bedrock::dataserver::LockShardRequest)},
-  { 140, -1, -1, sizeof(::bedrock::dataserver::LockShardResponse)},
-  { 146, -1, -1, sizeof(::bedrock::dataserver::UnlockShardRequest)},
-  { 152, -1, -1, sizeof(::bedrock::dataserver::UnlockShardResponse)},
-  { 158, -1, -1, sizeof(::bedrock::dataserver::ShardReadRequest)},
-  { 166, -1, -1, sizeof(::bedrock::dataserver::ShardReadResponse)},
-  { 173, -1, -1, sizeof(::bedrock::dataserver::ShardWriteRequest)},
-  { 182, -1, -1, sizeof(::bedrock::dataserver::ShardWriteResponse)},
-  { 189, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest_Entry)},
-  { 199, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest)},
-  { 208, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogResponse)},
-  { 216, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotRequest)},
-  { 225, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotResponse)},
-  { 231, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaRequest)},
-  { 237, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaResponse)},
-  { 243, -1, -1, sizeof(::bedrock::dataserver::ShardRepairRequest)},
-  { 249, -1, -1, sizeof(::bedrock::dataserver::ShardRepairResponse)},
-  { 255, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinRequest)},
-  { 261, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinResponse)},
-  { 267, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveRequest)},
-  { 273, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveResponse)},
+  { 14, -1, -1, sizeof(::bedrock::dataserver::SplitShardRequest)},
+  { 20, -1, -1, sizeof(::bedrock::dataserver::SplitShardResponse)},
+  { 26, -1, -1, sizeof(::bedrock::dataserver::MergeShardRequest)},
+  { 32, -1, -1, sizeof(::bedrock::dataserver::MergeShardResponse)},
+  { 38, -1, -1, sizeof(::bedrock::dataserver::CreateShardRequest)},
+  { 50, -1, -1, sizeof(::bedrock::dataserver::CreateShardResponse)},
+  { 56, -1, -1, sizeof(::bedrock::dataserver::DeleteShardRequest)},
+  { 63, -1, -1, sizeof(::bedrock::dataserver::DeleteShardResponse)},
+  { 69, -1, -1, sizeof(::bedrock::dataserver::ShardInfoRequest)},
+  { 76, -1, -1, sizeof(::bedrock::dataserver::ShardInfoResponse)},
+  { 90, -1, -1, sizeof(::bedrock::dataserver::PullShardDataRequest)},
+  { 96, -1, -1, sizeof(::bedrock::dataserver::PullShardDataResponse)},
+  { 102, -1, -1, sizeof(::bedrock::dataserver::TransferShardRequest)},
+  { 108, -1, -1, sizeof(::bedrock::dataserver::TransferShardResponse)},
+  { 114, -1, -1, sizeof(::bedrock::dataserver::AddShardReplicaRequest)},
+  { 120, -1, -1, sizeof(::bedrock::dataserver::AddShardReplicaResponse)},
+  { 126, -1, -1, sizeof(::bedrock::dataserver::DeleteShardReplicaRequest)},
+  { 132, -1, -1, sizeof(::bedrock::dataserver::DeleteShardReplicaResponse)},
+  { 138, -1, -1, sizeof(::bedrock::dataserver::TransferShardLeaderRequest)},
+  { 147, -1, -1, sizeof(::bedrock::dataserver::TransferShardLeaderResponse)},
+  { 153, -1, -1, sizeof(::bedrock::dataserver::LockShardRequest)},
+  { 159, -1, -1, sizeof(::bedrock::dataserver::LockShardResponse)},
+  { 165, -1, -1, sizeof(::bedrock::dataserver::UnlockShardRequest)},
+  { 171, -1, -1, sizeof(::bedrock::dataserver::UnlockShardResponse)},
+  { 177, -1, -1, sizeof(::bedrock::dataserver::ShardReadRequest)},
+  { 185, -1, -1, sizeof(::bedrock::dataserver::ShardReadResponse)},
+  { 192, -1, -1, sizeof(::bedrock::dataserver::ShardWriteRequest)},
+  { 201, -1, -1, sizeof(::bedrock::dataserver::ShardWriteResponse)},
+  { 208, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest_Entry)},
+  { 218, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogRequest)},
+  { 227, -1, -1, sizeof(::bedrock::dataserver::ShardAppendLogResponse)},
+  { 235, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotRequest)},
+  { 244, -1, -1, sizeof(::bedrock::dataserver::ShardInstallSnapshotResponse)},
+  { 250, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaRequest)},
+  { 256, -1, -1, sizeof(::bedrock::dataserver::ShardWriteReplicaResponse)},
+  { 262, -1, -1, sizeof(::bedrock::dataserver::ShardRepairRequest)},
+  { 268, -1, -1, sizeof(::bedrock::dataserver::ShardRepairResponse)},
+  { 274, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinRequest)},
+  { 280, -1, -1, sizeof(::bedrock::dataserver::DataServerJoinResponse)},
+  { 286, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveRequest)},
+  { 292, -1, -1, sizeof(::bedrock::dataserver::DataServerLeaveResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -853,6 +905,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::bedrock::dataserver::_CreateShardResponse_default_instance_._instance,
   &::bedrock::dataserver::_DeleteShardRequest_default_instance_._instance,
   &::bedrock::dataserver::_DeleteShardResponse_default_instance_._instance,
+  &::bedrock::dataserver::_ShardInfoRequest_default_instance_._instance,
+  &::bedrock::dataserver::_ShardInfoResponse_default_instance_._instance,
   &::bedrock::dataserver::_PullShardDataRequest_default_instance_._instance,
   &::bedrock::dataserver::_PullShardDataResponse_default_instance_._instance,
   &::bedrock::dataserver::_TransferShardRequest_default_instance_._instance,
@@ -889,76 +943,86 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_dataserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\020dataserver.proto\022\022bedrock.dataserver\032\033"
   "google/protobuf/empty.proto\032\037google/prot"
-  "obuf/timestamp.proto\"\237\002\n\tShardMeta\022\020\n\010sh"
-  "ard_id\030\001 \001(\004\022\022\n\nstorage_id\030\002 \001(\004\022-\n\tcrea"
-  "te_ts\030\003 \001(\0132\032.google.protobuf.Timestamp\022"
-  "\022\n\nreplicates\030\004 \003(\t\0228\n\024replicates_update"
-  "_ts\030\005 \001(\0132\032.google.protobuf.Timestamp\022\021\n"
-  "\tis_leader\030\006 \001(\010\022\016\n\006leader\030\007 \001(\t\0224\n\020lead"
-  "er_change_ts\030\010 \001(\0132\032.google.protobuf.Tim"
-  "estamp\022\026\n\016last_wal_index\030\t \001(\004\"\023\n\021SplitS"
-  "hardRequest\"\024\n\022SplitShardResponse\"\023\n\021Mer"
-  "geShardRequest\"\024\n\022MergeShardResponse\"\372\001\n"
-  "\022CreateShardRequest\022\020\n\010shard_id\030\001 \001(\004\022\022\n"
-  "\nstorage_id\030\002 \001(\004\022-\n\tcreate_ts\030\003 \001(\0132\032.g"
-  "oogle.protobuf.Timestamp\022\022\n\nreplicates\030\004"
-  " \003(\t\0225\n\021replica_update_ts\030\005 \001(\0132\032.google"
-  ".protobuf.Timestamp\022\016\n\006leader\030\006 \001(\t\0224\n\020l"
-  "eader_change_ts\030\007 \001(\0132\032.google.protobuf."
+  "obuf/timestamp.proto\"\213\002\n\tShardMeta\022\020\n\010sh"
+  "ard_id\030\001 \001(\004\022-\n\tcreate_ts\030\002 \001(\0132\032.google"
+  ".protobuf.Timestamp\022\022\n\nreplicates\030\003 \003(\t\022"
+  "8\n\024replicates_update_ts\030\004 \001(\0132\032.google.p"
+  "rotobuf.Timestamp\022\021\n\tis_leader\030\005 \001(\010\022\016\n\006"
+  "leader\030\006 \001(\t\0224\n\020leader_change_ts\030\007 \001(\0132\032"
+  ".google.protobuf.Timestamp\022\026\n\016last_wal_i"
+  "ndex\030\010 \001(\004\"\023\n\021SplitShardRequest\"\024\n\022Split"
+  "ShardResponse\"\023\n\021MergeShardRequest\"\024\n\022Me"
+  "rgeShardResponse\"\346\001\n\022CreateShardRequest\022"
+  "\020\n\010shard_id\030\001 \001(\004\022-\n\tcreate_ts\030\002 \001(\0132\032.g"
+  "oogle.protobuf.Timestamp\022\022\n\nreplicates\030\003"
+  " \003(\t\0225\n\021replica_update_ts\030\004 \001(\0132\032.google"
+  ".protobuf.Timestamp\022\016\n\006leader\030\005 \001(\t\0224\n\020l"
+  "eader_change_ts\030\006 \001(\0132\032.google.protobuf."
   "Timestamp\"\025\n\023CreateShardResponse\"&\n\022Dele"
   "teShardRequest\022\020\n\010shard_id\030\001 \001(\004\"\025\n\023Dele"
-  "teShardResponse\"\026\n\024PullShardDataRequest\""
-  "\027\n\025PullShardDataResponse\"\026\n\024TransferShar"
-  "dRequest\"\027\n\025TransferShardResponse\"\030\n\026Add"
-  "ShardReplicaRequest\"\031\n\027AddShardReplicaRe"
-  "sponse\"\033\n\031DeleteShardReplicaRequest\"\034\n\032D"
-  "eleteShardReplicaResponse\"x\n\032TransferSha"
-  "rdLeaderRequest\022\020\n\010shard_id\030\001 \001(\004\022\022\n\nrep"
-  "licates\030\002 \003(\t\0224\n\020leader_change_ts\030\003 \001(\0132"
-  "\032.google.protobuf.Timestamp\"\035\n\033TransferS"
-  "hardLeaderResponse\"\022\n\020LockShardRequest\"\023"
-  "\n\021LockShardResponse\"\024\n\022UnlockShardReques"
-  "t\"\025\n\023UnlockShardResponse\"1\n\020ShardReadReq"
-  "uest\022\020\n\010shard_id\030\001 \001(\004\022\013\n\003key\030\002 \001(\014\"\"\n\021S"
-  "hardReadResponse\022\r\n\005value\030\001 \001(\014\"A\n\021Shard"
-  "WriteRequest\022\020\n\010shard_id\030\001 \001(\004\022\013\n\003key\030\002 "
-  "\001(\014\022\r\n\005value\030\003 \001(\014\"(\n\022ShardWriteResponse"
-  "\022\022\n\nnot_leader\030\001 \001(\010\"\341\001\n\025ShardAppendLogR"
-  "equest\022\020\n\010shard_id\030\001 \001(\004\0224\n\020leader_chang"
-  "e_ts\030\002 \001(\0132\032.google.protobuf.Timestamp\022@"
-  "\n\007entries\030\003 \003(\0132/.bedrock.dataserver.Sha"
-  "rdAppendLogRequest.Entry\032>\n\005Entry\022\n\n\002op\030"
-  "\001 \001(\t\022\r\n\005index\030\002 \001(\004\022\013\n\003key\030\003 \001(\014\022\r\n\005val"
-  "ue\030\004 \001(\014\"K\n\026ShardAppendLogResponse\022\025\n\ris"
-  "_old_leader\030\001 \001(\010\022\032\n\022last_applied_index\030"
-  "\002 \001(\004\"[\n\033ShardInstallSnapshotRequest\022\020\n\010"
-  "shard_id\030\001 \001(\004\022\022\n\ndata_piece\030\002 \001(\014\022\026\n\016la"
-  "st_wal_index\030\003 \001(\004\"\036\n\034ShardInstallSnapsh"
-  "otResponse\"\032\n\030ShardWriteReplicaRequest\"\033"
-  "\n\031ShardWriteReplicaResponse\"\024\n\022ShardRepa"
-  "irRequest\"\025\n\023ShardRepairResponse\"\027\n\025Data"
-  "ServerJoinRequest\"\030\n\026DataServerJoinRespo"
-  "nse\"\030\n\026DataServerLeaveRequest\"\031\n\027DataSer"
-  "verLeaveResponse2\321\005\n\013DataService\022^\n\013Crea"
-  "teShard\022&.bedrock.dataserver.CreateShard"
-  "Request\032\'.bedrock.dataserver.CreateShard"
-  "Response\022M\n\013DeleteShard\022&.bedrock.datase"
-  "rver.DeleteShardRequest\032\026.google.protobu"
-  "f.Empty\022v\n\023TransferShardLeader\022..bedrock"
-  ".dataserver.TransferShardLeaderRequest\032/"
-  ".bedrock.dataserver.TransferShardLeaderR"
-  "esponse\022X\n\tShardRead\022$.bedrock.dataserve"
-  "r.ShardReadRequest\032%.bedrock.dataserver."
-  "ShardReadResponse\022[\n\nShardWrite\022%.bedroc"
-  "k.dataserver.ShardWriteRequest\032&.bedrock"
-  ".dataserver.ShardWriteResponse\022g\n\016ShardA"
-  "ppendLog\022).bedrock.dataserver.ShardAppen"
-  "dLogRequest\032*.bedrock.dataserver.ShardAp"
-  "pendLogResponse\022{\n\024ShardInstallSnapshot\022"
-  "/.bedrock.dataserver.ShardInstallSnapsho"
-  "tRequest\0320.bedrock.dataserver.ShardInsta"
-  "llSnapshotResponse(\001B1Z,sr.ht/moyanhao/b"
-  "edrock-metaserver/dataserver\200\001\001b\006proto3"
+  "teShardResponse\"$\n\020ShardInfoRequest\022\020\n\010s"
+  "hard_id\030\001 \001(\004\"\223\002\n\021ShardInfoResponse\022\020\n\010s"
+  "hard_id\030\001 \001(\004\022-\n\tcreate_ts\030\002 \001(\0132\032.googl"
+  "e.protobuf.Timestamp\022\022\n\nreplicates\030\003 \003(\t"
+  "\0228\n\024replicates_update_ts\030\004 \001(\0132\032.google."
+  "protobuf.Timestamp\022\021\n\tis_leader\030\005 \001(\010\022\016\n"
+  "\006leader\030\006 \001(\t\0224\n\020leader_change_ts\030\007 \001(\0132"
+  "\032.google.protobuf.Timestamp\022\026\n\016last_wal_"
+  "index\030\010 \001(\004\"\026\n\024PullShardDataRequest\"\027\n\025P"
+  "ullShardDataResponse\"\026\n\024TransferShardReq"
+  "uest\"\027\n\025TransferShardResponse\"\030\n\026AddShar"
+  "dReplicaRequest\"\031\n\027AddShardReplicaRespon"
+  "se\"\033\n\031DeleteShardReplicaRequest\"\034\n\032Delet"
+  "eShardReplicaResponse\"x\n\032TransferShardLe"
+  "aderRequest\022\020\n\010shard_id\030\001 \001(\004\022\022\n\nreplica"
+  "tes\030\002 \003(\t\0224\n\020leader_change_ts\030\003 \001(\0132\032.go"
+  "ogle.protobuf.Timestamp\"\035\n\033TransferShard"
+  "LeaderResponse\"\022\n\020LockShardRequest\"\023\n\021Lo"
+  "ckShardResponse\"\024\n\022UnlockShardRequest\"\025\n"
+  "\023UnlockShardResponse\"1\n\020ShardReadRequest"
+  "\022\020\n\010shard_id\030\001 \001(\004\022\013\n\003key\030\002 \001(\014\"\"\n\021Shard"
+  "ReadResponse\022\r\n\005value\030\001 \001(\014\"A\n\021ShardWrit"
+  "eRequest\022\020\n\010shard_id\030\001 \001(\004\022\013\n\003key\030\002 \001(\014\022"
+  "\r\n\005value\030\003 \001(\014\"(\n\022ShardWriteResponse\022\022\n\n"
+  "not_leader\030\001 \001(\010\"\341\001\n\025ShardAppendLogReque"
+  "st\022\020\n\010shard_id\030\001 \001(\004\0224\n\020leader_change_ts"
+  "\030\002 \001(\0132\032.google.protobuf.Timestamp\022@\n\007en"
+  "tries\030\003 \003(\0132/.bedrock.dataserver.ShardAp"
+  "pendLogRequest.Entry\032>\n\005Entry\022\n\n\002op\030\001 \001("
+  "\t\022\r\n\005index\030\002 \001(\004\022\013\n\003key\030\003 \001(\014\022\r\n\005value\030\004"
+  " \001(\014\"K\n\026ShardAppendLogResponse\022\025\n\ris_old"
+  "_leader\030\001 \001(\010\022\032\n\022last_applied_index\030\002 \001("
+  "\004\"[\n\033ShardInstallSnapshotRequest\022\020\n\010shar"
+  "d_id\030\001 \001(\004\022\022\n\ndata_piece\030\002 \001(\014\022\026\n\016last_w"
+  "al_index\030\003 \001(\004\"\036\n\034ShardInstallSnapshotRe"
+  "sponse\"\032\n\030ShardWriteReplicaRequest\"\033\n\031Sh"
+  "ardWriteReplicaResponse\"\024\n\022ShardRepairRe"
+  "quest\"\025\n\023ShardRepairResponse\"\027\n\025DataServ"
+  "erJoinRequest\"\030\n\026DataServerJoinResponse\""
+  "\030\n\026DataServerLeaveRequest\"\031\n\027DataServerL"
+  "eaveResponse2\253\006\n\013DataService\022^\n\013CreateSh"
+  "ard\022&.bedrock.dataserver.CreateShardRequ"
+  "est\032\'.bedrock.dataserver.CreateShardResp"
+  "onse\022M\n\013DeleteShard\022&.bedrock.dataserver"
+  ".DeleteShardRequest\032\026.google.protobuf.Em"
+  "pty\022X\n\tShardInfo\022$.bedrock.dataserver.Sh"
+  "ardInfoRequest\032%.bedrock.dataserver.Shar"
+  "dInfoResponse\022v\n\023TransferShardLeader\022..b"
+  "edrock.dataserver.TransferShardLeaderReq"
+  "uest\032/.bedrock.dataserver.TransferShardL"
+  "eaderResponse\022X\n\tShardRead\022$.bedrock.dat"
+  "aserver.ShardReadRequest\032%.bedrock.datas"
+  "erver.ShardReadResponse\022[\n\nShardWrite\022%."
+  "bedrock.dataserver.ShardWriteRequest\032&.b"
+  "edrock.dataserver.ShardWriteResponse\022g\n\016"
+  "ShardAppendLog\022).bedrock.dataserver.Shar"
+  "dAppendLogRequest\032*.bedrock.dataserver.S"
+  "hardAppendLogResponse\022{\n\024ShardInstallSna"
+  "pshot\022/.bedrock.dataserver.ShardInstallS"
+  "napshotRequest\0320.bedrock.dataserver.Shar"
+  "dInstallSnapshotResponse(\001B1Z,sr.ht/moya"
+  "nhao/bedrock-metaserver/dataserver\200\001\001b\006p"
+  "roto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dataserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -966,9 +1030,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dataserver_2eproto_
 };
 static ::_pbi::once_flag descriptor_table_dataserver_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dataserver_2eproto = {
-    false, false, 2879, descriptor_table_protodef_dataserver_2eproto,
+    false, false, 3245, descriptor_table_protodef_dataserver_2eproto,
     "dataserver.proto",
-    &descriptor_table_dataserver_2eproto_once, descriptor_table_dataserver_2eproto_deps, 2, 40,
+    &descriptor_table_dataserver_2eproto_once, descriptor_table_dataserver_2eproto_deps, 2, 42,
     schemas, file_default_instances, TableStruct_dataserver_2eproto::offsets,
     file_level_metadata_dataserver_2eproto, file_level_enum_descriptors_dataserver_2eproto,
     file_level_service_descriptors_dataserver_2eproto,
@@ -1037,7 +1101,6 @@ ShardMeta::ShardMeta(const ShardMeta& from)
     , decltype(_impl_.replicates_update_ts_){nullptr}
     , decltype(_impl_.leader_change_ts_){nullptr}
     , decltype(_impl_.shard_id_){}
-    , decltype(_impl_.storage_id_){}
     , decltype(_impl_.last_wal_index_){}
     , decltype(_impl_.is_leader_){}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -1077,7 +1140,6 @@ inline void ShardMeta::SharedCtor(
     , decltype(_impl_.replicates_update_ts_){nullptr}
     , decltype(_impl_.leader_change_ts_){nullptr}
     , decltype(_impl_.shard_id_){uint64_t{0u}}
-    , decltype(_impl_.storage_id_){uint64_t{0u}}
     , decltype(_impl_.last_wal_index_){uint64_t{0u}}
     , decltype(_impl_.is_leader_){false}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -1150,25 +1212,17 @@ const char* ShardMeta::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // uint64 storage_id = 2;
+      // .google.protobuf.Timestamp create_ts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .google.protobuf.Timestamp create_ts = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_create_ts(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated string replicates = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // repeated string replicates = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1177,29 +1231,29 @@ const char* ShardMeta::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
             CHK_(ptr);
             CHK_(::_pbi::VerifyUTF8(str, "bedrock.dataserver.ShardMeta.replicates"));
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp replicates_update_ts = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // .google.protobuf.Timestamp replicates_update_ts = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_replicates_update_ts(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool is_leader = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // bool is_leader = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _impl_.is_leader_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string leader = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+      // string leader = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_leader();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1207,17 +1261,17 @@ const char* ShardMeta::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp leader_change_ts = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+      // .google.protobuf.Timestamp leader_change_ts = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_leader_change_ts(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint64 last_wal_index = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // uint64 last_wal_index = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           _impl_.last_wal_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
@@ -1258,63 +1312,57 @@ uint8_t* ShardMeta::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
   }
 
-  // uint64 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
-  }
-
-  // .google.protobuf.Timestamp create_ts = 3;
+  // .google.protobuf.Timestamp create_ts = 2;
   if (this->_internal_has_create_ts()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::create_ts(this),
+      InternalWriteMessage(2, _Internal::create_ts(this),
         _Internal::create_ts(this).GetCachedSize(), target, stream);
   }
 
-  // repeated string replicates = 4;
+  // repeated string replicates = 3;
   for (int i = 0, n = this->_internal_replicates_size(); i < n; i++) {
     const auto& s = this->_internal_replicates(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "bedrock.dataserver.ShardMeta.replicates");
-    target = stream->WriteString(4, s, target);
+    target = stream->WriteString(3, s, target);
   }
 
-  // .google.protobuf.Timestamp replicates_update_ts = 5;
+  // .google.protobuf.Timestamp replicates_update_ts = 4;
   if (this->_internal_has_replicates_update_ts()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::replicates_update_ts(this),
+      InternalWriteMessage(4, _Internal::replicates_update_ts(this),
         _Internal::replicates_update_ts(this).GetCachedSize(), target, stream);
   }
 
-  // bool is_leader = 6;
+  // bool is_leader = 5;
   if (this->_internal_is_leader() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(6, this->_internal_is_leader(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_is_leader(), target);
   }
 
-  // string leader = 7;
+  // string leader = 6;
   if (!this->_internal_leader().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_leader().data(), static_cast<int>(this->_internal_leader().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "bedrock.dataserver.ShardMeta.leader");
     target = stream->WriteStringMaybeAliased(
-        7, this->_internal_leader(), target);
+        6, this->_internal_leader(), target);
   }
 
-  // .google.protobuf.Timestamp leader_change_ts = 8;
+  // .google.protobuf.Timestamp leader_change_ts = 7;
   if (this->_internal_has_leader_change_ts()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(8, _Internal::leader_change_ts(this),
+      InternalWriteMessage(7, _Internal::leader_change_ts(this),
         _Internal::leader_change_ts(this).GetCachedSize(), target, stream);
   }
 
-  // uint64 last_wal_index = 9;
+  // uint64 last_wal_index = 8;
   if (this->_internal_last_wal_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(9, this->_internal_last_wal_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_last_wal_index(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1333,7 +1381,7 @@ size_t ShardMeta::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string replicates = 4;
+  // repeated string replicates = 3;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.replicates_.size());
   for (int i = 0, n = _impl_.replicates_.size(); i < n; i++) {
@@ -1341,28 +1389,28 @@ size_t ShardMeta::ByteSizeLong() const {
       _impl_.replicates_.Get(i));
   }
 
-  // string leader = 7;
+  // string leader = 6;
   if (!this->_internal_leader().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_leader());
   }
 
-  // .google.protobuf.Timestamp create_ts = 3;
+  // .google.protobuf.Timestamp create_ts = 2;
   if (this->_internal_has_create_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.create_ts_);
   }
 
-  // .google.protobuf.Timestamp replicates_update_ts = 5;
+  // .google.protobuf.Timestamp replicates_update_ts = 4;
   if (this->_internal_has_replicates_update_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.replicates_update_ts_);
   }
 
-  // .google.protobuf.Timestamp leader_change_ts = 8;
+  // .google.protobuf.Timestamp leader_change_ts = 7;
   if (this->_internal_has_leader_change_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1374,17 +1422,12 @@ size_t ShardMeta::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
   }
 
-  // uint64 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
-  }
-
-  // uint64 last_wal_index = 9;
+  // uint64 last_wal_index = 8;
   if (this->_internal_last_wal_index() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_last_wal_index());
   }
 
-  // bool is_leader = 6;
+  // bool is_leader = 5;
   if (this->_internal_is_leader() != 0) {
     total_size += 1 + 1;
   }
@@ -1425,9 +1468,6 @@ void ShardMeta::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
   }
   if (from._internal_shard_id() != 0) {
     _this->_internal_set_shard_id(from._internal_shard_id());
-  }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
   }
   if (from._internal_last_wal_index() != 0) {
     _this->_internal_set_last_wal_index(from._internal_last_wal_index());
@@ -1688,7 +1728,6 @@ CreateShardRequest::CreateShardRequest(const CreateShardRequest& from)
     , decltype(_impl_.replica_update_ts_){nullptr}
     , decltype(_impl_.leader_change_ts_){nullptr}
     , decltype(_impl_.shard_id_){}
-    , decltype(_impl_.storage_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1709,9 +1748,7 @@ CreateShardRequest::CreateShardRequest(const CreateShardRequest& from)
   if (from._internal_has_leader_change_ts()) {
     _this->_impl_.leader_change_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.leader_change_ts_);
   }
-  ::memcpy(&_impl_.shard_id_, &from._impl_.shard_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.storage_id_) -
-    reinterpret_cast<char*>(&_impl_.shard_id_)) + sizeof(_impl_.storage_id_));
+  _this->_impl_.shard_id_ = from._impl_.shard_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.dataserver.CreateShardRequest)
 }
 
@@ -1726,7 +1763,6 @@ inline void CreateShardRequest::SharedCtor(
     , decltype(_impl_.replica_update_ts_){nullptr}
     , decltype(_impl_.leader_change_ts_){nullptr}
     , decltype(_impl_.shard_id_){uint64_t{0u}}
-    , decltype(_impl_.storage_id_){uint64_t{0u}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.leader_.InitDefault();
@@ -1777,9 +1813,7 @@ void CreateShardRequest::Clear() {
     delete _impl_.leader_change_ts_;
   }
   _impl_.leader_change_ts_ = nullptr;
-  ::memset(&_impl_.shard_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.storage_id_) -
-      reinterpret_cast<char*>(&_impl_.shard_id_)) + sizeof(_impl_.storage_id_));
+  _impl_.shard_id_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1797,25 +1831,17 @@ const char* CreateShardRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // uint64 storage_id = 2;
+      // .google.protobuf.Timestamp create_ts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .google.protobuf.Timestamp create_ts = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_create_ts(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated string replicates = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // repeated string replicates = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1824,21 +1850,21 @@ const char* CreateShardRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
             CHK_(ptr);
             CHK_(::_pbi::VerifyUTF8(str, "bedrock.dataserver.CreateShardRequest.replicates"));
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp replica_update_ts = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // .google.protobuf.Timestamp replica_update_ts = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_replica_update_ts(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string leader = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+      // string leader = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_leader();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1846,9 +1872,9 @@ const char* CreateShardRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp leader_change_ts = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+      // .google.protobuf.Timestamp leader_change_ts = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_leader_change_ts(), ptr);
           CHK_(ptr);
         } else
@@ -1889,50 +1915,44 @@ uint8_t* CreateShardRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
   }
 
-  // uint64 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_storage_id(), target);
-  }
-
-  // .google.protobuf.Timestamp create_ts = 3;
+  // .google.protobuf.Timestamp create_ts = 2;
   if (this->_internal_has_create_ts()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::create_ts(this),
+      InternalWriteMessage(2, _Internal::create_ts(this),
         _Internal::create_ts(this).GetCachedSize(), target, stream);
   }
 
-  // repeated string replicates = 4;
+  // repeated string replicates = 3;
   for (int i = 0, n = this->_internal_replicates_size(); i < n; i++) {
     const auto& s = this->_internal_replicates(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "bedrock.dataserver.CreateShardRequest.replicates");
-    target = stream->WriteString(4, s, target);
+    target = stream->WriteString(3, s, target);
   }
 
-  // .google.protobuf.Timestamp replica_update_ts = 5;
+  // .google.protobuf.Timestamp replica_update_ts = 4;
   if (this->_internal_has_replica_update_ts()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::replica_update_ts(this),
+      InternalWriteMessage(4, _Internal::replica_update_ts(this),
         _Internal::replica_update_ts(this).GetCachedSize(), target, stream);
   }
 
-  // string leader = 6;
+  // string leader = 5;
   if (!this->_internal_leader().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_leader().data(), static_cast<int>(this->_internal_leader().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "bedrock.dataserver.CreateShardRequest.leader");
     target = stream->WriteStringMaybeAliased(
-        6, this->_internal_leader(), target);
+        5, this->_internal_leader(), target);
   }
 
-  // .google.protobuf.Timestamp leader_change_ts = 7;
+  // .google.protobuf.Timestamp leader_change_ts = 6;
   if (this->_internal_has_leader_change_ts()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, _Internal::leader_change_ts(this),
+      InternalWriteMessage(6, _Internal::leader_change_ts(this),
         _Internal::leader_change_ts(this).GetCachedSize(), target, stream);
   }
 
@@ -1952,7 +1972,7 @@ size_t CreateShardRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string replicates = 4;
+  // repeated string replicates = 3;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.replicates_.size());
   for (int i = 0, n = _impl_.replicates_.size(); i < n; i++) {
@@ -1960,28 +1980,28 @@ size_t CreateShardRequest::ByteSizeLong() const {
       _impl_.replicates_.Get(i));
   }
 
-  // string leader = 6;
+  // string leader = 5;
   if (!this->_internal_leader().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_leader());
   }
 
-  // .google.protobuf.Timestamp create_ts = 3;
+  // .google.protobuf.Timestamp create_ts = 2;
   if (this->_internal_has_create_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.create_ts_);
   }
 
-  // .google.protobuf.Timestamp replica_update_ts = 5;
+  // .google.protobuf.Timestamp replica_update_ts = 4;
   if (this->_internal_has_replica_update_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.replica_update_ts_);
   }
 
-  // .google.protobuf.Timestamp leader_change_ts = 7;
+  // .google.protobuf.Timestamp leader_change_ts = 6;
   if (this->_internal_has_leader_change_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1991,11 +2011,6 @@ size_t CreateShardRequest::ByteSizeLong() const {
   // uint64 shard_id = 1;
   if (this->_internal_shard_id() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
-  }
-
-  // uint64 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_storage_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2035,9 +2050,6 @@ void CreateShardRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   if (from._internal_shard_id() != 0) {
     _this->_internal_set_shard_id(from._internal_shard_id());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
-  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2063,8 +2075,8 @@ void CreateShardRequest::InternalSwap(CreateShardRequest* other) {
       &other->_impl_.leader_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CreateShardRequest, _impl_.storage_id_)
-      + sizeof(CreateShardRequest::_impl_.storage_id_)
+      PROTOBUF_FIELD_OFFSET(CreateShardRequest, _impl_.shard_id_)
+      + sizeof(CreateShardRequest::_impl_.shard_id_)
       - PROTOBUF_FIELD_OFFSET(CreateShardRequest, _impl_.create_ts_)>(
           reinterpret_cast<char*>(&_impl_.create_ts_),
           reinterpret_cast<char*>(&other->_impl_.create_ts_));
@@ -2336,6 +2348,651 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteShardResponse::GetClassD
 
 // ===================================================================
 
+class ShardInfoRequest::_Internal {
+ public:
+};
+
+ShardInfoRequest::ShardInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:bedrock.dataserver.ShardInfoRequest)
+}
+ShardInfoRequest::ShardInfoRequest(const ShardInfoRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ShardInfoRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.shard_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.shard_id_ = from._impl_.shard_id_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.dataserver.ShardInfoRequest)
+}
+
+inline void ShardInfoRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.shard_id_){uint64_t{0u}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ShardInfoRequest::~ShardInfoRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.dataserver.ShardInfoRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ShardInfoRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ShardInfoRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ShardInfoRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.dataserver.ShardInfoRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.shard_id_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ShardInfoRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 shard_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ShardInfoRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.dataserver.ShardInfoRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.dataserver.ShardInfoRequest)
+  return target;
+}
+
+size_t ShardInfoRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.dataserver.ShardInfoRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardInfoRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ShardInfoRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardInfoRequest::GetClassData() const { return &_class_data_; }
+
+
+void ShardInfoRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ShardInfoRequest*>(&to_msg);
+  auto& from = static_cast<const ShardInfoRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.dataserver.ShardInfoRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_shard_id() != 0) {
+    _this->_internal_set_shard_id(from._internal_shard_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ShardInfoRequest::CopyFrom(const ShardInfoRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.dataserver.ShardInfoRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ShardInfoRequest::IsInitialized() const {
+  return true;
+}
+
+void ShardInfoRequest::InternalSwap(ShardInfoRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.shard_id_, other->_impl_.shard_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ShardInfoRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
+      file_level_metadata_dataserver_2eproto[9]);
+}
+
+// ===================================================================
+
+class ShardInfoResponse::_Internal {
+ public:
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const ShardInfoResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& replicates_update_ts(const ShardInfoResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts(const ShardInfoResponse* msg);
+};
+
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+ShardInfoResponse::_Internal::create_ts(const ShardInfoResponse* msg) {
+  return *msg->_impl_.create_ts_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+ShardInfoResponse::_Internal::replicates_update_ts(const ShardInfoResponse* msg) {
+  return *msg->_impl_.replicates_update_ts_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+ShardInfoResponse::_Internal::leader_change_ts(const ShardInfoResponse* msg) {
+  return *msg->_impl_.leader_change_ts_;
+}
+void ShardInfoResponse::clear_create_ts() {
+  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
+    delete _impl_.create_ts_;
+  }
+  _impl_.create_ts_ = nullptr;
+}
+void ShardInfoResponse::clear_replicates_update_ts() {
+  if (GetArenaForAllocation() == nullptr && _impl_.replicates_update_ts_ != nullptr) {
+    delete _impl_.replicates_update_ts_;
+  }
+  _impl_.replicates_update_ts_ = nullptr;
+}
+void ShardInfoResponse::clear_leader_change_ts() {
+  if (GetArenaForAllocation() == nullptr && _impl_.leader_change_ts_ != nullptr) {
+    delete _impl_.leader_change_ts_;
+  }
+  _impl_.leader_change_ts_ = nullptr;
+}
+ShardInfoResponse::ShardInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:bedrock.dataserver.ShardInfoResponse)
+}
+ShardInfoResponse::ShardInfoResponse(const ShardInfoResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ShardInfoResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.replicates_){from._impl_.replicates_}
+    , decltype(_impl_.leader_){}
+    , decltype(_impl_.create_ts_){nullptr}
+    , decltype(_impl_.replicates_update_ts_){nullptr}
+    , decltype(_impl_.leader_change_ts_){nullptr}
+    , decltype(_impl_.shard_id_){}
+    , decltype(_impl_.last_wal_index_){}
+    , decltype(_impl_.is_leader_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.leader_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.leader_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_leader().empty()) {
+    _this->_impl_.leader_.Set(from._internal_leader(), 
+      _this->GetArenaForAllocation());
+  }
+  if (from._internal_has_create_ts()) {
+    _this->_impl_.create_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.create_ts_);
+  }
+  if (from._internal_has_replicates_update_ts()) {
+    _this->_impl_.replicates_update_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.replicates_update_ts_);
+  }
+  if (from._internal_has_leader_change_ts()) {
+    _this->_impl_.leader_change_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.leader_change_ts_);
+  }
+  ::memcpy(&_impl_.shard_id_, &from._impl_.shard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.is_leader_) -
+    reinterpret_cast<char*>(&_impl_.shard_id_)) + sizeof(_impl_.is_leader_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.dataserver.ShardInfoResponse)
+}
+
+inline void ShardInfoResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.replicates_){arena}
+    , decltype(_impl_.leader_){}
+    , decltype(_impl_.create_ts_){nullptr}
+    , decltype(_impl_.replicates_update_ts_){nullptr}
+    , decltype(_impl_.leader_change_ts_){nullptr}
+    , decltype(_impl_.shard_id_){uint64_t{0u}}
+    , decltype(_impl_.last_wal_index_){uint64_t{0u}}
+    , decltype(_impl_.is_leader_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.leader_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.leader_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ShardInfoResponse::~ShardInfoResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.dataserver.ShardInfoResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ShardInfoResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.replicates_.~RepeatedPtrField();
+  _impl_.leader_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.create_ts_;
+  if (this != internal_default_instance()) delete _impl_.replicates_update_ts_;
+  if (this != internal_default_instance()) delete _impl_.leader_change_ts_;
+}
+
+void ShardInfoResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ShardInfoResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.dataserver.ShardInfoResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.replicates_.Clear();
+  _impl_.leader_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
+    delete _impl_.create_ts_;
+  }
+  _impl_.create_ts_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.replicates_update_ts_ != nullptr) {
+    delete _impl_.replicates_update_ts_;
+  }
+  _impl_.replicates_update_ts_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.leader_change_ts_ != nullptr) {
+    delete _impl_.leader_change_ts_;
+  }
+  _impl_.leader_change_ts_ = nullptr;
+  ::memset(&_impl_.shard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.is_leader_) -
+      reinterpret_cast<char*>(&_impl_.shard_id_)) + sizeof(_impl_.is_leader_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ShardInfoResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 shard_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp create_ts = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_create_ts(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string replicates = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_replicates();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "bedrock.dataserver.ShardInfoResponse.replicates"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp replicates_update_ts = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_replicates_update_ts(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool is_leader = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.is_leader_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string leader = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_leader();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "bedrock.dataserver.ShardInfoResponse.leader"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp leader_change_ts = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_leader_change_ts(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 last_wal_index = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.last_wal_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ShardInfoResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.dataserver.ShardInfoResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+  }
+
+  // .google.protobuf.Timestamp create_ts = 2;
+  if (this->_internal_has_create_ts()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::create_ts(this),
+        _Internal::create_ts(this).GetCachedSize(), target, stream);
+  }
+
+  // repeated string replicates = 3;
+  for (int i = 0, n = this->_internal_replicates_size(); i < n; i++) {
+    const auto& s = this->_internal_replicates(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "bedrock.dataserver.ShardInfoResponse.replicates");
+    target = stream->WriteString(3, s, target);
+  }
+
+  // .google.protobuf.Timestamp replicates_update_ts = 4;
+  if (this->_internal_has_replicates_update_ts()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, _Internal::replicates_update_ts(this),
+        _Internal::replicates_update_ts(this).GetCachedSize(), target, stream);
+  }
+
+  // bool is_leader = 5;
+  if (this->_internal_is_leader() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_is_leader(), target);
+  }
+
+  // string leader = 6;
+  if (!this->_internal_leader().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_leader().data(), static_cast<int>(this->_internal_leader().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "bedrock.dataserver.ShardInfoResponse.leader");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_leader(), target);
+  }
+
+  // .google.protobuf.Timestamp leader_change_ts = 7;
+  if (this->_internal_has_leader_change_ts()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, _Internal::leader_change_ts(this),
+        _Internal::leader_change_ts(this).GetCachedSize(), target, stream);
+  }
+
+  // uint64 last_wal_index = 8;
+  if (this->_internal_last_wal_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(8, this->_internal_last_wal_index(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.dataserver.ShardInfoResponse)
+  return target;
+}
+
+size_t ShardInfoResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.dataserver.ShardInfoResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string replicates = 3;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.replicates_.size());
+  for (int i = 0, n = _impl_.replicates_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.replicates_.Get(i));
+  }
+
+  // string leader = 6;
+  if (!this->_internal_leader().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_leader());
+  }
+
+  // .google.protobuf.Timestamp create_ts = 2;
+  if (this->_internal_has_create_ts()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.create_ts_);
+  }
+
+  // .google.protobuf.Timestamp replicates_update_ts = 4;
+  if (this->_internal_has_replicates_update_ts()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.replicates_update_ts_);
+  }
+
+  // .google.protobuf.Timestamp leader_change_ts = 7;
+  if (this->_internal_has_leader_change_ts()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.leader_change_ts_);
+  }
+
+  // uint64 shard_id = 1;
+  if (this->_internal_shard_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  }
+
+  // uint64 last_wal_index = 8;
+  if (this->_internal_last_wal_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_last_wal_index());
+  }
+
+  // bool is_leader = 5;
+  if (this->_internal_is_leader() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardInfoResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ShardInfoResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardInfoResponse::GetClassData() const { return &_class_data_; }
+
+
+void ShardInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ShardInfoResponse*>(&to_msg);
+  auto& from = static_cast<const ShardInfoResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.dataserver.ShardInfoResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.replicates_.MergeFrom(from._impl_.replicates_);
+  if (!from._internal_leader().empty()) {
+    _this->_internal_set_leader(from._internal_leader());
+  }
+  if (from._internal_has_create_ts()) {
+    _this->_internal_mutable_create_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_create_ts());
+  }
+  if (from._internal_has_replicates_update_ts()) {
+    _this->_internal_mutable_replicates_update_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_replicates_update_ts());
+  }
+  if (from._internal_has_leader_change_ts()) {
+    _this->_internal_mutable_leader_change_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_leader_change_ts());
+  }
+  if (from._internal_shard_id() != 0) {
+    _this->_internal_set_shard_id(from._internal_shard_id());
+  }
+  if (from._internal_last_wal_index() != 0) {
+    _this->_internal_set_last_wal_index(from._internal_last_wal_index());
+  }
+  if (from._internal_is_leader() != 0) {
+    _this->_internal_set_is_leader(from._internal_is_leader());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ShardInfoResponse::CopyFrom(const ShardInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.dataserver.ShardInfoResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ShardInfoResponse::IsInitialized() const {
+  return true;
+}
+
+void ShardInfoResponse::InternalSwap(ShardInfoResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.replicates_.InternalSwap(&other->_impl_.replicates_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.leader_, lhs_arena,
+      &other->_impl_.leader_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ShardInfoResponse, _impl_.is_leader_)
+      + sizeof(ShardInfoResponse::_impl_.is_leader_)
+      - PROTOBUF_FIELD_OFFSET(ShardInfoResponse, _impl_.create_ts_)>(
+          reinterpret_cast<char*>(&_impl_.create_ts_),
+          reinterpret_cast<char*>(&other->_impl_.create_ts_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ShardInfoResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
+      file_level_metadata_dataserver_2eproto[10]);
+}
+
+// ===================================================================
+
 class PullShardDataRequest::_Internal {
  public:
 };
@@ -2371,7 +3028,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PullShardDataRequest::GetClass
 ::PROTOBUF_NAMESPACE_ID::Metadata PullShardDataRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[9]);
+      file_level_metadata_dataserver_2eproto[11]);
 }
 
 // ===================================================================
@@ -2411,7 +3068,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PullShardDataResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata PullShardDataResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[10]);
+      file_level_metadata_dataserver_2eproto[12]);
 }
 
 // ===================================================================
@@ -2451,7 +3108,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransferShardRequest::GetClass
 ::PROTOBUF_NAMESPACE_ID::Metadata TransferShardRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[11]);
+      file_level_metadata_dataserver_2eproto[13]);
 }
 
 // ===================================================================
@@ -2491,7 +3148,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransferShardResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata TransferShardResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[12]);
+      file_level_metadata_dataserver_2eproto[14]);
 }
 
 // ===================================================================
@@ -2531,7 +3188,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddShardReplicaRequest::GetCla
 ::PROTOBUF_NAMESPACE_ID::Metadata AddShardReplicaRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[13]);
+      file_level_metadata_dataserver_2eproto[15]);
 }
 
 // ===================================================================
@@ -2571,7 +3228,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddShardReplicaResponse::GetCl
 ::PROTOBUF_NAMESPACE_ID::Metadata AddShardReplicaResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[14]);
+      file_level_metadata_dataserver_2eproto[16]);
 }
 
 // ===================================================================
@@ -2611,7 +3268,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteShardReplicaRequest::Get
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteShardReplicaRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[15]);
+      file_level_metadata_dataserver_2eproto[17]);
 }
 
 // ===================================================================
@@ -2651,7 +3308,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteShardReplicaResponse::Ge
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteShardReplicaResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[16]);
+      file_level_metadata_dataserver_2eproto[18]);
 }
 
 // ===================================================================
@@ -2920,7 +3577,7 @@ void TransferShardLeaderRequest::InternalSwap(TransferShardLeaderRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata TransferShardLeaderRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[17]);
+      file_level_metadata_dataserver_2eproto[19]);
 }
 
 // ===================================================================
@@ -2960,7 +3617,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransferShardLeaderResponse::G
 ::PROTOBUF_NAMESPACE_ID::Metadata TransferShardLeaderResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[18]);
+      file_level_metadata_dataserver_2eproto[20]);
 }
 
 // ===================================================================
@@ -3000,7 +3657,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LockShardRequest::GetClassData
 ::PROTOBUF_NAMESPACE_ID::Metadata LockShardRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[19]);
+      file_level_metadata_dataserver_2eproto[21]);
 }
 
 // ===================================================================
@@ -3040,7 +3697,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LockShardResponse::GetClassDat
 ::PROTOBUF_NAMESPACE_ID::Metadata LockShardResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[20]);
+      file_level_metadata_dataserver_2eproto[22]);
 }
 
 // ===================================================================
@@ -3080,7 +3737,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UnlockShardRequest::GetClassDa
 ::PROTOBUF_NAMESPACE_ID::Metadata UnlockShardRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[21]);
+      file_level_metadata_dataserver_2eproto[23]);
 }
 
 // ===================================================================
@@ -3120,7 +3777,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UnlockShardResponse::GetClassD
 ::PROTOBUF_NAMESPACE_ID::Metadata UnlockShardResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[22]);
+      file_level_metadata_dataserver_2eproto[24]);
 }
 
 // ===================================================================
@@ -3345,7 +4002,7 @@ void ShardReadRequest::InternalSwap(ShardReadRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardReadRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[23]);
+      file_level_metadata_dataserver_2eproto[25]);
 }
 
 // ===================================================================
@@ -3543,7 +4200,7 @@ void ShardReadResponse::InternalSwap(ShardReadResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardReadResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[24]);
+      file_level_metadata_dataserver_2eproto[26]);
 }
 
 // ===================================================================
@@ -3813,7 +4470,7 @@ void ShardWriteRequest::InternalSwap(ShardWriteRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardWriteRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[25]);
+      file_level_metadata_dataserver_2eproto[27]);
 }
 
 // ===================================================================
@@ -3991,7 +4648,7 @@ void ShardWriteResponse::InternalSwap(ShardWriteResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardWriteResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[26]);
+      file_level_metadata_dataserver_2eproto[28]);
 }
 
 // ===================================================================
@@ -4311,7 +4968,7 @@ void ShardAppendLogRequest_Entry::InternalSwap(ShardAppendLogRequest_Entry* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardAppendLogRequest_Entry::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[27]);
+      file_level_metadata_dataserver_2eproto[29]);
 }
 
 // ===================================================================
@@ -4575,7 +5232,7 @@ void ShardAppendLogRequest::InternalSwap(ShardAppendLogRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardAppendLogRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[28]);
+      file_level_metadata_dataserver_2eproto[30]);
 }
 
 // ===================================================================
@@ -4786,7 +5443,7 @@ void ShardAppendLogResponse::InternalSwap(ShardAppendLogResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardAppendLogResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[29]);
+      file_level_metadata_dataserver_2eproto[31]);
 }
 
 // ===================================================================
@@ -5044,7 +5701,7 @@ void ShardInstallSnapshotRequest::InternalSwap(ShardInstallSnapshotRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardInstallSnapshotRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[30]);
+      file_level_metadata_dataserver_2eproto[32]);
 }
 
 // ===================================================================
@@ -5084,7 +5741,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardInstallSnapshotResponse::
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardInstallSnapshotResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[31]);
+      file_level_metadata_dataserver_2eproto[33]);
 }
 
 // ===================================================================
@@ -5124,7 +5781,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardWriteReplicaRequest::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardWriteReplicaRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[32]);
+      file_level_metadata_dataserver_2eproto[34]);
 }
 
 // ===================================================================
@@ -5164,7 +5821,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardWriteReplicaResponse::Get
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardWriteReplicaResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[33]);
+      file_level_metadata_dataserver_2eproto[35]);
 }
 
 // ===================================================================
@@ -5204,7 +5861,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardRepairRequest::GetClassDa
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardRepairRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[34]);
+      file_level_metadata_dataserver_2eproto[36]);
 }
 
 // ===================================================================
@@ -5244,7 +5901,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardRepairResponse::GetClassD
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardRepairResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[35]);
+      file_level_metadata_dataserver_2eproto[37]);
 }
 
 // ===================================================================
@@ -5284,7 +5941,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataServerJoinRequest::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata DataServerJoinRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[36]);
+      file_level_metadata_dataserver_2eproto[38]);
 }
 
 // ===================================================================
@@ -5324,7 +5981,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataServerJoinResponse::GetCla
 ::PROTOBUF_NAMESPACE_ID::Metadata DataServerJoinResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[37]);
+      file_level_metadata_dataserver_2eproto[39]);
 }
 
 // ===================================================================
@@ -5364,7 +6021,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataServerLeaveRequest::GetCla
 ::PROTOBUF_NAMESPACE_ID::Metadata DataServerLeaveRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[38]);
+      file_level_metadata_dataserver_2eproto[40]);
 }
 
 // ===================================================================
@@ -5404,7 +6061,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataServerLeaveResponse::GetCl
 ::PROTOBUF_NAMESPACE_ID::Metadata DataServerLeaveResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dataserver_2eproto_getter, &descriptor_table_dataserver_2eproto_once,
-      file_level_metadata_dataserver_2eproto[39]);
+      file_level_metadata_dataserver_2eproto[41]);
 }
 
 // ===================================================================
@@ -5433,6 +6090,14 @@ void DataService::DeleteShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller
                          ::PROTOBUF_NAMESPACE_ID::Empty*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method DeleteShard() not implemented.");
+  done->Run();
+}
+
+void DataService::ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::dataserver::ShardInfoRequest*,
+                         ::bedrock::dataserver::ShardInfoResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method ShardInfo() not implemented.");
   done->Run();
 }
 
@@ -5500,6 +6165,14 @@ void DataService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
              done);
       break;
     case 2:
+      ShardInfo(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::dataserver::ShardInfoRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::dataserver::ShardInfoResponse*>(
+                 response),
+             done);
+      break;
+    case 3:
       TransferShardLeader(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::dataserver::TransferShardLeaderRequest*>(
                  request),
@@ -5507,7 +6180,7 @@ void DataService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 3:
+    case 4:
       ShardRead(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::dataserver::ShardReadRequest*>(
                  request),
@@ -5515,7 +6188,7 @@ void DataService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 4:
+    case 5:
       ShardWrite(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::dataserver::ShardWriteRequest*>(
                  request),
@@ -5523,7 +6196,7 @@ void DataService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 5:
+    case 6:
       ShardAppendLog(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::dataserver::ShardAppendLogRequest*>(
                  request),
@@ -5531,7 +6204,7 @@ void DataService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
-    case 6:
+    case 7:
       ShardInstallSnapshot(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::dataserver::ShardInstallSnapshotRequest*>(
                  request),
@@ -5554,14 +6227,16 @@ const ::PROTOBUF_NAMESPACE_ID::Message& DataService::GetRequestPrototype(
     case 1:
       return ::bedrock::dataserver::DeleteShardRequest::default_instance();
     case 2:
-      return ::bedrock::dataserver::TransferShardLeaderRequest::default_instance();
+      return ::bedrock::dataserver::ShardInfoRequest::default_instance();
     case 3:
-      return ::bedrock::dataserver::ShardReadRequest::default_instance();
+      return ::bedrock::dataserver::TransferShardLeaderRequest::default_instance();
     case 4:
-      return ::bedrock::dataserver::ShardWriteRequest::default_instance();
+      return ::bedrock::dataserver::ShardReadRequest::default_instance();
     case 5:
-      return ::bedrock::dataserver::ShardAppendLogRequest::default_instance();
+      return ::bedrock::dataserver::ShardWriteRequest::default_instance();
     case 6:
+      return ::bedrock::dataserver::ShardAppendLogRequest::default_instance();
+    case 7:
       return ::bedrock::dataserver::ShardInstallSnapshotRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
@@ -5579,14 +6254,16 @@ const ::PROTOBUF_NAMESPACE_ID::Message& DataService::GetResponsePrototype(
     case 1:
       return ::PROTOBUF_NAMESPACE_ID::Empty::default_instance();
     case 2:
-      return ::bedrock::dataserver::TransferShardLeaderResponse::default_instance();
+      return ::bedrock::dataserver::ShardInfoResponse::default_instance();
     case 3:
-      return ::bedrock::dataserver::ShardReadResponse::default_instance();
+      return ::bedrock::dataserver::TransferShardLeaderResponse::default_instance();
     case 4:
-      return ::bedrock::dataserver::ShardWriteResponse::default_instance();
+      return ::bedrock::dataserver::ShardReadResponse::default_instance();
     case 5:
-      return ::bedrock::dataserver::ShardAppendLogResponse::default_instance();
+      return ::bedrock::dataserver::ShardWriteResponse::default_instance();
     case 6:
+      return ::bedrock::dataserver::ShardAppendLogResponse::default_instance();
+    case 7:
       return ::bedrock::dataserver::ShardInstallSnapshotResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
@@ -5620,39 +6297,46 @@ void DataService_Stub::DeleteShard(::PROTOBUF_NAMESPACE_ID::RpcController* contr
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
 }
+void DataService_Stub::ShardInfo(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::dataserver::ShardInfoRequest* request,
+                              ::bedrock::dataserver::ShardInfoResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(2),
+                       controller, request, response, done);
+}
 void DataService_Stub::TransferShardLeader(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::dataserver::TransferShardLeaderRequest* request,
                               ::bedrock::dataserver::TransferShardLeaderResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(2),
+  channel_->CallMethod(descriptor()->method(3),
                        controller, request, response, done);
 }
 void DataService_Stub::ShardRead(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::dataserver::ShardReadRequest* request,
                               ::bedrock::dataserver::ShardReadResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(3),
+  channel_->CallMethod(descriptor()->method(4),
                        controller, request, response, done);
 }
 void DataService_Stub::ShardWrite(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::dataserver::ShardWriteRequest* request,
                               ::bedrock::dataserver::ShardWriteResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(4),
+  channel_->CallMethod(descriptor()->method(5),
                        controller, request, response, done);
 }
 void DataService_Stub::ShardAppendLog(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::dataserver::ShardAppendLogRequest* request,
                               ::bedrock::dataserver::ShardAppendLogResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(5),
+  channel_->CallMethod(descriptor()->method(6),
                        controller, request, response, done);
 }
 void DataService_Stub::ShardInstallSnapshot(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::dataserver::ShardInstallSnapshotRequest* request,
                               ::bedrock::dataserver::ShardInstallSnapshotResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(6),
+  channel_->CallMethod(descriptor()->method(7),
                        controller, request, response, done);
 }
 
@@ -5695,6 +6379,14 @@ Arena::CreateMaybeMessage< ::bedrock::dataserver::DeleteShardRequest >(Arena* ar
 template<> PROTOBUF_NOINLINE ::bedrock::dataserver::DeleteShardResponse*
 Arena::CreateMaybeMessage< ::bedrock::dataserver::DeleteShardResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::dataserver::DeleteShardResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::dataserver::ShardInfoRequest*
+Arena::CreateMaybeMessage< ::bedrock::dataserver::ShardInfoRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::dataserver::ShardInfoRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::dataserver::ShardInfoResponse*
+Arena::CreateMaybeMessage< ::bedrock::dataserver::ShardInfoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::dataserver::ShardInfoResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::bedrock::dataserver::PullShardDataRequest*
 Arena::CreateMaybeMessage< ::bedrock::dataserver::PullShardDataRequest >(Arena* arena) {
