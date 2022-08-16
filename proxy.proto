@@ -42,7 +42,7 @@ message BedRockKvDeleteResponse {
 }
 
 service ProxyService {
-    rpc BedRockKvSet(BedRockKvSetRequest) returns (BedRockKvSetRequest);
-    rpc BedRockKvGet(BedRockKvGetRequest) returns (BedRockKvGetRequest);
+    rpc BedRockKvSet(BedRockKvSetRequest) returns (BedRockKvSetResponse);
+    rpc BedRockKvGet(BedRockKvGetRequest) returns (BedRockKvGetResponse);
     rpc BedRockKvDelete(BedRockKvDeleteRequest) returns (BedRockKvDeleteResponse);
 }

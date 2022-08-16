@@ -1091,11 +1091,11 @@ class ProxyService : public ::PROTOBUF_NAMESPACE_ID::Service {
 
   virtual void BedRockKvSet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockKvSetRequest* request,
-                       ::bedrock::proxy::BedRockKvSetRequest* response,
+                       ::bedrock::proxy::BedRockKvSetResponse* response,
                        ::google::protobuf::Closure* done);
   virtual void BedRockKvGet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockKvGetRequest* request,
-                       ::bedrock::proxy::BedRockKvGetRequest* response,
+                       ::bedrock::proxy::BedRockKvGetResponse* response,
                        ::google::protobuf::Closure* done);
   virtual void BedRockKvDelete(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockKvDeleteRequest* request,
@@ -1132,11 +1132,11 @@ class ProxyService_Stub : public ProxyService {
 
   void BedRockKvSet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockKvSetRequest* request,
-                       ::bedrock::proxy::BedRockKvSetRequest* response,
+                       ::bedrock::proxy::BedRockKvSetResponse* response,
                        ::google::protobuf::Closure* done);
   void BedRockKvGet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockKvGetRequest* request,
-                       ::bedrock::proxy::BedRockKvGetRequest* response,
+                       ::bedrock::proxy::BedRockKvGetResponse* response,
                        ::google::protobuf::Closure* done);
   void BedRockKvDelete(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockKvDeleteRequest* request,

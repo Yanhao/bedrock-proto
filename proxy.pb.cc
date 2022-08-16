@@ -191,18 +191,18 @@ const char descriptor_table_protodef_proxy_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "KvDeleteResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock"
   ".proxy.Error*F\n\005Error\022\006\n\002OK\020\000\022\017\n\013NO_SUCH"
   "_KEY\020\001\022\026\n\022INVLIAD_PARAMETERS\020\002\022\014\n\007UNKNOW"
-  "N\020\377\0012\240\002\n\014ProxyService\022V\n\014BedRockKvSet\022\"."
-  "bedrock.proxy.BedRockKvSetRequest\032\".bedr"
-  "ock.proxy.BedRockKvSetRequest\022V\n\014BedRock"
-  "KvGet\022\".bedrock.proxy.BedRockKvGetReques"
-  "t\032\".bedrock.proxy.BedRockKvGetRequest\022`\n"
-  "\017BedRockKvDelete\022%.bedrock.proxy.BedRock"
-  "KvDeleteRequest\032&.bedrock.proxy.BedRockK"
-  "vDeleteResponseB\003\200\001\001b\006proto3"
+  "N\020\377\0012\242\002\n\014ProxyService\022W\n\014BedRockKvSet\022\"."
+  "bedrock.proxy.BedRockKvSetRequest\032#.bedr"
+  "ock.proxy.BedRockKvSetResponse\022W\n\014BedRoc"
+  "kKvGet\022\".bedrock.proxy.BedRockKvGetReque"
+  "st\032#.bedrock.proxy.BedRockKvGetResponse\022"
+  "`\n\017BedRockKvDelete\022%.bedrock.proxy.BedRo"
+  "ckKvDeleteRequest\032&.bedrock.proxy.BedRoc"
+  "kKvDeleteResponseB\003\200\001\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_proxy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proxy_2eproto = {
-    false, false, 788, descriptor_table_protodef_proxy_2eproto,
+    false, false, 790, descriptor_table_protodef_proxy_2eproto,
     "proxy.proto",
     &descriptor_table_proxy_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_proxy_2eproto::offsets,
@@ -1559,7 +1559,7 @@ const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* ProxyService::GetDescriptor() 
 
 void ProxyService::BedRockKvSet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                          const ::bedrock::proxy::BedRockKvSetRequest*,
-                         ::bedrock::proxy::BedRockKvSetRequest*,
+                         ::bedrock::proxy::BedRockKvSetResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method BedRockKvSet() not implemented.");
   done->Run();
@@ -1567,7 +1567,7 @@ void ProxyService::BedRockKvSet(::PROTOBUF_NAMESPACE_ID::RpcController* controll
 
 void ProxyService::BedRockKvGet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                          const ::bedrock::proxy::BedRockKvGetRequest*,
-                         ::bedrock::proxy::BedRockKvGetRequest*,
+                         ::bedrock::proxy::BedRockKvGetResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method BedRockKvGet() not implemented.");
   done->Run();
@@ -1592,7 +1592,7 @@ void ProxyService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* m
       BedRockKvSet(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::proxy::BedRockKvSetRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockKvSetRequest*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockKvSetResponse*>(
                  response),
              done);
       break;
@@ -1600,7 +1600,7 @@ void ProxyService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* m
       BedRockKvGet(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::proxy::BedRockKvGetRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockKvGetRequest*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockKvGetResponse*>(
                  response),
              done);
       break;
@@ -1640,9 +1640,9 @@ const ::PROTOBUF_NAMESPACE_ID::Message& ProxyService::GetResponsePrototype(
   GOOGLE_DCHECK_EQ(method->service(), descriptor());
   switch(method->index()) {
     case 0:
-      return ::bedrock::proxy::BedRockKvSetRequest::default_instance();
+      return ::bedrock::proxy::BedRockKvSetResponse::default_instance();
     case 1:
-      return ::bedrock::proxy::BedRockKvGetRequest::default_instance();
+      return ::bedrock::proxy::BedRockKvGetResponse::default_instance();
     case 2:
       return ::bedrock::proxy::BedRockKvDeleteResponse::default_instance();
     default:
@@ -1665,14 +1665,14 @@ ProxyService_Stub::~ProxyService_Stub() {
 
 void ProxyService_Stub::BedRockKvSet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::proxy::BedRockKvSetRequest* request,
-                              ::bedrock::proxy::BedRockKvSetRequest* response,
+                              ::bedrock::proxy::BedRockKvSetResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(0),
                        controller, request, response, done);
 }
 void ProxyService_Stub::BedRockKvGet(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::proxy::BedRockKvGetRequest* request,
-                              ::bedrock::proxy::BedRockKvGetRequest* response,
+                              ::bedrock::proxy::BedRockKvGetResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
