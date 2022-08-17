@@ -337,10 +337,11 @@ class Storage final :
 
   enum : int {
     kNameFieldNumber = 2,
-    kOwnerFieldNumber = 5,
+    kOwnerFieldNumber = 6,
     kDeletedTsFieldNumber = 3,
     kCreateTsFieldNumber = 4,
     kIdFieldNumber = 1,
+    kLastShardIsnFieldNumber = 5,
   };
   // string name = 2;
   void clear_name();
@@ -356,7 +357,7 @@ class Storage final :
   std::string* _internal_mutable_name();
   public:
 
-  // string owner = 5;
+  // string owner = 6;
   void clear_owner();
   const std::string& owner() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -415,6 +416,15 @@ class Storage final :
   void _internal_set_id(uint32_t value);
   public:
 
+  // uint32 last_shard_isn = 5;
+  void clear_last_shard_isn();
+  uint32_t last_shard_isn() const;
+  void set_last_shard_isn(uint32_t value);
+  private:
+  uint32_t _internal_last_shard_isn() const;
+  void _internal_set_last_shard_isn(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.Storage)
  private:
   class _Internal;
@@ -428,6 +438,7 @@ class Storage final :
     ::PROTOBUF_NAMESPACE_ID::Timestamp* deleted_ts_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts_;
     uint32_t id_;
+    uint32_t last_shard_isn_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6730,7 +6741,27 @@ inline void Storage::set_allocated_create_ts(::PROTOBUF_NAMESPACE_ID::Timestamp*
   // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.Storage.create_ts)
 }
 
-// string owner = 5;
+// uint32 last_shard_isn = 5;
+inline void Storage::clear_last_shard_isn() {
+  _impl_.last_shard_isn_ = 0u;
+}
+inline uint32_t Storage::_internal_last_shard_isn() const {
+  return _impl_.last_shard_isn_;
+}
+inline uint32_t Storage::last_shard_isn() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.Storage.last_shard_isn)
+  return _internal_last_shard_isn();
+}
+inline void Storage::_internal_set_last_shard_isn(uint32_t value) {
+  
+  _impl_.last_shard_isn_ = value;
+}
+inline void Storage::set_last_shard_isn(uint32_t value) {
+  _internal_set_last_shard_isn(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.Storage.last_shard_isn)
+}
+
+// string owner = 6;
 inline void Storage::clear_owner() {
   _impl_.owner_.ClearToEmpty();
 }

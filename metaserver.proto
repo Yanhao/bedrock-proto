@@ -15,7 +15,8 @@ message Storage {
     google.protobuf.Timestamp deleted_ts = 3;
     google.protobuf.Timestamp create_ts = 4;
 
-    string owner = 5;
+    uint32 last_shard_isn = 5; // internel serial number
+    string owner = 6;
 }
 
 message Shard {
