@@ -339,6 +339,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR RouteRecord::RouteRecord(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.addrs_)*/{}
+  , /*decltype(_impl_.leader_addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.shard_id_)*/uint64_t{0u}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RouteRecordDefaultTypeInternal {
@@ -737,6 +738,7 @@ const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _impl_.shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _impl_.leader_addr_),
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _impl_.addrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardList, _internal_metadata_),
@@ -870,21 +872,21 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 167, -1, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
   { 174, -1, -1, sizeof(::bedrock::metaserver::ShardRange)},
   { 182, -1, -1, sizeof(::bedrock::metaserver::RouteRecord)},
-  { 190, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
-  { 197, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
-  { 207, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
-  { 214, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
-  { 222, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
-  { 231, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
-  { 238, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
-  { 244, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
-  { 251, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
-  { 257, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
-  { 263, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
-  { 270, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
-  { 276, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
-  { 282, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
-  { 289, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
+  { 191, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
+  { 198, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
+  { 208, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
+  { 215, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
+  { 223, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
+  { 232, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
+  { 239, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
+  { 245, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
+  { 252, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
+  { 258, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
+  { 264, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
+  { 271, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
+  { 277, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
+  { 283, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
+  { 290, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -969,71 +971,72 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "\030\001 \003(\r\022\r\n\005names\030\002 \003(\t\"D\n\023GetStoragesResp"
   "onse\022-\n\010storages\030\001 \003(\0132\033.bedrock.metaser"
   "ver.Storage\"4\n\nShardRange\022\026\n\016start_shard"
-  "_id\030\001 \001(\004\022\016\n\006offset\030\002 \001(\004\".\n\013RouteRecord"
-  "\022\020\n\010shard_id\030\001 \001(\004\022\r\n\005addrs\030\002 \003(\t\"\036\n\tSha"
-  "rdList\022\021\n\tshard_ids\030\001 \003(\004\"\275\001\n\025GetShardRo"
-  "utesRequest\0224\n\013shards_list\030\001 \001(\0132\035.bedro"
-  "ck.metaserver.ShardListH\000\0225\n\013shard_range"
-  "\030\002 \001(\0132\036.bedrock.metaserver.ShardRangeH\000"
-  "\022-\n\ttimestamp\030\003 \001(\0132\032.google.protobuf.Ti"
-  "mestampB\010\n\006shards\"I\n\026GetShardRoutesRespo"
-  "nse\022/\n\006routes\030\001 \003(\0132\037.bedrock.metaserver"
-  ".RouteRecord\"c\n\036GetShardRoutesByStorageR"
-  "equest\022\022\n\nstorage_id\030\001 \001(\r\022-\n\ttimestamp\030"
-  "\002 \001(\0132\032.google.protobuf.Timestamp\"\222\001\n\037Ge"
-  "tShardRoutesByStorageResponse\022/\n\006routes\030"
-  "\001 \003(\0132\037.bedrock.metaserver.RouteRecord\022-"
-  "\n\ttimestamp\030\002 \001(\0132\032.google.protobuf.Time"
-  "stamp\022\017\n\007is_full\030\003 \001(\010\"$\n\024AddDataServerR"
-  "equest\022\014\n\004addr\030\001 \001(\t\"\027\n\025AddDataServerRes"
-  "ponse\"\'\n\027RemoveDataServerRequest\022\014\n\004addr"
-  "\030\001 \001(\t\"\032\n\030RemoveDataServerResponse\"\027\n\025Li"
-  "stDataServerRequest\"N\n\026ListDataServerRes"
-  "ponse\0224\n\014data_servers\030\001 \003(\0132\036.bedrock.me"
-  "taserver.DataServer\"\031\n\027UpdateDataServerR"
-  "equest\"\032\n\030UpdateDataServerResponse\"\036\n\020Sh"
-  "ardInfoRequest\022\n\n\002id\030\001 \001(\004\"=\n\021ShardInfoR"
-  "esponse\022(\n\005shard\030\001 \001(\0132\031.bedrock.metaser"
-  "ver.Shard2\354\013\n\013MetaService\022I\n\tHeartBeat\022$"
-  ".bedrock.metaserver.HeartBeatRequest\032\026.g"
-  "oogle.protobuf.Empty\022g\n\016GetShardRoutes\022)"
-  ".bedrock.metaserver.GetShardRoutesReques"
-  "t\032*.bedrock.metaserver.GetShardRoutesRes"
-  "ponse\022X\n\tShardInfo\022$.bedrock.metaserver."
-  "ShardInfoRequest\032%.bedrock.metaserver.Sh"
-  "ardInfoResponse\022^\n\013CreateShard\022&.bedrock"
-  ".metaserver.CreateShardRequest\032\'.bedrock"
-  ".metaserver.CreateShardResponse\022^\n\013Remov"
-  "eShard\022&.bedrock.metaserver.RemoveShardR"
-  "equest\032\'.bedrock.metaserver.RemoveShardR"
-  "esponse\022d\n\rCreateStorage\022(.bedrock.metas"
-  "erver.CreateStorageRequest\032).bedrock.met"
-  "aserver.CreateStorageResponse\022d\n\rDeleteS"
-  "torage\022(.bedrock.metaserver.DeleteStorag"
-  "eRequest\032).bedrock.metaserver.DeleteStor"
-  "ageResponse\022j\n\017UndeleteStorage\022*.bedrock"
-  ".metaserver.UndeleteStorageRequest\032+.bed"
-  "rock.metaserver.UndeleteStorageResponse\022"
-  "d\n\rRenameStorage\022(.bedrock.metaserver.Re"
-  "nameStorageRequest\032).bedrock.metaserver."
-  "RenameStorageResponse\022d\n\rResizeStorage\022("
-  ".bedrock.metaserver.ResizeStorageRequest"
-  "\032).bedrock.metaserver.ResizeStorageRespo"
-  "nse\022^\n\013GetStorages\022&.bedrock.metaserver."
-  "GetStoragesRequest\032\'.bedrock.metaserver."
-  "GetStoragesResponse\022d\n\rAddDataServer\022(.b"
-  "edrock.metaserver.AddDataServerRequest\032)"
-  ".bedrock.metaserver.AddDataServerRespons"
-  "e\022m\n\020RemoveDataServer\022+.bedrock.metaserv"
-  "er.RemoveDataServerRequest\032,.bedrock.met"
-  "aserver.RemoveDataServerResponse\022g\n\016List"
-  "DataServer\022).bedrock.metaserver.ListData"
-  "ServerRequest\032*.bedrock.metaserver.ListD"
-  "ataServerResponse\022m\n\020UpdateDataServer\022+."
-  "bedrock.metaserver.UpdateDataServerReque"
-  "st\032,.bedrock.metaserver.UpdateDataServer"
-  "ResponseB.Z)sr.ht/moyanhao/bedrock-metas"
-  "erver/service\200\001\001b\006proto3"
+  "_id\030\001 \001(\004\022\016\n\006offset\030\002 \001(\004\"C\n\013RouteRecord"
+  "\022\020\n\010shard_id\030\001 \001(\004\022\023\n\013leader_addr\030\002 \001(\t\022"
+  "\r\n\005addrs\030\003 \003(\t\"\036\n\tShardList\022\021\n\tshard_ids"
+  "\030\001 \003(\004\"\275\001\n\025GetShardRoutesRequest\0224\n\013shar"
+  "ds_list\030\001 \001(\0132\035.bedrock.metaserver.Shard"
+  "ListH\000\0225\n\013shard_range\030\002 \001(\0132\036.bedrock.me"
+  "taserver.ShardRangeH\000\022-\n\ttimestamp\030\003 \001(\013"
+  "2\032.google.protobuf.TimestampB\010\n\006shards\"I"
+  "\n\026GetShardRoutesResponse\022/\n\006routes\030\001 \003(\013"
+  "2\037.bedrock.metaserver.RouteRecord\"c\n\036Get"
+  "ShardRoutesByStorageRequest\022\022\n\nstorage_i"
+  "d\030\001 \001(\r\022-\n\ttimestamp\030\002 \001(\0132\032.google.prot"
+  "obuf.Timestamp\"\222\001\n\037GetShardRoutesByStora"
+  "geResponse\022/\n\006routes\030\001 \003(\0132\037.bedrock.met"
+  "aserver.RouteRecord\022-\n\ttimestamp\030\002 \001(\0132\032"
+  ".google.protobuf.Timestamp\022\017\n\007is_full\030\003 "
+  "\001(\010\"$\n\024AddDataServerRequest\022\014\n\004addr\030\001 \001("
+  "\t\"\027\n\025AddDataServerResponse\"\'\n\027RemoveData"
+  "ServerRequest\022\014\n\004addr\030\001 \001(\t\"\032\n\030RemoveDat"
+  "aServerResponse\"\027\n\025ListDataServerRequest"
+  "\"N\n\026ListDataServerResponse\0224\n\014data_serve"
+  "rs\030\001 \003(\0132\036.bedrock.metaserver.DataServer"
+  "\"\031\n\027UpdateDataServerRequest\"\032\n\030UpdateDat"
+  "aServerResponse\"\036\n\020ShardInfoRequest\022\n\n\002i"
+  "d\030\001 \001(\004\"=\n\021ShardInfoResponse\022(\n\005shard\030\001 "
+  "\001(\0132\031.bedrock.metaserver.Shard2\354\013\n\013MetaS"
+  "ervice\022I\n\tHeartBeat\022$.bedrock.metaserver"
+  ".HeartBeatRequest\032\026.google.protobuf.Empt"
+  "y\022g\n\016GetShardRoutes\022).bedrock.metaserver"
+  ".GetShardRoutesRequest\032*.bedrock.metaser"
+  "ver.GetShardRoutesResponse\022X\n\tShardInfo\022"
+  "$.bedrock.metaserver.ShardInfoRequest\032%."
+  "bedrock.metaserver.ShardInfoResponse\022^\n\013"
+  "CreateShard\022&.bedrock.metaserver.CreateS"
+  "hardRequest\032\'.bedrock.metaserver.CreateS"
+  "hardResponse\022^\n\013RemoveShard\022&.bedrock.me"
+  "taserver.RemoveShardRequest\032\'.bedrock.me"
+  "taserver.RemoveShardResponse\022d\n\rCreateSt"
+  "orage\022(.bedrock.metaserver.CreateStorage"
+  "Request\032).bedrock.metaserver.CreateStora"
+  "geResponse\022d\n\rDeleteStorage\022(.bedrock.me"
+  "taserver.DeleteStorageRequest\032).bedrock."
+  "metaserver.DeleteStorageResponse\022j\n\017Unde"
+  "leteStorage\022*.bedrock.metaserver.Undelet"
+  "eStorageRequest\032+.bedrock.metaserver.Und"
+  "eleteStorageResponse\022d\n\rRenameStorage\022(."
+  "bedrock.metaserver.RenameStorageRequest\032"
+  ").bedrock.metaserver.RenameStorageRespon"
+  "se\022d\n\rResizeStorage\022(.bedrock.metaserver"
+  ".ResizeStorageRequest\032).bedrock.metaserv"
+  "er.ResizeStorageResponse\022^\n\013GetStorages\022"
+  "&.bedrock.metaserver.GetStoragesRequest\032"
+  "\'.bedrock.metaserver.GetStoragesResponse"
+  "\022d\n\rAddDataServer\022(.bedrock.metaserver.A"
+  "ddDataServerRequest\032).bedrock.metaserver"
+  ".AddDataServerResponse\022m\n\020RemoveDataServ"
+  "er\022+.bedrock.metaserver.RemoveDataServer"
+  "Request\032,.bedrock.metaserver.RemoveDataS"
+  "erverResponse\022g\n\016ListDataServer\022).bedroc"
+  "k.metaserver.ListDataServerRequest\032*.bed"
+  "rock.metaserver.ListDataServerResponse\022m"
+  "\n\020UpdateDataServer\022+.bedrock.metaserver."
+  "UpdateDataServerRequest\032,.bedrock.metase"
+  "rver.UpdateDataServerResponseB.Z)sr.ht/m"
+  "oyanhao/bedrock-metaserver/service\200\001\001b\006p"
+  "roto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -1041,7 +1044,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_metaserver_2eproto_
 };
 static ::_pbi::once_flag descriptor_table_metaserver_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_metaserver_2eproto = {
-    false, false, 4144, descriptor_table_protodef_metaserver_2eproto,
+    false, false, 4165, descriptor_table_protodef_metaserver_2eproto,
     "metaserver.proto",
     &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 39,
     schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
@@ -5437,10 +5440,19 @@ RouteRecord::RouteRecord(const RouteRecord& from)
   RouteRecord* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.addrs_){from._impl_.addrs_}
+    , decltype(_impl_.leader_addr_){}
     , decltype(_impl_.shard_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.leader_addr_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.leader_addr_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_leader_addr().empty()) {
+    _this->_impl_.leader_addr_.Set(from._internal_leader_addr(), 
+      _this->GetArenaForAllocation());
+  }
   _this->_impl_.shard_id_ = from._impl_.shard_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RouteRecord)
 }
@@ -5451,9 +5463,14 @@ inline void RouteRecord::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.addrs_){arena}
+    , decltype(_impl_.leader_addr_){}
     , decltype(_impl_.shard_id_){uint64_t{0u}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.leader_addr_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.leader_addr_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RouteRecord::~RouteRecord() {
@@ -5468,6 +5485,7 @@ RouteRecord::~RouteRecord() {
 inline void RouteRecord::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.addrs_.~RepeatedPtrField();
+  _impl_.leader_addr_.Destroy();
 }
 
 void RouteRecord::SetCachedSize(int size) const {
@@ -5481,6 +5499,7 @@ void RouteRecord::Clear() {
   (void) cached_has_bits;
 
   _impl_.addrs_.Clear();
+  _impl_.leader_addr_.ClearToEmpty();
   _impl_.shard_id_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5499,9 +5518,19 @@ const char* RouteRecord::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         } else
           goto handle_unusual;
         continue;
-      // repeated string addrs = 2;
+      // string leader_addr = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_leader_addr();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.RouteRecord.leader_addr"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string addrs = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -5510,7 +5539,7 @@ const char* RouteRecord::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
             CHK_(ptr);
             CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.RouteRecord.addrs"));
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -5549,14 +5578,24 @@ uint8_t* RouteRecord::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
   }
 
-  // repeated string addrs = 2;
+  // string leader_addr = 2;
+  if (!this->_internal_leader_addr().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_leader_addr().data(), static_cast<int>(this->_internal_leader_addr().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "bedrock.metaserver.RouteRecord.leader_addr");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_leader_addr(), target);
+  }
+
+  // repeated string addrs = 3;
   for (int i = 0, n = this->_internal_addrs_size(); i < n; i++) {
     const auto& s = this->_internal_addrs(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "bedrock.metaserver.RouteRecord.addrs");
-    target = stream->WriteString(2, s, target);
+    target = stream->WriteString(3, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5575,12 +5614,19 @@ size_t RouteRecord::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string addrs = 2;
+  // repeated string addrs = 3;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.addrs_.size());
   for (int i = 0, n = _impl_.addrs_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
       _impl_.addrs_.Get(i));
+  }
+
+  // string leader_addr = 2;
+  if (!this->_internal_leader_addr().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_leader_addr());
   }
 
   // uint64 shard_id = 1;
@@ -5607,6 +5653,9 @@ void RouteRecord::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   (void) cached_has_bits;
 
   _this->_impl_.addrs_.MergeFrom(from._impl_.addrs_);
+  if (!from._internal_leader_addr().empty()) {
+    _this->_internal_set_leader_addr(from._internal_leader_addr());
+  }
   if (from._internal_shard_id() != 0) {
     _this->_internal_set_shard_id(from._internal_shard_id());
   }
@@ -5626,8 +5675,14 @@ bool RouteRecord::IsInitialized() const {
 
 void RouteRecord::InternalSwap(RouteRecord* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.addrs_.InternalSwap(&other->_impl_.addrs_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.leader_addr_, lhs_arena,
+      &other->_impl_.leader_addr_, rhs_arena
+  );
   swap(_impl_.shard_id_, other->_impl_.shard_id_);
 }
 

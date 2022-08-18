@@ -125,7 +125,8 @@ message ShardRange {
 
 message RouteRecord {
     uint64 shard_id = 1;
-    repeated string addrs = 2;
+    string leader_addr = 2;
+    repeated string addrs = 3;
 }
 
 message ShardList {

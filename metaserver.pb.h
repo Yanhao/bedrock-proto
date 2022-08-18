@@ -4019,10 +4019,11 @@ class RouteRecord final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAddrsFieldNumber = 2,
+    kAddrsFieldNumber = 3,
+    kLeaderAddrFieldNumber = 2,
     kShardIdFieldNumber = 1,
   };
-  // repeated string addrs = 2;
+  // repeated string addrs = 3;
   int addrs_size() const;
   private:
   int _internal_addrs_size() const;
@@ -4046,6 +4047,20 @@ class RouteRecord final :
   std::string* _internal_add_addrs();
   public:
 
+  // string leader_addr = 2;
+  void clear_leader_addr();
+  const std::string& leader_addr() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_leader_addr(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_leader_addr();
+  PROTOBUF_NODISCARD std::string* release_leader_addr();
+  void set_allocated_leader_addr(std::string* leader_addr);
+  private:
+  const std::string& _internal_leader_addr() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_leader_addr(const std::string& value);
+  std::string* _internal_mutable_leader_addr();
+  public:
+
   // uint64 shard_id = 1;
   void clear_shard_id();
   uint64_t shard_id() const;
@@ -4064,6 +4079,7 @@ class RouteRecord final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> addrs_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr leader_addr_;
     uint64_t shard_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -8460,7 +8476,57 @@ inline void RouteRecord::set_shard_id(uint64_t value) {
   // @@protoc_insertion_point(field_set:bedrock.metaserver.RouteRecord.shard_id)
 }
 
-// repeated string addrs = 2;
+// string leader_addr = 2;
+inline void RouteRecord::clear_leader_addr() {
+  _impl_.leader_addr_.ClearToEmpty();
+}
+inline const std::string& RouteRecord::leader_addr() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.RouteRecord.leader_addr)
+  return _internal_leader_addr();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RouteRecord::set_leader_addr(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.leader_addr_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.RouteRecord.leader_addr)
+}
+inline std::string* RouteRecord::mutable_leader_addr() {
+  std::string* _s = _internal_mutable_leader_addr();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.RouteRecord.leader_addr)
+  return _s;
+}
+inline const std::string& RouteRecord::_internal_leader_addr() const {
+  return _impl_.leader_addr_.Get();
+}
+inline void RouteRecord::_internal_set_leader_addr(const std::string& value) {
+  
+  _impl_.leader_addr_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RouteRecord::_internal_mutable_leader_addr() {
+  
+  return _impl_.leader_addr_.Mutable(GetArenaForAllocation());
+}
+inline std::string* RouteRecord::release_leader_addr() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.RouteRecord.leader_addr)
+  return _impl_.leader_addr_.Release();
+}
+inline void RouteRecord::set_allocated_leader_addr(std::string* leader_addr) {
+  if (leader_addr != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.leader_addr_.SetAllocated(leader_addr, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.leader_addr_.IsDefault()) {
+    _impl_.leader_addr_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.RouteRecord.leader_addr)
+}
+
+// repeated string addrs = 3;
 inline int RouteRecord::_internal_addrs_size() const {
   return _impl_.addrs_.size();
 }
