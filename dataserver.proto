@@ -17,13 +17,20 @@ message ShardMeta {
     string leader = 6;
     google.protobuf.Timestamp leader_change_ts = 7; // TODO: maybe we should use term, not ts here
     uint64 last_wal_index = 8;
+    bytes min_key = 9;
+    bytes max_key = 10;
 }
 
 message SplitShardRequest {
+    uint64 shard_id = 1;
+    uint64 new_shard_id = 2;
 }
+
 message SplitShardResponse {
 }
 message MergeShardRequest {
+    uint64 shard_id_a = 1;
+    uint64 shard_id_b = 2;
 }
 message MergeShardResponse {
 }
@@ -38,6 +45,9 @@ message CreateShardRequest {
 
     string leader = 5;
     google.protobuf.Timestamp leader_change_ts = 6;
+
+    bytes min_key = 7;
+    bytes max_key = 8;
 }
 
 message CreateShardResponse {
@@ -68,10 +78,25 @@ message PullShardDataRequest {
 message PullShardDataResponse {
 }
 
-message TransferShardRequest {
+message MigrateShardRequest {
+    enum Direction {
+        FROM = 0;
+        TO = 1;
+    }
+    message Entry {
+        bytes key = 3;
+        bytes value = 4;
+    }
+
+    uint64 shard_id_from = 1;
+    uint64 shard_id_to = 2;
+    string target_address = 3;
+    Direction direction = 4;
+
+    repeated Entry entries = 5;
 }
 
-message TransferShardResponse {
+message MigrateShardResponse {
 }
 
 message AddShardReplicaRequest {
@@ -165,13 +190,14 @@ message DataServerLeaveResponse {
 }
 
 service DataService {
-    // rpc SplitShard(SplitShardRequest) returns (SplitShardResponse);
-    // rpc MergeShard(MergeShardRequest) returns (MergeShardResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
     rpc DeleteShard(DeleteShardRequest) returns (google.protobuf.Empty);
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
+
+    rpc SplitShard(SplitShardRequest) returns (SplitShardResponse);
+    rpc MergeShard(MergeShardRequest) returns (MergeShardResponse);
+
     // rpc PullShardData(PullShardDataRequest) returns (PullShardDataResponse);
-    // rpc TransferShard(TransferShardRequest) returns (TransferShardResponse);
     // rpc AddShardReplica(AddShardReplicaRequest) returns (AddShardReplicaResponse);
     // rpc DeleteShardReplica(DeleteShardReplicaRequest) returns (DeleteShardReplicaResponse);
     rpc TransferShardLeader(TransferShardLeaderRequest) returns (TransferShardLeaderResponse);
@@ -183,6 +209,8 @@ service DataService {
 
     rpc ShardAppendLog(ShardAppendLogRequest) returns (ShardAppendLogResponse);
     rpc ShardInstallSnapshot(stream ShardInstallSnapshotRequest) returns (ShardInstallSnapshotResponse);
+
+    rpc MigrateShard(stream MigrateShardRequest) returns (MigrateShardResponse);
 
     // rpc ShardWriteReplica(ShardWriteReplicaRequest) returns (ShardWriteReplicaResponse);
     // rpc ShardInstallSnap(ShardInstallSnapRequest) returns (ShardInstallSnapResponse);

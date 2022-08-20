@@ -24,6 +24,8 @@ type MetaServiceClient interface {
 	ShardInfo(ctx context.Context, in *ShardInfoRequest, opts ...grpc.CallOption) (*ShardInfoResponse, error)
 	CreateShard(ctx context.Context, in *CreateShardRequest, opts ...grpc.CallOption) (*CreateShardResponse, error)
 	RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardResponse, error)
+	// rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
+	GetShardIDByKey(ctx context.Context, in *GetShardIDByKeyRequest, opts ...grpc.CallOption) (*GetShardIDByKeyResponse, error)
 	CreateStorage(ctx context.Context, in *CreateStorageRequest, opts ...grpc.CallOption) (*CreateStorageResponse, error)
 	DeleteStorage(ctx context.Context, in *DeleteStorageRequest, opts ...grpc.CallOption) (*DeleteStorageResponse, error)
 	UndeleteStorage(ctx context.Context, in *UndeleteStorageRequest, opts ...grpc.CallOption) (*UndeleteStorageResponse, error)
@@ -83,6 +85,15 @@ func (c *metaServiceClient) CreateShard(ctx context.Context, in *CreateShardRequ
 func (c *metaServiceClient) RemoveShard(ctx context.Context, in *RemoveShardRequest, opts ...grpc.CallOption) (*RemoveShardResponse, error) {
 	out := new(RemoveShardResponse)
 	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/RemoveShard", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *metaServiceClient) GetShardIDByKey(ctx context.Context, in *GetShardIDByKeyRequest, opts ...grpc.CallOption) (*GetShardIDByKeyResponse, error) {
+	out := new(GetShardIDByKeyResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/GetShardIDByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -188,6 +199,8 @@ type MetaServiceServer interface {
 	ShardInfo(context.Context, *ShardInfoRequest) (*ShardInfoResponse, error)
 	CreateShard(context.Context, *CreateShardRequest) (*CreateShardResponse, error)
 	RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardResponse, error)
+	// rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
+	GetShardIDByKey(context.Context, *GetShardIDByKeyRequest) (*GetShardIDByKeyResponse, error)
 	CreateStorage(context.Context, *CreateStorageRequest) (*CreateStorageResponse, error)
 	DeleteStorage(context.Context, *DeleteStorageRequest) (*DeleteStorageResponse, error)
 	UndeleteStorage(context.Context, *UndeleteStorageRequest) (*UndeleteStorageResponse, error)
@@ -219,6 +232,9 @@ func (UnimplementedMetaServiceServer) CreateShard(context.Context, *CreateShardR
 }
 func (UnimplementedMetaServiceServer) RemoveShard(context.Context, *RemoveShardRequest) (*RemoveShardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveShard not implemented")
+}
+func (UnimplementedMetaServiceServer) GetShardIDByKey(context.Context, *GetShardIDByKeyRequest) (*GetShardIDByKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetShardIDByKey not implemented")
 }
 func (UnimplementedMetaServiceServer) CreateStorage(context.Context, *CreateStorageRequest) (*CreateStorageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStorage not implemented")
@@ -349,6 +365,24 @@ func _MetaService_RemoveShard_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MetaServiceServer).RemoveShard(ctx, req.(*RemoveShardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MetaService_GetShardIDByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetShardIDByKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MetaServiceServer).GetShardIDByKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.metaserver.MetaService/GetShardIDByKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MetaServiceServer).GetShardIDByKey(ctx, req.(*GetShardIDByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -559,6 +593,10 @@ var MetaService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RemoveShard",
 			Handler:    _MetaService_RemoveShard_Handler,
+		},
+		{
+			MethodName: "GetShardIDByKey",
+			Handler:    _MetaService_GetShardIDByKey_Handler,
 		},
 		{
 			MethodName: "CreateStorage",

@@ -192,6 +192,15 @@ message ShardInfoResponse {
      Shard shard = 1;
 }
 
+message GetShardIDByKeyRequest {
+    uint32 storage_id = 1;
+    bytes key = 2;
+}
+
+message GetShardIDByKeyResponse {
+    uint64 shard_id = 1;
+}
+
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
@@ -200,6 +209,7 @@ service MetaService {
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
     rpc RemoveShard(RemoveShardRequest) returns (RemoveShardResponse);
     // rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
+    rpc GetShardIDByKey(GetShardIDByKeyRequest) returns (GetShardIDByKeyResponse);
 
     rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse);
     rpc DeleteStorage (DeleteStorageRequest) returns (DeleteStorageResponse);
