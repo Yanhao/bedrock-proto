@@ -1274,6 +1274,7 @@ class HeartBeatRequest final :
 
   enum : int {
     kAddrFieldNumber = 1,
+    kRestartingFieldNumber = 2,
   };
   // string addr = 1;
   void clear_addr();
@@ -1289,6 +1290,15 @@ class HeartBeatRequest final :
   std::string* _internal_mutable_addr();
   public:
 
+  // bool restarting = 2;
+  void clear_restarting();
+  bool restarting() const;
+  void set_restarting(bool value);
+  private:
+  bool _internal_restarting() const;
+  void _internal_set_restarting(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.HeartBeatRequest)
  private:
   class _Internal;
@@ -1298,6 +1308,7 @@ class HeartBeatRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr addr_;
+    bool restarting_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8144,6 +8155,26 @@ inline void HeartBeatRequest::set_allocated_addr(std::string* addr) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.HeartBeatRequest.addr)
+}
+
+// bool restarting = 2;
+inline void HeartBeatRequest::clear_restarting() {
+  _impl_.restarting_ = false;
+}
+inline bool HeartBeatRequest::_internal_restarting() const {
+  return _impl_.restarting_;
+}
+inline bool HeartBeatRequest::restarting() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.HeartBeatRequest.restarting)
+  return _internal_restarting();
+}
+inline void HeartBeatRequest::_internal_set_restarting(bool value) {
+  
+  _impl_.restarting_ = value;
+}
+inline void HeartBeatRequest::set_restarting(bool value) {
+  _internal_set_restarting(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.HeartBeatRequest.restarting)
 }
 
 // -------------------------------------------------------------------

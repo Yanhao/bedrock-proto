@@ -47,6 +47,7 @@ message Replicate {
 
 message HeartBeatRequest {
     string addr = 1;
+    bool restarting = 2;
 }
 
 message HeartBeatResponse {

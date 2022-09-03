@@ -96,6 +96,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR HeartBeatRequest::HeartBeatRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.restarting_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HeartBeatRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HeartBeatRequestDefaultTypeInternal()
@@ -630,6 +631,7 @@ const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, _impl_.addr_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, _impl_.restarting_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -895,42 +897,42 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 27, -1, -1, sizeof(::bedrock::metaserver::DataServer)},
   { 40, -1, -1, sizeof(::bedrock::metaserver::Replicate)},
   { 47, -1, -1, sizeof(::bedrock::metaserver::HeartBeatRequest)},
-  { 54, -1, -1, sizeof(::bedrock::metaserver::HeartBeatResponse)},
-  { 60, -1, -1, sizeof(::bedrock::metaserver::CreateStorageRequest)},
-  { 67, -1, -1, sizeof(::bedrock::metaserver::CreateStorageResponse)},
-  { 74, -1, -1, sizeof(::bedrock::metaserver::CreateShardRequest)},
-  { 82, -1, -1, sizeof(::bedrock::metaserver::CreateShardResponse)},
-  { 88, -1, -1, sizeof(::bedrock::metaserver::RemoveShardRequest)},
-  { 96, -1, -1, sizeof(::bedrock::metaserver::RemoveShardResponse)},
-  { 102, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageRequest)},
-  { 111, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageResponse)},
-  { 117, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageRequest)},
-  { 124, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageResponse)},
-  { 130, -1, -1, sizeof(::bedrock::metaserver::RenameStorageRequest)},
-  { 138, -1, -1, sizeof(::bedrock::metaserver::RenameStorageResponse)},
-  { 144, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageRequest)},
-  { 153, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageResponse)},
-  { 159, -1, -1, sizeof(::bedrock::metaserver::GetStoragesRequest)},
-  { 167, -1, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
-  { 174, -1, -1, sizeof(::bedrock::metaserver::ShardRange)},
-  { 182, -1, -1, sizeof(::bedrock::metaserver::RouteRecord)},
-  { 191, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
-  { 198, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
-  { 208, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
-  { 215, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
-  { 223, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
-  { 232, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
-  { 239, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
-  { 245, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
-  { 252, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
-  { 258, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
-  { 264, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
-  { 271, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
-  { 277, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
-  { 283, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
-  { 290, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
-  { 297, -1, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyRequest)},
-  { 305, -1, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyResponse)},
+  { 55, -1, -1, sizeof(::bedrock::metaserver::HeartBeatResponse)},
+  { 61, -1, -1, sizeof(::bedrock::metaserver::CreateStorageRequest)},
+  { 68, -1, -1, sizeof(::bedrock::metaserver::CreateStorageResponse)},
+  { 75, -1, -1, sizeof(::bedrock::metaserver::CreateShardRequest)},
+  { 83, -1, -1, sizeof(::bedrock::metaserver::CreateShardResponse)},
+  { 89, -1, -1, sizeof(::bedrock::metaserver::RemoveShardRequest)},
+  { 97, -1, -1, sizeof(::bedrock::metaserver::RemoveShardResponse)},
+  { 103, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageRequest)},
+  { 112, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageResponse)},
+  { 118, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageRequest)},
+  { 125, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageResponse)},
+  { 131, -1, -1, sizeof(::bedrock::metaserver::RenameStorageRequest)},
+  { 139, -1, -1, sizeof(::bedrock::metaserver::RenameStorageResponse)},
+  { 145, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageRequest)},
+  { 154, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageResponse)},
+  { 160, -1, -1, sizeof(::bedrock::metaserver::GetStoragesRequest)},
+  { 168, -1, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
+  { 175, -1, -1, sizeof(::bedrock::metaserver::ShardRange)},
+  { 183, -1, -1, sizeof(::bedrock::metaserver::RouteRecord)},
+  { 192, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
+  { 199, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
+  { 209, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
+  { 216, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
+  { 224, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
+  { 233, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
+  { 240, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
+  { 246, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
+  { 253, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
+  { 259, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
+  { 265, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
+  { 272, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
+  { 278, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
+  { 284, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
+  { 291, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
+  { 298, -1, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyRequest)},
+  { 306, -1, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -997,97 +999,97 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "ee\030\004 \001(\004\0225\n\021last_heartbeat_ts\030\005 \001(\0132\032.go"
   "ogle.protobuf.Timestamp\022\016\n\006status\030\006 \001(\t\022"
   "\013\n\003idc\030\007 \001(\t\"\032\n\tReplicate\022\r\n\005addrs\030\001 \003(\t"
-  "\" \n\020HeartBeatRequest\022\014\n\004addr\030\001 \001(\t\"\023\n\021He"
-  "artBeatResponse\"$\n\024CreateStorageRequest\022"
-  "\014\n\004name\030\001 \001(\t\"#\n\025CreateStorageResponse\022\n"
-  "\n\002id\030\001 \001(\004\";\n\022CreateShardRequest\022\022\n\nstor"
-  "age_id\030\001 \001(\r\022\021\n\tshard_isn\030\002 \001(\r\"\025\n\023Creat"
-  "eShardResponse\";\n\022RemoveShardRequest\022\022\n\n"
-  "storage_id\030\001 \001(\r\022\021\n\tshard_isn\030\002 \001(\r\"\025\n\023R"
-  "emoveShardResponse\"N\n\024DeleteStorageReque"
-  "st\022\n\n\002id\030\001 \001(\r\022\023\n\013real_delete\030\002 \001(\010\022\025\n\rr"
-  "ecycle_after\030\003 \001(\004\"\027\n\025DeleteStorageRespo"
-  "nse\"$\n\026UndeleteStorageRequest\022\n\n\002id\030\001 \001("
-  "\r\"\031\n\027UndeleteStorageResponse\"4\n\024RenameSt"
-  "orageRequest\022\n\n\002id\030\001 \001(\r\022\020\n\010new_name\030\002 \001"
-  "(\t\"\027\n\025RenameStorageResponse\"M\n\024ResizeSto"
-  "rageRequest\022\n\n\002id\030\001 \001(\r\022\020\n\010new_size\030\002 \001("
-  "\004\022\027\n\017new_shard_count\030\003 \001(\004\"\027\n\025ResizeStor"
-  "ageResponse\"0\n\022GetStoragesRequest\022\013\n\003ids"
-  "\030\001 \003(\r\022\r\n\005names\030\002 \003(\t\"D\n\023GetStoragesResp"
-  "onse\022-\n\010storages\030\001 \003(\0132\033.bedrock.metaser"
-  "ver.Storage\"4\n\nShardRange\022\026\n\016start_shard"
-  "_id\030\001 \001(\004\022\016\n\006offset\030\002 \001(\004\"C\n\013RouteRecord"
-  "\022\020\n\010shard_id\030\001 \001(\004\022\023\n\013leader_addr\030\002 \001(\t\022"
-  "\r\n\005addrs\030\003 \003(\t\"\036\n\tShardList\022\021\n\tshard_ids"
-  "\030\001 \003(\004\"\275\001\n\025GetShardRoutesRequest\0224\n\013shar"
-  "ds_list\030\001 \001(\0132\035.bedrock.metaserver.Shard"
-  "ListH\000\0225\n\013shard_range\030\002 \001(\0132\036.bedrock.me"
-  "taserver.ShardRangeH\000\022-\n\ttimestamp\030\003 \001(\013"
-  "2\032.google.protobuf.TimestampB\010\n\006shards\"I"
-  "\n\026GetShardRoutesResponse\022/\n\006routes\030\001 \003(\013"
-  "2\037.bedrock.metaserver.RouteRecord\"c\n\036Get"
-  "ShardRoutesByStorageRequest\022\022\n\nstorage_i"
-  "d\030\001 \001(\r\022-\n\ttimestamp\030\002 \001(\0132\032.google.prot"
-  "obuf.Timestamp\"\222\001\n\037GetShardRoutesByStora"
-  "geResponse\022/\n\006routes\030\001 \003(\0132\037.bedrock.met"
-  "aserver.RouteRecord\022-\n\ttimestamp\030\002 \001(\0132\032"
-  ".google.protobuf.Timestamp\022\017\n\007is_full\030\003 "
-  "\001(\010\"$\n\024AddDataServerRequest\022\014\n\004addr\030\001 \001("
-  "\t\"\027\n\025AddDataServerResponse\"\'\n\027RemoveData"
-  "ServerRequest\022\014\n\004addr\030\001 \001(\t\"\032\n\030RemoveDat"
-  "aServerResponse\"\027\n\025ListDataServerRequest"
-  "\"N\n\026ListDataServerResponse\0224\n\014data_serve"
-  "rs\030\001 \003(\0132\036.bedrock.metaserver.DataServer"
-  "\"\031\n\027UpdateDataServerRequest\"\032\n\030UpdateDat"
-  "aServerResponse\"\036\n\020ShardInfoRequest\022\n\n\002i"
-  "d\030\001 \001(\004\"=\n\021ShardInfoResponse\022(\n\005shard\030\001 "
-  "\001(\0132\031.bedrock.metaserver.Shard\"9\n\026GetSha"
-  "rdIDByKeyRequest\022\022\n\nstorage_id\030\001 \001(\r\022\013\n\003"
-  "key\030\002 \001(\014\"+\n\027GetShardIDByKeyResponse\022\020\n\010"
-  "shard_id\030\001 \001(\0042\330\014\n\013MetaService\022I\n\tHeartB"
-  "eat\022$.bedrock.metaserver.HeartBeatReques"
-  "t\032\026.google.protobuf.Empty\022g\n\016GetShardRou"
-  "tes\022).bedrock.metaserver.GetShardRoutesR"
-  "equest\032*.bedrock.metaserver.GetShardRout"
-  "esResponse\022X\n\tShardInfo\022$.bedrock.metase"
-  "rver.ShardInfoRequest\032%.bedrock.metaserv"
-  "er.ShardInfoResponse\022^\n\013CreateShard\022&.be"
-  "drock.metaserver.CreateShardRequest\032\'.be"
-  "drock.metaserver.CreateShardResponse\022^\n\013"
-  "RemoveShard\022&.bedrock.metaserver.RemoveS"
-  "hardRequest\032\'.bedrock.metaserver.RemoveS"
-  "hardResponse\022j\n\017GetShardIDByKey\022*.bedroc"
-  "k.metaserver.GetShardIDByKeyRequest\032+.be"
-  "drock.metaserver.GetShardIDByKeyResponse"
-  "\022d\n\rCreateStorage\022(.bedrock.metaserver.C"
-  "reateStorageRequest\032).bedrock.metaserver"
-  ".CreateStorageResponse\022d\n\rDeleteStorage\022"
-  "(.bedrock.metaserver.DeleteStorageReques"
-  "t\032).bedrock.metaserver.DeleteStorageResp"
-  "onse\022j\n\017UndeleteStorage\022*.bedrock.metase"
-  "rver.UndeleteStorageRequest\032+.bedrock.me"
-  "taserver.UndeleteStorageResponse\022d\n\rRena"
-  "meStorage\022(.bedrock.metaserver.RenameSto"
-  "rageRequest\032).bedrock.metaserver.RenameS"
-  "torageResponse\022d\n\rResizeStorage\022(.bedroc"
-  "k.metaserver.ResizeStorageRequest\032).bedr"
-  "ock.metaserver.ResizeStorageResponse\022^\n\013"
-  "GetStorages\022&.bedrock.metaserver.GetStor"
-  "agesRequest\032\'.bedrock.metaserver.GetStor"
-  "agesResponse\022d\n\rAddDataServer\022(.bedrock."
-  "metaserver.AddDataServerRequest\032).bedroc"
-  "k.metaserver.AddDataServerResponse\022m\n\020Re"
-  "moveDataServer\022+.bedrock.metaserver.Remo"
-  "veDataServerRequest\032,.bedrock.metaserver"
-  ".RemoveDataServerResponse\022g\n\016ListDataSer"
-  "ver\022).bedrock.metaserver.ListDataServerR"
-  "equest\032*.bedrock.metaserver.ListDataServ"
-  "erResponse\022m\n\020UpdateDataServer\022+.bedrock"
-  ".metaserver.UpdateDataServerRequest\032,.be"
-  "drock.metaserver.UpdateDataServerRespons"
-  "eB.Z)sr.ht/moyanhao/bedrock-metaserver/s"
-  "ervice\200\001\001b\006proto3"
+  "\"4\n\020HeartBeatRequest\022\014\n\004addr\030\001 \001(\t\022\022\n\nre"
+  "starting\030\002 \001(\010\"\023\n\021HeartBeatResponse\"$\n\024C"
+  "reateStorageRequest\022\014\n\004name\030\001 \001(\t\"#\n\025Cre"
+  "ateStorageResponse\022\n\n\002id\030\001 \001(\004\";\n\022Create"
+  "ShardRequest\022\022\n\nstorage_id\030\001 \001(\r\022\021\n\tshar"
+  "d_isn\030\002 \001(\r\"\025\n\023CreateShardResponse\";\n\022Re"
+  "moveShardRequest\022\022\n\nstorage_id\030\001 \001(\r\022\021\n\t"
+  "shard_isn\030\002 \001(\r\"\025\n\023RemoveShardResponse\"N"
+  "\n\024DeleteStorageRequest\022\n\n\002id\030\001 \001(\r\022\023\n\013re"
+  "al_delete\030\002 \001(\010\022\025\n\rrecycle_after\030\003 \001(\004\"\027"
+  "\n\025DeleteStorageResponse\"$\n\026UndeleteStora"
+  "geRequest\022\n\n\002id\030\001 \001(\r\"\031\n\027UndeleteStorage"
+  "Response\"4\n\024RenameStorageRequest\022\n\n\002id\030\001"
+  " \001(\r\022\020\n\010new_name\030\002 \001(\t\"\027\n\025RenameStorageR"
+  "esponse\"M\n\024ResizeStorageRequest\022\n\n\002id\030\001 "
+  "\001(\r\022\020\n\010new_size\030\002 \001(\004\022\027\n\017new_shard_count"
+  "\030\003 \001(\004\"\027\n\025ResizeStorageResponse\"0\n\022GetSt"
+  "oragesRequest\022\013\n\003ids\030\001 \003(\r\022\r\n\005names\030\002 \003("
+  "\t\"D\n\023GetStoragesResponse\022-\n\010storages\030\001 \003"
+  "(\0132\033.bedrock.metaserver.Storage\"4\n\nShard"
+  "Range\022\026\n\016start_shard_id\030\001 \001(\004\022\016\n\006offset\030"
+  "\002 \001(\004\"C\n\013RouteRecord\022\020\n\010shard_id\030\001 \001(\004\022\023"
+  "\n\013leader_addr\030\002 \001(\t\022\r\n\005addrs\030\003 \003(\t\"\036\n\tSh"
+  "ardList\022\021\n\tshard_ids\030\001 \003(\004\"\275\001\n\025GetShardR"
+  "outesRequest\0224\n\013shards_list\030\001 \001(\0132\035.bedr"
+  "ock.metaserver.ShardListH\000\0225\n\013shard_rang"
+  "e\030\002 \001(\0132\036.bedrock.metaserver.ShardRangeH"
+  "\000\022-\n\ttimestamp\030\003 \001(\0132\032.google.protobuf.T"
+  "imestampB\010\n\006shards\"I\n\026GetShardRoutesResp"
+  "onse\022/\n\006routes\030\001 \003(\0132\037.bedrock.metaserve"
+  "r.RouteRecord\"c\n\036GetShardRoutesByStorage"
+  "Request\022\022\n\nstorage_id\030\001 \001(\r\022-\n\ttimestamp"
+  "\030\002 \001(\0132\032.google.protobuf.Timestamp\"\222\001\n\037G"
+  "etShardRoutesByStorageResponse\022/\n\006routes"
+  "\030\001 \003(\0132\037.bedrock.metaserver.RouteRecord\022"
+  "-\n\ttimestamp\030\002 \001(\0132\032.google.protobuf.Tim"
+  "estamp\022\017\n\007is_full\030\003 \001(\010\"$\n\024AddDataServer"
+  "Request\022\014\n\004addr\030\001 \001(\t\"\027\n\025AddDataServerRe"
+  "sponse\"\'\n\027RemoveDataServerRequest\022\014\n\004add"
+  "r\030\001 \001(\t\"\032\n\030RemoveDataServerResponse\"\027\n\025L"
+  "istDataServerRequest\"N\n\026ListDataServerRe"
+  "sponse\0224\n\014data_servers\030\001 \003(\0132\036.bedrock.m"
+  "etaserver.DataServer\"\031\n\027UpdateDataServer"
+  "Request\"\032\n\030UpdateDataServerResponse\"\036\n\020S"
+  "hardInfoRequest\022\n\n\002id\030\001 \001(\004\"=\n\021ShardInfo"
+  "Response\022(\n\005shard\030\001 \001(\0132\031.bedrock.metase"
+  "rver.Shard\"9\n\026GetShardIDByKeyRequest\022\022\n\n"
+  "storage_id\030\001 \001(\r\022\013\n\003key\030\002 \001(\014\"+\n\027GetShar"
+  "dIDByKeyResponse\022\020\n\010shard_id\030\001 \001(\0042\330\014\n\013M"
+  "etaService\022I\n\tHeartBeat\022$.bedrock.metase"
+  "rver.HeartBeatRequest\032\026.google.protobuf."
+  "Empty\022g\n\016GetShardRoutes\022).bedrock.metase"
+  "rver.GetShardRoutesRequest\032*.bedrock.met"
+  "aserver.GetShardRoutesResponse\022X\n\tShardI"
+  "nfo\022$.bedrock.metaserver.ShardInfoReques"
+  "t\032%.bedrock.metaserver.ShardInfoResponse"
+  "\022^\n\013CreateShard\022&.bedrock.metaserver.Cre"
+  "ateShardRequest\032\'.bedrock.metaserver.Cre"
+  "ateShardResponse\022^\n\013RemoveShard\022&.bedroc"
+  "k.metaserver.RemoveShardRequest\032\'.bedroc"
+  "k.metaserver.RemoveShardResponse\022j\n\017GetS"
+  "hardIDByKey\022*.bedrock.metaserver.GetShar"
+  "dIDByKeyRequest\032+.bedrock.metaserver.Get"
+  "ShardIDByKeyResponse\022d\n\rCreateStorage\022(."
+  "bedrock.metaserver.CreateStorageRequest\032"
+  ").bedrock.metaserver.CreateStorageRespon"
+  "se\022d\n\rDeleteStorage\022(.bedrock.metaserver"
+  ".DeleteStorageRequest\032).bedrock.metaserv"
+  "er.DeleteStorageResponse\022j\n\017UndeleteStor"
+  "age\022*.bedrock.metaserver.UndeleteStorage"
+  "Request\032+.bedrock.metaserver.UndeleteSto"
+  "rageResponse\022d\n\rRenameStorage\022(.bedrock."
+  "metaserver.RenameStorageRequest\032).bedroc"
+  "k.metaserver.RenameStorageResponse\022d\n\rRe"
+  "sizeStorage\022(.bedrock.metaserver.ResizeS"
+  "torageRequest\032).bedrock.metaserver.Resiz"
+  "eStorageResponse\022^\n\013GetStorages\022&.bedroc"
+  "k.metaserver.GetStoragesRequest\032\'.bedroc"
+  "k.metaserver.GetStoragesResponse\022d\n\rAddD"
+  "ataServer\022(.bedrock.metaserver.AddDataSe"
+  "rverRequest\032).bedrock.metaserver.AddData"
+  "ServerResponse\022m\n\020RemoveDataServer\022+.bed"
+  "rock.metaserver.RemoveDataServerRequest\032"
+  ",.bedrock.metaserver.RemoveDataServerRes"
+  "ponse\022g\n\016ListDataServer\022).bedrock.metase"
+  "rver.ListDataServerRequest\032*.bedrock.met"
+  "aserver.ListDataServerResponse\022m\n\020Update"
+  "DataServer\022+.bedrock.metaserver.UpdateDa"
+  "taServerRequest\032,.bedrock.metaserver.Upd"
+  "ateDataServerResponseB.Z)sr.ht/moyanhao/"
+  "bedrock-metaserver/service\200\001\001b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -1095,7 +1097,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_metaserver_2eproto_
 };
 static ::_pbi::once_flag descriptor_table_metaserver_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_metaserver_2eproto = {
-    false, false, 4377, descriptor_table_protodef_metaserver_2eproto,
+    false, false, 4397, descriptor_table_protodef_metaserver_2eproto,
     "metaserver.proto",
     &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 41,
     schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
@@ -2699,6 +2701,7 @@ HeartBeatRequest::HeartBeatRequest(const HeartBeatRequest& from)
   HeartBeatRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.addr_){}
+    , decltype(_impl_.restarting_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2710,6 +2713,7 @@ HeartBeatRequest::HeartBeatRequest(const HeartBeatRequest& from)
     _this->_impl_.addr_.Set(from._internal_addr(), 
       _this->GetArenaForAllocation());
   }
+  _this->_impl_.restarting_ = from._impl_.restarting_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.HeartBeatRequest)
 }
 
@@ -2719,6 +2723,7 @@ inline void HeartBeatRequest::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.addr_){}
+    , decltype(_impl_.restarting_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.addr_.InitDefault();
@@ -2752,6 +2757,7 @@ void HeartBeatRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.addr_.ClearToEmpty();
+  _impl_.restarting_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2768,6 +2774,14 @@ const char* HeartBeatRequest::_InternalParse(const char* ptr, ::_pbi::ParseConte
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.HeartBeatRequest.addr"));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool restarting = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.restarting_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -2810,6 +2824,12 @@ uint8_t* HeartBeatRequest::_InternalSerialize(
         1, this->_internal_addr(), target);
   }
 
+  // bool restarting = 2;
+  if (this->_internal_restarting() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_restarting(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2833,6 +2853,11 @@ size_t HeartBeatRequest::ByteSizeLong() const {
         this->_internal_addr());
   }
 
+  // bool restarting = 2;
+  if (this->_internal_restarting() != 0) {
+    total_size += 1 + 1;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -2853,6 +2878,9 @@ void HeartBeatRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
 
   if (!from._internal_addr().empty()) {
     _this->_internal_set_addr(from._internal_addr());
+  }
+  if (from._internal_restarting() != 0) {
+    _this->_internal_set_restarting(from._internal_restarting());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2877,6 +2905,7 @@ void HeartBeatRequest::InternalSwap(HeartBeatRequest* other) {
       &_impl_.addr_, lhs_arena,
       &other->_impl_.addr_, rhs_arena
   );
+  swap(_impl_.restarting_, other->_impl_.restarting_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HeartBeatRequest::GetMetadata() const {
