@@ -55,6 +55,7 @@ message HeartBeatResponse {
 
 message CreateStorageRequest {
     string name = 1;
+    uint32 initial_range_count = 2;
 }
 
 message CreateStorageResponse {

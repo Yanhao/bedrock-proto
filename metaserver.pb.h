@@ -1556,6 +1556,7 @@ class CreateStorageRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kInitialRangeCountFieldNumber = 2,
   };
   // string name = 1;
   void clear_name();
@@ -1571,6 +1572,15 @@ class CreateStorageRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // uint32 initial_range_count = 2;
+  void clear_initial_range_count();
+  uint32_t initial_range_count() const;
+  void set_initial_range_count(uint32_t value);
+  private:
+  uint32_t _internal_initial_range_count() const;
+  void _internal_set_initial_range_count(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bedrock.metaserver.CreateStorageRequest)
  private:
   class _Internal;
@@ -1580,6 +1590,7 @@ class CreateStorageRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+    uint32_t initial_range_count_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8233,6 +8244,26 @@ inline void CreateStorageRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.CreateStorageRequest.name)
+}
+
+// uint32 initial_range_count = 2;
+inline void CreateStorageRequest::clear_initial_range_count() {
+  _impl_.initial_range_count_ = 0u;
+}
+inline uint32_t CreateStorageRequest::_internal_initial_range_count() const {
+  return _impl_.initial_range_count_;
+}
+inline uint32_t CreateStorageRequest::initial_range_count() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.CreateStorageRequest.initial_range_count)
+  return _internal_initial_range_count();
+}
+inline void CreateStorageRequest::_internal_set_initial_range_count(uint32_t value) {
+  
+  _impl_.initial_range_count_ = value;
+}
+inline void CreateStorageRequest::set_initial_range_count(uint32_t value) {
+  _internal_set_initial_range_count(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.CreateStorageRequest.initial_range_count)
 }
 
 // -------------------------------------------------------------------
