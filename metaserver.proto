@@ -203,6 +203,25 @@ message GetShardIDByKeyResponse {
     uint64 shard_id = 1;
 }
 
+message SyncShardInDataServerRequest {
+    message SyncShardInfo {
+        uint64 shard_id = 1;
+        google.protobuf.Timestamp  replica_update_ts = 2;
+        google.protobuf.Timestamp create_ts = 3;
+        string leader = 4;
+        google.protobuf.Timestamp leader_change_ts = 5;
+    }
+
+    bool is_last_piece = 1;
+    google.protobuf.Timestamp sync_ts = 2;
+    string dataserver_addr = 3;
+
+    repeated SyncShardInfo shards = 4;
+}
+
+message SyncShardInDataServerResponse {
+}
+
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
@@ -224,4 +243,5 @@ service MetaService {
     rpc RemoveDataServer (RemoveDataServerRequest) returns (RemoveDataServerResponse);
     rpc ListDataServer (ListDataServerRequest) returns (ListDataServerResponse);
     rpc UpdateDataServer (UpdateDataServerRequest) returns (UpdateDataServerResponse);
+    rpc SyncShardInDataServer(stream SyncShardInDataServerRequest) returns (SyncShardInDataServerResponse);
 }

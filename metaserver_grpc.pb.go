@@ -36,6 +36,7 @@ type MetaServiceClient interface {
 	RemoveDataServer(ctx context.Context, in *RemoveDataServerRequest, opts ...grpc.CallOption) (*RemoveDataServerResponse, error)
 	ListDataServer(ctx context.Context, in *ListDataServerRequest, opts ...grpc.CallOption) (*ListDataServerResponse, error)
 	UpdateDataServer(ctx context.Context, in *UpdateDataServerRequest, opts ...grpc.CallOption) (*UpdateDataServerResponse, error)
+	SyncShardInDataServer(ctx context.Context, opts ...grpc.CallOption) (MetaService_SyncShardInDataServerClient, error)
 }
 
 type metaServiceClient struct {
@@ -190,6 +191,40 @@ func (c *metaServiceClient) UpdateDataServer(ctx context.Context, in *UpdateData
 	return out, nil
 }
 
+func (c *metaServiceClient) SyncShardInDataServer(ctx context.Context, opts ...grpc.CallOption) (MetaService_SyncShardInDataServerClient, error) {
+	stream, err := c.cc.NewStream(ctx, &MetaService_ServiceDesc.Streams[0], "/bedrock.metaserver.MetaService/SyncShardInDataServer", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &metaServiceSyncShardInDataServerClient{stream}
+	return x, nil
+}
+
+type MetaService_SyncShardInDataServerClient interface {
+	Send(*SyncShardInDataServerRequest) error
+	CloseAndRecv() (*SyncShardInDataServerResponse, error)
+	grpc.ClientStream
+}
+
+type metaServiceSyncShardInDataServerClient struct {
+	grpc.ClientStream
+}
+
+func (x *metaServiceSyncShardInDataServerClient) Send(m *SyncShardInDataServerRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *metaServiceSyncShardInDataServerClient) CloseAndRecv() (*SyncShardInDataServerResponse, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(SyncShardInDataServerResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // MetaServiceServer is the server API for MetaService service.
 // All implementations must embed UnimplementedMetaServiceServer
 // for forward compatibility
@@ -211,6 +246,7 @@ type MetaServiceServer interface {
 	RemoveDataServer(context.Context, *RemoveDataServerRequest) (*RemoveDataServerResponse, error)
 	ListDataServer(context.Context, *ListDataServerRequest) (*ListDataServerResponse, error)
 	UpdateDataServer(context.Context, *UpdateDataServerRequest) (*UpdateDataServerResponse, error)
+	SyncShardInDataServer(MetaService_SyncShardInDataServerServer) error
 	mustEmbedUnimplementedMetaServiceServer()
 }
 
@@ -265,6 +301,9 @@ func (UnimplementedMetaServiceServer) ListDataServer(context.Context, *ListDataS
 }
 func (UnimplementedMetaServiceServer) UpdateDataServer(context.Context, *UpdateDataServerRequest) (*UpdateDataServerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataServer not implemented")
+}
+func (UnimplementedMetaServiceServer) SyncShardInDataServer(MetaService_SyncShardInDataServerServer) error {
+	return status.Errorf(codes.Unimplemented, "method SyncShardInDataServer not implemented")
 }
 func (UnimplementedMetaServiceServer) mustEmbedUnimplementedMetaServiceServer() {}
 
@@ -567,6 +606,32 @@ func _MetaService_UpdateDataServer_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _MetaService_SyncShardInDataServer_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(MetaServiceServer).SyncShardInDataServer(&metaServiceSyncShardInDataServerServer{stream})
+}
+
+type MetaService_SyncShardInDataServerServer interface {
+	SendAndClose(*SyncShardInDataServerResponse) error
+	Recv() (*SyncShardInDataServerRequest, error)
+	grpc.ServerStream
+}
+
+type metaServiceSyncShardInDataServerServer struct {
+	grpc.ServerStream
+}
+
+func (x *metaServiceSyncShardInDataServerServer) SendAndClose(m *SyncShardInDataServerResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *metaServiceSyncShardInDataServerServer) Recv() (*SyncShardInDataServerRequest, error) {
+	m := new(SyncShardInDataServerRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // MetaService_ServiceDesc is the grpc.ServiceDesc for MetaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -639,6 +704,12 @@ var MetaService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _MetaService_UpdateDataServer_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "SyncShardInDataServer",
+			Handler:       _MetaService_SyncShardInDataServer_Handler,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "metaserver.proto",
 }

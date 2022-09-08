@@ -161,6 +161,15 @@ extern ShardRangeDefaultTypeInternal _ShardRange_default_instance_;
 class Storage;
 struct StorageDefaultTypeInternal;
 extern StorageDefaultTypeInternal _Storage_default_instance_;
+class SyncShardInDataServerRequest;
+struct SyncShardInDataServerRequestDefaultTypeInternal;
+extern SyncShardInDataServerRequestDefaultTypeInternal _SyncShardInDataServerRequest_default_instance_;
+class SyncShardInDataServerRequest_SyncShardInfo;
+struct SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal;
+extern SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal _SyncShardInDataServerRequest_SyncShardInfo_default_instance_;
+class SyncShardInDataServerResponse;
+struct SyncShardInDataServerResponseDefaultTypeInternal;
+extern SyncShardInDataServerResponseDefaultTypeInternal _SyncShardInDataServerResponse_default_instance_;
 class UndeleteStorageRequest;
 struct UndeleteStorageRequestDefaultTypeInternal;
 extern UndeleteStorageRequestDefaultTypeInternal _UndeleteStorageRequest_default_instance_;
@@ -213,6 +222,9 @@ template<> ::bedrock::metaserver::ShardInfoResponse* Arena::CreateMaybeMessage<:
 template<> ::bedrock::metaserver::ShardList* Arena::CreateMaybeMessage<::bedrock::metaserver::ShardList>(Arena*);
 template<> ::bedrock::metaserver::ShardRange* Arena::CreateMaybeMessage<::bedrock::metaserver::ShardRange>(Arena*);
 template<> ::bedrock::metaserver::Storage* Arena::CreateMaybeMessage<::bedrock::metaserver::Storage>(Arena*);
+template<> ::bedrock::metaserver::SyncShardInDataServerRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::SyncShardInDataServerRequest>(Arena*);
+template<> ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* Arena::CreateMaybeMessage<::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo>(Arena*);
+template<> ::bedrock::metaserver::SyncShardInDataServerResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::SyncShardInDataServerResponse>(Arena*);
 template<> ::bedrock::metaserver::UndeleteStorageRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::UndeleteStorageRequest>(Arena*);
 template<> ::bedrock::metaserver::UndeleteStorageResponse* Arena::CreateMaybeMessage<::bedrock::metaserver::UndeleteStorageResponse>(Arena*);
 template<> ::bedrock::metaserver::UpdateDataServerRequest* Arena::CreateMaybeMessage<::bedrock::metaserver::UpdateDataServerRequest>(Arena*);
@@ -6677,6 +6689,554 @@ class GetShardIDByKeyResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_metaserver_2eproto;
 };
+// -------------------------------------------------------------------
+
+class SyncShardInDataServerRequest_SyncShardInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo) */ {
+ public:
+  inline SyncShardInDataServerRequest_SyncShardInfo() : SyncShardInDataServerRequest_SyncShardInfo(nullptr) {}
+  ~SyncShardInDataServerRequest_SyncShardInfo() override;
+  explicit PROTOBUF_CONSTEXPR SyncShardInDataServerRequest_SyncShardInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SyncShardInDataServerRequest_SyncShardInfo(const SyncShardInDataServerRequest_SyncShardInfo& from);
+  SyncShardInDataServerRequest_SyncShardInfo(SyncShardInDataServerRequest_SyncShardInfo&& from) noexcept
+    : SyncShardInDataServerRequest_SyncShardInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline SyncShardInDataServerRequest_SyncShardInfo& operator=(const SyncShardInDataServerRequest_SyncShardInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SyncShardInDataServerRequest_SyncShardInfo& operator=(SyncShardInDataServerRequest_SyncShardInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SyncShardInDataServerRequest_SyncShardInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SyncShardInDataServerRequest_SyncShardInfo* internal_default_instance() {
+    return reinterpret_cast<const SyncShardInDataServerRequest_SyncShardInfo*>(
+               &_SyncShardInDataServerRequest_SyncShardInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    41;
+
+  friend void swap(SyncShardInDataServerRequest_SyncShardInfo& a, SyncShardInDataServerRequest_SyncShardInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SyncShardInDataServerRequest_SyncShardInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SyncShardInDataServerRequest_SyncShardInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SyncShardInDataServerRequest_SyncShardInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SyncShardInDataServerRequest_SyncShardInfo>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SyncShardInDataServerRequest_SyncShardInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SyncShardInDataServerRequest_SyncShardInfo& from) {
+    SyncShardInDataServerRequest_SyncShardInfo::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SyncShardInDataServerRequest_SyncShardInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo";
+  }
+  protected:
+  explicit SyncShardInDataServerRequest_SyncShardInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLeaderFieldNumber = 4,
+    kReplicaUpdateTsFieldNumber = 2,
+    kCreateTsFieldNumber = 3,
+    kLeaderChangeTsFieldNumber = 5,
+    kShardIdFieldNumber = 1,
+  };
+  // string leader = 4;
+  void clear_leader();
+  const std::string& leader() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_leader(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_leader();
+  PROTOBUF_NODISCARD std::string* release_leader();
+  void set_allocated_leader(std::string* leader);
+  private:
+  const std::string& _internal_leader() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_leader(const std::string& value);
+  std::string* _internal_mutable_leader();
+  public:
+
+  // .google.protobuf.Timestamp replica_update_ts = 2;
+  bool has_replica_update_ts() const;
+  private:
+  bool _internal_has_replica_update_ts() const;
+  public:
+  void clear_replica_update_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& replica_update_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_replica_update_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_replica_update_ts();
+  void set_allocated_replica_update_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* replica_update_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_replica_update_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_replica_update_ts();
+  public:
+  void unsafe_arena_set_allocated_replica_update_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* replica_update_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_replica_update_ts();
+
+  // .google.protobuf.Timestamp create_ts = 3;
+  bool has_create_ts() const;
+  private:
+  bool _internal_has_create_ts() const;
+  public:
+  void clear_create_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& create_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_create_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_create_ts();
+  void set_allocated_create_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_create_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_create_ts();
+  public:
+  void unsafe_arena_set_allocated_create_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_create_ts();
+
+  // .google.protobuf.Timestamp leader_change_ts = 5;
+  bool has_leader_change_ts() const;
+  private:
+  bool _internal_has_leader_change_ts() const;
+  public:
+  void clear_leader_change_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_leader_change_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_leader_change_ts();
+  void set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_leader_change_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_leader_change_ts();
+  public:
+  void unsafe_arena_set_allocated_leader_change_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_leader_change_ts();
+
+  // uint64 shard_id = 1;
+  void clear_shard_id();
+  uint64_t shard_id() const;
+  void set_shard_id(uint64_t value);
+  private:
+  uint64_t _internal_shard_id() const;
+  void _internal_set_shard_id(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr leader_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* replica_update_ts_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts_;
+    uint64_t shard_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_metaserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SyncShardInDataServerRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.metaserver.SyncShardInDataServerRequest) */ {
+ public:
+  inline SyncShardInDataServerRequest() : SyncShardInDataServerRequest(nullptr) {}
+  ~SyncShardInDataServerRequest() override;
+  explicit PROTOBUF_CONSTEXPR SyncShardInDataServerRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SyncShardInDataServerRequest(const SyncShardInDataServerRequest& from);
+  SyncShardInDataServerRequest(SyncShardInDataServerRequest&& from) noexcept
+    : SyncShardInDataServerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SyncShardInDataServerRequest& operator=(const SyncShardInDataServerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SyncShardInDataServerRequest& operator=(SyncShardInDataServerRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SyncShardInDataServerRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SyncShardInDataServerRequest* internal_default_instance() {
+    return reinterpret_cast<const SyncShardInDataServerRequest*>(
+               &_SyncShardInDataServerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    42;
+
+  friend void swap(SyncShardInDataServerRequest& a, SyncShardInDataServerRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SyncShardInDataServerRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SyncShardInDataServerRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SyncShardInDataServerRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SyncShardInDataServerRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SyncShardInDataServerRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SyncShardInDataServerRequest& from) {
+    SyncShardInDataServerRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SyncShardInDataServerRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.SyncShardInDataServerRequest";
+  }
+  protected:
+  explicit SyncShardInDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef SyncShardInDataServerRequest_SyncShardInfo SyncShardInfo;
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kShardsFieldNumber = 4,
+    kDataserverAddrFieldNumber = 3,
+    kSyncTsFieldNumber = 2,
+    kIsLastPieceFieldNumber = 1,
+  };
+  // repeated .bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo shards = 4;
+  int shards_size() const;
+  private:
+  int _internal_shards_size() const;
+  public:
+  void clear_shards();
+  ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* mutable_shards(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >*
+      mutable_shards();
+  private:
+  const ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo& _internal_shards(int index) const;
+  ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* _internal_add_shards();
+  public:
+  const ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo& shards(int index) const;
+  ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* add_shards();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >&
+      shards() const;
+
+  // string dataserver_addr = 3;
+  void clear_dataserver_addr();
+  const std::string& dataserver_addr() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_dataserver_addr(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_dataserver_addr();
+  PROTOBUF_NODISCARD std::string* release_dataserver_addr();
+  void set_allocated_dataserver_addr(std::string* dataserver_addr);
+  private:
+  const std::string& _internal_dataserver_addr() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_dataserver_addr(const std::string& value);
+  std::string* _internal_mutable_dataserver_addr();
+  public:
+
+  // .google.protobuf.Timestamp sync_ts = 2;
+  bool has_sync_ts() const;
+  private:
+  bool _internal_has_sync_ts() const;
+  public:
+  void clear_sync_ts();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& sync_ts() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_sync_ts();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_sync_ts();
+  void set_allocated_sync_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* sync_ts);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_sync_ts() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_sync_ts();
+  public:
+  void unsafe_arena_set_allocated_sync_ts(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* sync_ts);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_sync_ts();
+
+  // bool is_last_piece = 1;
+  void clear_is_last_piece();
+  bool is_last_piece() const;
+  void set_is_last_piece(bool value);
+  private:
+  bool _internal_is_last_piece() const;
+  void _internal_set_is_last_piece(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.SyncShardInDataServerRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo > shards_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr dataserver_addr_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* sync_ts_;
+    bool is_last_piece_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_metaserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SyncShardInDataServerResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:bedrock.metaserver.SyncShardInDataServerResponse) */ {
+ public:
+  inline SyncShardInDataServerResponse() : SyncShardInDataServerResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SyncShardInDataServerResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SyncShardInDataServerResponse(const SyncShardInDataServerResponse& from);
+  SyncShardInDataServerResponse(SyncShardInDataServerResponse&& from) noexcept
+    : SyncShardInDataServerResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SyncShardInDataServerResponse& operator=(const SyncShardInDataServerResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SyncShardInDataServerResponse& operator=(SyncShardInDataServerResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SyncShardInDataServerResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SyncShardInDataServerResponse* internal_default_instance() {
+    return reinterpret_cast<const SyncShardInDataServerResponse*>(
+               &_SyncShardInDataServerResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    43;
+
+  friend void swap(SyncShardInDataServerResponse& a, SyncShardInDataServerResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SyncShardInDataServerResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SyncShardInDataServerResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SyncShardInDataServerResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SyncShardInDataServerResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SyncShardInDataServerResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SyncShardInDataServerResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.metaserver.SyncShardInDataServerResponse";
+  }
+  protected:
+  explicit SyncShardInDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.metaserver.SyncShardInDataServerResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_metaserver_2eproto;
+};
 // ===================================================================
 
 class MetaService_Stub;
@@ -6755,6 +7315,10 @@ class MetaService : public ::PROTOBUF_NAMESPACE_ID::Service {
   virtual void UpdateDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::UpdateDataServerRequest* request,
                        ::bedrock::metaserver::UpdateDataServerResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void SyncShardInDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::SyncShardInDataServerRequest* request,
+                       ::bedrock::metaserver::SyncShardInDataServerResponse* response,
                        ::google::protobuf::Closure* done);
 
   // implements Service ----------------------------------------------
@@ -6848,6 +7412,10 @@ class MetaService_Stub : public MetaService {
   void UpdateDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::metaserver::UpdateDataServerRequest* request,
                        ::bedrock::metaserver::UpdateDataServerResponse* response,
+                       ::google::protobuf::Closure* done);
+  void SyncShardInDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::metaserver::SyncShardInDataServerRequest* request,
+                       ::bedrock::metaserver::SyncShardInDataServerResponse* response,
                        ::google::protobuf::Closure* done);
  private:
   ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel_;
@@ -9978,9 +10546,547 @@ inline void GetShardIDByKeyResponse::set_shard_id(uint64_t value) {
   // @@protoc_insertion_point(field_set:bedrock.metaserver.GetShardIDByKeyResponse.shard_id)
 }
 
+// -------------------------------------------------------------------
+
+// SyncShardInDataServerRequest_SyncShardInfo
+
+// uint64 shard_id = 1;
+inline void SyncShardInDataServerRequest_SyncShardInfo::clear_shard_id() {
+  _impl_.shard_id_ = uint64_t{0u};
+}
+inline uint64_t SyncShardInDataServerRequest_SyncShardInfo::_internal_shard_id() const {
+  return _impl_.shard_id_;
+}
+inline uint64_t SyncShardInDataServerRequest_SyncShardInfo::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.shard_id)
+  return _internal_shard_id();
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::_internal_set_shard_id(uint64_t value) {
+  
+  _impl_.shard_id_ = value;
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::set_shard_id(uint64_t value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.shard_id)
+}
+
+// .google.protobuf.Timestamp replica_update_ts = 2;
+inline bool SyncShardInDataServerRequest_SyncShardInfo::_internal_has_replica_update_ts() const {
+  return this != internal_default_instance() && _impl_.replica_update_ts_ != nullptr;
+}
+inline bool SyncShardInDataServerRequest_SyncShardInfo::has_replica_update_ts() const {
+  return _internal_has_replica_update_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest_SyncShardInfo::_internal_replica_update_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.replica_update_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest_SyncShardInfo::replica_update_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.replica_update_ts)
+  return _internal_replica_update_ts();
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::unsafe_arena_set_allocated_replica_update_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* replica_update_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.replica_update_ts_);
+  }
+  _impl_.replica_update_ts_ = replica_update_ts;
+  if (replica_update_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.replica_update_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::release_replica_update_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.replica_update_ts_;
+  _impl_.replica_update_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::unsafe_arena_release_replica_update_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.replica_update_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.replica_update_ts_;
+  _impl_.replica_update_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::_internal_mutable_replica_update_ts() {
+  
+  if (_impl_.replica_update_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.replica_update_ts_ = p;
+  }
+  return _impl_.replica_update_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::mutable_replica_update_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_replica_update_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.replica_update_ts)
+  return _msg;
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::set_allocated_replica_update_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* replica_update_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.replica_update_ts_);
+  }
+  if (replica_update_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(replica_update_ts));
+    if (message_arena != submessage_arena) {
+      replica_update_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, replica_update_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.replica_update_ts_ = replica_update_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.replica_update_ts)
+}
+
+// .google.protobuf.Timestamp create_ts = 3;
+inline bool SyncShardInDataServerRequest_SyncShardInfo::_internal_has_create_ts() const {
+  return this != internal_default_instance() && _impl_.create_ts_ != nullptr;
+}
+inline bool SyncShardInDataServerRequest_SyncShardInfo::has_create_ts() const {
+  return _internal_has_create_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest_SyncShardInfo::_internal_create_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.create_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest_SyncShardInfo::create_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.create_ts)
+  return _internal_create_ts();
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::unsafe_arena_set_allocated_create_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.create_ts_);
+  }
+  _impl_.create_ts_ = create_ts;
+  if (create_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.create_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::release_create_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.create_ts_;
+  _impl_.create_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::unsafe_arena_release_create_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.create_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.create_ts_;
+  _impl_.create_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::_internal_mutable_create_ts() {
+  
+  if (_impl_.create_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.create_ts_ = p;
+  }
+  return _impl_.create_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::mutable_create_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_create_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.create_ts)
+  return _msg;
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::set_allocated_create_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* create_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.create_ts_);
+  }
+  if (create_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(create_ts));
+    if (message_arena != submessage_arena) {
+      create_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, create_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.create_ts_ = create_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.create_ts)
+}
+
+// string leader = 4;
+inline void SyncShardInDataServerRequest_SyncShardInfo::clear_leader() {
+  _impl_.leader_.ClearToEmpty();
+}
+inline const std::string& SyncShardInDataServerRequest_SyncShardInfo::leader() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader)
+  return _internal_leader();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SyncShardInDataServerRequest_SyncShardInfo::set_leader(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.leader_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader)
+}
+inline std::string* SyncShardInDataServerRequest_SyncShardInfo::mutable_leader() {
+  std::string* _s = _internal_mutable_leader();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader)
+  return _s;
+}
+inline const std::string& SyncShardInDataServerRequest_SyncShardInfo::_internal_leader() const {
+  return _impl_.leader_.Get();
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::_internal_set_leader(const std::string& value) {
+  
+  _impl_.leader_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SyncShardInDataServerRequest_SyncShardInfo::_internal_mutable_leader() {
+  
+  return _impl_.leader_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SyncShardInDataServerRequest_SyncShardInfo::release_leader() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader)
+  return _impl_.leader_.Release();
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::set_allocated_leader(std::string* leader) {
+  if (leader != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.leader_.SetAllocated(leader, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.leader_.IsDefault()) {
+    _impl_.leader_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader)
+}
+
+// .google.protobuf.Timestamp leader_change_ts = 5;
+inline bool SyncShardInDataServerRequest_SyncShardInfo::_internal_has_leader_change_ts() const {
+  return this != internal_default_instance() && _impl_.leader_change_ts_ != nullptr;
+}
+inline bool SyncShardInDataServerRequest_SyncShardInfo::has_leader_change_ts() const {
+  return _internal_has_leader_change_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest_SyncShardInfo::_internal_leader_change_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.leader_change_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest_SyncShardInfo::leader_change_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader_change_ts)
+  return _internal_leader_change_ts();
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::unsafe_arena_set_allocated_leader_change_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.leader_change_ts_);
+  }
+  _impl_.leader_change_ts_ = leader_change_ts;
+  if (leader_change_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader_change_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::release_leader_change_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.leader_change_ts_;
+  _impl_.leader_change_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::unsafe_arena_release_leader_change_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader_change_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.leader_change_ts_;
+  _impl_.leader_change_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::_internal_mutable_leader_change_ts() {
+  
+  if (_impl_.leader_change_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.leader_change_ts_ = p;
+  }
+  return _impl_.leader_change_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest_SyncShardInfo::mutable_leader_change_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_leader_change_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader_change_ts)
+  return _msg;
+}
+inline void SyncShardInDataServerRequest_SyncShardInfo::set_allocated_leader_change_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* leader_change_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.leader_change_ts_);
+  }
+  if (leader_change_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(leader_change_ts));
+    if (message_arena != submessage_arena) {
+      leader_change_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, leader_change_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.leader_change_ts_ = leader_change_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader_change_ts)
+}
+
+// -------------------------------------------------------------------
+
+// SyncShardInDataServerRequest
+
+// bool is_last_piece = 1;
+inline void SyncShardInDataServerRequest::clear_is_last_piece() {
+  _impl_.is_last_piece_ = false;
+}
+inline bool SyncShardInDataServerRequest::_internal_is_last_piece() const {
+  return _impl_.is_last_piece_;
+}
+inline bool SyncShardInDataServerRequest::is_last_piece() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.is_last_piece)
+  return _internal_is_last_piece();
+}
+inline void SyncShardInDataServerRequest::_internal_set_is_last_piece(bool value) {
+  
+  _impl_.is_last_piece_ = value;
+}
+inline void SyncShardInDataServerRequest::set_is_last_piece(bool value) {
+  _internal_set_is_last_piece(value);
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.SyncShardInDataServerRequest.is_last_piece)
+}
+
+// .google.protobuf.Timestamp sync_ts = 2;
+inline bool SyncShardInDataServerRequest::_internal_has_sync_ts() const {
+  return this != internal_default_instance() && _impl_.sync_ts_ != nullptr;
+}
+inline bool SyncShardInDataServerRequest::has_sync_ts() const {
+  return _internal_has_sync_ts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest::_internal_sync_ts() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.sync_ts_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& SyncShardInDataServerRequest::sync_ts() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.sync_ts)
+  return _internal_sync_ts();
+}
+inline void SyncShardInDataServerRequest::unsafe_arena_set_allocated_sync_ts(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* sync_ts) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.sync_ts_);
+  }
+  _impl_.sync_ts_ = sync_ts;
+  if (sync_ts) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.sync_ts)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest::release_sync_ts() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.sync_ts_;
+  _impl_.sync_ts_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest::unsafe_arena_release_sync_ts() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.SyncShardInDataServerRequest.sync_ts)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.sync_ts_;
+  _impl_.sync_ts_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest::_internal_mutable_sync_ts() {
+  
+  if (_impl_.sync_ts_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.sync_ts_ = p;
+  }
+  return _impl_.sync_ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* SyncShardInDataServerRequest::mutable_sync_ts() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_sync_ts();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.sync_ts)
+  return _msg;
+}
+inline void SyncShardInDataServerRequest::set_allocated_sync_ts(::PROTOBUF_NAMESPACE_ID::Timestamp* sync_ts) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.sync_ts_);
+  }
+  if (sync_ts) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(sync_ts));
+    if (message_arena != submessage_arena) {
+      sync_ts = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, sync_ts, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.sync_ts_ = sync_ts;
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.sync_ts)
+}
+
+// string dataserver_addr = 3;
+inline void SyncShardInDataServerRequest::clear_dataserver_addr() {
+  _impl_.dataserver_addr_.ClearToEmpty();
+}
+inline const std::string& SyncShardInDataServerRequest::dataserver_addr() const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr)
+  return _internal_dataserver_addr();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SyncShardInDataServerRequest::set_dataserver_addr(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.dataserver_addr_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr)
+}
+inline std::string* SyncShardInDataServerRequest::mutable_dataserver_addr() {
+  std::string* _s = _internal_mutable_dataserver_addr();
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr)
+  return _s;
+}
+inline const std::string& SyncShardInDataServerRequest::_internal_dataserver_addr() const {
+  return _impl_.dataserver_addr_.Get();
+}
+inline void SyncShardInDataServerRequest::_internal_set_dataserver_addr(const std::string& value) {
+  
+  _impl_.dataserver_addr_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SyncShardInDataServerRequest::_internal_mutable_dataserver_addr() {
+  
+  return _impl_.dataserver_addr_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SyncShardInDataServerRequest::release_dataserver_addr() {
+  // @@protoc_insertion_point(field_release:bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr)
+  return _impl_.dataserver_addr_.Release();
+}
+inline void SyncShardInDataServerRequest::set_allocated_dataserver_addr(std::string* dataserver_addr) {
+  if (dataserver_addr != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.dataserver_addr_.SetAllocated(dataserver_addr, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.dataserver_addr_.IsDefault()) {
+    _impl_.dataserver_addr_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr)
+}
+
+// repeated .bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo shards = 4;
+inline int SyncShardInDataServerRequest::_internal_shards_size() const {
+  return _impl_.shards_.size();
+}
+inline int SyncShardInDataServerRequest::shards_size() const {
+  return _internal_shards_size();
+}
+inline void SyncShardInDataServerRequest::clear_shards() {
+  _impl_.shards_.Clear();
+}
+inline ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* SyncShardInDataServerRequest::mutable_shards(int index) {
+  // @@protoc_insertion_point(field_mutable:bedrock.metaserver.SyncShardInDataServerRequest.shards)
+  return _impl_.shards_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >*
+SyncShardInDataServerRequest::mutable_shards() {
+  // @@protoc_insertion_point(field_mutable_list:bedrock.metaserver.SyncShardInDataServerRequest.shards)
+  return &_impl_.shards_;
+}
+inline const ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo& SyncShardInDataServerRequest::_internal_shards(int index) const {
+  return _impl_.shards_.Get(index);
+}
+inline const ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo& SyncShardInDataServerRequest::shards(int index) const {
+  // @@protoc_insertion_point(field_get:bedrock.metaserver.SyncShardInDataServerRequest.shards)
+  return _internal_shards(index);
+}
+inline ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* SyncShardInDataServerRequest::_internal_add_shards() {
+  return _impl_.shards_.Add();
+}
+inline ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* SyncShardInDataServerRequest::add_shards() {
+  ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* _add = _internal_add_shards();
+  // @@protoc_insertion_point(field_add:bedrock.metaserver.SyncShardInDataServerRequest.shards)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >&
+SyncShardInDataServerRequest::shards() const {
+  // @@protoc_insertion_point(field_list:bedrock.metaserver.SyncShardInDataServerRequest.shards)
+  return _impl_.shards_;
+}
+
+// -------------------------------------------------------------------
+
+// SyncShardInDataServerResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
