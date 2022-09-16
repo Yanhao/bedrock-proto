@@ -34,6 +34,7 @@ type DataServiceClient interface {
 	TransferShardLeader(ctx context.Context, in *TransferShardLeaderRequest, opts ...grpc.CallOption) (*TransferShardLeaderResponse, error)
 	ShardRead(ctx context.Context, in *ShardReadRequest, opts ...grpc.CallOption) (*ShardReadResponse, error)
 	ShardWrite(ctx context.Context, in *ShardWriteRequest, opts ...grpc.CallOption) (*ShardWriteResponse, error)
+	ShardScan(ctx context.Context, in *ShardScanRequest, opts ...grpc.CallOption) (*ShardScanResponse, error)
 	ShardAppendLog(ctx context.Context, in *ShardAppendLogRequest, opts ...grpc.CallOption) (*ShardAppendLogResponse, error)
 	ShardInstallSnapshot(ctx context.Context, opts ...grpc.CallOption) (DataService_ShardInstallSnapshotClient, error)
 	MigrateShard(ctx context.Context, opts ...grpc.CallOption) (DataService_MigrateShardClient, error)
@@ -113,6 +114,15 @@ func (c *dataServiceClient) ShardRead(ctx context.Context, in *ShardReadRequest,
 func (c *dataServiceClient) ShardWrite(ctx context.Context, in *ShardWriteRequest, opts ...grpc.CallOption) (*ShardWriteResponse, error) {
 	out := new(ShardWriteResponse)
 	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/ShardWrite", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) ShardScan(ctx context.Context, in *ShardScanRequest, opts ...grpc.CallOption) (*ShardScanResponse, error) {
+	out := new(ShardScanResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/ShardScan", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -211,6 +221,7 @@ type DataServiceServer interface {
 	TransferShardLeader(context.Context, *TransferShardLeaderRequest) (*TransferShardLeaderResponse, error)
 	ShardRead(context.Context, *ShardReadRequest) (*ShardReadResponse, error)
 	ShardWrite(context.Context, *ShardWriteRequest) (*ShardWriteResponse, error)
+	ShardScan(context.Context, *ShardScanRequest) (*ShardScanResponse, error)
 	ShardAppendLog(context.Context, *ShardAppendLogRequest) (*ShardAppendLogResponse, error)
 	ShardInstallSnapshot(DataService_ShardInstallSnapshotServer) error
 	MigrateShard(DataService_MigrateShardServer) error
@@ -244,6 +255,9 @@ func (UnimplementedDataServiceServer) ShardRead(context.Context, *ShardReadReque
 }
 func (UnimplementedDataServiceServer) ShardWrite(context.Context, *ShardWriteRequest) (*ShardWriteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ShardWrite not implemented")
+}
+func (UnimplementedDataServiceServer) ShardScan(context.Context, *ShardScanRequest) (*ShardScanResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShardScan not implemented")
 }
 func (UnimplementedDataServiceServer) ShardAppendLog(context.Context, *ShardAppendLogRequest) (*ShardAppendLogResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ShardAppendLog not implemented")
@@ -411,6 +425,24 @@ func _DataService_ShardWrite_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_ShardScan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShardScanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).ShardScan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/ShardScan",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).ShardScan(ctx, req.(*ShardScanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_ShardAppendLog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ShardAppendLogRequest)
 	if err := dec(in); err != nil {
@@ -519,6 +551,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ShardWrite",
 			Handler:    _DataService_ShardWrite_Handler,
+		},
+		{
+			MethodName: "ShardScan",
+			Handler:    _DataService_ShardScan_Handler,
 		},
 		{
 			MethodName: "ShardAppendLog",

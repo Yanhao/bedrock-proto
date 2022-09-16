@@ -51,7 +51,7 @@ struct TableStruct_dataserver_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[43]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[46]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -96,6 +96,9 @@ extern DeleteShardRequestDefaultTypeInternal _DeleteShardRequest_default_instanc
 class DeleteShardResponse;
 class DeleteShardResponseDefaultTypeInternal;
 extern DeleteShardResponseDefaultTypeInternal _DeleteShardResponse_default_instance_;
+class KeyValue;
+class KeyValueDefaultTypeInternal;
+extern KeyValueDefaultTypeInternal _KeyValue_default_instance_;
 class LockShardRequest;
 class LockShardRequestDefaultTypeInternal;
 extern LockShardRequestDefaultTypeInternal _LockShardRequest_default_instance_;
@@ -159,6 +162,12 @@ extern ShardRepairRequestDefaultTypeInternal _ShardRepairRequest_default_instanc
 class ShardRepairResponse;
 class ShardRepairResponseDefaultTypeInternal;
 extern ShardRepairResponseDefaultTypeInternal _ShardRepairResponse_default_instance_;
+class ShardScanRequest;
+class ShardScanRequestDefaultTypeInternal;
+extern ShardScanRequestDefaultTypeInternal _ShardScanRequest_default_instance_;
+class ShardScanResponse;
+class ShardScanResponseDefaultTypeInternal;
+extern ShardScanResponseDefaultTypeInternal _ShardScanResponse_default_instance_;
 class ShardWriteReplicaRequest;
 class ShardWriteReplicaRequestDefaultTypeInternal;
 extern ShardWriteReplicaRequestDefaultTypeInternal _ShardWriteReplicaRequest_default_instance_;
@@ -204,6 +213,7 @@ template<> ::bedrock::dataserver::DeleteShardReplicaRequest* Arena::CreateMaybeM
 template<> ::bedrock::dataserver::DeleteShardReplicaResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::DeleteShardReplicaResponse>(Arena*);
 template<> ::bedrock::dataserver::DeleteShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::DeleteShardRequest>(Arena*);
 template<> ::bedrock::dataserver::DeleteShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::DeleteShardResponse>(Arena*);
+template<> ::bedrock::dataserver::KeyValue* Arena::CreateMaybeMessage<::bedrock::dataserver::KeyValue>(Arena*);
 template<> ::bedrock::dataserver::LockShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::LockShardRequest>(Arena*);
 template<> ::bedrock::dataserver::LockShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::LockShardResponse>(Arena*);
 template<> ::bedrock::dataserver::MergeShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::MergeShardRequest>(Arena*);
@@ -225,6 +235,8 @@ template<> ::bedrock::dataserver::ShardReadRequest* Arena::CreateMaybeMessage<::
 template<> ::bedrock::dataserver::ShardReadResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardReadResponse>(Arena*);
 template<> ::bedrock::dataserver::ShardRepairRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardRepairRequest>(Arena*);
 template<> ::bedrock::dataserver::ShardRepairResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardRepairResponse>(Arena*);
+template<> ::bedrock::dataserver::ShardScanRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardScanRequest>(Arena*);
+template<> ::bedrock::dataserver::ShardScanResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardScanResponse>(Arena*);
 template<> ::bedrock::dataserver::ShardWriteReplicaRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardWriteReplicaRequest>(Arena*);
 template<> ::bedrock::dataserver::ShardWriteReplicaResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardWriteReplicaResponse>(Arena*);
 template<> ::bedrock::dataserver::ShardWriteRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardWriteRequest>(Arena*);
@@ -4968,6 +4980,534 @@ class ShardWriteResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class ShardScanRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.ShardScanRequest) */ {
+ public:
+  inline ShardScanRequest() : ShardScanRequest(nullptr) {};
+  virtual ~ShardScanRequest();
+
+  ShardScanRequest(const ShardScanRequest& from);
+  ShardScanRequest(ShardScanRequest&& from) noexcept
+    : ShardScanRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ShardScanRequest& operator=(const ShardScanRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ShardScanRequest& operator=(ShardScanRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ShardScanRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ShardScanRequest* internal_default_instance() {
+    return reinterpret_cast<const ShardScanRequest*>(
+               &_ShardScanRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(ShardScanRequest& a, ShardScanRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ShardScanRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ShardScanRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ShardScanRequest* New() const final {
+    return CreateMaybeMessage<ShardScanRequest>(nullptr);
+  }
+
+  ShardScanRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ShardScanRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ShardScanRequest& from);
+  void MergeFrom(const ShardScanRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ShardScanRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.ShardScanRequest";
+  }
+  protected:
+  explicit ShardScanRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStartKeyFieldNumber = 2,
+    kEndKeyFieldNumber = 3,
+    kShardIdFieldNumber = 1,
+  };
+  // bytes start_key = 2;
+  void clear_start_key();
+  const std::string& start_key() const;
+  void set_start_key(const std::string& value);
+  void set_start_key(std::string&& value);
+  void set_start_key(const char* value);
+  void set_start_key(const void* value, size_t size);
+  std::string* mutable_start_key();
+  std::string* release_start_key();
+  void set_allocated_start_key(std::string* start_key);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_start_key();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_start_key(
+      std::string* start_key);
+  private:
+  const std::string& _internal_start_key() const;
+  void _internal_set_start_key(const std::string& value);
+  std::string* _internal_mutable_start_key();
+  public:
+
+  // bytes end_key = 3;
+  void clear_end_key();
+  const std::string& end_key() const;
+  void set_end_key(const std::string& value);
+  void set_end_key(std::string&& value);
+  void set_end_key(const char* value);
+  void set_end_key(const void* value, size_t size);
+  std::string* mutable_end_key();
+  std::string* release_end_key();
+  void set_allocated_end_key(std::string* end_key);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_end_key();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_end_key(
+      std::string* end_key);
+  private:
+  const std::string& _internal_end_key() const;
+  void _internal_set_end_key(const std::string& value);
+  std::string* _internal_mutable_end_key();
+  public:
+
+  // uint64 shard_id = 1;
+  void clear_shard_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 shard_id() const;
+  void set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_shard_id() const;
+  void _internal_set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.ShardScanRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr end_key_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 shard_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class KeyValue PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.KeyValue) */ {
+ public:
+  inline KeyValue() : KeyValue(nullptr) {};
+  virtual ~KeyValue();
+
+  KeyValue(const KeyValue& from);
+  KeyValue(KeyValue&& from) noexcept
+    : KeyValue() {
+    *this = ::std::move(from);
+  }
+
+  inline KeyValue& operator=(const KeyValue& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline KeyValue& operator=(KeyValue&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const KeyValue& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const KeyValue* internal_default_instance() {
+    return reinterpret_cast<const KeyValue*>(
+               &_KeyValue_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  friend void swap(KeyValue& a, KeyValue& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(KeyValue* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(KeyValue* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline KeyValue* New() const final {
+    return CreateMaybeMessage<KeyValue>(nullptr);
+  }
+
+  KeyValue* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<KeyValue>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const KeyValue& from);
+  void MergeFrom(const KeyValue& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(KeyValue* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.KeyValue";
+  }
+  protected:
+  explicit KeyValue(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyFieldNumber = 1,
+    kValueFieldNumber = 2,
+  };
+  // bytes key = 1;
+  void clear_key();
+  const std::string& key() const;
+  void set_key(const std::string& value);
+  void set_key(std::string&& value);
+  void set_key(const char* value);
+  void set_key(const void* value, size_t size);
+  std::string* mutable_key();
+  std::string* release_key();
+  void set_allocated_key(std::string* key);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_key();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_key(
+      std::string* key);
+  private:
+  const std::string& _internal_key() const;
+  void _internal_set_key(const std::string& value);
+  std::string* _internal_mutable_key();
+  public:
+
+  // bytes value = 2;
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const void* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_value();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_value(
+      std::string* value);
+  private:
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.KeyValue)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ShardScanResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.ShardScanResponse) */ {
+ public:
+  inline ShardScanResponse() : ShardScanResponse(nullptr) {};
+  virtual ~ShardScanResponse();
+
+  ShardScanResponse(const ShardScanResponse& from);
+  ShardScanResponse(ShardScanResponse&& from) noexcept
+    : ShardScanResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ShardScanResponse& operator=(const ShardScanResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ShardScanResponse& operator=(ShardScanResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ShardScanResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ShardScanResponse* internal_default_instance() {
+    return reinterpret_cast<const ShardScanResponse*>(
+               &_ShardScanResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    32;
+
+  friend void swap(ShardScanResponse& a, ShardScanResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ShardScanResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ShardScanResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ShardScanResponse* New() const final {
+    return CreateMaybeMessage<ShardScanResponse>(nullptr);
+  }
+
+  ShardScanResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ShardScanResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ShardScanResponse& from);
+  void MergeFrom(const ShardScanResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ShardScanResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.ShardScanResponse";
+  }
+  protected:
+  explicit ShardScanResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKvsFieldNumber = 1,
+    kNoLeftFieldNumber = 2,
+  };
+  // repeated .bedrock.dataserver.KeyValue kvs = 1;
+  int kvs_size() const;
+  private:
+  int _internal_kvs_size() const;
+  public:
+  void clear_kvs();
+  ::bedrock::dataserver::KeyValue* mutable_kvs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::dataserver::KeyValue >*
+      mutable_kvs();
+  private:
+  const ::bedrock::dataserver::KeyValue& _internal_kvs(int index) const;
+  ::bedrock::dataserver::KeyValue* _internal_add_kvs();
+  public:
+  const ::bedrock::dataserver::KeyValue& kvs(int index) const;
+  ::bedrock::dataserver::KeyValue* add_kvs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::dataserver::KeyValue >&
+      kvs() const;
+
+  // bool no_left = 2;
+  void clear_no_left();
+  bool no_left() const;
+  void set_no_left(bool value);
+  private:
+  bool _internal_no_left() const;
+  void _internal_set_no_left(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.ShardScanResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::dataserver::KeyValue > kvs_;
+  bool no_left_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ShardAppendLogRequest_Entry PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.ShardAppendLogRequest.Entry) */ {
  public:
@@ -5010,7 +5550,7 @@ class ShardAppendLogRequest_Entry PROTOBUF_FINAL :
                &_ShardAppendLogRequest_Entry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    33;
 
   friend void swap(ShardAppendLogRequest_Entry& a, ShardAppendLogRequest_Entry& b) {
     a.Swap(&b);
@@ -5228,7 +5768,7 @@ class ShardAppendLogRequest PROTOBUF_FINAL :
                &_ShardAppendLogRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    34;
 
   friend void swap(ShardAppendLogRequest& a, ShardAppendLogRequest& b) {
     a.Swap(&b);
@@ -5407,7 +5947,7 @@ class ShardAppendLogResponse PROTOBUF_FINAL :
                &_ShardAppendLogResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    35;
 
   friend void swap(ShardAppendLogResponse& a, ShardAppendLogResponse& b) {
     a.Swap(&b);
@@ -5555,7 +6095,7 @@ class ShardInstallSnapshotRequest PROTOBUF_FINAL :
                &_ShardInstallSnapshotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    36;
 
   friend void swap(ShardInstallSnapshotRequest& a, ShardInstallSnapshotRequest& b) {
     a.Swap(&b);
@@ -5730,7 +6270,7 @@ class ShardInstallSnapshotResponse PROTOBUF_FINAL :
                &_ShardInstallSnapshotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    37;
 
   friend void swap(ShardInstallSnapshotResponse& a, ShardInstallSnapshotResponse& b) {
     a.Swap(&b);
@@ -5854,7 +6394,7 @@ class ShardWriteReplicaRequest PROTOBUF_FINAL :
                &_ShardWriteReplicaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    38;
 
   friend void swap(ShardWriteReplicaRequest& a, ShardWriteReplicaRequest& b) {
     a.Swap(&b);
@@ -5978,7 +6518,7 @@ class ShardWriteReplicaResponse PROTOBUF_FINAL :
                &_ShardWriteReplicaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    39;
 
   friend void swap(ShardWriteReplicaResponse& a, ShardWriteReplicaResponse& b) {
     a.Swap(&b);
@@ -6102,7 +6642,7 @@ class ShardRepairRequest PROTOBUF_FINAL :
                &_ShardRepairRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    40;
 
   friend void swap(ShardRepairRequest& a, ShardRepairRequest& b) {
     a.Swap(&b);
@@ -6226,7 +6766,7 @@ class ShardRepairResponse PROTOBUF_FINAL :
                &_ShardRepairResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    41;
 
   friend void swap(ShardRepairResponse& a, ShardRepairResponse& b) {
     a.Swap(&b);
@@ -6350,7 +6890,7 @@ class DataServerJoinRequest PROTOBUF_FINAL :
                &_DataServerJoinRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    42;
 
   friend void swap(DataServerJoinRequest& a, DataServerJoinRequest& b) {
     a.Swap(&b);
@@ -6474,7 +7014,7 @@ class DataServerJoinResponse PROTOBUF_FINAL :
                &_DataServerJoinResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    43;
 
   friend void swap(DataServerJoinResponse& a, DataServerJoinResponse& b) {
     a.Swap(&b);
@@ -6598,7 +7138,7 @@ class DataServerLeaveRequest PROTOBUF_FINAL :
                &_DataServerLeaveRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    44;
 
   friend void swap(DataServerLeaveRequest& a, DataServerLeaveRequest& b) {
     a.Swap(&b);
@@ -6722,7 +7262,7 @@ class DataServerLeaveResponse PROTOBUF_FINAL :
                &_DataServerLeaveResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    45;
 
   friend void swap(DataServerLeaveResponse& a, DataServerLeaveResponse& b) {
     a.Swap(&b);
@@ -6849,6 +7389,10 @@ class DataService : public ::PROTOBUF_NAMESPACE_ID::Service {
                        const ::bedrock::dataserver::ShardWriteRequest* request,
                        ::bedrock::dataserver::ShardWriteResponse* response,
                        ::google::protobuf::Closure* done);
+  virtual void ShardScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::ShardScanRequest* request,
+                       ::bedrock::dataserver::ShardScanResponse* response,
+                       ::google::protobuf::Closure* done);
   virtual void ShardAppendLog(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::ShardAppendLogRequest* request,
                        ::bedrock::dataserver::ShardAppendLogResponse* response,
@@ -6921,6 +7465,10 @@ class DataService_Stub : public DataService {
   void ShardWrite(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::ShardWriteRequest* request,
                        ::bedrock::dataserver::ShardWriteResponse* response,
+                       ::google::protobuf::Closure* done);
+  void ShardScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::ShardScanRequest* request,
+                       ::bedrock::dataserver::ShardScanResponse* response,
                        ::google::protobuf::Closure* done);
   void ShardAppendLog(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::ShardAppendLogRequest* request,
@@ -9689,6 +10237,421 @@ inline void ShardWriteResponse::set_not_leader(bool value) {
 
 // -------------------------------------------------------------------
 
+// ShardScanRequest
+
+// uint64 shard_id = 1;
+inline void ShardScanRequest::clear_shard_id() {
+  shard_id_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ShardScanRequest::_internal_shard_id() const {
+  return shard_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ShardScanRequest::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardScanRequest.shard_id)
+  return _internal_shard_id();
+}
+inline void ShardScanRequest::_internal_set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  shard_id_ = value;
+}
+inline void ShardScanRequest::set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardScanRequest.shard_id)
+}
+
+// bytes start_key = 2;
+inline void ShardScanRequest::clear_start_key() {
+  start_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& ShardScanRequest::start_key() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardScanRequest.start_key)
+  return _internal_start_key();
+}
+inline void ShardScanRequest::set_start_key(const std::string& value) {
+  _internal_set_start_key(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardScanRequest.start_key)
+}
+inline std::string* ShardScanRequest::mutable_start_key() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardScanRequest.start_key)
+  return _internal_mutable_start_key();
+}
+inline const std::string& ShardScanRequest::_internal_start_key() const {
+  return start_key_.Get();
+}
+inline void ShardScanRequest::_internal_set_start_key(const std::string& value) {
+  
+  start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void ShardScanRequest::set_start_key(std::string&& value) {
+  
+  start_key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.ShardScanRequest.start_key)
+}
+inline void ShardScanRequest::set_start_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.ShardScanRequest.start_key)
+}
+inline void ShardScanRequest::set_start_key(const void* value,
+    size_t size) {
+  
+  start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.ShardScanRequest.start_key)
+}
+inline std::string* ShardScanRequest::_internal_mutable_start_key() {
+  
+  return start_key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* ShardScanRequest::release_start_key() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.ShardScanRequest.start_key)
+  return start_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ShardScanRequest::set_allocated_start_key(std::string* start_key) {
+  if (start_key != nullptr) {
+    
+  } else {
+    
+  }
+  start_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), start_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardScanRequest.start_key)
+}
+inline std::string* ShardScanRequest::unsafe_arena_release_start_key() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.ShardScanRequest.start_key)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return start_key_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void ShardScanRequest::unsafe_arena_set_allocated_start_key(
+    std::string* start_key) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (start_key != nullptr) {
+    
+  } else {
+    
+  }
+  start_key_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      start_key, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.ShardScanRequest.start_key)
+}
+
+// bytes end_key = 3;
+inline void ShardScanRequest::clear_end_key() {
+  end_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& ShardScanRequest::end_key() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardScanRequest.end_key)
+  return _internal_end_key();
+}
+inline void ShardScanRequest::set_end_key(const std::string& value) {
+  _internal_set_end_key(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardScanRequest.end_key)
+}
+inline std::string* ShardScanRequest::mutable_end_key() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardScanRequest.end_key)
+  return _internal_mutable_end_key();
+}
+inline const std::string& ShardScanRequest::_internal_end_key() const {
+  return end_key_.Get();
+}
+inline void ShardScanRequest::_internal_set_end_key(const std::string& value) {
+  
+  end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void ShardScanRequest::set_end_key(std::string&& value) {
+  
+  end_key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.ShardScanRequest.end_key)
+}
+inline void ShardScanRequest::set_end_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.ShardScanRequest.end_key)
+}
+inline void ShardScanRequest::set_end_key(const void* value,
+    size_t size) {
+  
+  end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.ShardScanRequest.end_key)
+}
+inline std::string* ShardScanRequest::_internal_mutable_end_key() {
+  
+  return end_key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* ShardScanRequest::release_end_key() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.ShardScanRequest.end_key)
+  return end_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ShardScanRequest::set_allocated_end_key(std::string* end_key) {
+  if (end_key != nullptr) {
+    
+  } else {
+    
+  }
+  end_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), end_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.ShardScanRequest.end_key)
+}
+inline std::string* ShardScanRequest::unsafe_arena_release_end_key() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.ShardScanRequest.end_key)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return end_key_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void ShardScanRequest::unsafe_arena_set_allocated_end_key(
+    std::string* end_key) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (end_key != nullptr) {
+    
+  } else {
+    
+  }
+  end_key_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      end_key, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.ShardScanRequest.end_key)
+}
+
+// -------------------------------------------------------------------
+
+// KeyValue
+
+// bytes key = 1;
+inline void KeyValue::clear_key() {
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& KeyValue::key() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.KeyValue.key)
+  return _internal_key();
+}
+inline void KeyValue::set_key(const std::string& value) {
+  _internal_set_key(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.KeyValue.key)
+}
+inline std::string* KeyValue::mutable_key() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.KeyValue.key)
+  return _internal_mutable_key();
+}
+inline const std::string& KeyValue::_internal_key() const {
+  return key_.Get();
+}
+inline void KeyValue::_internal_set_key(const std::string& value) {
+  
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void KeyValue::set_key(std::string&& value) {
+  
+  key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.KeyValue.key)
+}
+inline void KeyValue::set_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.KeyValue.key)
+}
+inline void KeyValue::set_key(const void* value,
+    size_t size) {
+  
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.KeyValue.key)
+}
+inline std::string* KeyValue::_internal_mutable_key() {
+  
+  return key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* KeyValue::release_key() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.KeyValue.key)
+  return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void KeyValue::set_allocated_key(std::string* key) {
+  if (key != nullptr) {
+    
+  } else {
+    
+  }
+  key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.KeyValue.key)
+}
+inline std::string* KeyValue::unsafe_arena_release_key() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.KeyValue.key)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return key_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void KeyValue::unsafe_arena_set_allocated_key(
+    std::string* key) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (key != nullptr) {
+    
+  } else {
+    
+  }
+  key_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      key, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.KeyValue.key)
+}
+
+// bytes value = 2;
+inline void KeyValue::clear_value() {
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& KeyValue::value() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.KeyValue.value)
+  return _internal_value();
+}
+inline void KeyValue::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.KeyValue.value)
+}
+inline std::string* KeyValue::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.KeyValue.value)
+  return _internal_mutable_value();
+}
+inline const std::string& KeyValue::_internal_value() const {
+  return value_.Get();
+}
+inline void KeyValue::_internal_set_value(const std::string& value) {
+  
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void KeyValue::set_value(std::string&& value) {
+  
+  value_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.KeyValue.value)
+}
+inline void KeyValue::set_value(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.KeyValue.value)
+}
+inline void KeyValue::set_value(const void* value,
+    size_t size) {
+  
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.KeyValue.value)
+}
+inline std::string* KeyValue::_internal_mutable_value() {
+  
+  return value_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* KeyValue::release_value() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.KeyValue.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void KeyValue::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
+    
+  } else {
+    
+  }
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.KeyValue.value)
+}
+inline std::string* KeyValue::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.KeyValue.value)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return value_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void KeyValue::unsafe_arena_set_allocated_value(
+    std::string* value) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (value != nullptr) {
+    
+  } else {
+    
+  }
+  value_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      value, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.KeyValue.value)
+}
+
+// -------------------------------------------------------------------
+
+// ShardScanResponse
+
+// repeated .bedrock.dataserver.KeyValue kvs = 1;
+inline int ShardScanResponse::_internal_kvs_size() const {
+  return kvs_.size();
+}
+inline int ShardScanResponse::kvs_size() const {
+  return _internal_kvs_size();
+}
+inline void ShardScanResponse::clear_kvs() {
+  kvs_.Clear();
+}
+inline ::bedrock::dataserver::KeyValue* ShardScanResponse::mutable_kvs(int index) {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.ShardScanResponse.kvs)
+  return kvs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::dataserver::KeyValue >*
+ShardScanResponse::mutable_kvs() {
+  // @@protoc_insertion_point(field_mutable_list:bedrock.dataserver.ShardScanResponse.kvs)
+  return &kvs_;
+}
+inline const ::bedrock::dataserver::KeyValue& ShardScanResponse::_internal_kvs(int index) const {
+  return kvs_.Get(index);
+}
+inline const ::bedrock::dataserver::KeyValue& ShardScanResponse::kvs(int index) const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardScanResponse.kvs)
+  return _internal_kvs(index);
+}
+inline ::bedrock::dataserver::KeyValue* ShardScanResponse::_internal_add_kvs() {
+  return kvs_.Add();
+}
+inline ::bedrock::dataserver::KeyValue* ShardScanResponse::add_kvs() {
+  // @@protoc_insertion_point(field_add:bedrock.dataserver.ShardScanResponse.kvs)
+  return _internal_add_kvs();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bedrock::dataserver::KeyValue >&
+ShardScanResponse::kvs() const {
+  // @@protoc_insertion_point(field_list:bedrock.dataserver.ShardScanResponse.kvs)
+  return kvs_;
+}
+
+// bool no_left = 2;
+inline void ShardScanResponse::clear_no_left() {
+  no_left_ = false;
+}
+inline bool ShardScanResponse::_internal_no_left() const {
+  return no_left_;
+}
+inline bool ShardScanResponse::no_left() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.ShardScanResponse.no_left)
+  return _internal_no_left();
+}
+inline void ShardScanResponse::_internal_set_no_left(bool value) {
+  
+  no_left_ = value;
+}
+inline void ShardScanResponse::set_no_left(bool value) {
+  _internal_set_no_left(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.ShardScanResponse.no_left)
+}
+
+// -------------------------------------------------------------------
+
 // ShardAppendLogRequest_Entry
 
 // string op = 1;
@@ -10300,6 +11263,12 @@ inline void ShardInstallSnapshotRequest::set_last_wal_index(::PROTOBUF_NAMESPACE
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
