@@ -14,1048 +14,1223 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DataServer_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RouteRecord_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Shard_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ShardList_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ShardRange_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Storage_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_metaserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace bedrock {
 namespace metaserver {
-PROTOBUF_CONSTEXPR Storage::Storage(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.owner_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.deleted_ts_)*/nullptr
-  , /*decltype(_impl_.create_ts_)*/nullptr
-  , /*decltype(_impl_.id_)*/0u
-  , /*decltype(_impl_.last_shard_isn_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct StorageDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StorageDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~StorageDefaultTypeInternal() {}
-  union {
-    Storage _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StorageDefaultTypeInternal _Storage_default_instance_;
-PROTOBUF_CONSTEXPR Shard::Shard(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.replicates_)*/{}
-  , /*decltype(_impl_.leader_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.replica_update_ts_)*/nullptr
-  , /*decltype(_impl_.deleted_ts_)*/nullptr
-  , /*decltype(_impl_.create_ts_)*/nullptr
-  , /*decltype(_impl_.leader_change_ts_)*/nullptr
-  , /*decltype(_impl_.isn_)*/0u
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_.is_deleted_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ShardDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ShardDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ShardDefaultTypeInternal() {}
-  union {
-    Shard _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardDefaultTypeInternal _Shard_default_instance_;
-PROTOBUF_CONSTEXPR DataServer::DataServer(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ip_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.port_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.idc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.last_heartbeat_ts_)*/nullptr
-  , /*decltype(_impl_.capacity_)*/uint64_t{0u}
-  , /*decltype(_impl_.free_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct DataServerDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR DataServerDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~DataServerDefaultTypeInternal() {}
-  union {
-    DataServer _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DataServerDefaultTypeInternal _DataServer_default_instance_;
-PROTOBUF_CONSTEXPR Replicate::Replicate(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.addrs_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ReplicateDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ReplicateDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ReplicateDefaultTypeInternal() {}
-  union {
-    Replicate _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReplicateDefaultTypeInternal _Replicate_default_instance_;
-PROTOBUF_CONSTEXPR HeartBeatRequest::HeartBeatRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.restarting_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct HeartBeatRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR HeartBeatRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~HeartBeatRequestDefaultTypeInternal() {}
-  union {
-    HeartBeatRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HeartBeatRequestDefaultTypeInternal _HeartBeatRequest_default_instance_;
-PROTOBUF_CONSTEXPR HeartBeatResponse::HeartBeatResponse(
-    ::_pbi::ConstantInitialized) {}
-struct HeartBeatResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR HeartBeatResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~HeartBeatResponseDefaultTypeInternal() {}
-  union {
-    HeartBeatResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HeartBeatResponseDefaultTypeInternal _HeartBeatResponse_default_instance_;
-PROTOBUF_CONSTEXPR CreateStorageRequest::CreateStorageRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.initial_range_count_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct CreateStorageRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreateStorageRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreateStorageRequestDefaultTypeInternal() {}
-  union {
-    CreateStorageRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStorageRequestDefaultTypeInternal _CreateStorageRequest_default_instance_;
-PROTOBUF_CONSTEXPR CreateStorageResponse::CreateStorageResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.id_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct CreateStorageResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreateStorageResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreateStorageResponseDefaultTypeInternal() {}
-  union {
-    CreateStorageResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStorageResponseDefaultTypeInternal _CreateStorageResponse_default_instance_;
-PROTOBUF_CONSTEXPR CreateShardRequest::CreateShardRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_.shard_isn_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct CreateShardRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreateShardRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreateShardRequestDefaultTypeInternal() {}
-  union {
-    CreateShardRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateShardRequestDefaultTypeInternal _CreateShardRequest_default_instance_;
-PROTOBUF_CONSTEXPR CreateShardResponse::CreateShardResponse(
-    ::_pbi::ConstantInitialized) {}
-struct CreateShardResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreateShardResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreateShardResponseDefaultTypeInternal() {}
-  union {
-    CreateShardResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateShardResponseDefaultTypeInternal _CreateShardResponse_default_instance_;
-PROTOBUF_CONSTEXPR RemoveShardRequest::RemoveShardRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_.shard_isn_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct RemoveShardRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RemoveShardRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RemoveShardRequestDefaultTypeInternal() {}
-  union {
-    RemoveShardRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveShardRequestDefaultTypeInternal _RemoveShardRequest_default_instance_;
-PROTOBUF_CONSTEXPR RemoveShardResponse::RemoveShardResponse(
-    ::_pbi::ConstantInitialized) {}
-struct RemoveShardResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RemoveShardResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RemoveShardResponseDefaultTypeInternal() {}
-  union {
-    RemoveShardResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveShardResponseDefaultTypeInternal _RemoveShardResponse_default_instance_;
-PROTOBUF_CONSTEXPR DeleteStorageRequest::DeleteStorageRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.id_)*/0u
-  , /*decltype(_impl_.real_delete_)*/false
-  , /*decltype(_impl_.recycle_after_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct DeleteStorageRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR DeleteStorageRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~DeleteStorageRequestDefaultTypeInternal() {}
-  union {
-    DeleteStorageRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteStorageRequestDefaultTypeInternal _DeleteStorageRequest_default_instance_;
-PROTOBUF_CONSTEXPR DeleteStorageResponse::DeleteStorageResponse(
-    ::_pbi::ConstantInitialized) {}
-struct DeleteStorageResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR DeleteStorageResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~DeleteStorageResponseDefaultTypeInternal() {}
-  union {
-    DeleteStorageResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteStorageResponseDefaultTypeInternal _DeleteStorageResponse_default_instance_;
-PROTOBUF_CONSTEXPR UndeleteStorageRequest::UndeleteStorageRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct UndeleteStorageRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UndeleteStorageRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UndeleteStorageRequestDefaultTypeInternal() {}
-  union {
-    UndeleteStorageRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UndeleteStorageRequestDefaultTypeInternal _UndeleteStorageRequest_default_instance_;
-PROTOBUF_CONSTEXPR UndeleteStorageResponse::UndeleteStorageResponse(
-    ::_pbi::ConstantInitialized) {}
-struct UndeleteStorageResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UndeleteStorageResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UndeleteStorageResponseDefaultTypeInternal() {}
-  union {
-    UndeleteStorageResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UndeleteStorageResponseDefaultTypeInternal _UndeleteStorageResponse_default_instance_;
-PROTOBUF_CONSTEXPR RenameStorageRequest::RenameStorageRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.new_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct RenameStorageRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RenameStorageRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RenameStorageRequestDefaultTypeInternal() {}
-  union {
-    RenameStorageRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RenameStorageRequestDefaultTypeInternal _RenameStorageRequest_default_instance_;
-PROTOBUF_CONSTEXPR RenameStorageResponse::RenameStorageResponse(
-    ::_pbi::ConstantInitialized) {}
-struct RenameStorageResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RenameStorageResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RenameStorageResponseDefaultTypeInternal() {}
-  union {
-    RenameStorageResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RenameStorageResponseDefaultTypeInternal _RenameStorageResponse_default_instance_;
-PROTOBUF_CONSTEXPR ResizeStorageRequest::ResizeStorageRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.new_size_)*/uint64_t{0u}
-  , /*decltype(_impl_.new_shard_count_)*/uint64_t{0u}
-  , /*decltype(_impl_.id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ResizeStorageRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ResizeStorageRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ResizeStorageRequestDefaultTypeInternal() {}
-  union {
-    ResizeStorageRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResizeStorageRequestDefaultTypeInternal _ResizeStorageRequest_default_instance_;
-PROTOBUF_CONSTEXPR ResizeStorageResponse::ResizeStorageResponse(
-    ::_pbi::ConstantInitialized) {}
-struct ResizeStorageResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ResizeStorageResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ResizeStorageResponseDefaultTypeInternal() {}
-  union {
-    ResizeStorageResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResizeStorageResponseDefaultTypeInternal _ResizeStorageResponse_default_instance_;
-PROTOBUF_CONSTEXPR GetStoragesRequest::GetStoragesRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ids_)*/{}
-  , /*decltype(_impl_._ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.names_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetStoragesRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetStoragesRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetStoragesRequestDefaultTypeInternal() {}
-  union {
-    GetStoragesRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStoragesRequestDefaultTypeInternal _GetStoragesRequest_default_instance_;
-PROTOBUF_CONSTEXPR GetStoragesResponse::GetStoragesResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.storages_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetStoragesResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetStoragesResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetStoragesResponseDefaultTypeInternal() {}
-  union {
-    GetStoragesResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStoragesResponseDefaultTypeInternal _GetStoragesResponse_default_instance_;
-PROTOBUF_CONSTEXPR ShardRange::ShardRange(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.start_shard_id_)*/uint64_t{0u}
-  , /*decltype(_impl_.offset_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ShardRangeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ShardRangeDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ShardRangeDefaultTypeInternal() {}
-  union {
-    ShardRange _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardRangeDefaultTypeInternal _ShardRange_default_instance_;
-PROTOBUF_CONSTEXPR RouteRecord::RouteRecord(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.addrs_)*/{}
-  , /*decltype(_impl_.leader_addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.shard_id_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct RouteRecordDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RouteRecordDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RouteRecordDefaultTypeInternal() {}
-  union {
-    RouteRecord _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RouteRecordDefaultTypeInternal _RouteRecord_default_instance_;
-PROTOBUF_CONSTEXPR ShardList::ShardList(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.shard_ids_)*/{}
-  , /*decltype(_impl_._shard_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ShardListDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ShardListDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ShardListDefaultTypeInternal() {}
-  union {
-    ShardList _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardListDefaultTypeInternal _ShardList_default_instance_;
-PROTOBUF_CONSTEXPR GetShardRoutesRequest::GetShardRoutesRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.timestamp_)*/nullptr
-  , /*decltype(_impl_.shards_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_._oneof_case_)*/{}} {}
-struct GetShardRoutesRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetShardRoutesRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetShardRoutesRequestDefaultTypeInternal() {}
-  union {
-    GetShardRoutesRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetShardRoutesRequestDefaultTypeInternal _GetShardRoutesRequest_default_instance_;
-PROTOBUF_CONSTEXPR GetShardRoutesResponse::GetShardRoutesResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.routes_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetShardRoutesResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetShardRoutesResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetShardRoutesResponseDefaultTypeInternal() {}
-  union {
-    GetShardRoutesResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetShardRoutesResponseDefaultTypeInternal _GetShardRoutesResponse_default_instance_;
-PROTOBUF_CONSTEXPR GetShardRoutesByStorageRequest::GetShardRoutesByStorageRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.timestamp_)*/nullptr
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetShardRoutesByStorageRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetShardRoutesByStorageRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetShardRoutesByStorageRequestDefaultTypeInternal() {}
-  union {
-    GetShardRoutesByStorageRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetShardRoutesByStorageRequestDefaultTypeInternal _GetShardRoutesByStorageRequest_default_instance_;
-PROTOBUF_CONSTEXPR GetShardRoutesByStorageResponse::GetShardRoutesByStorageResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.routes_)*/{}
-  , /*decltype(_impl_.timestamp_)*/nullptr
-  , /*decltype(_impl_.is_full_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetShardRoutesByStorageResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetShardRoutesByStorageResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetShardRoutesByStorageResponseDefaultTypeInternal() {}
-  union {
-    GetShardRoutesByStorageResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetShardRoutesByStorageResponseDefaultTypeInternal _GetShardRoutesByStorageResponse_default_instance_;
-PROTOBUF_CONSTEXPR AddDataServerRequest::AddDataServerRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct AddDataServerRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AddDataServerRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~AddDataServerRequestDefaultTypeInternal() {}
-  union {
-    AddDataServerRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddDataServerRequestDefaultTypeInternal _AddDataServerRequest_default_instance_;
-PROTOBUF_CONSTEXPR AddDataServerResponse::AddDataServerResponse(
-    ::_pbi::ConstantInitialized) {}
-struct AddDataServerResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AddDataServerResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~AddDataServerResponseDefaultTypeInternal() {}
-  union {
-    AddDataServerResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddDataServerResponseDefaultTypeInternal _AddDataServerResponse_default_instance_;
-PROTOBUF_CONSTEXPR RemoveDataServerRequest::RemoveDataServerRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct RemoveDataServerRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RemoveDataServerRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RemoveDataServerRequestDefaultTypeInternal() {}
-  union {
-    RemoveDataServerRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveDataServerRequestDefaultTypeInternal _RemoveDataServerRequest_default_instance_;
-PROTOBUF_CONSTEXPR RemoveDataServerResponse::RemoveDataServerResponse(
-    ::_pbi::ConstantInitialized) {}
-struct RemoveDataServerResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RemoveDataServerResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RemoveDataServerResponseDefaultTypeInternal() {}
-  union {
-    RemoveDataServerResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveDataServerResponseDefaultTypeInternal _RemoveDataServerResponse_default_instance_;
-PROTOBUF_CONSTEXPR ListDataServerRequest::ListDataServerRequest(
-    ::_pbi::ConstantInitialized) {}
-struct ListDataServerRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ListDataServerRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ListDataServerRequestDefaultTypeInternal() {}
-  union {
-    ListDataServerRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListDataServerRequestDefaultTypeInternal _ListDataServerRequest_default_instance_;
-PROTOBUF_CONSTEXPR ListDataServerResponse::ListDataServerResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.data_servers_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ListDataServerResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ListDataServerResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ListDataServerResponseDefaultTypeInternal() {}
-  union {
-    ListDataServerResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListDataServerResponseDefaultTypeInternal _ListDataServerResponse_default_instance_;
-PROTOBUF_CONSTEXPR UpdateDataServerRequest::UpdateDataServerRequest(
-    ::_pbi::ConstantInitialized) {}
-struct UpdateDataServerRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdateDataServerRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UpdateDataServerRequestDefaultTypeInternal() {}
-  union {
-    UpdateDataServerRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateDataServerRequestDefaultTypeInternal _UpdateDataServerRequest_default_instance_;
-PROTOBUF_CONSTEXPR UpdateDataServerResponse::UpdateDataServerResponse(
-    ::_pbi::ConstantInitialized) {}
-struct UpdateDataServerResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdateDataServerResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UpdateDataServerResponseDefaultTypeInternal() {}
-  union {
-    UpdateDataServerResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateDataServerResponseDefaultTypeInternal _UpdateDataServerResponse_default_instance_;
-PROTOBUF_CONSTEXPR ShardInfoRequest::ShardInfoRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.id_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ShardInfoRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ShardInfoRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ShardInfoRequestDefaultTypeInternal() {}
-  union {
-    ShardInfoRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardInfoRequestDefaultTypeInternal _ShardInfoRequest_default_instance_;
-PROTOBUF_CONSTEXPR ShardInfoResponse::ShardInfoResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.shard_)*/nullptr
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ShardInfoResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ShardInfoResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ShardInfoResponseDefaultTypeInternal() {}
-  union {
-    ShardInfoResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ShardInfoResponseDefaultTypeInternal _ShardInfoResponse_default_instance_;
-PROTOBUF_CONSTEXPR GetShardIDByKeyRequest::GetShardIDByKeyRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetShardIDByKeyRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetShardIDByKeyRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetShardIDByKeyRequestDefaultTypeInternal() {}
-  union {
-    GetShardIDByKeyRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetShardIDByKeyRequestDefaultTypeInternal _GetShardIDByKeyRequest_default_instance_;
-PROTOBUF_CONSTEXPR GetShardIDByKeyResponse::GetShardIDByKeyResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.shard_id_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetShardIDByKeyResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetShardIDByKeyResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetShardIDByKeyResponseDefaultTypeInternal() {}
-  union {
-    GetShardIDByKeyResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetShardIDByKeyResponseDefaultTypeInternal _GetShardIDByKeyResponse_default_instance_;
-PROTOBUF_CONSTEXPR SyncShardInDataServerRequest_SyncShardInfo::SyncShardInDataServerRequest_SyncShardInfo(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.leader_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.replica_update_ts_)*/nullptr
-  , /*decltype(_impl_.create_ts_)*/nullptr
-  , /*decltype(_impl_.leader_change_ts_)*/nullptr
-  , /*decltype(_impl_.shard_id_)*/uint64_t{0u}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal() {}
-  union {
-    SyncShardInDataServerRequest_SyncShardInfo _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal _SyncShardInDataServerRequest_SyncShardInfo_default_instance_;
-PROTOBUF_CONSTEXPR SyncShardInDataServerRequest::SyncShardInDataServerRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.shards_)*/{}
-  , /*decltype(_impl_.dataserver_addr_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.sync_ts_)*/nullptr
-  , /*decltype(_impl_.is_last_piece_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct SyncShardInDataServerRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SyncShardInDataServerRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SyncShardInDataServerRequestDefaultTypeInternal() {}
-  union {
-    SyncShardInDataServerRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SyncShardInDataServerRequestDefaultTypeInternal _SyncShardInDataServerRequest_default_instance_;
-PROTOBUF_CONSTEXPR SyncShardInDataServerResponse::SyncShardInDataServerResponse(
-    ::_pbi::ConstantInitialized) {}
-struct SyncShardInDataServerResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SyncShardInDataServerResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SyncShardInDataServerResponseDefaultTypeInternal() {}
-  union {
-    SyncShardInDataServerResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SyncShardInDataServerResponseDefaultTypeInternal _SyncShardInDataServerResponse_default_instance_;
+class StorageDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Storage> _instance;
+} _Storage_default_instance_;
+class ShardDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Shard> _instance;
+} _Shard_default_instance_;
+class DataServerDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DataServer> _instance;
+} _DataServer_default_instance_;
+class ReplicateDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Replicate> _instance;
+} _Replicate_default_instance_;
+class HeartBeatRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HeartBeatRequest> _instance;
+} _HeartBeatRequest_default_instance_;
+class HeartBeatResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HeartBeatResponse> _instance;
+} _HeartBeatResponse_default_instance_;
+class CreateStorageRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateStorageRequest> _instance;
+} _CreateStorageRequest_default_instance_;
+class CreateStorageResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateStorageResponse> _instance;
+} _CreateStorageResponse_default_instance_;
+class CreateShardRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateShardRequest> _instance;
+} _CreateShardRequest_default_instance_;
+class CreateShardResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateShardResponse> _instance;
+} _CreateShardResponse_default_instance_;
+class RemoveShardRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveShardRequest> _instance;
+} _RemoveShardRequest_default_instance_;
+class RemoveShardResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveShardResponse> _instance;
+} _RemoveShardResponse_default_instance_;
+class DeleteStorageRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteStorageRequest> _instance;
+} _DeleteStorageRequest_default_instance_;
+class DeleteStorageResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteStorageResponse> _instance;
+} _DeleteStorageResponse_default_instance_;
+class UndeleteStorageRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UndeleteStorageRequest> _instance;
+} _UndeleteStorageRequest_default_instance_;
+class UndeleteStorageResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UndeleteStorageResponse> _instance;
+} _UndeleteStorageResponse_default_instance_;
+class RenameStorageRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RenameStorageRequest> _instance;
+} _RenameStorageRequest_default_instance_;
+class RenameStorageResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RenameStorageResponse> _instance;
+} _RenameStorageResponse_default_instance_;
+class ResizeStorageRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ResizeStorageRequest> _instance;
+} _ResizeStorageRequest_default_instance_;
+class ResizeStorageResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ResizeStorageResponse> _instance;
+} _ResizeStorageResponse_default_instance_;
+class GetStoragesRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetStoragesRequest> _instance;
+} _GetStoragesRequest_default_instance_;
+class GetStoragesResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetStoragesResponse> _instance;
+} _GetStoragesResponse_default_instance_;
+class ShardRangeDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ShardRange> _instance;
+} _ShardRange_default_instance_;
+class RouteRecordDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RouteRecord> _instance;
+} _RouteRecord_default_instance_;
+class ShardListDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ShardList> _instance;
+} _ShardList_default_instance_;
+class GetShardRoutesRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetShardRoutesRequest> _instance;
+  const ::bedrock::metaserver::ShardList* shards_list_;
+  const ::bedrock::metaserver::ShardRange* shard_range_;
+} _GetShardRoutesRequest_default_instance_;
+class GetShardRoutesResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetShardRoutesResponse> _instance;
+} _GetShardRoutesResponse_default_instance_;
+class GetShardRoutesByStorageRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetShardRoutesByStorageRequest> _instance;
+} _GetShardRoutesByStorageRequest_default_instance_;
+class GetShardRoutesByStorageResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetShardRoutesByStorageResponse> _instance;
+} _GetShardRoutesByStorageResponse_default_instance_;
+class AddDataServerRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddDataServerRequest> _instance;
+} _AddDataServerRequest_default_instance_;
+class AddDataServerResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddDataServerResponse> _instance;
+} _AddDataServerResponse_default_instance_;
+class RemoveDataServerRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveDataServerRequest> _instance;
+} _RemoveDataServerRequest_default_instance_;
+class RemoveDataServerResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveDataServerResponse> _instance;
+} _RemoveDataServerResponse_default_instance_;
+class ListDataServerRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListDataServerRequest> _instance;
+} _ListDataServerRequest_default_instance_;
+class ListDataServerResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListDataServerResponse> _instance;
+} _ListDataServerResponse_default_instance_;
+class UpdateDataServerRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateDataServerRequest> _instance;
+} _UpdateDataServerRequest_default_instance_;
+class UpdateDataServerResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateDataServerResponse> _instance;
+} _UpdateDataServerResponse_default_instance_;
+class ShardInfoRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ShardInfoRequest> _instance;
+} _ShardInfoRequest_default_instance_;
+class ShardInfoResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ShardInfoResponse> _instance;
+} _ShardInfoResponse_default_instance_;
+class GetShardIDByKeyRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetShardIDByKeyRequest> _instance;
+} _GetShardIDByKeyRequest_default_instance_;
+class GetShardIDByKeyResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetShardIDByKeyResponse> _instance;
+} _GetShardIDByKeyResponse_default_instance_;
+class SyncShardInDataServerRequest_SyncShardInfoDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SyncShardInDataServerRequest_SyncShardInfo> _instance;
+} _SyncShardInDataServerRequest_SyncShardInfo_default_instance_;
+class SyncShardInDataServerRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SyncShardInDataServerRequest> _instance;
+} _SyncShardInDataServerRequest_default_instance_;
+class SyncShardInDataServerResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SyncShardInDataServerResponse> _instance;
+} _SyncShardInDataServerResponse_default_instance_;
 }  // namespace metaserver
 }  // namespace bedrock
-static ::_pb::Metadata file_level_metadata_metaserver_2eproto[44];
-static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_metaserver_2eproto = nullptr;
-static const ::_pb::ServiceDescriptor* file_level_service_descriptors_metaserver_2eproto[1];
+static void InitDefaultsscc_info_AddDataServerRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  {
+    void* ptr = &::bedrock::metaserver::_AddDataServerRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::AddDataServerRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::AddDataServerRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddDataServerRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddDataServerRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddDataServerResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_AddDataServerResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::AddDataServerResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::AddDataServerResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddDataServerResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddDataServerResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_CreateShardRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_CreateShardRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::CreateShardRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::CreateShardRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateShardRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateShardRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_CreateShardResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_CreateShardResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::CreateShardResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::CreateShardResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateShardResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateShardResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_CreateStorageRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_CreateStorageRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::CreateStorageRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::CreateStorageRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateStorageRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateStorageRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_CreateStorageResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_CreateStorageResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::CreateStorageResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::CreateStorageResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateStorageResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateStorageResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_DataServer_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_DataServer_default_instance_;
+    new (ptr) ::bedrock::metaserver::DataServer();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::DataServer::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DataServer_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DataServer_metaserver_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_DeleteStorageRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_DeleteStorageRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::DeleteStorageRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::DeleteStorageRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteStorageRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteStorageRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteStorageResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_DeleteStorageResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::DeleteStorageResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::DeleteStorageResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteStorageResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteStorageResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetShardIDByKeyRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetShardIDByKeyRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetShardIDByKeyRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetShardIDByKeyRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetShardIDByKeyRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetShardIDByKeyRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetShardIDByKeyResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetShardIDByKeyResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetShardIDByKeyResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetShardIDByKeyResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetShardIDByKeyResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetShardIDByKeyResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetShardRoutesByStorageRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetShardRoutesByStorageRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetShardRoutesByStorageRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetShardRoutesByStorageRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetShardRoutesByStorageRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetShardRoutesByStorageRequest_metaserver_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetShardRoutesByStorageResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetShardRoutesByStorageResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetShardRoutesByStorageResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetShardRoutesByStorageResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_GetShardRoutesByStorageResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_GetShardRoutesByStorageResponse_metaserver_2eproto}, {
+      &scc_info_RouteRecord_metaserver_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetShardRoutesRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetShardRoutesRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetShardRoutesRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetShardRoutesRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_GetShardRoutesRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_GetShardRoutesRequest_metaserver_2eproto}, {
+      &scc_info_ShardList_metaserver_2eproto.base,
+      &scc_info_ShardRange_metaserver_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetShardRoutesResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetShardRoutesResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetShardRoutesResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetShardRoutesResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetShardRoutesResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetShardRoutesResponse_metaserver_2eproto}, {
+      &scc_info_RouteRecord_metaserver_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetStoragesRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetStoragesRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetStoragesRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetStoragesRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetStoragesRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetStoragesRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetStoragesResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_GetStoragesResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::GetStoragesResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::GetStoragesResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetStoragesResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetStoragesResponse_metaserver_2eproto}, {
+      &scc_info_Storage_metaserver_2eproto.base,}};
+
+static void InitDefaultsscc_info_HeartBeatRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_HeartBeatRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::HeartBeatRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::HeartBeatRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HeartBeatRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HeartBeatRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_HeartBeatResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_HeartBeatResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::HeartBeatResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::HeartBeatResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HeartBeatResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HeartBeatResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ListDataServerRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ListDataServerRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::ListDataServerRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ListDataServerRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListDataServerRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListDataServerRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ListDataServerResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ListDataServerResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::ListDataServerResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ListDataServerResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListDataServerResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListDataServerResponse_metaserver_2eproto}, {
+      &scc_info_DataServer_metaserver_2eproto.base,}};
+
+static void InitDefaultsscc_info_RemoveDataServerRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RemoveDataServerRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::RemoveDataServerRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RemoveDataServerRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveDataServerRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveDataServerRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveDataServerResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RemoveDataServerResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::RemoveDataServerResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RemoveDataServerResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveDataServerResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveDataServerResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveShardRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RemoveShardRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::RemoveShardRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RemoveShardRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveShardRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveShardRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveShardResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RemoveShardResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::RemoveShardResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RemoveShardResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveShardResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveShardResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_RenameStorageRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RenameStorageRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::RenameStorageRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RenameStorageRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RenameStorageRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RenameStorageRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_RenameStorageResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RenameStorageResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::RenameStorageResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RenameStorageResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RenameStorageResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RenameStorageResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_Replicate_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_Replicate_default_instance_;
+    new (ptr) ::bedrock::metaserver::Replicate();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::Replicate::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Replicate_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Replicate_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ResizeStorageRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ResizeStorageRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::ResizeStorageRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ResizeStorageRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ResizeStorageRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ResizeStorageRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ResizeStorageResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ResizeStorageResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::ResizeStorageResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ResizeStorageResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ResizeStorageResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ResizeStorageResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_RouteRecord_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_RouteRecord_default_instance_;
+    new (ptr) ::bedrock::metaserver::RouteRecord();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::RouteRecord::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RouteRecord_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RouteRecord_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_Shard_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_Shard_default_instance_;
+    new (ptr) ::bedrock::metaserver::Shard();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::Shard::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Shard_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Shard_metaserver_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_ShardInfoRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ShardInfoRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::ShardInfoRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ShardInfoRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ShardInfoRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ShardInfoRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ShardInfoResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ShardInfoResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::ShardInfoResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ShardInfoResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ShardInfoResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ShardInfoResponse_metaserver_2eproto}, {
+      &scc_info_Shard_metaserver_2eproto.base,}};
+
+static void InitDefaultsscc_info_ShardList_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ShardList_default_instance_;
+    new (ptr) ::bedrock::metaserver::ShardList();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ShardList::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ShardList_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ShardList_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ShardRange_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_ShardRange_default_instance_;
+    new (ptr) ::bedrock::metaserver::ShardRange();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::ShardRange::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ShardRange_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ShardRange_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_Storage_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_Storage_default_instance_;
+    new (ptr) ::bedrock::metaserver::Storage();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::Storage::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Storage_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Storage_metaserver_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_SyncShardInDataServerRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_SyncShardInDataServerRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::SyncShardInDataServerRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::SyncShardInDataServerRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SyncShardInDataServerRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_SyncShardInDataServerRequest_metaserver_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
+      &scc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto.base,}};
+
+static void InitDefaultsscc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_;
+    new (ptr) ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsscc_info_SyncShardInDataServerResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_SyncShardInDataServerResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::SyncShardInDataServerResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::SyncShardInDataServerResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SyncShardInDataServerResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SyncShardInDataServerResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_UndeleteStorageRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_UndeleteStorageRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::UndeleteStorageRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::UndeleteStorageRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndeleteStorageRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UndeleteStorageRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_UndeleteStorageResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_UndeleteStorageResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::UndeleteStorageResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::UndeleteStorageResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndeleteStorageResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UndeleteStorageResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_UpdateDataServerRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_UpdateDataServerRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::UpdateDataServerRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::UpdateDataServerRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateDataServerRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateDataServerRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_UpdateDataServerResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_UpdateDataServerResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::UpdateDataServerResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::UpdateDataServerResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateDataServerResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateDataServerResponse_metaserver_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_metaserver_2eproto[44];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_metaserver_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* file_level_service_descriptors_metaserver_2eproto[1];
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_metaserver_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _impl_.deleted_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _impl_.create_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _impl_.last_shard_isn_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, _impl_.owner_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, name_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, deleted_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, create_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, last_shard_isn_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Storage, owner_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.isn_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.replica_update_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.replicates_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.is_deleted_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.deleted_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.create_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.leader_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, _impl_.leader_change_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, isn_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, replica_update_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, replicates_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, is_deleted_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, deleted_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, create_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, leader_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Shard, leader_change_ts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.ip_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.port_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.capacity_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.free_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.last_heartbeat_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.status_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, _impl_.idc_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, ip_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, port_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, capacity_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, free_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, last_heartbeat_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, status_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DataServer, idc_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Replicate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Replicate, _impl_.addrs_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::Replicate, addrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, _impl_.addr_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, _impl_.restarting_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, addr_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatRequest, restarting_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::HeartBeatResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageRequest, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageRequest, _impl_.initial_range_count_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageRequest, initial_range_count_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageResponse, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateStorageResponse, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, _impl_.shard_isn_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardRequest, shard_isn_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::CreateShardResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, _impl_.shard_isn_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardRequest, shard_isn_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveShardResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, _impl_.real_delete_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, _impl_.recycle_after_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, real_delete_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageRequest, recycle_after_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::DeleteStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::UndeleteStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::UndeleteStorageRequest, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::UndeleteStorageRequest, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::UndeleteStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RenameStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RenameStorageRequest, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RenameStorageRequest, _impl_.new_name_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RenameStorageRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RenameStorageRequest, new_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RenameStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, _impl_.new_size_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, _impl_.new_shard_count_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, new_size_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageRequest, new_shard_count_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ResizeStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesRequest, _impl_.ids_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesRequest, _impl_.names_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesRequest, ids_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesRequest, names_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesResponse, _impl_.storages_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetStoragesResponse, storages_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardRange, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardRange, _impl_.start_shard_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardRange, _impl_.offset_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardRange, start_shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardRange, offset_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _impl_.shard_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _impl_.leader_addr_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, _impl_.addrs_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, leader_addr_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RouteRecord, addrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardList, _impl_.shard_ids_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardList, shard_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, _impl_._oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ::_pbi::kInvalidFieldOffsetTag,
-  ::_pbi::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, _impl_.timestamp_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, _impl_.shards_),
+  offsetof(::bedrock::metaserver::GetShardRoutesRequestDefaultTypeInternal, shards_list_),
+  offsetof(::bedrock::metaserver::GetShardRoutesRequestDefaultTypeInternal, shard_range_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesRequest, shards_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesResponse, _impl_.routes_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesResponse, routes_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageRequest, _impl_.timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageRequest, timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, _impl_.routes_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, _impl_.timestamp_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, _impl_.is_full_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, routes_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardRoutesByStorageResponse, is_full_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AddDataServerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AddDataServerRequest, _impl_.addr_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AddDataServerRequest, addr_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AddDataServerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveDataServerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveDataServerRequest, _impl_.addr_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveDataServerRequest, addr_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::RemoveDataServerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ListDataServerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ListDataServerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ListDataServerResponse, _impl_.data_servers_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ListDataServerResponse, data_servers_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::UpdateDataServerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::UpdateDataServerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardInfoRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardInfoRequest, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardInfoRequest, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardInfoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardInfoResponse, _impl_.shard_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::ShardInfoResponse, shard_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyRequest, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyRequest, key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyResponse, _impl_.shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::GetShardIDByKeyResponse, shard_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, _impl_.shard_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, _impl_.replica_update_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, _impl_.create_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, _impl_.leader_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, _impl_.leader_change_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, shard_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, replica_update_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, create_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, leader_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo, leader_change_ts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, _impl_.is_last_piece_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, _impl_.sync_ts_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, _impl_.dataserver_addr_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, _impl_.shards_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, is_last_piece_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, sync_ts_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, dataserver_addr_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerRequest, shards_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::SyncShardInDataServerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::bedrock::metaserver::Storage)},
-  { 12, -1, -1, sizeof(::bedrock::metaserver::Shard)},
-  { 27, -1, -1, sizeof(::bedrock::metaserver::DataServer)},
-  { 40, -1, -1, sizeof(::bedrock::metaserver::Replicate)},
-  { 47, -1, -1, sizeof(::bedrock::metaserver::HeartBeatRequest)},
-  { 55, -1, -1, sizeof(::bedrock::metaserver::HeartBeatResponse)},
-  { 61, -1, -1, sizeof(::bedrock::metaserver::CreateStorageRequest)},
-  { 69, -1, -1, sizeof(::bedrock::metaserver::CreateStorageResponse)},
-  { 76, -1, -1, sizeof(::bedrock::metaserver::CreateShardRequest)},
-  { 84, -1, -1, sizeof(::bedrock::metaserver::CreateShardResponse)},
-  { 90, -1, -1, sizeof(::bedrock::metaserver::RemoveShardRequest)},
-  { 98, -1, -1, sizeof(::bedrock::metaserver::RemoveShardResponse)},
-  { 104, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageRequest)},
-  { 113, -1, -1, sizeof(::bedrock::metaserver::DeleteStorageResponse)},
-  { 119, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageRequest)},
-  { 126, -1, -1, sizeof(::bedrock::metaserver::UndeleteStorageResponse)},
-  { 132, -1, -1, sizeof(::bedrock::metaserver::RenameStorageRequest)},
-  { 140, -1, -1, sizeof(::bedrock::metaserver::RenameStorageResponse)},
-  { 146, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageRequest)},
-  { 155, -1, -1, sizeof(::bedrock::metaserver::ResizeStorageResponse)},
-  { 161, -1, -1, sizeof(::bedrock::metaserver::GetStoragesRequest)},
-  { 169, -1, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
-  { 176, -1, -1, sizeof(::bedrock::metaserver::ShardRange)},
-  { 184, -1, -1, sizeof(::bedrock::metaserver::RouteRecord)},
-  { 193, -1, -1, sizeof(::bedrock::metaserver::ShardList)},
-  { 200, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
-  { 210, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
-  { 217, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
-  { 225, -1, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
-  { 234, -1, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
-  { 241, -1, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
-  { 247, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
-  { 254, -1, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
-  { 260, -1, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
-  { 266, -1, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
-  { 273, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
-  { 279, -1, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
-  { 285, -1, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
-  { 292, -1, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
-  { 299, -1, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyRequest)},
-  { 307, -1, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyResponse)},
-  { 314, -1, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo)},
-  { 325, -1, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerRequest)},
-  { 335, -1, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerResponse)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, sizeof(::bedrock::metaserver::Storage)},
+  { 11, -1, sizeof(::bedrock::metaserver::Shard)},
+  { 25, -1, sizeof(::bedrock::metaserver::DataServer)},
+  { 37, -1, sizeof(::bedrock::metaserver::Replicate)},
+  { 43, -1, sizeof(::bedrock::metaserver::HeartBeatRequest)},
+  { 50, -1, sizeof(::bedrock::metaserver::HeartBeatResponse)},
+  { 55, -1, sizeof(::bedrock::metaserver::CreateStorageRequest)},
+  { 62, -1, sizeof(::bedrock::metaserver::CreateStorageResponse)},
+  { 68, -1, sizeof(::bedrock::metaserver::CreateShardRequest)},
+  { 75, -1, sizeof(::bedrock::metaserver::CreateShardResponse)},
+  { 80, -1, sizeof(::bedrock::metaserver::RemoveShardRequest)},
+  { 87, -1, sizeof(::bedrock::metaserver::RemoveShardResponse)},
+  { 92, -1, sizeof(::bedrock::metaserver::DeleteStorageRequest)},
+  { 100, -1, sizeof(::bedrock::metaserver::DeleteStorageResponse)},
+  { 105, -1, sizeof(::bedrock::metaserver::UndeleteStorageRequest)},
+  { 111, -1, sizeof(::bedrock::metaserver::UndeleteStorageResponse)},
+  { 116, -1, sizeof(::bedrock::metaserver::RenameStorageRequest)},
+  { 123, -1, sizeof(::bedrock::metaserver::RenameStorageResponse)},
+  { 128, -1, sizeof(::bedrock::metaserver::ResizeStorageRequest)},
+  { 136, -1, sizeof(::bedrock::metaserver::ResizeStorageResponse)},
+  { 141, -1, sizeof(::bedrock::metaserver::GetStoragesRequest)},
+  { 148, -1, sizeof(::bedrock::metaserver::GetStoragesResponse)},
+  { 154, -1, sizeof(::bedrock::metaserver::ShardRange)},
+  { 161, -1, sizeof(::bedrock::metaserver::RouteRecord)},
+  { 169, -1, sizeof(::bedrock::metaserver::ShardList)},
+  { 175, -1, sizeof(::bedrock::metaserver::GetShardRoutesRequest)},
+  { 184, -1, sizeof(::bedrock::metaserver::GetShardRoutesResponse)},
+  { 190, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageRequest)},
+  { 197, -1, sizeof(::bedrock::metaserver::GetShardRoutesByStorageResponse)},
+  { 205, -1, sizeof(::bedrock::metaserver::AddDataServerRequest)},
+  { 211, -1, sizeof(::bedrock::metaserver::AddDataServerResponse)},
+  { 216, -1, sizeof(::bedrock::metaserver::RemoveDataServerRequest)},
+  { 222, -1, sizeof(::bedrock::metaserver::RemoveDataServerResponse)},
+  { 227, -1, sizeof(::bedrock::metaserver::ListDataServerRequest)},
+  { 232, -1, sizeof(::bedrock::metaserver::ListDataServerResponse)},
+  { 238, -1, sizeof(::bedrock::metaserver::UpdateDataServerRequest)},
+  { 243, -1, sizeof(::bedrock::metaserver::UpdateDataServerResponse)},
+  { 248, -1, sizeof(::bedrock::metaserver::ShardInfoRequest)},
+  { 254, -1, sizeof(::bedrock::metaserver::ShardInfoResponse)},
+  { 260, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyRequest)},
+  { 267, -1, sizeof(::bedrock::metaserver::GetShardIDByKeyResponse)},
+  { 273, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo)},
+  { 283, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerRequest)},
+  { 292, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerResponse)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::bedrock::metaserver::_Storage_default_instance_._instance,
-  &::bedrock::metaserver::_Shard_default_instance_._instance,
-  &::bedrock::metaserver::_DataServer_default_instance_._instance,
-  &::bedrock::metaserver::_Replicate_default_instance_._instance,
-  &::bedrock::metaserver::_HeartBeatRequest_default_instance_._instance,
-  &::bedrock::metaserver::_HeartBeatResponse_default_instance_._instance,
-  &::bedrock::metaserver::_CreateStorageRequest_default_instance_._instance,
-  &::bedrock::metaserver::_CreateStorageResponse_default_instance_._instance,
-  &::bedrock::metaserver::_CreateShardRequest_default_instance_._instance,
-  &::bedrock::metaserver::_CreateShardResponse_default_instance_._instance,
-  &::bedrock::metaserver::_RemoveShardRequest_default_instance_._instance,
-  &::bedrock::metaserver::_RemoveShardResponse_default_instance_._instance,
-  &::bedrock::metaserver::_DeleteStorageRequest_default_instance_._instance,
-  &::bedrock::metaserver::_DeleteStorageResponse_default_instance_._instance,
-  &::bedrock::metaserver::_UndeleteStorageRequest_default_instance_._instance,
-  &::bedrock::metaserver::_UndeleteStorageResponse_default_instance_._instance,
-  &::bedrock::metaserver::_RenameStorageRequest_default_instance_._instance,
-  &::bedrock::metaserver::_RenameStorageResponse_default_instance_._instance,
-  &::bedrock::metaserver::_ResizeStorageRequest_default_instance_._instance,
-  &::bedrock::metaserver::_ResizeStorageResponse_default_instance_._instance,
-  &::bedrock::metaserver::_GetStoragesRequest_default_instance_._instance,
-  &::bedrock::metaserver::_GetStoragesResponse_default_instance_._instance,
-  &::bedrock::metaserver::_ShardRange_default_instance_._instance,
-  &::bedrock::metaserver::_RouteRecord_default_instance_._instance,
-  &::bedrock::metaserver::_ShardList_default_instance_._instance,
-  &::bedrock::metaserver::_GetShardRoutesRequest_default_instance_._instance,
-  &::bedrock::metaserver::_GetShardRoutesResponse_default_instance_._instance,
-  &::bedrock::metaserver::_GetShardRoutesByStorageRequest_default_instance_._instance,
-  &::bedrock::metaserver::_GetShardRoutesByStorageResponse_default_instance_._instance,
-  &::bedrock::metaserver::_AddDataServerRequest_default_instance_._instance,
-  &::bedrock::metaserver::_AddDataServerResponse_default_instance_._instance,
-  &::bedrock::metaserver::_RemoveDataServerRequest_default_instance_._instance,
-  &::bedrock::metaserver::_RemoveDataServerResponse_default_instance_._instance,
-  &::bedrock::metaserver::_ListDataServerRequest_default_instance_._instance,
-  &::bedrock::metaserver::_ListDataServerResponse_default_instance_._instance,
-  &::bedrock::metaserver::_UpdateDataServerRequest_default_instance_._instance,
-  &::bedrock::metaserver::_UpdateDataServerResponse_default_instance_._instance,
-  &::bedrock::metaserver::_ShardInfoRequest_default_instance_._instance,
-  &::bedrock::metaserver::_ShardInfoResponse_default_instance_._instance,
-  &::bedrock::metaserver::_GetShardIDByKeyRequest_default_instance_._instance,
-  &::bedrock::metaserver::_GetShardIDByKeyResponse_default_instance_._instance,
-  &::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_._instance,
-  &::bedrock::metaserver::_SyncShardInDataServerRequest_default_instance_._instance,
-  &::bedrock::metaserver::_SyncShardInDataServerResponse_default_instance_._instance,
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_Storage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_Shard_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_DataServer_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_Replicate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_HeartBeatRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_HeartBeatResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateStorageRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateShardRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_CreateShardResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RemoveShardRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RemoveShardResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_DeleteStorageRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_DeleteStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_UndeleteStorageRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_UndeleteStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RenameStorageRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RenameStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ResizeStorageRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ResizeStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetStoragesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetStoragesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ShardRange_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RouteRecord_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ShardList_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetShardRoutesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetShardRoutesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetShardRoutesByStorageRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetShardRoutesByStorageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_AddDataServerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_AddDataServerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RemoveDataServerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_RemoveDataServerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ListDataServerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ListDataServerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_UpdateDataServerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_UpdateDataServerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ShardInfoRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_ShardInfoResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetShardIDByKeyRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_GetShardIDByKeyResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_SyncShardInDataServerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_SyncShardInDataServerResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -1186,264 +1361,288 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "hao/bedrock-metaserver/service\200\001\001b\006proto"
   "3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_metaserver_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::_pbi::once_flag descriptor_table_metaserver_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_metaserver_2eproto = {
-    false, false, 5001, descriptor_table_protodef_metaserver_2eproto,
-    "metaserver.proto",
-    &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_deps, 2, 44,
-    schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
-    file_level_metadata_metaserver_2eproto, file_level_enum_descriptors_metaserver_2eproto,
-    file_level_service_descriptors_metaserver_2eproto,
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_metaserver_2eproto_sccs[44] = {
+  &scc_info_AddDataServerRequest_metaserver_2eproto.base,
+  &scc_info_AddDataServerResponse_metaserver_2eproto.base,
+  &scc_info_CreateShardRequest_metaserver_2eproto.base,
+  &scc_info_CreateShardResponse_metaserver_2eproto.base,
+  &scc_info_CreateStorageRequest_metaserver_2eproto.base,
+  &scc_info_CreateStorageResponse_metaserver_2eproto.base,
+  &scc_info_DataServer_metaserver_2eproto.base,
+  &scc_info_DeleteStorageRequest_metaserver_2eproto.base,
+  &scc_info_DeleteStorageResponse_metaserver_2eproto.base,
+  &scc_info_GetShardIDByKeyRequest_metaserver_2eproto.base,
+  &scc_info_GetShardIDByKeyResponse_metaserver_2eproto.base,
+  &scc_info_GetShardRoutesByStorageRequest_metaserver_2eproto.base,
+  &scc_info_GetShardRoutesByStorageResponse_metaserver_2eproto.base,
+  &scc_info_GetShardRoutesRequest_metaserver_2eproto.base,
+  &scc_info_GetShardRoutesResponse_metaserver_2eproto.base,
+  &scc_info_GetStoragesRequest_metaserver_2eproto.base,
+  &scc_info_GetStoragesResponse_metaserver_2eproto.base,
+  &scc_info_HeartBeatRequest_metaserver_2eproto.base,
+  &scc_info_HeartBeatResponse_metaserver_2eproto.base,
+  &scc_info_ListDataServerRequest_metaserver_2eproto.base,
+  &scc_info_ListDataServerResponse_metaserver_2eproto.base,
+  &scc_info_RemoveDataServerRequest_metaserver_2eproto.base,
+  &scc_info_RemoveDataServerResponse_metaserver_2eproto.base,
+  &scc_info_RemoveShardRequest_metaserver_2eproto.base,
+  &scc_info_RemoveShardResponse_metaserver_2eproto.base,
+  &scc_info_RenameStorageRequest_metaserver_2eproto.base,
+  &scc_info_RenameStorageResponse_metaserver_2eproto.base,
+  &scc_info_Replicate_metaserver_2eproto.base,
+  &scc_info_ResizeStorageRequest_metaserver_2eproto.base,
+  &scc_info_ResizeStorageResponse_metaserver_2eproto.base,
+  &scc_info_RouteRecord_metaserver_2eproto.base,
+  &scc_info_Shard_metaserver_2eproto.base,
+  &scc_info_ShardInfoRequest_metaserver_2eproto.base,
+  &scc_info_ShardInfoResponse_metaserver_2eproto.base,
+  &scc_info_ShardList_metaserver_2eproto.base,
+  &scc_info_ShardRange_metaserver_2eproto.base,
+  &scc_info_Storage_metaserver_2eproto.base,
+  &scc_info_SyncShardInDataServerRequest_metaserver_2eproto.base,
+  &scc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto.base,
+  &scc_info_SyncShardInDataServerResponse_metaserver_2eproto.base,
+  &scc_info_UndeleteStorageRequest_metaserver_2eproto.base,
+  &scc_info_UndeleteStorageResponse_metaserver_2eproto.base,
+  &scc_info_UpdateDataServerRequest_metaserver_2eproto.base,
+  &scc_info_UpdateDataServerResponse_metaserver_2eproto.base,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_metaserver_2eproto_getter() {
-  return &descriptor_table_metaserver_2eproto;
-}
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_metaserver_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_metaserver_2eproto = {
+  false, false, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 5001,
+  &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_sccs, descriptor_table_metaserver_2eproto_deps, 44, 2,
+  schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
+  file_level_metadata_metaserver_2eproto, 44, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
+};
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_metaserver_2eproto(&descriptor_table_metaserver_2eproto);
+static bool dynamic_init_dummy_metaserver_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_metaserver_2eproto)), true);
 namespace bedrock {
 namespace metaserver {
 
 // ===================================================================
 
+void Storage::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_Storage_default_instance_._instance.get_mutable()->deleted_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::bedrock::metaserver::_Storage_default_instance_._instance.get_mutable()->create_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class Storage::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& deleted_ts(const Storage* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const Storage* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& deleted_ts(const Storage* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const Storage* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 Storage::_Internal::deleted_ts(const Storage* msg) {
-  return *msg->_impl_.deleted_ts_;
+  return *msg->deleted_ts_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 Storage::_Internal::create_ts(const Storage* msg) {
-  return *msg->_impl_.create_ts_;
+  return *msg->create_ts_;
 }
 void Storage::clear_deleted_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.deleted_ts_ != nullptr) {
-    delete _impl_.deleted_ts_;
+  if (GetArena() == nullptr && deleted_ts_ != nullptr) {
+    delete deleted_ts_;
   }
-  _impl_.deleted_ts_ = nullptr;
+  deleted_ts_ = nullptr;
 }
 void Storage::clear_create_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
-    delete _impl_.create_ts_;
+  if (GetArena() == nullptr && create_ts_ != nullptr) {
+    delete create_ts_;
   }
-  _impl_.create_ts_ = nullptr;
+  create_ts_ = nullptr;
 }
-Storage::Storage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Storage::Storage(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.Storage)
 }
 Storage::Storage(const Storage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Storage* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.owner_){}
-    , decltype(_impl_.deleted_ts_){nullptr}
-    , decltype(_impl_.create_ts_){nullptr}
-    , decltype(_impl_.id_){}
-    , decltype(_impl_.last_shard_isn_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
-      _this->GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
-  _impl_.owner_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.owner_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_owner().empty()) {
-    _this->_impl_.owner_.Set(from._internal_owner(), 
-      _this->GetArenaForAllocation());
+    owner_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_owner(),
+      GetArena());
   }
   if (from._internal_has_deleted_ts()) {
-    _this->_impl_.deleted_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.deleted_ts_);
+    deleted_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.deleted_ts_);
+  } else {
+    deleted_ts_ = nullptr;
   }
   if (from._internal_has_create_ts()) {
-    _this->_impl_.create_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.create_ts_);
+    create_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.create_ts_);
+  } else {
+    create_ts_ = nullptr;
   }
-  ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.last_shard_isn_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.last_shard_isn_));
+  ::memcpy(&id_, &from.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&last_shard_isn_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(last_shard_isn_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.Storage)
 }
 
-inline void Storage::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.owner_){}
-    , decltype(_impl_.deleted_ts_){nullptr}
-    , decltype(_impl_.create_ts_){nullptr}
-    , decltype(_impl_.id_){0u}
-    , decltype(_impl_.last_shard_isn_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.owner_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.owner_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void Storage::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Storage_metaserver_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&deleted_ts_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&last_shard_isn_) -
+      reinterpret_cast<char*>(&deleted_ts_)) + sizeof(last_shard_isn_));
 }
 
 Storage::~Storage() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.Storage)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Storage::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.name_.Destroy();
-  _impl_.owner_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.deleted_ts_;
-  if (this != internal_default_instance()) delete _impl_.create_ts_;
+void Storage::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  owner_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete deleted_ts_;
+  if (this != internal_default_instance()) delete create_ts_;
 }
 
+void Storage::ArenaDtor(void* object) {
+  Storage* _this = reinterpret_cast< Storage* >(object);
+  (void)_this;
+}
+void Storage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Storage::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const Storage& Storage::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Storage_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void Storage::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.Storage)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.name_.ClearToEmpty();
-  _impl_.owner_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.deleted_ts_ != nullptr) {
-    delete _impl_.deleted_ts_;
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  owner_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && deleted_ts_ != nullptr) {
+    delete deleted_ts_;
   }
-  _impl_.deleted_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
-    delete _impl_.create_ts_;
+  deleted_ts_ = nullptr;
+  if (GetArena() == nullptr && create_ts_ != nullptr) {
+    delete create_ts_;
   }
-  _impl_.create_ts_ = nullptr;
-  ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.last_shard_isn_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.last_shard_isn_));
+  create_ts_ = nullptr;
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&last_shard_isn_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(last_shard_isn_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Storage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Storage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.Storage.name"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.Storage.name"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp deleted_ts = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_deleted_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp create_ts = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_create_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 last_shard_isn = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _impl_.last_shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          last_shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string owner = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_owner();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.Storage.owner"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.Storage.owner"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Storage::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Storage::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.Storage)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // string name = 2;
-  if (!this->_internal_name().empty()) {
+  if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1453,27 +1652,29 @@ uint8_t* Storage::_InternalSerialize(
   }
 
   // .google.protobuf.Timestamp deleted_ts = 3;
-  if (this->_internal_has_deleted_ts()) {
+  if (this->has_deleted_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::deleted_ts(this),
-        _Internal::deleted_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        3, _Internal::deleted_ts(this), target, stream);
   }
 
   // .google.protobuf.Timestamp create_ts = 4;
-  if (this->_internal_has_create_ts()) {
+  if (this->has_create_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::create_ts(this),
-        _Internal::create_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        4, _Internal::create_ts(this), target, stream);
   }
 
   // uint32 last_shard_isn = 5;
-  if (this->_internal_last_shard_isn() != 0) {
+  if (this->last_shard_isn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_last_shard_isn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_last_shard_isn(), target);
   }
 
   // string owner = 6;
-  if (!this->_internal_owner().empty()) {
+  if (this->owner().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_owner().data(), static_cast<int>(this->_internal_owner().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1483,7 +1684,7 @@ uint8_t* Storage::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.Storage)
@@ -1494,87 +1695,108 @@ size_t Storage::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.Storage)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string name = 2;
-  if (!this->_internal_name().empty()) {
+  if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
   // string owner = 6;
-  if (!this->_internal_owner().empty()) {
+  if (this->owner().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_owner());
   }
 
   // .google.protobuf.Timestamp deleted_ts = 3;
-  if (this->_internal_has_deleted_ts()) {
+  if (this->has_deleted_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.deleted_ts_);
+        *deleted_ts_);
   }
 
   // .google.protobuf.Timestamp create_ts = 4;
-  if (this->_internal_has_create_ts()) {
+  if (this->has_create_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.create_ts_);
+        *create_ts_);
   }
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
   }
 
   // uint32 last_shard_isn = 5;
-  if (this->_internal_last_shard_isn() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_last_shard_isn());
+  if (this->last_shard_isn() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_last_shard_isn());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Storage::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Storage::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Storage::GetClassData() const { return &_class_data_; }
+void Storage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.Storage)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Storage* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Storage>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.Storage)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.Storage)
+    MergeFrom(*source);
+  }
+}
 
-
-void Storage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Storage*>(&to_msg);
-  auto& from = static_cast<const Storage&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.Storage)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void Storage::MergeFrom(const Storage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.Storage)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_name().empty()) {
-    _this->_internal_set_name(from._internal_name());
+  if (from.name().size() > 0) {
+    _internal_set_name(from._internal_name());
   }
-  if (!from._internal_owner().empty()) {
-    _this->_internal_set_owner(from._internal_owner());
+  if (from.owner().size() > 0) {
+    _internal_set_owner(from._internal_owner());
   }
-  if (from._internal_has_deleted_ts()) {
-    _this->_internal_mutable_deleted_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_deleted_ts());
+  if (from.has_deleted_ts()) {
+    _internal_mutable_deleted_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_deleted_ts());
   }
-  if (from._internal_has_create_ts()) {
-    _this->_internal_mutable_create_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_create_ts());
+  if (from.has_create_ts()) {
+    _internal_mutable_create_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_create_ts());
   }
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  if (from._internal_last_shard_isn() != 0) {
-    _this->_internal_set_last_shard_isn(from._internal_last_shard_isn());
+  if (from.last_shard_isn() != 0) {
+    _internal_set_last_shard_isn(from._internal_last_shard_isn());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Storage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.Storage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Storage::CopyFrom(const Storage& from) {
@@ -1590,337 +1812,318 @@ bool Storage::IsInitialized() const {
 
 void Storage::InternalSwap(Storage* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.owner_, lhs_arena,
-      &other->_impl_.owner_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  owner_.Swap(&other->owner_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Storage, _impl_.last_shard_isn_)
-      + sizeof(Storage::_impl_.last_shard_isn_)
-      - PROTOBUF_FIELD_OFFSET(Storage, _impl_.deleted_ts_)>(
-          reinterpret_cast<char*>(&_impl_.deleted_ts_),
-          reinterpret_cast<char*>(&other->_impl_.deleted_ts_));
+      PROTOBUF_FIELD_OFFSET(Storage, last_shard_isn_)
+      + sizeof(Storage::last_shard_isn_)
+      - PROTOBUF_FIELD_OFFSET(Storage, deleted_ts_)>(
+          reinterpret_cast<char*>(&deleted_ts_),
+          reinterpret_cast<char*>(&other->deleted_ts_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Storage::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void Shard::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_Shard_default_instance_._instance.get_mutable()->replica_update_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::bedrock::metaserver::_Shard_default_instance_._instance.get_mutable()->deleted_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::bedrock::metaserver::_Shard_default_instance_._instance.get_mutable()->create_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::bedrock::metaserver::_Shard_default_instance_._instance.get_mutable()->leader_change_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class Shard::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& replica_update_ts(const Shard* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& deleted_ts(const Shard* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const Shard* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts(const Shard* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& replica_update_ts(const Shard* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& deleted_ts(const Shard* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const Shard* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts(const Shard* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 Shard::_Internal::replica_update_ts(const Shard* msg) {
-  return *msg->_impl_.replica_update_ts_;
+  return *msg->replica_update_ts_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 Shard::_Internal::deleted_ts(const Shard* msg) {
-  return *msg->_impl_.deleted_ts_;
+  return *msg->deleted_ts_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 Shard::_Internal::create_ts(const Shard* msg) {
-  return *msg->_impl_.create_ts_;
+  return *msg->create_ts_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 Shard::_Internal::leader_change_ts(const Shard* msg) {
-  return *msg->_impl_.leader_change_ts_;
+  return *msg->leader_change_ts_;
 }
 void Shard::clear_replica_update_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.replica_update_ts_ != nullptr) {
-    delete _impl_.replica_update_ts_;
+  if (GetArena() == nullptr && replica_update_ts_ != nullptr) {
+    delete replica_update_ts_;
   }
-  _impl_.replica_update_ts_ = nullptr;
+  replica_update_ts_ = nullptr;
 }
 void Shard::clear_deleted_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.deleted_ts_ != nullptr) {
-    delete _impl_.deleted_ts_;
+  if (GetArena() == nullptr && deleted_ts_ != nullptr) {
+    delete deleted_ts_;
   }
-  _impl_.deleted_ts_ = nullptr;
+  deleted_ts_ = nullptr;
 }
 void Shard::clear_create_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
-    delete _impl_.create_ts_;
+  if (GetArena() == nullptr && create_ts_ != nullptr) {
+    delete create_ts_;
   }
-  _impl_.create_ts_ = nullptr;
+  create_ts_ = nullptr;
 }
 void Shard::clear_leader_change_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.leader_change_ts_ != nullptr) {
-    delete _impl_.leader_change_ts_;
+  if (GetArena() == nullptr && leader_change_ts_ != nullptr) {
+    delete leader_change_ts_;
   }
-  _impl_.leader_change_ts_ = nullptr;
+  leader_change_ts_ = nullptr;
 }
-Shard::Shard(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Shard::Shard(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  replicates_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.Shard)
 }
 Shard::Shard(const Shard& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Shard* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.replicates_){from._impl_.replicates_}
-    , decltype(_impl_.leader_){}
-    , decltype(_impl_.replica_update_ts_){nullptr}
-    , decltype(_impl_.deleted_ts_){nullptr}
-    , decltype(_impl_.create_ts_){nullptr}
-    , decltype(_impl_.leader_change_ts_){nullptr}
-    , decltype(_impl_.isn_){}
-    , decltype(_impl_.storage_id_){}
-    , decltype(_impl_.is_deleted_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      replicates_(from.replicates_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.leader_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.leader_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  leader_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_leader().empty()) {
-    _this->_impl_.leader_.Set(from._internal_leader(), 
-      _this->GetArenaForAllocation());
+    leader_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_leader(),
+      GetArena());
   }
   if (from._internal_has_replica_update_ts()) {
-    _this->_impl_.replica_update_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.replica_update_ts_);
+    replica_update_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.replica_update_ts_);
+  } else {
+    replica_update_ts_ = nullptr;
   }
   if (from._internal_has_deleted_ts()) {
-    _this->_impl_.deleted_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.deleted_ts_);
+    deleted_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.deleted_ts_);
+  } else {
+    deleted_ts_ = nullptr;
   }
   if (from._internal_has_create_ts()) {
-    _this->_impl_.create_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.create_ts_);
+    create_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.create_ts_);
+  } else {
+    create_ts_ = nullptr;
   }
   if (from._internal_has_leader_change_ts()) {
-    _this->_impl_.leader_change_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.leader_change_ts_);
+    leader_change_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.leader_change_ts_);
+  } else {
+    leader_change_ts_ = nullptr;
   }
-  ::memcpy(&_impl_.isn_, &from._impl_.isn_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.is_deleted_) -
-    reinterpret_cast<char*>(&_impl_.isn_)) + sizeof(_impl_.is_deleted_));
+  ::memcpy(&isn_, &from.isn_,
+    static_cast<size_t>(reinterpret_cast<char*>(&is_deleted_) -
+    reinterpret_cast<char*>(&isn_)) + sizeof(is_deleted_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.Shard)
 }
 
-inline void Shard::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.replicates_){arena}
-    , decltype(_impl_.leader_){}
-    , decltype(_impl_.replica_update_ts_){nullptr}
-    , decltype(_impl_.deleted_ts_){nullptr}
-    , decltype(_impl_.create_ts_){nullptr}
-    , decltype(_impl_.leader_change_ts_){nullptr}
-    , decltype(_impl_.isn_){0u}
-    , decltype(_impl_.storage_id_){0u}
-    , decltype(_impl_.is_deleted_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.leader_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.leader_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void Shard::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Shard_metaserver_2eproto.base);
+  leader_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&replica_update_ts_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&is_deleted_) -
+      reinterpret_cast<char*>(&replica_update_ts_)) + sizeof(is_deleted_));
 }
 
 Shard::~Shard() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.Shard)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Shard::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.replicates_.~RepeatedPtrField();
-  _impl_.leader_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.replica_update_ts_;
-  if (this != internal_default_instance()) delete _impl_.deleted_ts_;
-  if (this != internal_default_instance()) delete _impl_.create_ts_;
-  if (this != internal_default_instance()) delete _impl_.leader_change_ts_;
+void Shard::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  leader_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete replica_update_ts_;
+  if (this != internal_default_instance()) delete deleted_ts_;
+  if (this != internal_default_instance()) delete create_ts_;
+  if (this != internal_default_instance()) delete leader_change_ts_;
 }
 
+void Shard::ArenaDtor(void* object) {
+  Shard* _this = reinterpret_cast< Shard* >(object);
+  (void)_this;
+}
+void Shard::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Shard::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const Shard& Shard::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Shard_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void Shard::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.Shard)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.replicates_.Clear();
-  _impl_.leader_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.replica_update_ts_ != nullptr) {
-    delete _impl_.replica_update_ts_;
+  replicates_.Clear();
+  leader_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && replica_update_ts_ != nullptr) {
+    delete replica_update_ts_;
   }
-  _impl_.replica_update_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.deleted_ts_ != nullptr) {
-    delete _impl_.deleted_ts_;
+  replica_update_ts_ = nullptr;
+  if (GetArena() == nullptr && deleted_ts_ != nullptr) {
+    delete deleted_ts_;
   }
-  _impl_.deleted_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
-    delete _impl_.create_ts_;
+  deleted_ts_ = nullptr;
+  if (GetArena() == nullptr && create_ts_ != nullptr) {
+    delete create_ts_;
   }
-  _impl_.create_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.leader_change_ts_ != nullptr) {
-    delete _impl_.leader_change_ts_;
+  create_ts_ = nullptr;
+  if (GetArena() == nullptr && leader_change_ts_ != nullptr) {
+    delete leader_change_ts_;
   }
-  _impl_.leader_change_ts_ = nullptr;
-  ::memset(&_impl_.isn_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.is_deleted_) -
-      reinterpret_cast<char*>(&_impl_.isn_)) + sizeof(_impl_.is_deleted_));
+  leader_change_ts_ = nullptr;
+  ::memset(&isn_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&is_deleted_) -
+      reinterpret_cast<char*>(&isn_)) + sizeof(is_deleted_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Shard::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Shard::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 isn = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 storage_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp replica_update_ts = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_replica_update_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated string replicates = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_replicates();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.Shard.replicates"));
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.Shard.replicates"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bool is_deleted = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _impl_.is_deleted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          is_deleted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp deleted_ts = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_deleted_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp create_ts = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_create_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string leader = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_leader();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.Shard.leader"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.Shard.leader"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp leader_change_ts = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_leader_change_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Shard::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Shard::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.Shard)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 isn = 1;
-  if (this->_internal_isn() != 0) {
+  if (this->isn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_isn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_isn(), target);
   }
 
   // uint32 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_storage_id(), target);
   }
 
   // .google.protobuf.Timestamp replica_update_ts = 3;
-  if (this->_internal_has_replica_update_ts()) {
+  if (this->has_replica_update_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::replica_update_ts(this),
-        _Internal::replica_update_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        3, _Internal::replica_update_ts(this), target, stream);
   }
 
   // repeated string replicates = 4;
@@ -1934,27 +2137,29 @@ uint8_t* Shard::_InternalSerialize(
   }
 
   // bool is_deleted = 5;
-  if (this->_internal_is_deleted() != 0) {
+  if (this->is_deleted() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_is_deleted(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_is_deleted(), target);
   }
 
   // .google.protobuf.Timestamp deleted_ts = 6;
-  if (this->_internal_has_deleted_ts()) {
+  if (this->has_deleted_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, _Internal::deleted_ts(this),
-        _Internal::deleted_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        6, _Internal::deleted_ts(this), target, stream);
   }
 
   // .google.protobuf.Timestamp create_ts = 7;
-  if (this->_internal_has_create_ts()) {
+  if (this->has_create_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, _Internal::create_ts(this),
-        _Internal::create_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        7, _Internal::create_ts(this), target, stream);
   }
 
   // string leader = 8;
-  if (!this->_internal_leader().empty()) {
+  if (this->leader().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_leader().data(), static_cast<int>(this->_internal_leader().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1964,14 +2169,15 @@ uint8_t* Shard::_InternalSerialize(
   }
 
   // .google.protobuf.Timestamp leader_change_ts = 9;
-  if (this->_internal_has_leader_change_ts()) {
+  if (this->has_leader_change_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(9, _Internal::leader_change_ts(this),
-        _Internal::leader_change_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        9, _Internal::leader_change_ts(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.Shard)
@@ -1982,116 +2188,135 @@ size_t Shard::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.Shard)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string replicates = 4;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.replicates_.size());
-  for (int i = 0, n = _impl_.replicates_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(replicates_.size());
+  for (int i = 0, n = replicates_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.replicates_.Get(i));
+      replicates_.Get(i));
   }
 
   // string leader = 8;
-  if (!this->_internal_leader().empty()) {
+  if (this->leader().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_leader());
   }
 
   // .google.protobuf.Timestamp replica_update_ts = 3;
-  if (this->_internal_has_replica_update_ts()) {
+  if (this->has_replica_update_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.replica_update_ts_);
+        *replica_update_ts_);
   }
 
   // .google.protobuf.Timestamp deleted_ts = 6;
-  if (this->_internal_has_deleted_ts()) {
+  if (this->has_deleted_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.deleted_ts_);
+        *deleted_ts_);
   }
 
   // .google.protobuf.Timestamp create_ts = 7;
-  if (this->_internal_has_create_ts()) {
+  if (this->has_create_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.create_ts_);
+        *create_ts_);
   }
 
   // .google.protobuf.Timestamp leader_change_ts = 9;
-  if (this->_internal_has_leader_change_ts()) {
+  if (this->has_leader_change_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.leader_change_ts_);
+        *leader_change_ts_);
   }
 
   // uint32 isn = 1;
-  if (this->_internal_isn() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_isn());
+  if (this->isn() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_isn());
   }
 
   // uint32 storage_id = 2;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
   // bool is_deleted = 5;
-  if (this->_internal_is_deleted() != 0) {
+  if (this->is_deleted() != 0) {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Shard::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Shard::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Shard::GetClassData() const { return &_class_data_; }
+void Shard::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.Shard)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Shard* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Shard>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.Shard)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.Shard)
+    MergeFrom(*source);
+  }
+}
 
-
-void Shard::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Shard*>(&to_msg);
-  auto& from = static_cast<const Shard&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.Shard)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void Shard::MergeFrom(const Shard& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.Shard)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.replicates_.MergeFrom(from._impl_.replicates_);
-  if (!from._internal_leader().empty()) {
-    _this->_internal_set_leader(from._internal_leader());
+  replicates_.MergeFrom(from.replicates_);
+  if (from.leader().size() > 0) {
+    _internal_set_leader(from._internal_leader());
   }
-  if (from._internal_has_replica_update_ts()) {
-    _this->_internal_mutable_replica_update_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_replica_update_ts());
+  if (from.has_replica_update_ts()) {
+    _internal_mutable_replica_update_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_replica_update_ts());
   }
-  if (from._internal_has_deleted_ts()) {
-    _this->_internal_mutable_deleted_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_deleted_ts());
+  if (from.has_deleted_ts()) {
+    _internal_mutable_deleted_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_deleted_ts());
   }
-  if (from._internal_has_create_ts()) {
-    _this->_internal_mutable_create_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_create_ts());
+  if (from.has_create_ts()) {
+    _internal_mutable_create_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_create_ts());
   }
-  if (from._internal_has_leader_change_ts()) {
-    _this->_internal_mutable_leader_change_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_leader_change_ts());
+  if (from.has_leader_change_ts()) {
+    _internal_mutable_leader_change_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_leader_change_ts());
   }
-  if (from._internal_isn() != 0) {
-    _this->_internal_set_isn(from._internal_isn());
+  if (from.isn() != 0) {
+    _internal_set_isn(from._internal_isn());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  if (from._internal_is_deleted() != 0) {
-    _this->_internal_set_is_deleted(from._internal_is_deleted());
+  if (from.is_deleted() != 0) {
+    _internal_set_is_deleted(from._internal_is_deleted());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Shard::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.Shard)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Shard::CopyFrom(const Shard& from) {
@@ -2107,281 +2332,239 @@ bool Shard::IsInitialized() const {
 
 void Shard::InternalSwap(Shard* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.replicates_.InternalSwap(&other->_impl_.replicates_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.leader_, lhs_arena,
-      &other->_impl_.leader_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  replicates_.InternalSwap(&other->replicates_);
+  leader_.Swap(&other->leader_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Shard, _impl_.is_deleted_)
-      + sizeof(Shard::_impl_.is_deleted_)
-      - PROTOBUF_FIELD_OFFSET(Shard, _impl_.replica_update_ts_)>(
-          reinterpret_cast<char*>(&_impl_.replica_update_ts_),
-          reinterpret_cast<char*>(&other->_impl_.replica_update_ts_));
+      PROTOBUF_FIELD_OFFSET(Shard, is_deleted_)
+      + sizeof(Shard::is_deleted_)
+      - PROTOBUF_FIELD_OFFSET(Shard, replica_update_ts_)>(
+          reinterpret_cast<char*>(&replica_update_ts_),
+          reinterpret_cast<char*>(&other->replica_update_ts_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Shard::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void DataServer::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_DataServer_default_instance_._instance.get_mutable()->last_heartbeat_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class DataServer::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_heartbeat_ts(const DataServer* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& last_heartbeat_ts(const DataServer* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 DataServer::_Internal::last_heartbeat_ts(const DataServer* msg) {
-  return *msg->_impl_.last_heartbeat_ts_;
+  return *msg->last_heartbeat_ts_;
 }
 void DataServer::clear_last_heartbeat_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.last_heartbeat_ts_ != nullptr) {
-    delete _impl_.last_heartbeat_ts_;
+  if (GetArena() == nullptr && last_heartbeat_ts_ != nullptr) {
+    delete last_heartbeat_ts_;
   }
-  _impl_.last_heartbeat_ts_ = nullptr;
+  last_heartbeat_ts_ = nullptr;
 }
-DataServer::DataServer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+DataServer::DataServer(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.DataServer)
 }
 DataServer::DataServer(const DataServer& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  DataServer* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.ip_){}
-    , decltype(_impl_.port_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.idc_){}
-    , decltype(_impl_.last_heartbeat_ts_){nullptr}
-    , decltype(_impl_.capacity_){}
-    , decltype(_impl_.free_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.ip_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.ip_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ip().empty()) {
-    _this->_impl_.ip_.Set(from._internal_ip(), 
-      _this->GetArenaForAllocation());
+    ip_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_ip(),
+      GetArena());
   }
-  _impl_.port_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.port_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_port().empty()) {
-    _this->_impl_.port_.Set(from._internal_port(), 
-      _this->GetArenaForAllocation());
+    port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_port(),
+      GetArena());
   }
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
+    status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_status(),
+      GetArena());
   }
-  _impl_.idc_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.idc_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  idc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_idc().empty()) {
-    _this->_impl_.idc_.Set(from._internal_idc(), 
-      _this->GetArenaForAllocation());
+    idc_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_idc(),
+      GetArena());
   }
   if (from._internal_has_last_heartbeat_ts()) {
-    _this->_impl_.last_heartbeat_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.last_heartbeat_ts_);
+    last_heartbeat_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.last_heartbeat_ts_);
+  } else {
+    last_heartbeat_ts_ = nullptr;
   }
-  ::memcpy(&_impl_.capacity_, &from._impl_.capacity_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.free_) -
-    reinterpret_cast<char*>(&_impl_.capacity_)) + sizeof(_impl_.free_));
+  ::memcpy(&capacity_, &from.capacity_,
+    static_cast<size_t>(reinterpret_cast<char*>(&free_) -
+    reinterpret_cast<char*>(&capacity_)) + sizeof(free_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.DataServer)
 }
 
-inline void DataServer::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.ip_){}
-    , decltype(_impl_.port_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.idc_){}
-    , decltype(_impl_.last_heartbeat_ts_){nullptr}
-    , decltype(_impl_.capacity_){uint64_t{0u}}
-    , decltype(_impl_.free_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.ip_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.ip_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.port_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.port_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.idc_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.idc_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void DataServer::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DataServer_metaserver_2eproto.base);
+  ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  idc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&last_heartbeat_ts_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&free_) -
+      reinterpret_cast<char*>(&last_heartbeat_ts_)) + sizeof(free_));
 }
 
 DataServer::~DataServer() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.DataServer)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void DataServer::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.ip_.Destroy();
-  _impl_.port_.Destroy();
-  _impl_.status_.Destroy();
-  _impl_.idc_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.last_heartbeat_ts_;
+void DataServer::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  idc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete last_heartbeat_ts_;
 }
 
+void DataServer::ArenaDtor(void* object) {
+  DataServer* _this = reinterpret_cast< DataServer* >(object);
+  (void)_this;
+}
+void DataServer::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DataServer::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const DataServer& DataServer::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DataServer_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void DataServer::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.DataServer)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.ip_.ClearToEmpty();
-  _impl_.port_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.idc_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.last_heartbeat_ts_ != nullptr) {
-    delete _impl_.last_heartbeat_ts_;
+  ip_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  port_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  status_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  idc_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && last_heartbeat_ts_ != nullptr) {
+    delete last_heartbeat_ts_;
   }
-  _impl_.last_heartbeat_ts_ = nullptr;
-  ::memset(&_impl_.capacity_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.free_) -
-      reinterpret_cast<char*>(&_impl_.capacity_)) + sizeof(_impl_.free_));
+  last_heartbeat_ts_ = nullptr;
+  ::memset(&capacity_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&free_) -
+      reinterpret_cast<char*>(&capacity_)) + sizeof(free_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DataServer::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* DataServer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string ip = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_ip();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.DataServer.ip"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.DataServer.ip"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string port = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_port();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.DataServer.port"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.DataServer.port"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint64 capacity = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint64 free = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.free_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          free_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp last_heartbeat_ts = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_last_heartbeat_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string status = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.DataServer.status"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.DataServer.status"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string idc = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_idc();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.DataServer.idc"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.DataServer.idc"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* DataServer::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* DataServer::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.DataServer)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string ip = 1;
-  if (!this->_internal_ip().empty()) {
+  if (this->ip().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ip().data(), static_cast<int>(this->_internal_ip().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2391,7 +2574,7 @@ uint8_t* DataServer::_InternalSerialize(
   }
 
   // string port = 2;
-  if (!this->_internal_port().empty()) {
+  if (this->port().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_port().data(), static_cast<int>(this->_internal_port().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2401,26 +2584,27 @@ uint8_t* DataServer::_InternalSerialize(
   }
 
   // uint64 capacity = 3;
-  if (this->_internal_capacity() != 0) {
+  if (this->capacity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_capacity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_capacity(), target);
   }
 
   // uint64 free = 4;
-  if (this->_internal_free() != 0) {
+  if (this->free() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_free(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_free(), target);
   }
 
   // .google.protobuf.Timestamp last_heartbeat_ts = 5;
-  if (this->_internal_has_last_heartbeat_ts()) {
+  if (this->has_last_heartbeat_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::last_heartbeat_ts(this),
-        _Internal::last_heartbeat_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        5, _Internal::last_heartbeat_ts(this), target, stream);
   }
 
   // string status = 6;
-  if (!this->_internal_status().empty()) {
+  if (this->status().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2430,7 +2614,7 @@ uint8_t* DataServer::_InternalSerialize(
   }
 
   // string idc = 7;
-  if (!this->_internal_idc().empty()) {
+  if (this->idc().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_idc().data(), static_cast<int>(this->_internal_idc().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2440,7 +2624,7 @@ uint8_t* DataServer::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.DataServer)
@@ -2451,96 +2635,118 @@ size_t DataServer::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.DataServer)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string ip = 1;
-  if (!this->_internal_ip().empty()) {
+  if (this->ip().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ip());
   }
 
   // string port = 2;
-  if (!this->_internal_port().empty()) {
+  if (this->port().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_port());
   }
 
   // string status = 6;
-  if (!this->_internal_status().empty()) {
+  if (this->status().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_status());
   }
 
   // string idc = 7;
-  if (!this->_internal_idc().empty()) {
+  if (this->idc().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_idc());
   }
 
   // .google.protobuf.Timestamp last_heartbeat_ts = 5;
-  if (this->_internal_has_last_heartbeat_ts()) {
+  if (this->has_last_heartbeat_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.last_heartbeat_ts_);
+        *last_heartbeat_ts_);
   }
 
   // uint64 capacity = 3;
-  if (this->_internal_capacity() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_capacity());
+  if (this->capacity() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_capacity());
   }
 
   // uint64 free = 4;
-  if (this->_internal_free() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_free());
+  if (this->free() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_free());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DataServer::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    DataServer::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DataServer::GetClassData() const { return &_class_data_; }
+void DataServer::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.DataServer)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DataServer* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DataServer>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.DataServer)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.DataServer)
+    MergeFrom(*source);
+  }
+}
 
-
-void DataServer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<DataServer*>(&to_msg);
-  auto& from = static_cast<const DataServer&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.DataServer)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void DataServer::MergeFrom(const DataServer& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.DataServer)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_ip().empty()) {
-    _this->_internal_set_ip(from._internal_ip());
+  if (from.ip().size() > 0) {
+    _internal_set_ip(from._internal_ip());
   }
-  if (!from._internal_port().empty()) {
-    _this->_internal_set_port(from._internal_port());
+  if (from.port().size() > 0) {
+    _internal_set_port(from._internal_port());
   }
-  if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
+  if (from.status().size() > 0) {
+    _internal_set_status(from._internal_status());
   }
-  if (!from._internal_idc().empty()) {
-    _this->_internal_set_idc(from._internal_idc());
+  if (from.idc().size() > 0) {
+    _internal_set_idc(from._internal_idc());
   }
-  if (from._internal_has_last_heartbeat_ts()) {
-    _this->_internal_mutable_last_heartbeat_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_last_heartbeat_ts());
+  if (from.has_last_heartbeat_ts()) {
+    _internal_mutable_last_heartbeat_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_last_heartbeat_ts());
   }
-  if (from._internal_capacity() != 0) {
-    _this->_internal_set_capacity(from._internal_capacity());
+  if (from.capacity() != 0) {
+    _internal_set_capacity(from._internal_capacity());
   }
-  if (from._internal_free() != 0) {
-    _this->_internal_set_free(from._internal_free());
+  if (from.free() != 0) {
+    _internal_set_free(from._internal_free());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DataServer::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.DataServer)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void DataServer::CopyFrom(const DataServer& from) {
@@ -2556,148 +2762,133 @@ bool DataServer::IsInitialized() const {
 
 void DataServer::InternalSwap(DataServer* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.ip_, lhs_arena,
-      &other->_impl_.ip_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.port_, lhs_arena,
-      &other->_impl_.port_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.idc_, lhs_arena,
-      &other->_impl_.idc_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ip_.Swap(&other->ip_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  port_.Swap(&other->port_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  status_.Swap(&other->status_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  idc_.Swap(&other->idc_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DataServer, _impl_.free_)
-      + sizeof(DataServer::_impl_.free_)
-      - PROTOBUF_FIELD_OFFSET(DataServer, _impl_.last_heartbeat_ts_)>(
-          reinterpret_cast<char*>(&_impl_.last_heartbeat_ts_),
-          reinterpret_cast<char*>(&other->_impl_.last_heartbeat_ts_));
+      PROTOBUF_FIELD_OFFSET(DataServer, free_)
+      + sizeof(DataServer::free_)
+      - PROTOBUF_FIELD_OFFSET(DataServer, last_heartbeat_ts_)>(
+          reinterpret_cast<char*>(&last_heartbeat_ts_),
+          reinterpret_cast<char*>(&other->last_heartbeat_ts_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DataServer::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void Replicate::InitAsDefaultInstance() {
+}
 class Replicate::_Internal {
  public:
 };
 
-Replicate::Replicate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+Replicate::Replicate(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  addrs_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.Replicate)
 }
 Replicate::Replicate(const Replicate& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Replicate* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addrs_){from._impl_.addrs_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      addrs_(from.addrs_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.Replicate)
 }
 
-inline void Replicate::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addrs_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void Replicate::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Replicate_metaserver_2eproto.base);
 }
 
 Replicate::~Replicate() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.Replicate)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void Replicate::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.addrs_.~RepeatedPtrField();
+void Replicate::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Replicate::ArenaDtor(void* object) {
+  Replicate* _this = reinterpret_cast< Replicate* >(object);
+  (void)_this;
+}
+void Replicate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Replicate::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const Replicate& Replicate::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Replicate_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void Replicate::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.Replicate)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.addrs_.Clear();
+  addrs_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Replicate::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Replicate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated string addrs = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_addrs();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.Replicate.addrs"));
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.Replicate.addrs"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* Replicate::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Replicate::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.Replicate)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string addrs = 1;
@@ -2711,7 +2902,7 @@ uint8_t* Replicate::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.Replicate)
@@ -2722,38 +2913,57 @@ size_t Replicate::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.Replicate)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string addrs = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.addrs_.size());
-  for (int i = 0, n = _impl_.addrs_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(addrs_.size());
+  for (int i = 0, n = addrs_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.addrs_.Get(i));
+      addrs_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Replicate::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Replicate::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Replicate::GetClassData() const { return &_class_data_; }
+void Replicate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.Replicate)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Replicate* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Replicate>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.Replicate)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.Replicate)
+    MergeFrom(*source);
+  }
+}
 
-
-void Replicate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Replicate*>(&to_msg);
-  auto& from = static_cast<const Replicate&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.Replicate)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void Replicate::MergeFrom(const Replicate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.Replicate)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.addrs_.MergeFrom(from._impl_.addrs_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  addrs_.MergeFrom(from.addrs_);
+}
+
+void Replicate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.Replicate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void Replicate::CopyFrom(const Replicate& from) {
@@ -2769,148 +2979,138 @@ bool Replicate::IsInitialized() const {
 
 void Replicate::InternalSwap(Replicate* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.addrs_.InternalSwap(&other->_impl_.addrs_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  addrs_.InternalSwap(&other->addrs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Replicate::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void HeartBeatRequest::InitAsDefaultInstance() {
+}
 class HeartBeatRequest::_Internal {
  public:
 };
 
-HeartBeatRequest::HeartBeatRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+HeartBeatRequest::HeartBeatRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.HeartBeatRequest)
 }
 HeartBeatRequest::HeartBeatRequest(const HeartBeatRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  HeartBeatRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addr_){}
-    , decltype(_impl_.restarting_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_addr().empty()) {
-    _this->_impl_.addr_.Set(from._internal_addr(), 
-      _this->GetArenaForAllocation());
+    addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_addr(),
+      GetArena());
   }
-  _this->_impl_.restarting_ = from._impl_.restarting_;
+  restarting_ = from.restarting_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.HeartBeatRequest)
 }
 
-inline void HeartBeatRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addr_){}
-    , decltype(_impl_.restarting_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void HeartBeatRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_HeartBeatRequest_metaserver_2eproto.base);
+  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  restarting_ = false;
 }
 
 HeartBeatRequest::~HeartBeatRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.HeartBeatRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void HeartBeatRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.addr_.Destroy();
+void HeartBeatRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void HeartBeatRequest::ArenaDtor(void* object) {
+  HeartBeatRequest* _this = reinterpret_cast< HeartBeatRequest* >(object);
+  (void)_this;
+}
+void HeartBeatRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HeartBeatRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const HeartBeatRequest& HeartBeatRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HeartBeatRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void HeartBeatRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.HeartBeatRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.addr_.ClearToEmpty();
-  _impl_.restarting_ = false;
+  addr_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  restarting_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* HeartBeatRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* HeartBeatRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string addr = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_addr();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.HeartBeatRequest.addr"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.HeartBeatRequest.addr"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bool restarting = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.restarting_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          restarting_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* HeartBeatRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* HeartBeatRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.HeartBeatRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string addr = 1;
-  if (!this->_internal_addr().empty()) {
+  if (this->addr().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_addr().data(), static_cast<int>(this->_internal_addr().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -2920,13 +3120,13 @@ uint8_t* HeartBeatRequest::_InternalSerialize(
   }
 
   // bool restarting = 2;
-  if (this->_internal_restarting() != 0) {
+  if (this->restarting() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_restarting(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_restarting(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.HeartBeatRequest)
@@ -2937,47 +3137,66 @@ size_t HeartBeatRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.HeartBeatRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string addr = 1;
-  if (!this->_internal_addr().empty()) {
+  if (this->addr().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_addr());
   }
 
   // bool restarting = 2;
-  if (this->_internal_restarting() != 0) {
+  if (this->restarting() != 0) {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HeartBeatRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    HeartBeatRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HeartBeatRequest::GetClassData() const { return &_class_data_; }
+void HeartBeatRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.HeartBeatRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HeartBeatRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<HeartBeatRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.HeartBeatRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.HeartBeatRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void HeartBeatRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<HeartBeatRequest*>(&to_msg);
-  auto& from = static_cast<const HeartBeatRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.HeartBeatRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void HeartBeatRequest::MergeFrom(const HeartBeatRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.HeartBeatRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_addr().empty()) {
-    _this->_internal_set_addr(from._internal_addr());
+  if (from.addr().size() > 0) {
+    _internal_set_addr(from._internal_addr());
   }
-  if (from._internal_restarting() != 0) {
-    _this->_internal_set_restarting(from._internal_restarting());
+  if (from.restarting() != 0) {
+    _internal_set_restarting(from._internal_restarting());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void HeartBeatRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.HeartBeatRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void HeartBeatRequest::CopyFrom(const HeartBeatRequest& from) {
@@ -2993,194 +3212,304 @@ bool HeartBeatRequest::IsInitialized() const {
 
 void HeartBeatRequest::InternalSwap(HeartBeatRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.addr_, lhs_arena,
-      &other->_impl_.addr_, rhs_arena
-  );
-  swap(_impl_.restarting_, other->_impl_.restarting_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  addr_.Swap(&other->addr_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(restarting_, other->restarting_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HeartBeatRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void HeartBeatResponse::InitAsDefaultInstance() {
+}
 class HeartBeatResponse::_Internal {
  public:
 };
 
-HeartBeatResponse::HeartBeatResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+HeartBeatResponse::HeartBeatResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.HeartBeatResponse)
 }
 HeartBeatResponse::HeartBeatResponse(const HeartBeatResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  HeartBeatResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.HeartBeatResponse)
 }
 
+void HeartBeatResponse::SharedCtor() {
+}
+
+HeartBeatResponse::~HeartBeatResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.HeartBeatResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void HeartBeatResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void HeartBeatResponse::ArenaDtor(void* object) {
+  HeartBeatResponse* _this = reinterpret_cast< HeartBeatResponse* >(object);
+  (void)_this;
+}
+void HeartBeatResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void HeartBeatResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const HeartBeatResponse& HeartBeatResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HeartBeatResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void HeartBeatResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.HeartBeatResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HeartBeatResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HeartBeatResponse::GetClassData() const { return &_class_data_; }
+const char* HeartBeatResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* HeartBeatResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.HeartBeatResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.HeartBeatResponse)
+  return target;
+}
 
+size_t HeartBeatResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.HeartBeatResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void HeartBeatResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.HeartBeatResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HeartBeatResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<HeartBeatResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.HeartBeatResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.HeartBeatResponse)
+    MergeFrom(*source);
+  }
+}
+
+void HeartBeatResponse::MergeFrom(const HeartBeatResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.HeartBeatResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void HeartBeatResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.HeartBeatResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HeartBeatResponse::CopyFrom(const HeartBeatResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.HeartBeatResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HeartBeatResponse::IsInitialized() const {
+  return true;
+}
+
+void HeartBeatResponse::InternalSwap(HeartBeatResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HeartBeatResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[5]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void CreateStorageRequest::InitAsDefaultInstance() {
+}
 class CreateStorageRequest::_Internal {
  public:
 };
 
-CreateStorageRequest::CreateStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+CreateStorageRequest::CreateStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.CreateStorageRequest)
 }
 CreateStorageRequest::CreateStorageRequest(const CreateStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CreateStorageRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.initial_range_count_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
-      _this->GetArenaForAllocation());
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
-  _this->_impl_.initial_range_count_ = from._impl_.initial_range_count_;
+  initial_range_count_ = from.initial_range_count_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateStorageRequest)
 }
 
-inline void CreateStorageRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.initial_range_count_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void CreateStorageRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateStorageRequest_metaserver_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  initial_range_count_ = 0u;
 }
 
 CreateStorageRequest::~CreateStorageRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.CreateStorageRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void CreateStorageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.name_.Destroy();
+void CreateStorageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void CreateStorageRequest::ArenaDtor(void* object) {
+  CreateStorageRequest* _this = reinterpret_cast< CreateStorageRequest* >(object);
+  (void)_this;
+}
+void CreateStorageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateStorageRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const CreateStorageRequest& CreateStorageRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateStorageRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void CreateStorageRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.CreateStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.name_.ClearToEmpty();
-  _impl_.initial_range_count_ = 0u;
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  initial_range_count_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CreateStorageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* CreateStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.CreateStorageRequest.name"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.CreateStorageRequest.name"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 initial_range_count = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.initial_range_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          initial_range_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* CreateStorageRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* CreateStorageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.CreateStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string name = 1;
-  if (!this->_internal_name().empty()) {
+  if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -3190,13 +3519,13 @@ uint8_t* CreateStorageRequest::_InternalSerialize(
   }
 
   // uint32 initial_range_count = 2;
-  if (this->_internal_initial_range_count() != 0) {
+  if (this->initial_range_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_initial_range_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_initial_range_count(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.CreateStorageRequest)
@@ -3207,47 +3536,68 @@ size_t CreateStorageRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.CreateStorageRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string name = 1;
-  if (!this->_internal_name().empty()) {
+  if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
   // uint32 initial_range_count = 2;
-  if (this->_internal_initial_range_count() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_initial_range_count());
+  if (this->initial_range_count() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_initial_range_count());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateStorageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CreateStorageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateStorageRequest::GetClassData() const { return &_class_data_; }
+void CreateStorageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.CreateStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateStorageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateStorageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.CreateStorageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.CreateStorageRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void CreateStorageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CreateStorageRequest*>(&to_msg);
-  auto& from = static_cast<const CreateStorageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateStorageRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void CreateStorageRequest::MergeFrom(const CreateStorageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_name().empty()) {
-    _this->_internal_set_name(from._internal_name());
+  if (from.name().size() > 0) {
+    _internal_set_name(from._internal_name());
   }
-  if (from._internal_initial_range_count() != 0) {
-    _this->_internal_set_initial_range_count(from._internal_initial_range_count());
+  if (from.initial_range_count() != 0) {
+    _internal_set_initial_range_count(from._internal_initial_range_count());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateStorageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.CreateStorageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void CreateStorageRequest::CopyFrom(const CreateStorageRequest& from) {
@@ -3263,134 +3613,127 @@ bool CreateStorageRequest::IsInitialized() const {
 
 void CreateStorageRequest::InternalSwap(CreateStorageRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
-  );
-  swap(_impl_.initial_range_count_, other->_impl_.initial_range_count_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(initial_range_count_, other->initial_range_count_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateStorageRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[6]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void CreateStorageResponse::InitAsDefaultInstance() {
+}
 class CreateStorageResponse::_Internal {
  public:
 };
 
-CreateStorageResponse::CreateStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+CreateStorageResponse::CreateStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.CreateStorageResponse)
 }
 CreateStorageResponse::CreateStorageResponse(const CreateStorageResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CreateStorageResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.id_ = from._impl_.id_;
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateStorageResponse)
 }
 
-inline void CreateStorageResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void CreateStorageResponse::SharedCtor() {
+  id_ = PROTOBUF_ULONGLONG(0);
 }
 
 CreateStorageResponse::~CreateStorageResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.CreateStorageResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void CreateStorageResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void CreateStorageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CreateStorageResponse::ArenaDtor(void* object) {
+  CreateStorageResponse* _this = reinterpret_cast< CreateStorageResponse* >(object);
+  (void)_this;
+}
+void CreateStorageResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateStorageResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const CreateStorageResponse& CreateStorageResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateStorageResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void CreateStorageResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.CreateStorageResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.id_ = uint64_t{0u};
+  id_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CreateStorageResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* CreateStorageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* CreateStorageResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* CreateStorageResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.CreateStorageResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.CreateStorageResponse)
@@ -3401,37 +3744,58 @@ size_t CreateStorageResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.CreateStorageResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateStorageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CreateStorageResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateStorageResponse::GetClassData() const { return &_class_data_; }
+void CreateStorageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.CreateStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateStorageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateStorageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.CreateStorageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.CreateStorageResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void CreateStorageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CreateStorageResponse*>(&to_msg);
-  auto& from = static_cast<const CreateStorageResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateStorageResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void CreateStorageResponse::MergeFrom(const CreateStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateStorageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.CreateStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void CreateStorageResponse::CopyFrom(const CreateStorageResponse& from) {
@@ -3447,148 +3811,145 @@ bool CreateStorageResponse::IsInitialized() const {
 
 void CreateStorageResponse::InternalSwap(CreateStorageResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.id_, other->_impl_.id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(id_, other->id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateStorageResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[7]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void CreateShardRequest::InitAsDefaultInstance() {
+}
 class CreateShardRequest::_Internal {
  public:
 };
 
-CreateShardRequest::CreateShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+CreateShardRequest::CreateShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.CreateShardRequest)
 }
 CreateShardRequest::CreateShardRequest(const CreateShardRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CreateShardRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.storage_id_){}
-    , decltype(_impl_.shard_isn_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.storage_id_, &from._impl_.storage_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.shard_isn_) -
-    reinterpret_cast<char*>(&_impl_.storage_id_)) + sizeof(_impl_.shard_isn_));
+  ::memcpy(&storage_id_, &from.storage_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&shard_isn_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateShardRequest)
 }
 
-inline void CreateShardRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.storage_id_){0u}
-    , decltype(_impl_.shard_isn_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void CreateShardRequest::SharedCtor() {
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_isn_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
 }
 
 CreateShardRequest::~CreateShardRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.CreateShardRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void CreateShardRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void CreateShardRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CreateShardRequest::ArenaDtor(void* object) {
+  CreateShardRequest* _this = reinterpret_cast< CreateShardRequest* >(object);
+  (void)_this;
+}
+void CreateShardRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateShardRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const CreateShardRequest& CreateShardRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateShardRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void CreateShardRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.CreateShardRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.storage_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.shard_isn_) -
-      reinterpret_cast<char*>(&_impl_.storage_id_)) + sizeof(_impl_.shard_isn_));
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_isn_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CreateShardRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* CreateShardRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 shard_isn = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* CreateShardRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* CreateShardRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.CreateShardRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // uint32 shard_isn = 2;
-  if (this->_internal_shard_isn() != 0) {
+  if (this->shard_isn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_shard_isn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_shard_isn(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.CreateShardRequest)
@@ -3599,45 +3960,68 @@ size_t CreateShardRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.CreateShardRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
   // uint32 shard_isn = 2;
-  if (this->_internal_shard_isn() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_shard_isn());
+  if (this->shard_isn() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_shard_isn());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateShardRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CreateShardRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateShardRequest::GetClassData() const { return &_class_data_; }
+void CreateShardRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.CreateShardRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateShardRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateShardRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.CreateShardRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.CreateShardRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void CreateShardRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CreateShardRequest*>(&to_msg);
-  auto& from = static_cast<const CreateShardRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateShardRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void CreateShardRequest::MergeFrom(const CreateShardRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateShardRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  if (from._internal_shard_isn() != 0) {
-    _this->_internal_set_shard_isn(from._internal_shard_isn());
+  if (from.shard_isn() != 0) {
+    _internal_set_shard_isn(from._internal_shard_isn());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateShardRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.CreateShardRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void CreateShardRequest::CopyFrom(const CreateShardRequest& from) {
@@ -3653,193 +4037,315 @@ bool CreateShardRequest::IsInitialized() const {
 
 void CreateShardRequest::InternalSwap(CreateShardRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CreateShardRequest, _impl_.shard_isn_)
-      + sizeof(CreateShardRequest::_impl_.shard_isn_)
-      - PROTOBUF_FIELD_OFFSET(CreateShardRequest, _impl_.storage_id_)>(
-          reinterpret_cast<char*>(&_impl_.storage_id_),
-          reinterpret_cast<char*>(&other->_impl_.storage_id_));
+      PROTOBUF_FIELD_OFFSET(CreateShardRequest, shard_isn_)
+      + sizeof(CreateShardRequest::shard_isn_)
+      - PROTOBUF_FIELD_OFFSET(CreateShardRequest, storage_id_)>(
+          reinterpret_cast<char*>(&storage_id_),
+          reinterpret_cast<char*>(&other->storage_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateShardRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[8]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void CreateShardResponse::InitAsDefaultInstance() {
+}
 class CreateShardResponse::_Internal {
  public:
 };
 
-CreateShardResponse::CreateShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+CreateShardResponse::CreateShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.CreateShardResponse)
 }
 CreateShardResponse::CreateShardResponse(const CreateShardResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  CreateShardResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.CreateShardResponse)
 }
 
+void CreateShardResponse::SharedCtor() {
+}
+
+CreateShardResponse::~CreateShardResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.CreateShardResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void CreateShardResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void CreateShardResponse::ArenaDtor(void* object) {
+  CreateShardResponse* _this = reinterpret_cast< CreateShardResponse* >(object);
+  (void)_this;
+}
+void CreateShardResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void CreateShardResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const CreateShardResponse& CreateShardResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateShardResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void CreateShardResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.CreateShardResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateShardResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateShardResponse::GetClassData() const { return &_class_data_; }
+const char* CreateShardResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* CreateShardResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.CreateShardResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.CreateShardResponse)
+  return target;
+}
 
+size_t CreateShardResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.CreateShardResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void CreateShardResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.CreateShardResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateShardResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateShardResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.CreateShardResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.CreateShardResponse)
+    MergeFrom(*source);
+  }
+}
+
+void CreateShardResponse::MergeFrom(const CreateShardResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.CreateShardResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void CreateShardResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.CreateShardResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CreateShardResponse::CopyFrom(const CreateShardResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.CreateShardResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateShardResponse::IsInitialized() const {
+  return true;
+}
+
+void CreateShardResponse::InternalSwap(CreateShardResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateShardResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[9]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RemoveShardRequest::InitAsDefaultInstance() {
+}
 class RemoveShardRequest::_Internal {
  public:
 };
 
-RemoveShardRequest::RemoveShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+RemoveShardRequest::RemoveShardRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RemoveShardRequest)
 }
 RemoveShardRequest::RemoveShardRequest(const RemoveShardRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  RemoveShardRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.storage_id_){}
-    , decltype(_impl_.shard_isn_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.storage_id_, &from._impl_.storage_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.shard_isn_) -
-    reinterpret_cast<char*>(&_impl_.storage_id_)) + sizeof(_impl_.shard_isn_));
+  ::memcpy(&storage_id_, &from.storage_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&shard_isn_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveShardRequest)
 }
 
-inline void RemoveShardRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.storage_id_){0u}
-    , decltype(_impl_.shard_isn_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void RemoveShardRequest::SharedCtor() {
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_isn_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
 }
 
 RemoveShardRequest::~RemoveShardRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.RemoveShardRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void RemoveShardRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void RemoveShardRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void RemoveShardRequest::ArenaDtor(void* object) {
+  RemoveShardRequest* _this = reinterpret_cast< RemoveShardRequest* >(object);
+  (void)_this;
+}
+void RemoveShardRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RemoveShardRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const RemoveShardRequest& RemoveShardRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveShardRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void RemoveShardRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RemoveShardRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.storage_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.shard_isn_) -
-      reinterpret_cast<char*>(&_impl_.storage_id_)) + sizeof(_impl_.shard_isn_));
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_isn_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(shard_isn_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RemoveShardRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* RemoveShardRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint32 shard_isn = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          shard_isn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* RemoveShardRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveShardRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RemoveShardRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // uint32 shard_isn = 2;
-  if (this->_internal_shard_isn() != 0) {
+  if (this->shard_isn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_shard_isn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_shard_isn(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RemoveShardRequest)
@@ -3850,45 +4356,68 @@ size_t RemoveShardRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RemoveShardRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
   // uint32 shard_isn = 2;
-  if (this->_internal_shard_isn() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_shard_isn());
+  if (this->shard_isn() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_shard_isn());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoveShardRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    RemoveShardRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveShardRequest::GetClassData() const { return &_class_data_; }
+void RemoveShardRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RemoveShardRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveShardRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveShardRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RemoveShardRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RemoveShardRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void RemoveShardRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<RemoveShardRequest*>(&to_msg);
-  auto& from = static_cast<const RemoveShardRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveShardRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void RemoveShardRequest::MergeFrom(const RemoveShardRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveShardRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  if (from._internal_shard_isn() != 0) {
-    _this->_internal_set_shard_isn(from._internal_shard_isn());
+  if (from.shard_isn() != 0) {
+    _internal_set_shard_isn(from._internal_shard_isn());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RemoveShardRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RemoveShardRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RemoveShardRequest::CopyFrom(const RemoveShardRequest& from) {
@@ -3904,209 +4433,328 @@ bool RemoveShardRequest::IsInitialized() const {
 
 void RemoveShardRequest::InternalSwap(RemoveShardRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RemoveShardRequest, _impl_.shard_isn_)
-      + sizeof(RemoveShardRequest::_impl_.shard_isn_)
-      - PROTOBUF_FIELD_OFFSET(RemoveShardRequest, _impl_.storage_id_)>(
-          reinterpret_cast<char*>(&_impl_.storage_id_),
-          reinterpret_cast<char*>(&other->_impl_.storage_id_));
+      PROTOBUF_FIELD_OFFSET(RemoveShardRequest, shard_isn_)
+      + sizeof(RemoveShardRequest::shard_isn_)
+      - PROTOBUF_FIELD_OFFSET(RemoveShardRequest, storage_id_)>(
+          reinterpret_cast<char*>(&storage_id_),
+          reinterpret_cast<char*>(&other->storage_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveShardRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[10]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RemoveShardResponse::InitAsDefaultInstance() {
+}
 class RemoveShardResponse::_Internal {
  public:
 };
 
-RemoveShardResponse::RemoveShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+RemoveShardResponse::RemoveShardResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RemoveShardResponse)
 }
 RemoveShardResponse::RemoveShardResponse(const RemoveShardResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  RemoveShardResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveShardResponse)
 }
 
+void RemoveShardResponse::SharedCtor() {
+}
+
+RemoveShardResponse::~RemoveShardResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.RemoveShardResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RemoveShardResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void RemoveShardResponse::ArenaDtor(void* object) {
+  RemoveShardResponse* _this = reinterpret_cast< RemoveShardResponse* >(object);
+  (void)_this;
+}
+void RemoveShardResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RemoveShardResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemoveShardResponse& RemoveShardResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveShardResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void RemoveShardResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RemoveShardResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoveShardResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveShardResponse::GetClassData() const { return &_class_data_; }
+const char* RemoveShardResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveShardResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RemoveShardResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RemoveShardResponse)
+  return target;
+}
 
+size_t RemoveShardResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RemoveShardResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void RemoveShardResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RemoveShardResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveShardResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveShardResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RemoveShardResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RemoveShardResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RemoveShardResponse::MergeFrom(const RemoveShardResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveShardResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void RemoveShardResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RemoveShardResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemoveShardResponse::CopyFrom(const RemoveShardResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.RemoveShardResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveShardResponse::IsInitialized() const {
+  return true;
+}
+
+void RemoveShardResponse::InternalSwap(RemoveShardResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveShardResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[11]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void DeleteStorageRequest::InitAsDefaultInstance() {
+}
 class DeleteStorageRequest::_Internal {
  public:
 };
 
-DeleteStorageRequest::DeleteStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+DeleteStorageRequest::DeleteStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.DeleteStorageRequest)
 }
 DeleteStorageRequest::DeleteStorageRequest(const DeleteStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  DeleteStorageRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){}
-    , decltype(_impl_.real_delete_){}
-    , decltype(_impl_.recycle_after_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.recycle_after_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.recycle_after_));
+  ::memcpy(&id_, &from.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&recycle_after_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(recycle_after_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.DeleteStorageRequest)
 }
 
-inline void DeleteStorageRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){0u}
-    , decltype(_impl_.real_delete_){false}
-    , decltype(_impl_.recycle_after_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void DeleteStorageRequest::SharedCtor() {
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&recycle_after_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(recycle_after_));
 }
 
 DeleteStorageRequest::~DeleteStorageRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.DeleteStorageRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void DeleteStorageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void DeleteStorageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteStorageRequest::ArenaDtor(void* object) {
+  DeleteStorageRequest* _this = reinterpret_cast< DeleteStorageRequest* >(object);
+  (void)_this;
+}
+void DeleteStorageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteStorageRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const DeleteStorageRequest& DeleteStorageRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteStorageRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void DeleteStorageRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.DeleteStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.recycle_after_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.recycle_after_));
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&recycle_after_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(recycle_after_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeleteStorageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* DeleteStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bool real_delete = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.real_delete_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          real_delete_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint64 recycle_after = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.recycle_after_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          recycle_after_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* DeleteStorageRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteStorageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.DeleteStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // bool real_delete = 2;
-  if (this->_internal_real_delete() != 0) {
+  if (this->real_delete() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_real_delete(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_real_delete(), target);
   }
 
   // uint64 recycle_after = 3;
-  if (this->_internal_recycle_after() != 0) {
+  if (this->recycle_after() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_recycle_after(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_recycle_after(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.DeleteStorageRequest)
@@ -4117,53 +4765,76 @@ size_t DeleteStorageRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.DeleteStorageRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
   }
 
   // bool real_delete = 2;
-  if (this->_internal_real_delete() != 0) {
+  if (this->real_delete() != 0) {
     total_size += 1 + 1;
   }
 
   // uint64 recycle_after = 3;
-  if (this->_internal_recycle_after() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_recycle_after());
+  if (this->recycle_after() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_recycle_after());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteStorageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    DeleteStorageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteStorageRequest::GetClassData() const { return &_class_data_; }
+void DeleteStorageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.DeleteStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteStorageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteStorageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.DeleteStorageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.DeleteStorageRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void DeleteStorageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<DeleteStorageRequest*>(&to_msg);
-  auto& from = static_cast<const DeleteStorageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.DeleteStorageRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void DeleteStorageRequest::MergeFrom(const DeleteStorageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.DeleteStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  if (from._internal_real_delete() != 0) {
-    _this->_internal_set_real_delete(from._internal_real_delete());
+  if (from.real_delete() != 0) {
+    _internal_set_real_delete(from._internal_real_delete());
   }
-  if (from._internal_recycle_after() != 0) {
-    _this->_internal_set_recycle_after(from._internal_recycle_after());
+  if (from.recycle_after() != 0) {
+    _internal_set_recycle_after(from._internal_recycle_after());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteStorageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.DeleteStorageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void DeleteStorageRequest::CopyFrom(const DeleteStorageRequest& from) {
@@ -4179,173 +4850,296 @@ bool DeleteStorageRequest::IsInitialized() const {
 
 void DeleteStorageRequest::InternalSwap(DeleteStorageRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, _impl_.recycle_after_)
-      + sizeof(DeleteStorageRequest::_impl_.recycle_after_)
-      - PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, _impl_.id_)>(
-          reinterpret_cast<char*>(&_impl_.id_),
-          reinterpret_cast<char*>(&other->_impl_.id_));
+      PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, recycle_after_)
+      + sizeof(DeleteStorageRequest::recycle_after_)
+      - PROTOBUF_FIELD_OFFSET(DeleteStorageRequest, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteStorageRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[12]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void DeleteStorageResponse::InitAsDefaultInstance() {
+}
 class DeleteStorageResponse::_Internal {
  public:
 };
 
-DeleteStorageResponse::DeleteStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+DeleteStorageResponse::DeleteStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.DeleteStorageResponse)
 }
 DeleteStorageResponse::DeleteStorageResponse(const DeleteStorageResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  DeleteStorageResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.DeleteStorageResponse)
 }
 
+void DeleteStorageResponse::SharedCtor() {
+}
+
+DeleteStorageResponse::~DeleteStorageResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.DeleteStorageResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void DeleteStorageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void DeleteStorageResponse::ArenaDtor(void* object) {
+  DeleteStorageResponse* _this = reinterpret_cast< DeleteStorageResponse* >(object);
+  (void)_this;
+}
+void DeleteStorageResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeleteStorageResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteStorageResponse& DeleteStorageResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteStorageResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void DeleteStorageResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.DeleteStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteStorageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteStorageResponse::GetClassData() const { return &_class_data_; }
+const char* DeleteStorageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteStorageResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.DeleteStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.DeleteStorageResponse)
+  return target;
+}
 
+size_t DeleteStorageResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.DeleteStorageResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void DeleteStorageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.DeleteStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteStorageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteStorageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.DeleteStorageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.DeleteStorageResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteStorageResponse::MergeFrom(const DeleteStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.DeleteStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void DeleteStorageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.DeleteStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteStorageResponse::CopyFrom(const DeleteStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.DeleteStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteStorageResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteStorageResponse::InternalSwap(DeleteStorageResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteStorageResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[13]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void UndeleteStorageRequest::InitAsDefaultInstance() {
+}
 class UndeleteStorageRequest::_Internal {
  public:
 };
 
-UndeleteStorageRequest::UndeleteStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+UndeleteStorageRequest::UndeleteStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.UndeleteStorageRequest)
 }
 UndeleteStorageRequest::UndeleteStorageRequest(const UndeleteStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  UndeleteStorageRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.id_ = from._impl_.id_;
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.UndeleteStorageRequest)
 }
 
-inline void UndeleteStorageRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void UndeleteStorageRequest::SharedCtor() {
+  id_ = 0u;
 }
 
 UndeleteStorageRequest::~UndeleteStorageRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.UndeleteStorageRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void UndeleteStorageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void UndeleteStorageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UndeleteStorageRequest::ArenaDtor(void* object) {
+  UndeleteStorageRequest* _this = reinterpret_cast< UndeleteStorageRequest* >(object);
+  (void)_this;
+}
+void UndeleteStorageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UndeleteStorageRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const UndeleteStorageRequest& UndeleteStorageRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UndeleteStorageRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void UndeleteStorageRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.UndeleteStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.id_ = 0u;
+  id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UndeleteStorageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* UndeleteStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* UndeleteStorageRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* UndeleteStorageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.UndeleteStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.UndeleteStorageRequest)
@@ -4356,37 +5150,58 @@ size_t UndeleteStorageRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.UndeleteStorageRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UndeleteStorageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    UndeleteStorageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UndeleteStorageRequest::GetClassData() const { return &_class_data_; }
+void UndeleteStorageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.UndeleteStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UndeleteStorageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UndeleteStorageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.UndeleteStorageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.UndeleteStorageRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void UndeleteStorageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<UndeleteStorageRequest*>(&to_msg);
-  auto& from = static_cast<const UndeleteStorageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.UndeleteStorageRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void UndeleteStorageRequest::MergeFrom(const UndeleteStorageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.UndeleteStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UndeleteStorageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.UndeleteStorageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void UndeleteStorageRequest::CopyFrom(const UndeleteStorageRequest& from) {
@@ -4402,194 +5217,309 @@ bool UndeleteStorageRequest::IsInitialized() const {
 
 void UndeleteStorageRequest::InternalSwap(UndeleteStorageRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.id_, other->_impl_.id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(id_, other->id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UndeleteStorageRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[14]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void UndeleteStorageResponse::InitAsDefaultInstance() {
+}
 class UndeleteStorageResponse::_Internal {
  public:
 };
 
-UndeleteStorageResponse::UndeleteStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+UndeleteStorageResponse::UndeleteStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.UndeleteStorageResponse)
 }
 UndeleteStorageResponse::UndeleteStorageResponse(const UndeleteStorageResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  UndeleteStorageResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.UndeleteStorageResponse)
 }
 
+void UndeleteStorageResponse::SharedCtor() {
+}
+
+UndeleteStorageResponse::~UndeleteStorageResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.UndeleteStorageResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void UndeleteStorageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void UndeleteStorageResponse::ArenaDtor(void* object) {
+  UndeleteStorageResponse* _this = reinterpret_cast< UndeleteStorageResponse* >(object);
+  (void)_this;
+}
+void UndeleteStorageResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UndeleteStorageResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UndeleteStorageResponse& UndeleteStorageResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UndeleteStorageResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void UndeleteStorageResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.UndeleteStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UndeleteStorageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UndeleteStorageResponse::GetClassData() const { return &_class_data_; }
+const char* UndeleteStorageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* UndeleteStorageResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.UndeleteStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.UndeleteStorageResponse)
+  return target;
+}
 
+size_t UndeleteStorageResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.UndeleteStorageResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void UndeleteStorageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.UndeleteStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UndeleteStorageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UndeleteStorageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.UndeleteStorageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.UndeleteStorageResponse)
+    MergeFrom(*source);
+  }
+}
+
+void UndeleteStorageResponse::MergeFrom(const UndeleteStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.UndeleteStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void UndeleteStorageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.UndeleteStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UndeleteStorageResponse::CopyFrom(const UndeleteStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.UndeleteStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UndeleteStorageResponse::IsInitialized() const {
+  return true;
+}
+
+void UndeleteStorageResponse::InternalSwap(UndeleteStorageResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UndeleteStorageResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[15]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RenameStorageRequest::InitAsDefaultInstance() {
+}
 class RenameStorageRequest::_Internal {
  public:
 };
 
-RenameStorageRequest::RenameStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+RenameStorageRequest::RenameStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RenameStorageRequest)
 }
 RenameStorageRequest::RenameStorageRequest(const RenameStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  RenameStorageRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.new_name_){}
-    , decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.new_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.new_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  new_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_new_name().empty()) {
-    _this->_impl_.new_name_.Set(from._internal_new_name(), 
-      _this->GetArenaForAllocation());
+    new_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_new_name(),
+      GetArena());
   }
-  _this->_impl_.id_ = from._impl_.id_;
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RenameStorageRequest)
 }
 
-inline void RenameStorageRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.new_name_){}
-    , decltype(_impl_.id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.new_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.new_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void RenameStorageRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RenameStorageRequest_metaserver_2eproto.base);
+  new_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
 }
 
 RenameStorageRequest::~RenameStorageRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.RenameStorageRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void RenameStorageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.new_name_.Destroy();
+void RenameStorageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  new_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RenameStorageRequest::ArenaDtor(void* object) {
+  RenameStorageRequest* _this = reinterpret_cast< RenameStorageRequest* >(object);
+  (void)_this;
+}
+void RenameStorageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RenameStorageRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const RenameStorageRequest& RenameStorageRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RenameStorageRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void RenameStorageRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RenameStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.new_name_.ClearToEmpty();
-  _impl_.id_ = 0u;
+  new_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RenameStorageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* RenameStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string new_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_new_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.RenameStorageRequest.new_name"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.RenameStorageRequest.new_name"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* RenameStorageRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RenameStorageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RenameStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // string new_name = 2;
-  if (!this->_internal_new_name().empty()) {
+  if (this->new_name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_new_name().data(), static_cast<int>(this->_internal_new_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4599,7 +5529,7 @@ uint8_t* RenameStorageRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RenameStorageRequest)
@@ -4610,47 +5540,68 @@ size_t RenameStorageRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RenameStorageRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string new_name = 2;
-  if (!this->_internal_new_name().empty()) {
+  if (this->new_name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_new_name());
   }
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RenameStorageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    RenameStorageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RenameStorageRequest::GetClassData() const { return &_class_data_; }
+void RenameStorageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RenameStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RenameStorageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RenameStorageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RenameStorageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RenameStorageRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void RenameStorageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<RenameStorageRequest*>(&to_msg);
-  auto& from = static_cast<const RenameStorageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RenameStorageRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void RenameStorageRequest::MergeFrom(const RenameStorageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RenameStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_new_name().empty()) {
-    _this->_internal_set_new_name(from._internal_new_name());
+  if (from.new_name().size() > 0) {
+    _internal_set_new_name(from._internal_new_name());
   }
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RenameStorageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RenameStorageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RenameStorageRequest::CopyFrom(const RenameStorageRequest& from) {
@@ -4666,210 +5617,324 @@ bool RenameStorageRequest::IsInitialized() const {
 
 void RenameStorageRequest::InternalSwap(RenameStorageRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.new_name_, lhs_arena,
-      &other->_impl_.new_name_, rhs_arena
-  );
-  swap(_impl_.id_, other->_impl_.id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  new_name_.Swap(&other->new_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(id_, other->id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RenameStorageRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[16]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RenameStorageResponse::InitAsDefaultInstance() {
+}
 class RenameStorageResponse::_Internal {
  public:
 };
 
-RenameStorageResponse::RenameStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+RenameStorageResponse::RenameStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RenameStorageResponse)
 }
 RenameStorageResponse::RenameStorageResponse(const RenameStorageResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  RenameStorageResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RenameStorageResponse)
 }
 
+void RenameStorageResponse::SharedCtor() {
+}
+
+RenameStorageResponse::~RenameStorageResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.RenameStorageResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RenameStorageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void RenameStorageResponse::ArenaDtor(void* object) {
+  RenameStorageResponse* _this = reinterpret_cast< RenameStorageResponse* >(object);
+  (void)_this;
+}
+void RenameStorageResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RenameStorageResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RenameStorageResponse& RenameStorageResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RenameStorageResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void RenameStorageResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RenameStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RenameStorageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RenameStorageResponse::GetClassData() const { return &_class_data_; }
+const char* RenameStorageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* RenameStorageResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RenameStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RenameStorageResponse)
+  return target;
+}
 
+size_t RenameStorageResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RenameStorageResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void RenameStorageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RenameStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RenameStorageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RenameStorageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RenameStorageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RenameStorageResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RenameStorageResponse::MergeFrom(const RenameStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RenameStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void RenameStorageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RenameStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RenameStorageResponse::CopyFrom(const RenameStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.RenameStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RenameStorageResponse::IsInitialized() const {
+  return true;
+}
+
+void RenameStorageResponse::InternalSwap(RenameStorageResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RenameStorageResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[17]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ResizeStorageRequest::InitAsDefaultInstance() {
+}
 class ResizeStorageRequest::_Internal {
  public:
 };
 
-ResizeStorageRequest::ResizeStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+ResizeStorageRequest::ResizeStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ResizeStorageRequest)
 }
 ResizeStorageRequest::ResizeStorageRequest(const ResizeStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ResizeStorageRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.new_size_){}
-    , decltype(_impl_.new_shard_count_){}
-    , decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.new_size_, &from._impl_.new_size_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.id_) -
-    reinterpret_cast<char*>(&_impl_.new_size_)) + sizeof(_impl_.id_));
+  ::memcpy(&new_size_, &from.new_size_,
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&new_size_)) + sizeof(id_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ResizeStorageRequest)
 }
 
-inline void ResizeStorageRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.new_size_){uint64_t{0u}}
-    , decltype(_impl_.new_shard_count_){uint64_t{0u}}
-    , decltype(_impl_.id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void ResizeStorageRequest::SharedCtor() {
+  ::memset(&new_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&new_size_)) + sizeof(id_));
 }
 
 ResizeStorageRequest::~ResizeStorageRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.ResizeStorageRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ResizeStorageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void ResizeStorageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ResizeStorageRequest::ArenaDtor(void* object) {
+  ResizeStorageRequest* _this = reinterpret_cast< ResizeStorageRequest* >(object);
+  (void)_this;
+}
+void ResizeStorageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ResizeStorageRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const ResizeStorageRequest& ResizeStorageRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ResizeStorageRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void ResizeStorageRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ResizeStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.new_size_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.id_) -
-      reinterpret_cast<char*>(&_impl_.new_size_)) + sizeof(_impl_.id_));
+  ::memset(&new_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&new_size_)) + sizeof(id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ResizeStorageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ResizeStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint64 new_size = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.new_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          new_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint64 new_shard_count = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.new_shard_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          new_shard_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ResizeStorageRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ResizeStorageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ResizeStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // uint64 new_size = 2;
-  if (this->_internal_new_size() != 0) {
+  if (this->new_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_new_size(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_new_size(), target);
   }
 
   // uint64 new_shard_count = 3;
-  if (this->_internal_new_shard_count() != 0) {
+  if (this->new_shard_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_new_shard_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_new_shard_count(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ResizeStorageRequest)
@@ -4880,53 +5945,78 @@ size_t ResizeStorageRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ResizeStorageRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 new_size = 2;
-  if (this->_internal_new_size() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_new_size());
+  if (this->new_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_new_size());
   }
 
   // uint64 new_shard_count = 3;
-  if (this->_internal_new_shard_count() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_new_shard_count());
+  if (this->new_shard_count() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_new_shard_count());
   }
 
   // uint32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResizeStorageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ResizeStorageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResizeStorageRequest::GetClassData() const { return &_class_data_; }
+void ResizeStorageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ResizeStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ResizeStorageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ResizeStorageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ResizeStorageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ResizeStorageRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void ResizeStorageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ResizeStorageRequest*>(&to_msg);
-  auto& from = static_cast<const ResizeStorageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ResizeStorageRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void ResizeStorageRequest::MergeFrom(const ResizeStorageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ResizeStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_new_size() != 0) {
-    _this->_internal_set_new_size(from._internal_new_size());
+  if (from.new_size() != 0) {
+    _internal_set_new_size(from._internal_new_size());
   }
-  if (from._internal_new_shard_count() != 0) {
-    _this->_internal_set_new_shard_count(from._internal_new_shard_count());
+  if (from.new_shard_count() != 0) {
+    _internal_set_new_shard_count(from._internal_new_shard_count());
   }
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ResizeStorageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ResizeStorageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ResizeStorageRequest::CopyFrom(const ResizeStorageRequest& from) {
@@ -4942,192 +6032,312 @@ bool ResizeStorageRequest::IsInitialized() const {
 
 void ResizeStorageRequest::InternalSwap(ResizeStorageRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, _impl_.id_)
-      + sizeof(ResizeStorageRequest::_impl_.id_)
-      - PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, _impl_.new_size_)>(
-          reinterpret_cast<char*>(&_impl_.new_size_),
-          reinterpret_cast<char*>(&other->_impl_.new_size_));
+      PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, id_)
+      + sizeof(ResizeStorageRequest::id_)
+      - PROTOBUF_FIELD_OFFSET(ResizeStorageRequest, new_size_)>(
+          reinterpret_cast<char*>(&new_size_),
+          reinterpret_cast<char*>(&other->new_size_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeStorageRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[18]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ResizeStorageResponse::InitAsDefaultInstance() {
+}
 class ResizeStorageResponse::_Internal {
  public:
 };
 
-ResizeStorageResponse::ResizeStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+ResizeStorageResponse::ResizeStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ResizeStorageResponse)
 }
 ResizeStorageResponse::ResizeStorageResponse(const ResizeStorageResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  ResizeStorageResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ResizeStorageResponse)
 }
 
+void ResizeStorageResponse::SharedCtor() {
+}
+
+ResizeStorageResponse::~ResizeStorageResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.ResizeStorageResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ResizeStorageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void ResizeStorageResponse::ArenaDtor(void* object) {
+  ResizeStorageResponse* _this = reinterpret_cast< ResizeStorageResponse* >(object);
+  (void)_this;
+}
+void ResizeStorageResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ResizeStorageResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ResizeStorageResponse& ResizeStorageResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ResizeStorageResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void ResizeStorageResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ResizeStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResizeStorageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResizeStorageResponse::GetClassData() const { return &_class_data_; }
+const char* ResizeStorageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* ResizeStorageResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ResizeStorageResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ResizeStorageResponse)
+  return target;
+}
 
+size_t ResizeStorageResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ResizeStorageResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void ResizeStorageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ResizeStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ResizeStorageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ResizeStorageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ResizeStorageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ResizeStorageResponse)
+    MergeFrom(*source);
+  }
+}
+
+void ResizeStorageResponse::MergeFrom(const ResizeStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ResizeStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ResizeStorageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ResizeStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ResizeStorageResponse::CopyFrom(const ResizeStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.ResizeStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResizeStorageResponse::IsInitialized() const {
+  return true;
+}
+
+void ResizeStorageResponse::InternalSwap(ResizeStorageResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeStorageResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[19]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetStoragesRequest::InitAsDefaultInstance() {
+}
 class GetStoragesRequest::_Internal {
  public:
 };
 
-GetStoragesRequest::GetStoragesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetStoragesRequest::GetStoragesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  ids_(arena),
+  names_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetStoragesRequest)
 }
 GetStoragesRequest::GetStoragesRequest(const GetStoragesRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetStoragesRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.ids_){from._impl_.ids_}
-    , /*decltype(_impl_._ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.names_){from._impl_.names_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      ids_(from.ids_),
+      names_(from.names_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetStoragesRequest)
 }
 
-inline void GetStoragesRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.ids_){arena}
-    , /*decltype(_impl_._ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.names_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void GetStoragesRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetStoragesRequest_metaserver_2eproto.base);
 }
 
 GetStoragesRequest::~GetStoragesRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetStoragesRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetStoragesRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.ids_.~RepeatedField();
-  _impl_.names_.~RepeatedPtrField();
+void GetStoragesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetStoragesRequest::ArenaDtor(void* object) {
+  GetStoragesRequest* _this = reinterpret_cast< GetStoragesRequest* >(object);
+  (void)_this;
+}
+void GetStoragesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetStoragesRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetStoragesRequest& GetStoragesRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetStoragesRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetStoragesRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetStoragesRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.ids_.Clear();
-  _impl_.names_.Clear();
+  ids_.Clear();
+  names_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetStoragesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetStoragesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated uint32 ids = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_ids(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
           _internal_add_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated string names = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_names();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.GetStoragesRequest.names"));
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.GetStoragesRequest.names"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetStoragesRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetStoragesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetStoragesRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated uint32 ids = 1;
   {
-    int byte_size = _impl_._ids_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteUInt32Packed(
           1, _internal_ids(), byte_size, target);
@@ -5145,7 +6355,7 @@ uint8_t* GetStoragesRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetStoragesRequest)
@@ -5156,53 +6366,73 @@ size_t GetStoragesRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetStoragesRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated uint32 ids = 1;
   {
-    size_t data_size = ::_pbi::WireFormatLite::
-      UInt32Size(this->_impl_.ids_);
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      UInt32Size(this->ids_);
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._ids_cached_byte_size_.store(cached_size,
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
   // repeated string names = 2;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.names_.size());
-  for (int i = 0, n = _impl_.names_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(names_.size());
+  for (int i = 0, n = names_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.names_.Get(i));
+      names_.Get(i));
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetStoragesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetStoragesRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetStoragesRequest::GetClassData() const { return &_class_data_; }
+void GetStoragesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetStoragesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetStoragesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetStoragesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetStoragesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetStoragesRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetStoragesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetStoragesRequest*>(&to_msg);
-  auto& from = static_cast<const GetStoragesRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetStoragesRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetStoragesRequest::MergeFrom(const GetStoragesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetStoragesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.ids_.MergeFrom(from._impl_.ids_);
-  _this->_impl_.names_.MergeFrom(from._impl_.names_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ids_.MergeFrom(from.ids_);
+  names_.MergeFrom(from.names_);
+}
+
+void GetStoragesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetStoragesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetStoragesRequest::CopyFrom(const GetStoragesRequest& from) {
@@ -5218,87 +6448,88 @@ bool GetStoragesRequest::IsInitialized() const {
 
 void GetStoragesRequest::InternalSwap(GetStoragesRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.ids_.InternalSwap(&other->_impl_.ids_);
-  _impl_.names_.InternalSwap(&other->_impl_.names_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ids_.InternalSwap(&other->ids_);
+  names_.InternalSwap(&other->names_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetStoragesRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[20]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetStoragesResponse::InitAsDefaultInstance() {
+}
 class GetStoragesResponse::_Internal {
  public:
 };
 
-GetStoragesResponse::GetStoragesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetStoragesResponse::GetStoragesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  storages_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetStoragesResponse)
 }
 GetStoragesResponse::GetStoragesResponse(const GetStoragesResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetStoragesResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.storages_){from._impl_.storages_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      storages_(from.storages_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetStoragesResponse)
 }
 
-inline void GetStoragesResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.storages_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void GetStoragesResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetStoragesResponse_metaserver_2eproto.base);
 }
 
 GetStoragesResponse::~GetStoragesResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetStoragesResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetStoragesResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.storages_.~RepeatedPtrField();
+void GetStoragesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetStoragesResponse::ArenaDtor(void* object) {
+  GetStoragesResponse* _this = reinterpret_cast< GetStoragesResponse* >(object);
+  (void)_this;
+}
+void GetStoragesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetStoragesResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetStoragesResponse& GetStoragesResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetStoragesResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetStoragesResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetStoragesResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.storages_.Clear();
+  storages_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetStoragesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetStoragesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .bedrock.metaserver.Storage storages = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -5306,48 +6537,46 @@ const char* GetStoragesResponse::_InternalParse(const char* ptr, ::_pbi::ParseCo
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetStoragesResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetStoragesResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetStoragesResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.Storage storages = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_storages_size()); i < n; i++) {
-    const auto& repfield = this->_internal_storages(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_storages_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(1, this->_internal_storages(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetStoragesResponse)
@@ -5358,37 +6587,56 @@ size_t GetStoragesResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetStoragesResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.Storage storages = 1;
   total_size += 1UL * this->_internal_storages_size();
-  for (const auto& msg : this->_impl_.storages_) {
+  for (const auto& msg : this->storages_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetStoragesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetStoragesResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetStoragesResponse::GetClassData() const { return &_class_data_; }
+void GetStoragesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetStoragesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetStoragesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetStoragesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetStoragesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetStoragesResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetStoragesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetStoragesResponse*>(&to_msg);
-  auto& from = static_cast<const GetStoragesResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetStoragesResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetStoragesResponse::MergeFrom(const GetStoragesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetStoragesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.storages_.MergeFrom(from._impl_.storages_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  storages_.MergeFrom(from.storages_);
+}
+
+void GetStoragesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetStoragesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetStoragesResponse::CopyFrom(const GetStoragesResponse& from) {
@@ -5404,148 +6652,145 @@ bool GetStoragesResponse::IsInitialized() const {
 
 void GetStoragesResponse::InternalSwap(GetStoragesResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.storages_.InternalSwap(&other->_impl_.storages_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  storages_.InternalSwap(&other->storages_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetStoragesResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[21]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ShardRange::InitAsDefaultInstance() {
+}
 class ShardRange::_Internal {
  public:
 };
 
-ShardRange::ShardRange(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+ShardRange::ShardRange(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ShardRange)
 }
 ShardRange::ShardRange(const ShardRange& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ShardRange* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.start_shard_id_){}
-    , decltype(_impl_.offset_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.start_shard_id_, &from._impl_.start_shard_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.offset_) -
-    reinterpret_cast<char*>(&_impl_.start_shard_id_)) + sizeof(_impl_.offset_));
+  ::memcpy(&start_shard_id_, &from.start_shard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&offset_) -
+    reinterpret_cast<char*>(&start_shard_id_)) + sizeof(offset_));
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ShardRange)
 }
 
-inline void ShardRange::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.start_shard_id_){uint64_t{0u}}
-    , decltype(_impl_.offset_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void ShardRange::SharedCtor() {
+  ::memset(&start_shard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&offset_) -
+      reinterpret_cast<char*>(&start_shard_id_)) + sizeof(offset_));
 }
 
 ShardRange::~ShardRange() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.ShardRange)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ShardRange::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void ShardRange::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ShardRange::ArenaDtor(void* object) {
+  ShardRange* _this = reinterpret_cast< ShardRange* >(object);
+  (void)_this;
+}
+void ShardRange::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ShardRange::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const ShardRange& ShardRange::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ShardRange_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void ShardRange::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ShardRange)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.start_shard_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.offset_) -
-      reinterpret_cast<char*>(&_impl_.start_shard_id_)) + sizeof(_impl_.offset_));
+  ::memset(&start_shard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&offset_) -
+      reinterpret_cast<char*>(&start_shard_id_)) + sizeof(offset_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ShardRange::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ShardRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 start_shard_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.start_shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // uint64 offset = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ShardRange::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ShardRange::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ShardRange)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 start_shard_id = 1;
-  if (this->_internal_start_shard_id() != 0) {
+  if (this->start_shard_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_start_shard_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_start_shard_id(), target);
   }
 
   // uint64 offset = 2;
-  if (this->_internal_offset() != 0) {
+  if (this->offset() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_offset(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_offset(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ShardRange)
@@ -5556,45 +6801,68 @@ size_t ShardRange::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ShardRange)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 start_shard_id = 1;
-  if (this->_internal_start_shard_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_start_shard_id());
+  if (this->start_shard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_start_shard_id());
   }
 
   // uint64 offset = 2;
-  if (this->_internal_offset() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_offset());
+  if (this->offset() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_offset());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardRange::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ShardRange::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardRange::GetClassData() const { return &_class_data_; }
+void ShardRange::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ShardRange)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ShardRange* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ShardRange>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ShardRange)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ShardRange)
+    MergeFrom(*source);
+  }
+}
 
-
-void ShardRange::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ShardRange*>(&to_msg);
-  auto& from = static_cast<const ShardRange&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardRange)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void ShardRange::MergeFrom(const ShardRange& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardRange)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_start_shard_id() != 0) {
-    _this->_internal_set_start_shard_id(from._internal_start_shard_id());
+  if (from.start_shard_id() != 0) {
+    _internal_set_start_shard_id(from._internal_start_shard_id());
   }
-  if (from._internal_offset() != 0) {
-    _this->_internal_set_offset(from._internal_offset());
+  if (from.offset() != 0) {
+    _internal_set_offset(from._internal_offset());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ShardRange::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ShardRange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ShardRange::CopyFrom(const ShardRange& from) {
@@ -5610,178 +6878,166 @@ bool ShardRange::IsInitialized() const {
 
 void ShardRange::InternalSwap(ShardRange* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ShardRange, _impl_.offset_)
-      + sizeof(ShardRange::_impl_.offset_)
-      - PROTOBUF_FIELD_OFFSET(ShardRange, _impl_.start_shard_id_)>(
-          reinterpret_cast<char*>(&_impl_.start_shard_id_),
-          reinterpret_cast<char*>(&other->_impl_.start_shard_id_));
+      PROTOBUF_FIELD_OFFSET(ShardRange, offset_)
+      + sizeof(ShardRange::offset_)
+      - PROTOBUF_FIELD_OFFSET(ShardRange, start_shard_id_)>(
+          reinterpret_cast<char*>(&start_shard_id_),
+          reinterpret_cast<char*>(&other->start_shard_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardRange::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[22]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RouteRecord::InitAsDefaultInstance() {
+}
 class RouteRecord::_Internal {
  public:
 };
 
-RouteRecord::RouteRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+RouteRecord::RouteRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  addrs_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RouteRecord)
 }
 RouteRecord::RouteRecord(const RouteRecord& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  RouteRecord* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addrs_){from._impl_.addrs_}
-    , decltype(_impl_.leader_addr_){}
-    , decltype(_impl_.shard_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      addrs_(from.addrs_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.leader_addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.leader_addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  leader_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_leader_addr().empty()) {
-    _this->_impl_.leader_addr_.Set(from._internal_leader_addr(), 
-      _this->GetArenaForAllocation());
+    leader_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_leader_addr(),
+      GetArena());
   }
-  _this->_impl_.shard_id_ = from._impl_.shard_id_;
+  shard_id_ = from.shard_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RouteRecord)
 }
 
-inline void RouteRecord::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addrs_){arena}
-    , decltype(_impl_.leader_addr_){}
-    , decltype(_impl_.shard_id_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.leader_addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.leader_addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void RouteRecord::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RouteRecord_metaserver_2eproto.base);
+  leader_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  shard_id_ = PROTOBUF_ULONGLONG(0);
 }
 
 RouteRecord::~RouteRecord() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.RouteRecord)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void RouteRecord::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.addrs_.~RepeatedPtrField();
-  _impl_.leader_addr_.Destroy();
+void RouteRecord::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  leader_addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RouteRecord::ArenaDtor(void* object) {
+  RouteRecord* _this = reinterpret_cast< RouteRecord* >(object);
+  (void)_this;
+}
+void RouteRecord::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RouteRecord::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const RouteRecord& RouteRecord::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RouteRecord_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void RouteRecord::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RouteRecord)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.addrs_.Clear();
-  _impl_.leader_addr_.ClearToEmpty();
-  _impl_.shard_id_ = uint64_t{0u};
+  addrs_.Clear();
+  leader_addr_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  shard_id_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RouteRecord::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* RouteRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 shard_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string leader_addr = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_leader_addr();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.RouteRecord.leader_addr"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.RouteRecord.leader_addr"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated string addrs = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_addrs();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.RouteRecord.addrs"));
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.RouteRecord.addrs"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* RouteRecord::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RouteRecord::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RouteRecord)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
+  if (this->shard_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
   }
 
   // string leader_addr = 2;
-  if (!this->_internal_leader_addr().empty()) {
+  if (this->leader_addr().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_leader_addr().data(), static_cast<int>(this->_internal_leader_addr().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -5801,7 +7057,7 @@ uint8_t* RouteRecord::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RouteRecord)
@@ -5812,56 +7068,77 @@ size_t RouteRecord::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RouteRecord)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string addrs = 3;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.addrs_.size());
-  for (int i = 0, n = _impl_.addrs_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(addrs_.size());
+  for (int i = 0, n = addrs_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.addrs_.Get(i));
+      addrs_.Get(i));
   }
 
   // string leader_addr = 2;
-  if (!this->_internal_leader_addr().empty()) {
+  if (this->leader_addr().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_leader_addr());
   }
 
   // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  if (this->shard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_shard_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RouteRecord::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    RouteRecord::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RouteRecord::GetClassData() const { return &_class_data_; }
+void RouteRecord::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RouteRecord)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RouteRecord* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RouteRecord>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RouteRecord)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RouteRecord)
+    MergeFrom(*source);
+  }
+}
 
-
-void RouteRecord::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<RouteRecord*>(&to_msg);
-  auto& from = static_cast<const RouteRecord&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RouteRecord)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void RouteRecord::MergeFrom(const RouteRecord& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RouteRecord)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.addrs_.MergeFrom(from._impl_.addrs_);
-  if (!from._internal_leader_addr().empty()) {
-    _this->_internal_set_leader_addr(from._internal_leader_addr());
+  addrs_.MergeFrom(from.addrs_);
+  if (from.leader_addr().size() > 0) {
+    _internal_set_leader_addr(from._internal_leader_addr());
   }
-  if (from._internal_shard_id() != 0) {
-    _this->_internal_set_shard_id(from._internal_shard_id());
+  if (from.shard_id() != 0) {
+    _internal_set_shard_id(from._internal_shard_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RouteRecord::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RouteRecord)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RouteRecord::CopyFrom(const RouteRecord& from) {
@@ -5877,135 +7154,126 @@ bool RouteRecord::IsInitialized() const {
 
 void RouteRecord::InternalSwap(RouteRecord* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.addrs_.InternalSwap(&other->_impl_.addrs_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.leader_addr_, lhs_arena,
-      &other->_impl_.leader_addr_, rhs_arena
-  );
-  swap(_impl_.shard_id_, other->_impl_.shard_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  addrs_.InternalSwap(&other->addrs_);
+  leader_addr_.Swap(&other->leader_addr_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(shard_id_, other->shard_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RouteRecord::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[23]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ShardList::InitAsDefaultInstance() {
+}
 class ShardList::_Internal {
  public:
 };
 
-ShardList::ShardList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+ShardList::ShardList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  shard_ids_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ShardList)
 }
 ShardList::ShardList(const ShardList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ShardList* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shard_ids_){from._impl_.shard_ids_}
-    , /*decltype(_impl_._shard_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      shard_ids_(from.shard_ids_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ShardList)
 }
 
-inline void ShardList::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shard_ids_){arena}
-    , /*decltype(_impl_._shard_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void ShardList::SharedCtor() {
 }
 
 ShardList::~ShardList() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.ShardList)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ShardList::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.shard_ids_.~RepeatedField();
+void ShardList::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ShardList::ArenaDtor(void* object) {
+  ShardList* _this = reinterpret_cast< ShardList* >(object);
+  (void)_this;
+}
+void ShardList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ShardList::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const ShardList& ShardList::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ShardList_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void ShardList::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ShardList)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.shard_ids_.Clear();
+  shard_ids_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ShardList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ShardList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated uint64 shard_ids = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt64Parser(_internal_mutable_shard_ids(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
           _internal_add_shard_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ShardList::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ShardList::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ShardList)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated uint64 shard_ids = 1;
   {
-    int byte_size = _impl_._shard_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _shard_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteUInt64Packed(
           1, _internal_shard_ids(), byte_size, target);
@@ -6013,7 +7281,7 @@ uint8_t* ShardList::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ShardList)
@@ -6024,44 +7292,64 @@ size_t ShardList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ShardList)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated uint64 shard_ids = 1;
   {
-    size_t data_size = ::_pbi::WireFormatLite::
-      UInt64Size(this->_impl_.shard_ids_);
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      UInt64Size(this->shard_ids_);
     if (data_size > 0) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._shard_ids_cached_byte_size_.store(cached_size,
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _shard_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardList::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ShardList::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardList::GetClassData() const { return &_class_data_; }
+void ShardList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ShardList)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ShardList* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ShardList>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ShardList)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ShardList)
+    MergeFrom(*source);
+  }
+}
 
-
-void ShardList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ShardList*>(&to_msg);
-  auto& from = static_cast<const ShardList&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardList)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void ShardList::MergeFrom(const ShardList& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardList)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.shard_ids_.MergeFrom(from._impl_.shard_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  shard_ids_.MergeFrom(from.shard_ids_);
+}
+
+void ShardList::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ShardList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ShardList::CopyFrom(const ShardList& from) {
@@ -6077,102 +7365,102 @@ bool ShardList::IsInitialized() const {
 
 void ShardList::InternalSwap(ShardList* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.shard_ids_.InternalSwap(&other->_impl_.shard_ids_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  shard_ids_.InternalSwap(&other->shard_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardList::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[24]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetShardRoutesRequest::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_GetShardRoutesRequest_default_instance_.shards_list_ = const_cast< ::bedrock::metaserver::ShardList*>(
+      ::bedrock::metaserver::ShardList::internal_default_instance());
+  ::bedrock::metaserver::_GetShardRoutesRequest_default_instance_.shard_range_ = const_cast< ::bedrock::metaserver::ShardRange*>(
+      ::bedrock::metaserver::ShardRange::internal_default_instance());
+  ::bedrock::metaserver::_GetShardRoutesRequest_default_instance_._instance.get_mutable()->timestamp_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class GetShardRoutesRequest::_Internal {
  public:
   static const ::bedrock::metaserver::ShardList& shards_list(const GetShardRoutesRequest* msg);
   static const ::bedrock::metaserver::ShardRange& shard_range(const GetShardRoutesRequest* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const GetShardRoutesRequest* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const GetShardRoutesRequest* msg);
 };
 
 const ::bedrock::metaserver::ShardList&
 GetShardRoutesRequest::_Internal::shards_list(const GetShardRoutesRequest* msg) {
-  return *msg->_impl_.shards_.shards_list_;
+  return *msg->shards_.shards_list_;
 }
 const ::bedrock::metaserver::ShardRange&
 GetShardRoutesRequest::_Internal::shard_range(const GetShardRoutesRequest* msg) {
-  return *msg->_impl_.shards_.shard_range_;
+  return *msg->shards_.shard_range_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 GetShardRoutesRequest::_Internal::timestamp(const GetShardRoutesRequest* msg) {
-  return *msg->_impl_.timestamp_;
+  return *msg->timestamp_;
 }
 void GetShardRoutesRequest::set_allocated_shards_list(::bedrock::metaserver::ShardList* shards_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_shards();
   if (shards_list) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(shards_list);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(shards_list);
     if (message_arena != submessage_arena) {
       shards_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, shards_list, submessage_arena);
     }
     set_has_shards_list();
-    _impl_.shards_.shards_list_ = shards_list;
+    shards_.shards_list_ = shards_list;
   }
   // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.GetShardRoutesRequest.shards_list)
 }
 void GetShardRoutesRequest::set_allocated_shard_range(::bedrock::metaserver::ShardRange* shard_range) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_shards();
   if (shard_range) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(shard_range);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(shard_range);
     if (message_arena != submessage_arena) {
       shard_range = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, shard_range, submessage_arena);
     }
     set_has_shard_range();
-    _impl_.shards_.shard_range_ = shard_range;
+    shards_.shard_range_ = shard_range;
   }
   // @@protoc_insertion_point(field_set_allocated:bedrock.metaserver.GetShardRoutesRequest.shard_range)
 }
 void GetShardRoutesRequest::clear_timestamp() {
-  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
-    delete _impl_.timestamp_;
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
   }
-  _impl_.timestamp_ = nullptr;
+  timestamp_ = nullptr;
 }
-GetShardRoutesRequest::GetShardRoutesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetShardRoutesRequest::GetShardRoutesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetShardRoutesRequest)
 }
 GetShardRoutesRequest::GetShardRoutesRequest(const GetShardRoutesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetShardRoutesRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.timestamp_){nullptr}
-    , decltype(_impl_.shards_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_timestamp()) {
-    _this->_impl_.timestamp_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.timestamp_);
+    timestamp_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.timestamp_);
+  } else {
+    timestamp_ = nullptr;
   }
   clear_has_shards();
   switch (from.shards_case()) {
     case kShardsList: {
-      _this->_internal_mutable_shards_list()->::bedrock::metaserver::ShardList::MergeFrom(
-          from._internal_shards_list());
+      _internal_mutable_shards_list()->::bedrock::metaserver::ShardList::MergeFrom(from._internal_shards_list());
       break;
     }
     case kShardRange: {
-      _this->_internal_mutable_shard_range()->::bedrock::metaserver::ShardRange::MergeFrom(
-          from._internal_shard_range());
+      _internal_mutable_shard_range()->::bedrock::metaserver::ShardRange::MergeFrom(from._internal_shard_range());
       break;
     }
     case SHARDS_NOT_SET: {
@@ -6182,52 +7470,53 @@ GetShardRoutesRequest::GetShardRoutesRequest(const GetShardRoutesRequest& from)
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetShardRoutesRequest)
 }
 
-inline void GetShardRoutesRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.timestamp_){nullptr}
-    , decltype(_impl_.shards_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , /*decltype(_impl_._oneof_case_)*/{}
-  };
+void GetShardRoutesRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetShardRoutesRequest_metaserver_2eproto.base);
+  timestamp_ = nullptr;
   clear_has_shards();
 }
 
 GetShardRoutesRequest::~GetShardRoutesRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetShardRoutesRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetShardRoutesRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.timestamp_;
+void GetShardRoutesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete timestamp_;
   if (has_shards()) {
     clear_shards();
   }
 }
 
-void GetShardRoutesRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+void GetShardRoutesRequest::ArenaDtor(void* object) {
+  GetShardRoutesRequest* _this = reinterpret_cast< GetShardRoutesRequest* >(object);
+  (void)_this;
 }
+void GetShardRoutesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetShardRoutesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetShardRoutesRequest& GetShardRoutesRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetShardRoutesRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetShardRoutesRequest::clear_shards() {
 // @@protoc_insertion_point(one_of_clear_start:bedrock.metaserver.GetShardRoutesRequest)
   switch (shards_case()) {
     case kShardsList: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete _impl_.shards_.shards_list_;
+      if (GetArena() == nullptr) {
+        delete shards_.shards_list_;
       }
       break;
     }
     case kShardRange: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete _impl_.shards_.shard_range_;
+      if (GetArena() == nullptr) {
+        delete shards_.shard_range_;
       }
       break;
     }
@@ -6235,106 +7524,107 @@ void GetShardRoutesRequest::clear_shards() {
       break;
     }
   }
-  _impl_._oneof_case_[0] = SHARDS_NOT_SET;
+  _oneof_case_[0] = SHARDS_NOT_SET;
 }
 
 
 void GetShardRoutesRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetShardRoutesRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
-    delete _impl_.timestamp_;
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
   }
-  _impl_.timestamp_ = nullptr;
+  timestamp_ = nullptr;
   clear_shards();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetShardRoutesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetShardRoutesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .bedrock.metaserver.ShardList shards_list = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_shards_list(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .bedrock.metaserver.ShardRange shard_range = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_shard_range(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp timestamp = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_timestamp(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetShardRoutesRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetShardRoutesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetShardRoutesRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .bedrock.metaserver.ShardList shards_list = 1;
   if (_internal_has_shards_list()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::shards_list(this),
-        _Internal::shards_list(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::shards_list(this), target, stream);
   }
 
   // .bedrock.metaserver.ShardRange shard_range = 2;
   if (_internal_has_shard_range()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::shard_range(this),
-        _Internal::shard_range(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::shard_range(this), target, stream);
   }
 
   // .google.protobuf.Timestamp timestamp = 3;
-  if (this->_internal_has_timestamp()) {
+  if (this->has_timestamp()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::timestamp(this),
-        _Internal::timestamp(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        3, _Internal::timestamp(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetShardRoutesRequest)
@@ -6345,15 +7635,15 @@ size_t GetShardRoutesRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetShardRoutesRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .google.protobuf.Timestamp timestamp = 3;
-  if (this->_internal_has_timestamp()) {
+  if (this->has_timestamp()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.timestamp_);
+        *timestamp_);
   }
 
   switch (shards_case()) {
@@ -6361,58 +7651,74 @@ size_t GetShardRoutesRequest::ByteSizeLong() const {
     case kShardsList: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.shards_.shards_list_);
+          *shards_.shards_list_);
       break;
     }
     // .bedrock.metaserver.ShardRange shard_range = 2;
     case kShardRange: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.shards_.shard_range_);
+          *shards_.shard_range_);
       break;
     }
     case SHARDS_NOT_SET: {
       break;
     }
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetShardRoutesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetShardRoutesRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetShardRoutesRequest::GetClassData() const { return &_class_data_; }
+void GetShardRoutesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetShardRoutesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetShardRoutesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetShardRoutesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetShardRoutesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetShardRoutesRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetShardRoutesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetShardRoutesRequest*>(&to_msg);
-  auto& from = static_cast<const GetShardRoutesRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetShardRoutesRequest::MergeFrom(const GetShardRoutesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_timestamp()) {
-    _this->_internal_mutable_timestamp()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_timestamp());
+  if (from.has_timestamp()) {
+    _internal_mutable_timestamp()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_timestamp());
   }
   switch (from.shards_case()) {
     case kShardsList: {
-      _this->_internal_mutable_shards_list()->::bedrock::metaserver::ShardList::MergeFrom(
-          from._internal_shards_list());
+      _internal_mutable_shards_list()->::bedrock::metaserver::ShardList::MergeFrom(from._internal_shards_list());
       break;
     }
     case kShardRange: {
-      _this->_internal_mutable_shard_range()->::bedrock::metaserver::ShardRange::MergeFrom(
-          from._internal_shard_range());
+      _internal_mutable_shard_range()->::bedrock::metaserver::ShardRange::MergeFrom(from._internal_shard_range());
       break;
     }
     case SHARDS_NOT_SET: {
       break;
     }
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetShardRoutesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetShardRoutesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetShardRoutesRequest::CopyFrom(const GetShardRoutesRequest& from) {
@@ -6428,88 +7734,89 @@ bool GetShardRoutesRequest::IsInitialized() const {
 
 void GetShardRoutesRequest::InternalSwap(GetShardRoutesRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.timestamp_, other->_impl_.timestamp_);
-  swap(_impl_.shards_, other->_impl_.shards_);
-  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(timestamp_, other->timestamp_);
+  swap(shards_, other->shards_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[25]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetShardRoutesResponse::InitAsDefaultInstance() {
+}
 class GetShardRoutesResponse::_Internal {
  public:
 };
 
-GetShardRoutesResponse::GetShardRoutesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetShardRoutesResponse::GetShardRoutesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  routes_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetShardRoutesResponse)
 }
 GetShardRoutesResponse::GetShardRoutesResponse(const GetShardRoutesResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetShardRoutesResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.routes_){from._impl_.routes_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      routes_(from.routes_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetShardRoutesResponse)
 }
 
-inline void GetShardRoutesResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.routes_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void GetShardRoutesResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetShardRoutesResponse_metaserver_2eproto.base);
 }
 
 GetShardRoutesResponse::~GetShardRoutesResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetShardRoutesResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetShardRoutesResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.routes_.~RepeatedPtrField();
+void GetShardRoutesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetShardRoutesResponse::ArenaDtor(void* object) {
+  GetShardRoutesResponse* _this = reinterpret_cast< GetShardRoutesResponse* >(object);
+  (void)_this;
+}
+void GetShardRoutesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetShardRoutesResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetShardRoutesResponse& GetShardRoutesResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetShardRoutesResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetShardRoutesResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetShardRoutesResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.routes_.Clear();
+  routes_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetShardRoutesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetShardRoutesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .bedrock.metaserver.RouteRecord routes = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -6517,48 +7824,46 @@ const char* GetShardRoutesResponse::_InternalParse(const char* ptr, ::_pbi::Pars
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetShardRoutesResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetShardRoutesResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetShardRoutesResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.RouteRecord routes = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_routes_size()); i < n; i++) {
-    const auto& repfield = this->_internal_routes(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_routes_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(1, this->_internal_routes(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetShardRoutesResponse)
@@ -6569,37 +7874,56 @@ size_t GetShardRoutesResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetShardRoutesResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.RouteRecord routes = 1;
   total_size += 1UL * this->_internal_routes_size();
-  for (const auto& msg : this->_impl_.routes_) {
+  for (const auto& msg : this->routes_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetShardRoutesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetShardRoutesResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetShardRoutesResponse::GetClassData() const { return &_class_data_; }
+void GetShardRoutesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetShardRoutesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetShardRoutesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetShardRoutesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetShardRoutesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetShardRoutesResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetShardRoutesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetShardRoutesResponse*>(&to_msg);
-  auto& from = static_cast<const GetShardRoutesResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetShardRoutesResponse::MergeFrom(const GetShardRoutesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.routes_.MergeFrom(from._impl_.routes_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  routes_.MergeFrom(from.routes_);
+}
+
+void GetShardRoutesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetShardRoutesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetShardRoutesResponse::CopyFrom(const GetShardRoutesResponse& from) {
@@ -6615,164 +7939,167 @@ bool GetShardRoutesResponse::IsInitialized() const {
 
 void GetShardRoutesResponse::InternalSwap(GetShardRoutesResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.routes_.InternalSwap(&other->_impl_.routes_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  routes_.InternalSwap(&other->routes_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[26]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetShardRoutesByStorageRequest::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_GetShardRoutesByStorageRequest_default_instance_._instance.get_mutable()->timestamp_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class GetShardRoutesByStorageRequest::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const GetShardRoutesByStorageRequest* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const GetShardRoutesByStorageRequest* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 GetShardRoutesByStorageRequest::_Internal::timestamp(const GetShardRoutesByStorageRequest* msg) {
-  return *msg->_impl_.timestamp_;
+  return *msg->timestamp_;
 }
 void GetShardRoutesByStorageRequest::clear_timestamp() {
-  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
-    delete _impl_.timestamp_;
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
   }
-  _impl_.timestamp_ = nullptr;
+  timestamp_ = nullptr;
 }
-GetShardRoutesByStorageRequest::GetShardRoutesByStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetShardRoutesByStorageRequest::GetShardRoutesByStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetShardRoutesByStorageRequest)
 }
 GetShardRoutesByStorageRequest::GetShardRoutesByStorageRequest(const GetShardRoutesByStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetShardRoutesByStorageRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.timestamp_){nullptr}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_timestamp()) {
-    _this->_impl_.timestamp_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.timestamp_);
+    timestamp_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.timestamp_);
+  } else {
+    timestamp_ = nullptr;
   }
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetShardRoutesByStorageRequest)
 }
 
-inline void GetShardRoutesByStorageRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.timestamp_){nullptr}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void GetShardRoutesByStorageRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetShardRoutesByStorageRequest_metaserver_2eproto.base);
+  ::memset(&timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(storage_id_));
 }
 
 GetShardRoutesByStorageRequest::~GetShardRoutesByStorageRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetShardRoutesByStorageRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetShardRoutesByStorageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.timestamp_;
+void GetShardRoutesByStorageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete timestamp_;
 }
 
+void GetShardRoutesByStorageRequest::ArenaDtor(void* object) {
+  GetShardRoutesByStorageRequest* _this = reinterpret_cast< GetShardRoutesByStorageRequest* >(object);
+  (void)_this;
+}
+void GetShardRoutesByStorageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetShardRoutesByStorageRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetShardRoutesByStorageRequest& GetShardRoutesByStorageRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetShardRoutesByStorageRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetShardRoutesByStorageRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
-    delete _impl_.timestamp_;
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
   }
-  _impl_.timestamp_ = nullptr;
-  _impl_.storage_id_ = 0u;
+  timestamp_ = nullptr;
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetShardRoutesByStorageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetShardRoutesByStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp timestamp = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_timestamp(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetShardRoutesByStorageRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetShardRoutesByStorageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // .google.protobuf.Timestamp timestamp = 2;
-  if (this->_internal_has_timestamp()) {
+  if (this->has_timestamp()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::timestamp(this),
-        _Internal::timestamp(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::timestamp(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetShardRoutesByStorageRequest)
@@ -6783,48 +8110,68 @@ size_t GetShardRoutesByStorageRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .google.protobuf.Timestamp timestamp = 2;
-  if (this->_internal_has_timestamp()) {
+  if (this->has_timestamp()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.timestamp_);
+        *timestamp_);
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetShardRoutesByStorageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetShardRoutesByStorageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetShardRoutesByStorageRequest::GetClassData() const { return &_class_data_; }
+void GetShardRoutesByStorageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetShardRoutesByStorageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetShardRoutesByStorageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetShardRoutesByStorageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetShardRoutesByStorageRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetShardRoutesByStorageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetShardRoutesByStorageRequest*>(&to_msg);
-  auto& from = static_cast<const GetShardRoutesByStorageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetShardRoutesByStorageRequest::MergeFrom(const GetShardRoutesByStorageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_timestamp()) {
-    _this->_internal_mutable_timestamp()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_timestamp());
+  if (from.has_timestamp()) {
+    _internal_mutable_timestamp()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_timestamp());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetShardRoutesByStorageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetShardRoutesByStorageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetShardRoutesByStorageRequest::CopyFrom(const GetShardRoutesByStorageRequest& from) {
@@ -6840,116 +8187,120 @@ bool GetShardRoutesByStorageRequest::IsInitialized() const {
 
 void GetShardRoutesByStorageRequest::InternalSwap(GetShardRoutesByStorageRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageRequest, _impl_.storage_id_)
-      + sizeof(GetShardRoutesByStorageRequest::_impl_.storage_id_)
-      - PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageRequest, _impl_.timestamp_)>(
-          reinterpret_cast<char*>(&_impl_.timestamp_),
-          reinterpret_cast<char*>(&other->_impl_.timestamp_));
+      PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageRequest, storage_id_)
+      + sizeof(GetShardRoutesByStorageRequest::storage_id_)
+      - PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageRequest, timestamp_)>(
+          reinterpret_cast<char*>(&timestamp_),
+          reinterpret_cast<char*>(&other->timestamp_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesByStorageRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[27]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetShardRoutesByStorageResponse::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_GetShardRoutesByStorageResponse_default_instance_._instance.get_mutable()->timestamp_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class GetShardRoutesByStorageResponse::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const GetShardRoutesByStorageResponse* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp(const GetShardRoutesByStorageResponse* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 GetShardRoutesByStorageResponse::_Internal::timestamp(const GetShardRoutesByStorageResponse* msg) {
-  return *msg->_impl_.timestamp_;
+  return *msg->timestamp_;
 }
 void GetShardRoutesByStorageResponse::clear_timestamp() {
-  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
-    delete _impl_.timestamp_;
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
   }
-  _impl_.timestamp_ = nullptr;
+  timestamp_ = nullptr;
 }
-GetShardRoutesByStorageResponse::GetShardRoutesByStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetShardRoutesByStorageResponse::GetShardRoutesByStorageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  routes_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetShardRoutesByStorageResponse)
 }
 GetShardRoutesByStorageResponse::GetShardRoutesByStorageResponse(const GetShardRoutesByStorageResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetShardRoutesByStorageResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.routes_){from._impl_.routes_}
-    , decltype(_impl_.timestamp_){nullptr}
-    , decltype(_impl_.is_full_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      routes_(from.routes_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_timestamp()) {
-    _this->_impl_.timestamp_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.timestamp_);
+    timestamp_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.timestamp_);
+  } else {
+    timestamp_ = nullptr;
   }
-  _this->_impl_.is_full_ = from._impl_.is_full_;
+  is_full_ = from.is_full_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetShardRoutesByStorageResponse)
 }
 
-inline void GetShardRoutesByStorageResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.routes_){arena}
-    , decltype(_impl_.timestamp_){nullptr}
-    , decltype(_impl_.is_full_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void GetShardRoutesByStorageResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetShardRoutesByStorageResponse_metaserver_2eproto.base);
+  ::memset(&timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&is_full_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(is_full_));
 }
 
 GetShardRoutesByStorageResponse::~GetShardRoutesByStorageResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetShardRoutesByStorageResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetShardRoutesByStorageResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.routes_.~RepeatedPtrField();
-  if (this != internal_default_instance()) delete _impl_.timestamp_;
+void GetShardRoutesByStorageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete timestamp_;
 }
 
+void GetShardRoutesByStorageResponse::ArenaDtor(void* object) {
+  GetShardRoutesByStorageResponse* _this = reinterpret_cast< GetShardRoutesByStorageResponse* >(object);
+  (void)_this;
+}
+void GetShardRoutesByStorageResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetShardRoutesByStorageResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetShardRoutesByStorageResponse& GetShardRoutesByStorageResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetShardRoutesByStorageResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetShardRoutesByStorageResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.routes_.Clear();
-  if (GetArenaForAllocation() == nullptr && _impl_.timestamp_ != nullptr) {
-    delete _impl_.timestamp_;
+  routes_.Clear();
+  if (GetArena() == nullptr && timestamp_ != nullptr) {
+    delete timestamp_;
   }
-  _impl_.timestamp_ = nullptr;
-  _impl_.is_full_ = false;
+  timestamp_ = nullptr;
+  is_full_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetShardRoutesByStorageResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetShardRoutesByStorageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .bedrock.metaserver.RouteRecord routes = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -6957,77 +8308,74 @@ const char* GetShardRoutesByStorageResponse::_InternalParse(const char* ptr, ::_
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp timestamp = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_timestamp(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bool is_full = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.is_full_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          is_full_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetShardRoutesByStorageResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetShardRoutesByStorageResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.RouteRecord routes = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_routes_size()); i < n; i++) {
-    const auto& repfield = this->_internal_routes(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_routes_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(1, this->_internal_routes(i), target, stream);
   }
 
   // .google.protobuf.Timestamp timestamp = 2;
-  if (this->_internal_has_timestamp()) {
+  if (this->has_timestamp()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::timestamp(this),
-        _Internal::timestamp(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::timestamp(this), target, stream);
   }
 
   // bool is_full = 3;
-  if (this->_internal_is_full() != 0) {
+  if (this->is_full() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_is_full(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_is_full(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetShardRoutesByStorageResponse)
@@ -7038,56 +8386,74 @@ size_t GetShardRoutesByStorageResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.RouteRecord routes = 1;
   total_size += 1UL * this->_internal_routes_size();
-  for (const auto& msg : this->_impl_.routes_) {
+  for (const auto& msg : this->routes_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // .google.protobuf.Timestamp timestamp = 2;
-  if (this->_internal_has_timestamp()) {
+  if (this->has_timestamp()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.timestamp_);
+        *timestamp_);
   }
 
   // bool is_full = 3;
-  if (this->_internal_is_full() != 0) {
+  if (this->is_full() != 0) {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetShardRoutesByStorageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetShardRoutesByStorageResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetShardRoutesByStorageResponse::GetClassData() const { return &_class_data_; }
+void GetShardRoutesByStorageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetShardRoutesByStorageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetShardRoutesByStorageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetShardRoutesByStorageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetShardRoutesByStorageResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetShardRoutesByStorageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetShardRoutesByStorageResponse*>(&to_msg);
-  auto& from = static_cast<const GetShardRoutesByStorageResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetShardRoutesByStorageResponse::MergeFrom(const GetShardRoutesByStorageResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.routes_.MergeFrom(from._impl_.routes_);
-  if (from._internal_has_timestamp()) {
-    _this->_internal_mutable_timestamp()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_timestamp());
+  routes_.MergeFrom(from.routes_);
+  if (from.has_timestamp()) {
+    _internal_mutable_timestamp()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_timestamp());
   }
-  if (from._internal_is_full() != 0) {
-    _this->_internal_set_is_full(from._internal_is_full());
+  if (from.is_full() != 0) {
+    _internal_set_is_full(from._internal_is_full());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetShardRoutesByStorageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetShardRoutesByStorageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetShardRoutesByStorageResponse::CopyFrom(const GetShardRoutesByStorageResponse& from) {
@@ -7103,142 +8469,134 @@ bool GetShardRoutesByStorageResponse::IsInitialized() const {
 
 void GetShardRoutesByStorageResponse::InternalSwap(GetShardRoutesByStorageResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.routes_.InternalSwap(&other->_impl_.routes_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  routes_.InternalSwap(&other->routes_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageResponse, _impl_.is_full_)
-      + sizeof(GetShardRoutesByStorageResponse::_impl_.is_full_)
-      - PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageResponse, _impl_.timestamp_)>(
-          reinterpret_cast<char*>(&_impl_.timestamp_),
-          reinterpret_cast<char*>(&other->_impl_.timestamp_));
+      PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageResponse, is_full_)
+      + sizeof(GetShardRoutesByStorageResponse::is_full_)
+      - PROTOBUF_FIELD_OFFSET(GetShardRoutesByStorageResponse, timestamp_)>(
+          reinterpret_cast<char*>(&timestamp_),
+          reinterpret_cast<char*>(&other->timestamp_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardRoutesByStorageResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[28]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void AddDataServerRequest::InitAsDefaultInstance() {
+}
 class AddDataServerRequest::_Internal {
  public:
 };
 
-AddDataServerRequest::AddDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+AddDataServerRequest::AddDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.AddDataServerRequest)
 }
 AddDataServerRequest::AddDataServerRequest(const AddDataServerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  AddDataServerRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addr_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_addr().empty()) {
-    _this->_impl_.addr_.Set(from._internal_addr(), 
-      _this->GetArenaForAllocation());
+    addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_addr(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.AddDataServerRequest)
 }
 
-inline void AddDataServerRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addr_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void AddDataServerRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AddDataServerRequest_metaserver_2eproto.base);
+  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 AddDataServerRequest::~AddDataServerRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.AddDataServerRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void AddDataServerRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.addr_.Destroy();
+void AddDataServerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void AddDataServerRequest::ArenaDtor(void* object) {
+  AddDataServerRequest* _this = reinterpret_cast< AddDataServerRequest* >(object);
+  (void)_this;
+}
+void AddDataServerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AddDataServerRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const AddDataServerRequest& AddDataServerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddDataServerRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void AddDataServerRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.AddDataServerRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.addr_.ClearToEmpty();
+  addr_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AddDataServerRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* AddDataServerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string addr = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_addr();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.AddDataServerRequest.addr"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.AddDataServerRequest.addr"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* AddDataServerRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* AddDataServerRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.AddDataServerRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string addr = 1;
-  if (!this->_internal_addr().empty()) {
+  if (this->addr().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_addr().data(), static_cast<int>(this->_internal_addr().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -7248,7 +8606,7 @@ uint8_t* AddDataServerRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.AddDataServerRequest)
@@ -7259,39 +8617,58 @@ size_t AddDataServerRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.AddDataServerRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string addr = 1;
-  if (!this->_internal_addr().empty()) {
+  if (this->addr().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_addr());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddDataServerRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    AddDataServerRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddDataServerRequest::GetClassData() const { return &_class_data_; }
+void AddDataServerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.AddDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddDataServerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddDataServerRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.AddDataServerRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.AddDataServerRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void AddDataServerRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<AddDataServerRequest*>(&to_msg);
-  auto& from = static_cast<const AddDataServerRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.AddDataServerRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void AddDataServerRequest::MergeFrom(const AddDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.AddDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_addr().empty()) {
-    _this->_internal_set_addr(from._internal_addr());
+  if (from.addr().size() > 0) {
+    _internal_set_addr(from._internal_addr());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddDataServerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.AddDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void AddDataServerRequest::CopyFrom(const AddDataServerRequest& from) {
@@ -7307,181 +8684,293 @@ bool AddDataServerRequest::IsInitialized() const {
 
 void AddDataServerRequest::InternalSwap(AddDataServerRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.addr_, lhs_arena,
-      &other->_impl_.addr_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  addr_.Swap(&other->addr_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddDataServerRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[29]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void AddDataServerResponse::InitAsDefaultInstance() {
+}
 class AddDataServerResponse::_Internal {
  public:
 };
 
-AddDataServerResponse::AddDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+AddDataServerResponse::AddDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.AddDataServerResponse)
 }
 AddDataServerResponse::AddDataServerResponse(const AddDataServerResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  AddDataServerResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.AddDataServerResponse)
 }
 
+void AddDataServerResponse::SharedCtor() {
+}
+
+AddDataServerResponse::~AddDataServerResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.AddDataServerResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AddDataServerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void AddDataServerResponse::ArenaDtor(void* object) {
+  AddDataServerResponse* _this = reinterpret_cast< AddDataServerResponse* >(object);
+  (void)_this;
+}
+void AddDataServerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddDataServerResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddDataServerResponse& AddDataServerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddDataServerResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void AddDataServerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.AddDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddDataServerResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddDataServerResponse::GetClassData() const { return &_class_data_; }
+const char* AddDataServerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* AddDataServerResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.AddDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.AddDataServerResponse)
+  return target;
+}
 
+size_t AddDataServerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.AddDataServerResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void AddDataServerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.AddDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddDataServerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddDataServerResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.AddDataServerResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.AddDataServerResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AddDataServerResponse::MergeFrom(const AddDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.AddDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void AddDataServerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.AddDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddDataServerResponse::CopyFrom(const AddDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.AddDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddDataServerResponse::IsInitialized() const {
+  return true;
+}
+
+void AddDataServerResponse::InternalSwap(AddDataServerResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddDataServerResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[30]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RemoveDataServerRequest::InitAsDefaultInstance() {
+}
 class RemoveDataServerRequest::_Internal {
  public:
 };
 
-RemoveDataServerRequest::RemoveDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+RemoveDataServerRequest::RemoveDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RemoveDataServerRequest)
 }
 RemoveDataServerRequest::RemoveDataServerRequest(const RemoveDataServerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  RemoveDataServerRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addr_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_addr().empty()) {
-    _this->_impl_.addr_.Set(from._internal_addr(), 
-      _this->GetArenaForAllocation());
+    addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_addr(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveDataServerRequest)
 }
 
-inline void RemoveDataServerRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.addr_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void RemoveDataServerRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RemoveDataServerRequest_metaserver_2eproto.base);
+  addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 RemoveDataServerRequest::~RemoveDataServerRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.RemoveDataServerRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void RemoveDataServerRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.addr_.Destroy();
+void RemoveDataServerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RemoveDataServerRequest::ArenaDtor(void* object) {
+  RemoveDataServerRequest* _this = reinterpret_cast< RemoveDataServerRequest* >(object);
+  (void)_this;
+}
+void RemoveDataServerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RemoveDataServerRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const RemoveDataServerRequest& RemoveDataServerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveDataServerRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void RemoveDataServerRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RemoveDataServerRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.addr_.ClearToEmpty();
+  addr_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RemoveDataServerRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* RemoveDataServerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string addr = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_addr();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.RemoveDataServerRequest.addr"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.RemoveDataServerRequest.addr"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* RemoveDataServerRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveDataServerRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RemoveDataServerRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string addr = 1;
-  if (!this->_internal_addr().empty()) {
+  if (this->addr().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_addr().data(), static_cast<int>(this->_internal_addr().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -7491,7 +8980,7 @@ uint8_t* RemoveDataServerRequest::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RemoveDataServerRequest)
@@ -7502,39 +8991,58 @@ size_t RemoveDataServerRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RemoveDataServerRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string addr = 1;
-  if (!this->_internal_addr().empty()) {
+  if (this->addr().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_addr());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoveDataServerRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    RemoveDataServerRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveDataServerRequest::GetClassData() const { return &_class_data_; }
+void RemoveDataServerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RemoveDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveDataServerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveDataServerRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RemoveDataServerRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RemoveDataServerRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void RemoveDataServerRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<RemoveDataServerRequest*>(&to_msg);
-  auto& from = static_cast<const RemoveDataServerRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveDataServerRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void RemoveDataServerRequest::MergeFrom(const RemoveDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_addr().empty()) {
-    _this->_internal_set_addr(from._internal_addr());
+  if (from.addr().size() > 0) {
+    _internal_set_addr(from._internal_addr());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RemoveDataServerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RemoveDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RemoveDataServerRequest::CopyFrom(const RemoveDataServerRequest& from) {
@@ -7550,171 +9058,417 @@ bool RemoveDataServerRequest::IsInitialized() const {
 
 void RemoveDataServerRequest::InternalSwap(RemoveDataServerRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.addr_, lhs_arena,
-      &other->_impl_.addr_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  addr_.Swap(&other->addr_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveDataServerRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[31]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void RemoveDataServerResponse::InitAsDefaultInstance() {
+}
 class RemoveDataServerResponse::_Internal {
  public:
 };
 
-RemoveDataServerResponse::RemoveDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+RemoveDataServerResponse::RemoveDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.RemoveDataServerResponse)
 }
 RemoveDataServerResponse::RemoveDataServerResponse(const RemoveDataServerResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  RemoveDataServerResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.RemoveDataServerResponse)
 }
 
+void RemoveDataServerResponse::SharedCtor() {
+}
+
+RemoveDataServerResponse::~RemoveDataServerResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.RemoveDataServerResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RemoveDataServerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void RemoveDataServerResponse::ArenaDtor(void* object) {
+  RemoveDataServerResponse* _this = reinterpret_cast< RemoveDataServerResponse* >(object);
+  (void)_this;
+}
+void RemoveDataServerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RemoveDataServerResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemoveDataServerResponse& RemoveDataServerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveDataServerResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void RemoveDataServerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.RemoveDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RemoveDataServerResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveDataServerResponse::GetClassData() const { return &_class_data_; }
+const char* RemoveDataServerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveDataServerResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.RemoveDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.RemoveDataServerResponse)
+  return target;
+}
 
+size_t RemoveDataServerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.RemoveDataServerResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void RemoveDataServerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.RemoveDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveDataServerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveDataServerResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.RemoveDataServerResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.RemoveDataServerResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RemoveDataServerResponse::MergeFrom(const RemoveDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.RemoveDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void RemoveDataServerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.RemoveDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemoveDataServerResponse::CopyFrom(const RemoveDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.RemoveDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveDataServerResponse::IsInitialized() const {
+  return true;
+}
+
+void RemoveDataServerResponse::InternalSwap(RemoveDataServerResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveDataServerResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[32]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ListDataServerRequest::InitAsDefaultInstance() {
+}
 class ListDataServerRequest::_Internal {
  public:
 };
 
-ListDataServerRequest::ListDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+ListDataServerRequest::ListDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ListDataServerRequest)
 }
 ListDataServerRequest::ListDataServerRequest(const ListDataServerRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  ListDataServerRequest* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ListDataServerRequest)
 }
 
+void ListDataServerRequest::SharedCtor() {
+}
+
+ListDataServerRequest::~ListDataServerRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.ListDataServerRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListDataServerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void ListDataServerRequest::ArenaDtor(void* object) {
+  ListDataServerRequest* _this = reinterpret_cast< ListDataServerRequest* >(object);
+  (void)_this;
+}
+void ListDataServerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListDataServerRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListDataServerRequest& ListDataServerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListDataServerRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void ListDataServerRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ListDataServerRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListDataServerRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListDataServerRequest::GetClassData() const { return &_class_data_; }
+const char* ListDataServerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* ListDataServerRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ListDataServerRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ListDataServerRequest)
+  return target;
+}
 
+size_t ListDataServerRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ListDataServerRequest)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void ListDataServerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ListDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListDataServerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListDataServerRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ListDataServerRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ListDataServerRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ListDataServerRequest::MergeFrom(const ListDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ListDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ListDataServerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ListDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListDataServerRequest::CopyFrom(const ListDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.ListDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListDataServerRequest::IsInitialized() const {
+  return true;
+}
+
+void ListDataServerRequest::InternalSwap(ListDataServerRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListDataServerRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[33]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ListDataServerResponse::InitAsDefaultInstance() {
+}
 class ListDataServerResponse::_Internal {
  public:
 };
 
-ListDataServerResponse::ListDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+ListDataServerResponse::ListDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  data_servers_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ListDataServerResponse)
 }
 ListDataServerResponse::ListDataServerResponse(const ListDataServerResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ListDataServerResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.data_servers_){from._impl_.data_servers_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      data_servers_(from.data_servers_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ListDataServerResponse)
 }
 
-inline void ListDataServerResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.data_servers_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void ListDataServerResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListDataServerResponse_metaserver_2eproto.base);
 }
 
 ListDataServerResponse::~ListDataServerResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.ListDataServerResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ListDataServerResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.data_servers_.~RepeatedPtrField();
+void ListDataServerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ListDataServerResponse::ArenaDtor(void* object) {
+  ListDataServerResponse* _this = reinterpret_cast< ListDataServerResponse* >(object);
+  (void)_this;
+}
+void ListDataServerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ListDataServerResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const ListDataServerResponse& ListDataServerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListDataServerResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void ListDataServerResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ListDataServerResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.data_servers_.Clear();
+  data_servers_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ListDataServerResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ListDataServerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .bedrock.metaserver.DataServer data_servers = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -7722,48 +9476,46 @@ const char* ListDataServerResponse::_InternalParse(const char* ptr, ::_pbi::Pars
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ListDataServerResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ListDataServerResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ListDataServerResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.DataServer data_servers = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_data_servers_size()); i < n; i++) {
-    const auto& repfield = this->_internal_data_servers(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_data_servers_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(1, this->_internal_data_servers(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ListDataServerResponse)
@@ -7774,37 +9526,56 @@ size_t ListDataServerResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ListDataServerResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.DataServer data_servers = 1;
   total_size += 1UL * this->_internal_data_servers_size();
-  for (const auto& msg : this->_impl_.data_servers_) {
+  for (const auto& msg : this->data_servers_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListDataServerResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ListDataServerResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListDataServerResponse::GetClassData() const { return &_class_data_; }
+void ListDataServerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ListDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListDataServerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListDataServerResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ListDataServerResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ListDataServerResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void ListDataServerResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ListDataServerResponse*>(&to_msg);
-  auto& from = static_cast<const ListDataServerResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ListDataServerResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void ListDataServerResponse::MergeFrom(const ListDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ListDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.data_servers_.MergeFrom(from._impl_.data_servers_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  data_servers_.MergeFrom(from.data_servers_);
+}
+
+void ListDataServerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ListDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ListDataServerResponse::CopyFrom(const ListDataServerResponse& from) {
@@ -7820,208 +9591,456 @@ bool ListDataServerResponse::IsInitialized() const {
 
 void ListDataServerResponse::InternalSwap(ListDataServerResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.data_servers_.InternalSwap(&other->_impl_.data_servers_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  data_servers_.InternalSwap(&other->data_servers_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListDataServerResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[34]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void UpdateDataServerRequest::InitAsDefaultInstance() {
+}
 class UpdateDataServerRequest::_Internal {
  public:
 };
 
-UpdateDataServerRequest::UpdateDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+UpdateDataServerRequest::UpdateDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.UpdateDataServerRequest)
 }
 UpdateDataServerRequest::UpdateDataServerRequest(const UpdateDataServerRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  UpdateDataServerRequest* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.UpdateDataServerRequest)
 }
 
+void UpdateDataServerRequest::SharedCtor() {
+}
+
+UpdateDataServerRequest::~UpdateDataServerRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.UpdateDataServerRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void UpdateDataServerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void UpdateDataServerRequest::ArenaDtor(void* object) {
+  UpdateDataServerRequest* _this = reinterpret_cast< UpdateDataServerRequest* >(object);
+  (void)_this;
+}
+void UpdateDataServerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UpdateDataServerRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UpdateDataServerRequest& UpdateDataServerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateDataServerRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void UpdateDataServerRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.UpdateDataServerRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateDataServerRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateDataServerRequest::GetClassData() const { return &_class_data_; }
+const char* UpdateDataServerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateDataServerRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.UpdateDataServerRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.UpdateDataServerRequest)
+  return target;
+}
 
+size_t UpdateDataServerRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.UpdateDataServerRequest)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void UpdateDataServerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.UpdateDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UpdateDataServerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateDataServerRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.UpdateDataServerRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.UpdateDataServerRequest)
+    MergeFrom(*source);
+  }
+}
+
+void UpdateDataServerRequest::MergeFrom(const UpdateDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.UpdateDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void UpdateDataServerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.UpdateDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UpdateDataServerRequest::CopyFrom(const UpdateDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.UpdateDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UpdateDataServerRequest::IsInitialized() const {
+  return true;
+}
+
+void UpdateDataServerRequest::InternalSwap(UpdateDataServerRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateDataServerRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[35]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void UpdateDataServerResponse::InitAsDefaultInstance() {
+}
 class UpdateDataServerResponse::_Internal {
  public:
 };
 
-UpdateDataServerResponse::UpdateDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+UpdateDataServerResponse::UpdateDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.UpdateDataServerResponse)
 }
 UpdateDataServerResponse::UpdateDataServerResponse(const UpdateDataServerResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  UpdateDataServerResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.UpdateDataServerResponse)
 }
 
+void UpdateDataServerResponse::SharedCtor() {
+}
+
+UpdateDataServerResponse::~UpdateDataServerResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.UpdateDataServerResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void UpdateDataServerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void UpdateDataServerResponse::ArenaDtor(void* object) {
+  UpdateDataServerResponse* _this = reinterpret_cast< UpdateDataServerResponse* >(object);
+  (void)_this;
+}
+void UpdateDataServerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UpdateDataServerResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UpdateDataServerResponse& UpdateDataServerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateDataServerResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void UpdateDataServerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.UpdateDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateDataServerResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateDataServerResponse::GetClassData() const { return &_class_data_; }
+const char* UpdateDataServerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateDataServerResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.UpdateDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.UpdateDataServerResponse)
+  return target;
+}
 
+size_t UpdateDataServerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.UpdateDataServerResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void UpdateDataServerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.UpdateDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UpdateDataServerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateDataServerResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.UpdateDataServerResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.UpdateDataServerResponse)
+    MergeFrom(*source);
+  }
+}
+
+void UpdateDataServerResponse::MergeFrom(const UpdateDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.UpdateDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void UpdateDataServerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.UpdateDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UpdateDataServerResponse::CopyFrom(const UpdateDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.UpdateDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UpdateDataServerResponse::IsInitialized() const {
+  return true;
+}
+
+void UpdateDataServerResponse::InternalSwap(UpdateDataServerResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateDataServerResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[36]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ShardInfoRequest::InitAsDefaultInstance() {
+}
 class ShardInfoRequest::_Internal {
  public:
 };
 
-ShardInfoRequest::ShardInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+ShardInfoRequest::ShardInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ShardInfoRequest)
 }
 ShardInfoRequest::ShardInfoRequest(const ShardInfoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ShardInfoRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.id_ = from._impl_.id_;
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ShardInfoRequest)
 }
 
-inline void ShardInfoRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.id_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void ShardInfoRequest::SharedCtor() {
+  id_ = PROTOBUF_ULONGLONG(0);
 }
 
 ShardInfoRequest::~ShardInfoRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.ShardInfoRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ShardInfoRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void ShardInfoRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ShardInfoRequest::ArenaDtor(void* object) {
+  ShardInfoRequest* _this = reinterpret_cast< ShardInfoRequest* >(object);
+  (void)_this;
+}
+void ShardInfoRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ShardInfoRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const ShardInfoRequest& ShardInfoRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ShardInfoRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void ShardInfoRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ShardInfoRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.id_ = uint64_t{0u};
+  id_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ShardInfoRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ShardInfoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ShardInfoRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ShardInfoRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ShardInfoRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 id = 1;
-  if (this->_internal_id() != 0) {
+  if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ShardInfoRequest)
@@ -8032,37 +10051,58 @@ size_t ShardInfoRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ShardInfoRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_id());
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardInfoRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ShardInfoRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardInfoRequest::GetClassData() const { return &_class_data_; }
+void ShardInfoRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ShardInfoRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ShardInfoRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ShardInfoRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ShardInfoRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ShardInfoRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void ShardInfoRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ShardInfoRequest*>(&to_msg);
-  auto& from = static_cast<const ShardInfoRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardInfoRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void ShardInfoRequest::MergeFrom(const ShardInfoRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardInfoRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ShardInfoRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ShardInfoRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ShardInfoRequest::CopyFrom(const ShardInfoRequest& from) {
@@ -8078,18 +10118,21 @@ bool ShardInfoRequest::IsInitialized() const {
 
 void ShardInfoRequest::InternalSwap(ShardInfoRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.id_, other->_impl_.id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(id_, other->id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardInfoRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[37]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void ShardInfoResponse::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_ShardInfoResponse_default_instance_._instance.get_mutable()->shard_ = const_cast< ::bedrock::metaserver::Shard*>(
+      ::bedrock::metaserver::Shard::internal_default_instance());
+}
 class ShardInfoResponse::_Internal {
  public:
   static const ::bedrock::metaserver::Shard& shard(const ShardInfoResponse* msg);
@@ -8097,121 +10140,122 @@ class ShardInfoResponse::_Internal {
 
 const ::bedrock::metaserver::Shard&
 ShardInfoResponse::_Internal::shard(const ShardInfoResponse* msg) {
-  return *msg->_impl_.shard_;
+  return *msg->shard_;
 }
-ShardInfoResponse::ShardInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+ShardInfoResponse::ShardInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.ShardInfoResponse)
 }
 ShardInfoResponse::ShardInfoResponse(const ShardInfoResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ShardInfoResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shard_){nullptr}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_shard()) {
-    _this->_impl_.shard_ = new ::bedrock::metaserver::Shard(*from._impl_.shard_);
+    shard_ = new ::bedrock::metaserver::Shard(*from.shard_);
+  } else {
+    shard_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.ShardInfoResponse)
 }
 
-inline void ShardInfoResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shard_){nullptr}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void ShardInfoResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ShardInfoResponse_metaserver_2eproto.base);
+  shard_ = nullptr;
 }
 
 ShardInfoResponse::~ShardInfoResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.ShardInfoResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void ShardInfoResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.shard_;
+void ShardInfoResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete shard_;
 }
 
+void ShardInfoResponse::ArenaDtor(void* object) {
+  ShardInfoResponse* _this = reinterpret_cast< ShardInfoResponse* >(object);
+  (void)_this;
+}
+void ShardInfoResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ShardInfoResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const ShardInfoResponse& ShardInfoResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ShardInfoResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void ShardInfoResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.ShardInfoResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.shard_ != nullptr) {
-    delete _impl_.shard_;
+  if (GetArena() == nullptr && shard_ != nullptr) {
+    delete shard_;
   }
-  _impl_.shard_ = nullptr;
+  shard_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ShardInfoResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* ShardInfoResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .bedrock.metaserver.Shard shard = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_shard(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* ShardInfoResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ShardInfoResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.ShardInfoResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .bedrock.metaserver.Shard shard = 1;
-  if (this->_internal_has_shard()) {
+  if (this->has_shard()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::shard(this),
-        _Internal::shard(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        1, _Internal::shard(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.ShardInfoResponse)
@@ -8222,40 +10266,58 @@ size_t ShardInfoResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.ShardInfoResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .bedrock.metaserver.Shard shard = 1;
-  if (this->_internal_has_shard()) {
+  if (this->has_shard()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.shard_);
+        *shard_);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ShardInfoResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ShardInfoResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ShardInfoResponse::GetClassData() const { return &_class_data_; }
+void ShardInfoResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.ShardInfoResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ShardInfoResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ShardInfoResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.ShardInfoResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.ShardInfoResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void ShardInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ShardInfoResponse*>(&to_msg);
-  auto& from = static_cast<const ShardInfoResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardInfoResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void ShardInfoResponse::MergeFrom(const ShardInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.ShardInfoResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_shard()) {
-    _this->_internal_mutable_shard()->::bedrock::metaserver::Shard::MergeFrom(
-        from._internal_shard());
+  if (from.has_shard()) {
+    _internal_mutable_shard()->::bedrock::metaserver::Shard::MergeFrom(from._internal_shard());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ShardInfoResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.ShardInfoResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void ShardInfoResponse::CopyFrom(const ShardInfoResponse& from) {
@@ -8271,159 +10333,149 @@ bool ShardInfoResponse::IsInitialized() const {
 
 void ShardInfoResponse::InternalSwap(ShardInfoResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.shard_, other->_impl_.shard_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(shard_, other->shard_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ShardInfoResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[38]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetShardIDByKeyRequest::InitAsDefaultInstance() {
+}
 class GetShardIDByKeyRequest::_Internal {
  public:
 };
 
-GetShardIDByKeyRequest::GetShardIDByKeyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetShardIDByKeyRequest::GetShardIDByKeyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetShardIDByKeyRequest)
 }
 GetShardIDByKeyRequest::GetShardIDByKeyRequest(const GetShardIDByKeyRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetShardIDByKeyRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetShardIDByKeyRequest)
 }
 
-inline void GetShardIDByKeyRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void GetShardIDByKeyRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetShardIDByKeyRequest_metaserver_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  storage_id_ = 0u;
 }
 
 GetShardIDByKeyRequest::~GetShardIDByKeyRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetShardIDByKeyRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetShardIDByKeyRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
+void GetShardIDByKeyRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetShardIDByKeyRequest::ArenaDtor(void* object) {
+  GetShardIDByKeyRequest* _this = reinterpret_cast< GetShardIDByKeyRequest* >(object);
+  (void)_this;
+}
+void GetShardIDByKeyRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetShardIDByKeyRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetShardIDByKeyRequest& GetShardIDByKeyRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetShardIDByKeyRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetShardIDByKeyRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetShardIDByKeyRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
-  _impl_.storage_id_ = 0u;
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetShardIDByKeyRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetShardIDByKeyRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes key = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetShardIDByKeyRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetShardIDByKeyRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetShardIDByKeyRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetShardIDByKeyRequest)
@@ -8434,47 +10486,68 @@ size_t GetShardIDByKeyRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetShardIDByKeyRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetShardIDByKeyRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetShardIDByKeyRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetShardIDByKeyRequest::GetClassData() const { return &_class_data_; }
+void GetShardIDByKeyRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetShardIDByKeyRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetShardIDByKeyRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetShardIDByKeyRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetShardIDByKeyRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetShardIDByKeyRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetShardIDByKeyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetShardIDByKeyRequest*>(&to_msg);
-  auto& from = static_cast<const GetShardIDByKeyRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardIDByKeyRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetShardIDByKeyRequest::MergeFrom(const GetShardIDByKeyRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardIDByKeyRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetShardIDByKeyRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetShardIDByKeyRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetShardIDByKeyRequest::CopyFrom(const GetShardIDByKeyRequest& from) {
@@ -8490,134 +10563,127 @@ bool GetShardIDByKeyRequest::IsInitialized() const {
 
 void GetShardIDByKeyRequest::InternalSwap(GetShardIDByKeyRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardIDByKeyRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[39]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void GetShardIDByKeyResponse::InitAsDefaultInstance() {
+}
 class GetShardIDByKeyResponse::_Internal {
  public:
 };
 
-GetShardIDByKeyResponse::GetShardIDByKeyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+GetShardIDByKeyResponse::GetShardIDByKeyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.GetShardIDByKeyResponse)
 }
 GetShardIDByKeyResponse::GetShardIDByKeyResponse(const GetShardIDByKeyResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetShardIDByKeyResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shard_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.shard_id_ = from._impl_.shard_id_;
+  shard_id_ = from.shard_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.GetShardIDByKeyResponse)
 }
 
-inline void GetShardIDByKeyResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shard_id_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void GetShardIDByKeyResponse::SharedCtor() {
+  shard_id_ = PROTOBUF_ULONGLONG(0);
 }
 
 GetShardIDByKeyResponse::~GetShardIDByKeyResponse() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.GetShardIDByKeyResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void GetShardIDByKeyResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void GetShardIDByKeyResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetShardIDByKeyResponse::ArenaDtor(void* object) {
+  GetShardIDByKeyResponse* _this = reinterpret_cast< GetShardIDByKeyResponse* >(object);
+  (void)_this;
+}
+void GetShardIDByKeyResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetShardIDByKeyResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const GetShardIDByKeyResponse& GetShardIDByKeyResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetShardIDByKeyResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void GetShardIDByKeyResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.GetShardIDByKeyResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.shard_id_ = uint64_t{0u};
+  shard_id_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetShardIDByKeyResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetShardIDByKeyResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 shard_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* GetShardIDByKeyResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetShardIDByKeyResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.GetShardIDByKeyResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
+  if (this->shard_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.GetShardIDByKeyResponse)
@@ -8628,37 +10694,58 @@ size_t GetShardIDByKeyResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.GetShardIDByKeyResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  if (this->shard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_shard_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetShardIDByKeyResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetShardIDByKeyResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetShardIDByKeyResponse::GetClassData() const { return &_class_data_; }
+void GetShardIDByKeyResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.GetShardIDByKeyResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetShardIDByKeyResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetShardIDByKeyResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.GetShardIDByKeyResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.GetShardIDByKeyResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void GetShardIDByKeyResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetShardIDByKeyResponse*>(&to_msg);
-  auto& from = static_cast<const GetShardIDByKeyResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardIDByKeyResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void GetShardIDByKeyResponse::MergeFrom(const GetShardIDByKeyResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.GetShardIDByKeyResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_shard_id() != 0) {
-    _this->_internal_set_shard_id(from._internal_shard_id());
+  if (from.shard_id() != 0) {
+    _internal_set_shard_id(from._internal_shard_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetShardIDByKeyResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.GetShardIDByKeyResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void GetShardIDByKeyResponse::CopyFrom(const GetShardIDByKeyResponse& from) {
@@ -8674,255 +10761,252 @@ bool GetShardIDByKeyResponse::IsInitialized() const {
 
 void GetShardIDByKeyResponse::InternalSwap(GetShardIDByKeyResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.shard_id_, other->_impl_.shard_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(shard_id_, other->shard_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetShardIDByKeyResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[40]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void SyncShardInDataServerRequest_SyncShardInfo::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_._instance.get_mutable()->replica_update_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_._instance.get_mutable()->create_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_._instance.get_mutable()->leader_change_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class SyncShardInDataServerRequest_SyncShardInfo::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& replica_update_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& replica_update_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& create_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& leader_change_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 SyncShardInDataServerRequest_SyncShardInfo::_Internal::replica_update_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg) {
-  return *msg->_impl_.replica_update_ts_;
+  return *msg->replica_update_ts_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 SyncShardInDataServerRequest_SyncShardInfo::_Internal::create_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg) {
-  return *msg->_impl_.create_ts_;
+  return *msg->create_ts_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 SyncShardInDataServerRequest_SyncShardInfo::_Internal::leader_change_ts(const SyncShardInDataServerRequest_SyncShardInfo* msg) {
-  return *msg->_impl_.leader_change_ts_;
+  return *msg->leader_change_ts_;
 }
 void SyncShardInDataServerRequest_SyncShardInfo::clear_replica_update_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.replica_update_ts_ != nullptr) {
-    delete _impl_.replica_update_ts_;
+  if (GetArena() == nullptr && replica_update_ts_ != nullptr) {
+    delete replica_update_ts_;
   }
-  _impl_.replica_update_ts_ = nullptr;
+  replica_update_ts_ = nullptr;
 }
 void SyncShardInDataServerRequest_SyncShardInfo::clear_create_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
-    delete _impl_.create_ts_;
+  if (GetArena() == nullptr && create_ts_ != nullptr) {
+    delete create_ts_;
   }
-  _impl_.create_ts_ = nullptr;
+  create_ts_ = nullptr;
 }
 void SyncShardInDataServerRequest_SyncShardInfo::clear_leader_change_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.leader_change_ts_ != nullptr) {
-    delete _impl_.leader_change_ts_;
+  if (GetArena() == nullptr && leader_change_ts_ != nullptr) {
+    delete leader_change_ts_;
   }
-  _impl_.leader_change_ts_ = nullptr;
+  leader_change_ts_ = nullptr;
 }
-SyncShardInDataServerRequest_SyncShardInfo::SyncShardInDataServerRequest_SyncShardInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+SyncShardInDataServerRequest_SyncShardInfo::SyncShardInDataServerRequest_SyncShardInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
 }
 SyncShardInDataServerRequest_SyncShardInfo::SyncShardInDataServerRequest_SyncShardInfo(const SyncShardInDataServerRequest_SyncShardInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SyncShardInDataServerRequest_SyncShardInfo* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.leader_){}
-    , decltype(_impl_.replica_update_ts_){nullptr}
-    , decltype(_impl_.create_ts_){nullptr}
-    , decltype(_impl_.leader_change_ts_){nullptr}
-    , decltype(_impl_.shard_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.leader_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.leader_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  leader_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_leader().empty()) {
-    _this->_impl_.leader_.Set(from._internal_leader(), 
-      _this->GetArenaForAllocation());
+    leader_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_leader(),
+      GetArena());
   }
   if (from._internal_has_replica_update_ts()) {
-    _this->_impl_.replica_update_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.replica_update_ts_);
+    replica_update_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.replica_update_ts_);
+  } else {
+    replica_update_ts_ = nullptr;
   }
   if (from._internal_has_create_ts()) {
-    _this->_impl_.create_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.create_ts_);
+    create_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.create_ts_);
+  } else {
+    create_ts_ = nullptr;
   }
   if (from._internal_has_leader_change_ts()) {
-    _this->_impl_.leader_change_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.leader_change_ts_);
+    leader_change_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.leader_change_ts_);
+  } else {
+    leader_change_ts_ = nullptr;
   }
-  _this->_impl_.shard_id_ = from._impl_.shard_id_;
+  shard_id_ = from.shard_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
 }
 
-inline void SyncShardInDataServerRequest_SyncShardInfo::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.leader_){}
-    , decltype(_impl_.replica_update_ts_){nullptr}
-    , decltype(_impl_.create_ts_){nullptr}
-    , decltype(_impl_.leader_change_ts_){nullptr}
-    , decltype(_impl_.shard_id_){uint64_t{0u}}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.leader_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.leader_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void SyncShardInDataServerRequest_SyncShardInfo::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto.base);
+  leader_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&replica_update_ts_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&shard_id_) -
+      reinterpret_cast<char*>(&replica_update_ts_)) + sizeof(shard_id_));
 }
 
 SyncShardInDataServerRequest_SyncShardInfo::~SyncShardInDataServerRequest_SyncShardInfo() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void SyncShardInDataServerRequest_SyncShardInfo::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.leader_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.replica_update_ts_;
-  if (this != internal_default_instance()) delete _impl_.create_ts_;
-  if (this != internal_default_instance()) delete _impl_.leader_change_ts_;
+void SyncShardInDataServerRequest_SyncShardInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  leader_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete replica_update_ts_;
+  if (this != internal_default_instance()) delete create_ts_;
+  if (this != internal_default_instance()) delete leader_change_ts_;
 }
 
+void SyncShardInDataServerRequest_SyncShardInfo::ArenaDtor(void* object) {
+  SyncShardInDataServerRequest_SyncShardInfo* _this = reinterpret_cast< SyncShardInDataServerRequest_SyncShardInfo* >(object);
+  (void)_this;
+}
+void SyncShardInDataServerRequest_SyncShardInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SyncShardInDataServerRequest_SyncShardInfo::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const SyncShardInDataServerRequest_SyncShardInfo& SyncShardInDataServerRequest_SyncShardInfo::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SyncShardInDataServerRequest_SyncShardInfo_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void SyncShardInDataServerRequest_SyncShardInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.leader_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.replica_update_ts_ != nullptr) {
-    delete _impl_.replica_update_ts_;
+  leader_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && replica_update_ts_ != nullptr) {
+    delete replica_update_ts_;
   }
-  _impl_.replica_update_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.create_ts_ != nullptr) {
-    delete _impl_.create_ts_;
+  replica_update_ts_ = nullptr;
+  if (GetArena() == nullptr && create_ts_ != nullptr) {
+    delete create_ts_;
   }
-  _impl_.create_ts_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.leader_change_ts_ != nullptr) {
-    delete _impl_.leader_change_ts_;
+  create_ts_ = nullptr;
+  if (GetArena() == nullptr && leader_change_ts_ != nullptr) {
+    delete leader_change_ts_;
   }
-  _impl_.leader_change_ts_ = nullptr;
-  _impl_.shard_id_ = uint64_t{0u};
+  leader_change_ts_ = nullptr;
+  shard_id_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SyncShardInDataServerRequest_SyncShardInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* SyncShardInDataServerRequest_SyncShardInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 shard_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          shard_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp replica_update_ts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_replica_update_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp create_ts = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_create_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string leader = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_leader();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo.leader"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp leader_change_ts = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_leader_change_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* SyncShardInDataServerRequest_SyncShardInfo::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* SyncShardInDataServerRequest_SyncShardInfo::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
+  if (this->shard_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_shard_id(), target);
   }
 
   // .google.protobuf.Timestamp replica_update_ts = 2;
-  if (this->_internal_has_replica_update_ts()) {
+  if (this->has_replica_update_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::replica_update_ts(this),
-        _Internal::replica_update_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::replica_update_ts(this), target, stream);
   }
 
   // .google.protobuf.Timestamp create_ts = 3;
-  if (this->_internal_has_create_ts()) {
+  if (this->has_create_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::create_ts(this),
-        _Internal::create_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        3, _Internal::create_ts(this), target, stream);
   }
 
   // string leader = 4;
-  if (!this->_internal_leader().empty()) {
+  if (this->leader().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_leader().data(), static_cast<int>(this->_internal_leader().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -8932,14 +11016,15 @@ uint8_t* SyncShardInDataServerRequest_SyncShardInfo::_InternalSerialize(
   }
 
   // .google.protobuf.Timestamp leader_change_ts = 5;
-  if (this->_internal_has_leader_change_ts()) {
+  if (this->has_leader_change_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::leader_change_ts(this),
-        _Internal::leader_change_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        5, _Internal::leader_change_ts(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
@@ -8950,80 +11035,98 @@ size_t SyncShardInDataServerRequest_SyncShardInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string leader = 4;
-  if (!this->_internal_leader().empty()) {
+  if (this->leader().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_leader());
   }
 
   // .google.protobuf.Timestamp replica_update_ts = 2;
-  if (this->_internal_has_replica_update_ts()) {
+  if (this->has_replica_update_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.replica_update_ts_);
+        *replica_update_ts_);
   }
 
   // .google.protobuf.Timestamp create_ts = 3;
-  if (this->_internal_has_create_ts()) {
+  if (this->has_create_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.create_ts_);
+        *create_ts_);
   }
 
   // .google.protobuf.Timestamp leader_change_ts = 5;
-  if (this->_internal_has_leader_change_ts()) {
+  if (this->has_leader_change_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.leader_change_ts_);
+        *leader_change_ts_);
   }
 
   // uint64 shard_id = 1;
-  if (this->_internal_shard_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_shard_id());
+  if (this->shard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_shard_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SyncShardInDataServerRequest_SyncShardInfo::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SyncShardInDataServerRequest_SyncShardInfo::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SyncShardInDataServerRequest_SyncShardInfo::GetClassData() const { return &_class_data_; }
+void SyncShardInDataServerRequest_SyncShardInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SyncShardInDataServerRequest_SyncShardInfo* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SyncShardInDataServerRequest_SyncShardInfo>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
+    MergeFrom(*source);
+  }
+}
 
-
-void SyncShardInDataServerRequest_SyncShardInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<SyncShardInDataServerRequest_SyncShardInfo*>(&to_msg);
-  auto& from = static_cast<const SyncShardInDataServerRequest_SyncShardInfo&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void SyncShardInDataServerRequest_SyncShardInfo::MergeFrom(const SyncShardInDataServerRequest_SyncShardInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_leader().empty()) {
-    _this->_internal_set_leader(from._internal_leader());
+  if (from.leader().size() > 0) {
+    _internal_set_leader(from._internal_leader());
   }
-  if (from._internal_has_replica_update_ts()) {
-    _this->_internal_mutable_replica_update_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_replica_update_ts());
+  if (from.has_replica_update_ts()) {
+    _internal_mutable_replica_update_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_replica_update_ts());
   }
-  if (from._internal_has_create_ts()) {
-    _this->_internal_mutable_create_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_create_ts());
+  if (from.has_create_ts()) {
+    _internal_mutable_create_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_create_ts());
   }
-  if (from._internal_has_leader_change_ts()) {
-    _this->_internal_mutable_leader_change_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_leader_change_ts());
+  if (from.has_leader_change_ts()) {
+    _internal_mutable_leader_change_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_leader_change_ts());
   }
-  if (from._internal_shard_id() != 0) {
-    _this->_internal_set_shard_id(from._internal_shard_id());
+  if (from.shard_id() != 0) {
+    _internal_set_shard_id(from._internal_shard_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SyncShardInDataServerRequest_SyncShardInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void SyncShardInDataServerRequest_SyncShardInfo::CopyFrom(const SyncShardInDataServerRequest_SyncShardInfo& from) {
@@ -9039,164 +11142,152 @@ bool SyncShardInDataServerRequest_SyncShardInfo::IsInitialized() const {
 
 void SyncShardInDataServerRequest_SyncShardInfo::InternalSwap(SyncShardInDataServerRequest_SyncShardInfo* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.leader_, lhs_arena,
-      &other->_impl_.leader_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  leader_.Swap(&other->leader_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest_SyncShardInfo, _impl_.shard_id_)
-      + sizeof(SyncShardInDataServerRequest_SyncShardInfo::_impl_.shard_id_)
-      - PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest_SyncShardInfo, _impl_.replica_update_ts_)>(
-          reinterpret_cast<char*>(&_impl_.replica_update_ts_),
-          reinterpret_cast<char*>(&other->_impl_.replica_update_ts_));
+      PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest_SyncShardInfo, shard_id_)
+      + sizeof(SyncShardInDataServerRequest_SyncShardInfo::shard_id_)
+      - PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest_SyncShardInfo, replica_update_ts_)>(
+          reinterpret_cast<char*>(&replica_update_ts_),
+          reinterpret_cast<char*>(&other->replica_update_ts_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SyncShardInDataServerRequest_SyncShardInfo::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[41]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void SyncShardInDataServerRequest::InitAsDefaultInstance() {
+  ::bedrock::metaserver::_SyncShardInDataServerRequest_default_instance_._instance.get_mutable()->sync_ts_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
 class SyncShardInDataServerRequest::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& sync_ts(const SyncShardInDataServerRequest* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& sync_ts(const SyncShardInDataServerRequest* msg);
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+const PROTOBUF_NAMESPACE_ID::Timestamp&
 SyncShardInDataServerRequest::_Internal::sync_ts(const SyncShardInDataServerRequest* msg) {
-  return *msg->_impl_.sync_ts_;
+  return *msg->sync_ts_;
 }
 void SyncShardInDataServerRequest::clear_sync_ts() {
-  if (GetArenaForAllocation() == nullptr && _impl_.sync_ts_ != nullptr) {
-    delete _impl_.sync_ts_;
+  if (GetArena() == nullptr && sync_ts_ != nullptr) {
+    delete sync_ts_;
   }
-  _impl_.sync_ts_ = nullptr;
+  sync_ts_ = nullptr;
 }
-SyncShardInDataServerRequest::SyncShardInDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+SyncShardInDataServerRequest::SyncShardInDataServerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  shards_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.SyncShardInDataServerRequest)
 }
 SyncShardInDataServerRequest::SyncShardInDataServerRequest(const SyncShardInDataServerRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SyncShardInDataServerRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shards_){from._impl_.shards_}
-    , decltype(_impl_.dataserver_addr_){}
-    , decltype(_impl_.sync_ts_){nullptr}
-    , decltype(_impl_.is_last_piece_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      shards_(from.shards_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.dataserver_addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.dataserver_addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  dataserver_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_dataserver_addr().empty()) {
-    _this->_impl_.dataserver_addr_.Set(from._internal_dataserver_addr(), 
-      _this->GetArenaForAllocation());
+    dataserver_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_dataserver_addr(),
+      GetArena());
   }
   if (from._internal_has_sync_ts()) {
-    _this->_impl_.sync_ts_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.sync_ts_);
+    sync_ts_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.sync_ts_);
+  } else {
+    sync_ts_ = nullptr;
   }
-  _this->_impl_.is_last_piece_ = from._impl_.is_last_piece_;
+  is_last_piece_ = from.is_last_piece_;
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.SyncShardInDataServerRequest)
 }
 
-inline void SyncShardInDataServerRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.shards_){arena}
-    , decltype(_impl_.dataserver_addr_){}
-    , decltype(_impl_.sync_ts_){nullptr}
-    , decltype(_impl_.is_last_piece_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.dataserver_addr_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.dataserver_addr_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void SyncShardInDataServerRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SyncShardInDataServerRequest_metaserver_2eproto.base);
+  dataserver_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&sync_ts_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&is_last_piece_) -
+      reinterpret_cast<char*>(&sync_ts_)) + sizeof(is_last_piece_));
 }
 
 SyncShardInDataServerRequest::~SyncShardInDataServerRequest() {
   // @@protoc_insertion_point(destructor:bedrock.metaserver.SyncShardInDataServerRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void SyncShardInDataServerRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.shards_.~RepeatedPtrField();
-  _impl_.dataserver_addr_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.sync_ts_;
+void SyncShardInDataServerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  dataserver_addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete sync_ts_;
 }
 
+void SyncShardInDataServerRequest::ArenaDtor(void* object) {
+  SyncShardInDataServerRequest* _this = reinterpret_cast< SyncShardInDataServerRequest* >(object);
+  (void)_this;
+}
+void SyncShardInDataServerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SyncShardInDataServerRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const SyncShardInDataServerRequest& SyncShardInDataServerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SyncShardInDataServerRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void SyncShardInDataServerRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.metaserver.SyncShardInDataServerRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.shards_.Clear();
-  _impl_.dataserver_addr_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.sync_ts_ != nullptr) {
-    delete _impl_.sync_ts_;
+  shards_.Clear();
+  dataserver_addr_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && sync_ts_ != nullptr) {
+    delete sync_ts_;
   }
-  _impl_.sync_ts_ = nullptr;
-  _impl_.is_last_piece_ = false;
+  sync_ts_ = nullptr;
+  is_last_piece_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SyncShardInDataServerRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* SyncShardInDataServerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bool is_last_piece = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.is_last_piece_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          is_last_piece_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp sync_ts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_sync_ts(), ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // string dataserver_addr = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_dataserver_addr();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr"));
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "bedrock.metaserver.SyncShardInDataServerRequest.dataserver_addr"));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo shards = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -9204,53 +11295,52 @@ const char* SyncShardInDataServerRequest::_InternalParse(const char* ptr, ::_pbi
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* SyncShardInDataServerRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* SyncShardInDataServerRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.SyncShardInDataServerRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool is_last_piece = 1;
-  if (this->_internal_is_last_piece() != 0) {
+  if (this->is_last_piece() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_is_last_piece(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_is_last_piece(), target);
   }
 
   // .google.protobuf.Timestamp sync_ts = 2;
-  if (this->_internal_has_sync_ts()) {
+  if (this->has_sync_ts()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::sync_ts(this),
-        _Internal::sync_ts(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(
+        2, _Internal::sync_ts(this), target, stream);
   }
 
   // string dataserver_addr = 3;
-  if (!this->_internal_dataserver_addr().empty()) {
+  if (this->dataserver_addr().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_dataserver_addr().data(), static_cast<int>(this->_internal_dataserver_addr().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -9260,15 +11350,15 @@ uint8_t* SyncShardInDataServerRequest::_InternalSerialize(
   }
 
   // repeated .bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo shards = 4;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_shards_size()); i < n; i++) {
-    const auto& repfield = this->_internal_shards(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_shards_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(4, this->_internal_shards(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.SyncShardInDataServerRequest)
@@ -9279,66 +11369,84 @@ size_t SyncShardInDataServerRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.SyncShardInDataServerRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.metaserver.SyncShardInDataServerRequest.SyncShardInfo shards = 4;
   total_size += 1UL * this->_internal_shards_size();
-  for (const auto& msg : this->_impl_.shards_) {
+  for (const auto& msg : this->shards_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // string dataserver_addr = 3;
-  if (!this->_internal_dataserver_addr().empty()) {
+  if (this->dataserver_addr().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_dataserver_addr());
   }
 
   // .google.protobuf.Timestamp sync_ts = 2;
-  if (this->_internal_has_sync_ts()) {
+  if (this->has_sync_ts()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.sync_ts_);
+        *sync_ts_);
   }
 
   // bool is_last_piece = 1;
-  if (this->_internal_is_last_piece() != 0) {
+  if (this->is_last_piece() != 0) {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SyncShardInDataServerRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SyncShardInDataServerRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SyncShardInDataServerRequest::GetClassData() const { return &_class_data_; }
+void SyncShardInDataServerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.SyncShardInDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SyncShardInDataServerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SyncShardInDataServerRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.SyncShardInDataServerRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.SyncShardInDataServerRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void SyncShardInDataServerRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<SyncShardInDataServerRequest*>(&to_msg);
-  auto& from = static_cast<const SyncShardInDataServerRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.SyncShardInDataServerRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void SyncShardInDataServerRequest::MergeFrom(const SyncShardInDataServerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.SyncShardInDataServerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.shards_.MergeFrom(from._impl_.shards_);
-  if (!from._internal_dataserver_addr().empty()) {
-    _this->_internal_set_dataserver_addr(from._internal_dataserver_addr());
+  shards_.MergeFrom(from.shards_);
+  if (from.dataserver_addr().size() > 0) {
+    _internal_set_dataserver_addr(from._internal_dataserver_addr());
   }
-  if (from._internal_has_sync_ts()) {
-    _this->_internal_mutable_sync_ts()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_sync_ts());
+  if (from.has_sync_ts()) {
+    _internal_mutable_sync_ts()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_sync_ts());
   }
-  if (from._internal_is_last_piece() != 0) {
-    _this->_internal_set_is_last_piece(from._internal_is_last_piece());
+  if (from.is_last_piece() != 0) {
+    _internal_set_is_last_piece(from._internal_is_last_piece());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SyncShardInDataServerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.SyncShardInDataServerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void SyncShardInDataServerRequest::CopyFrom(const SyncShardInDataServerRequest& from) {
@@ -9354,67 +11462,186 @@ bool SyncShardInDataServerRequest::IsInitialized() const {
 
 void SyncShardInDataServerRequest::InternalSwap(SyncShardInDataServerRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.shards_.InternalSwap(&other->_impl_.shards_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.dataserver_addr_, lhs_arena,
-      &other->_impl_.dataserver_addr_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  shards_.InternalSwap(&other->shards_);
+  dataserver_addr_.Swap(&other->dataserver_addr_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest, _impl_.is_last_piece_)
-      + sizeof(SyncShardInDataServerRequest::_impl_.is_last_piece_)
-      - PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest, _impl_.sync_ts_)>(
-          reinterpret_cast<char*>(&_impl_.sync_ts_),
-          reinterpret_cast<char*>(&other->_impl_.sync_ts_));
+      PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest, is_last_piece_)
+      + sizeof(SyncShardInDataServerRequest::is_last_piece_)
+      - PROTOBUF_FIELD_OFFSET(SyncShardInDataServerRequest, sync_ts_)>(
+          reinterpret_cast<char*>(&sync_ts_),
+          reinterpret_cast<char*>(&other->sync_ts_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SyncShardInDataServerRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[42]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void SyncShardInDataServerResponse::InitAsDefaultInstance() {
+}
 class SyncShardInDataServerResponse::_Internal {
  public:
 };
 
-SyncShardInDataServerResponse::SyncShardInDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+SyncShardInDataServerResponse::SyncShardInDataServerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.SyncShardInDataServerResponse)
 }
 SyncShardInDataServerResponse::SyncShardInDataServerResponse(const SyncShardInDataServerResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  SyncShardInDataServerResponse* const _this = this; (void)_this;
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.SyncShardInDataServerResponse)
 }
 
+void SyncShardInDataServerResponse::SharedCtor() {
+}
+
+SyncShardInDataServerResponse::~SyncShardInDataServerResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.SyncShardInDataServerResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void SyncShardInDataServerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void SyncShardInDataServerResponse::ArenaDtor(void* object) {
+  SyncShardInDataServerResponse* _this = reinterpret_cast< SyncShardInDataServerResponse* >(object);
+  (void)_this;
+}
+void SyncShardInDataServerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SyncShardInDataServerResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const SyncShardInDataServerResponse& SyncShardInDataServerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SyncShardInDataServerResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
 
 
+void SyncShardInDataServerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SyncShardInDataServerResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SyncShardInDataServerResponse::GetClassData() const { return &_class_data_; }
+const char* SyncShardInDataServerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
 
+::PROTOBUF_NAMESPACE_ID::uint8* SyncShardInDataServerResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.SyncShardInDataServerResponse)
+  return target;
+}
 
+size_t SyncShardInDataServerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  size_t total_size = 0;
 
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
 
+void SyncShardInDataServerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SyncShardInDataServerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SyncShardInDataServerResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.SyncShardInDataServerResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.SyncShardInDataServerResponse)
+    MergeFrom(*source);
+  }
+}
+
+void SyncShardInDataServerResponse::MergeFrom(const SyncShardInDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void SyncShardInDataServerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SyncShardInDataServerResponse::CopyFrom(const SyncShardInDataServerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.SyncShardInDataServerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SyncShardInDataServerResponse::IsInitialized() const {
+  return true;
+}
+
+void SyncShardInDataServerResponse::InternalSwap(SyncShardInDataServerResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SyncShardInDataServerResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_metaserver_2eproto_getter, &descriptor_table_metaserver_2eproto_once,
-      file_level_metadata_metaserver_2eproto[43]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -9431,7 +11658,7 @@ const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* MetaService::GetDescriptor() {
 
 void MetaService::HeartBeat(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                          const ::bedrock::metaserver::HeartBeatRequest*,
-                         ::PROTOBUF_NAMESPACE_ID::Empty*,
+                         PROTOBUF_NAMESPACE_ID::Empty*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method HeartBeat() not implemented.");
   done->Run();
@@ -9576,7 +11803,7 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
       HeartBeat(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::HeartBeatRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::PROTOBUF_NAMESPACE_ID::Empty*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<PROTOBUF_NAMESPACE_ID::Empty*>(
                  response),
              done);
       break;
@@ -9764,7 +11991,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MetaService::GetResponsePrototype(
   GOOGLE_DCHECK_EQ(method->service(), descriptor());
   switch(method->index()) {
     case 0:
-      return ::PROTOBUF_NAMESPACE_ID::Empty::default_instance();
+      return PROTOBUF_NAMESPACE_ID::Empty::default_instance();
     case 1:
       return ::bedrock::metaserver::GetShardRoutesResponse::default_instance();
     case 2:
@@ -9817,7 +12044,7 @@ MetaService_Stub::~MetaService_Stub() {
 
 void MetaService_Stub::HeartBeat(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::bedrock::metaserver::HeartBeatRequest* request,
-                              ::PROTOBUF_NAMESPACE_ID::Empty* response,
+                              PROTOBUF_NAMESPACE_ID::Empty* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(0),
                        controller, request, response, done);
@@ -9939,180 +12166,136 @@ void MetaService_Stub::SyncShardInDataServer(::PROTOBUF_NAMESPACE_ID::RpcControl
 }  // namespace metaserver
 }  // namespace bedrock
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::Storage*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::Storage >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::Storage* Arena::CreateMaybeMessage< ::bedrock::metaserver::Storage >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::Storage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::Shard*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::Shard >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::Shard* Arena::CreateMaybeMessage< ::bedrock::metaserver::Shard >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::Shard >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DataServer*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::DataServer >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DataServer* Arena::CreateMaybeMessage< ::bedrock::metaserver::DataServer >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::DataServer >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::Replicate*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::Replicate >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::Replicate* Arena::CreateMaybeMessage< ::bedrock::metaserver::Replicate >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::Replicate >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::HeartBeatRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::HeartBeatRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::HeartBeatRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::HeartBeatRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::HeartBeatRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::HeartBeatResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::HeartBeatResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::HeartBeatResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::HeartBeatResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::HeartBeatResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateStorageRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateStorageRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateStorageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateStorageResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateStorageResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateStorageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateShardRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateShardRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateShardRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateShardRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateShardRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateShardResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateShardResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::CreateShardResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::CreateShardResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::CreateShardResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveShardRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveShardRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveShardRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveShardRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RemoveShardRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveShardResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveShardResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveShardResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveShardResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RemoveShardResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DeleteStorageRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::DeleteStorageRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DeleteStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::DeleteStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::DeleteStorageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DeleteStorageResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::DeleteStorageResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::DeleteStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::DeleteStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::DeleteStorageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UndeleteStorageRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::UndeleteStorageRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UndeleteStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::UndeleteStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::UndeleteStorageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UndeleteStorageResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::UndeleteStorageResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UndeleteStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::UndeleteStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::UndeleteStorageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RenameStorageRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RenameStorageRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RenameStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::RenameStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RenameStorageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RenameStorageResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RenameStorageResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RenameStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::RenameStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RenameStorageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ResizeStorageRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ResizeStorageRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ResizeStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::ResizeStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ResizeStorageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ResizeStorageResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ResizeStorageResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ResizeStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::ResizeStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ResizeStorageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetStoragesRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetStoragesRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetStoragesRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetStoragesRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetStoragesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetStoragesResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetStoragesResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetStoragesResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetStoragesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetStoragesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardRange*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardRange >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardRange* Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardRange >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ShardRange >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RouteRecord*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RouteRecord >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RouteRecord* Arena::CreateMaybeMessage< ::bedrock::metaserver::RouteRecord >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RouteRecord >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardList*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardList >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardList* Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardList >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ShardList >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetShardRoutesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetShardRoutesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesByStorageRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesByStorageRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesByStorageRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesByStorageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetShardRoutesByStorageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesByStorageResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesByStorageResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardRoutesByStorageResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardRoutesByStorageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetShardRoutesByStorageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::AddDataServerRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::AddDataServerRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::AddDataServerRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::AddDataServerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::AddDataServerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::AddDataServerResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::AddDataServerResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::AddDataServerResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::AddDataServerResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::AddDataServerResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveDataServerRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveDataServerRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveDataServerRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveDataServerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RemoveDataServerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveDataServerResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveDataServerResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::RemoveDataServerResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::RemoveDataServerResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::RemoveDataServerResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ListDataServerRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ListDataServerRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ListDataServerRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::ListDataServerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ListDataServerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ListDataServerResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ListDataServerResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ListDataServerResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::ListDataServerResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ListDataServerResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UpdateDataServerRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::UpdateDataServerRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UpdateDataServerRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::UpdateDataServerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::UpdateDataServerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UpdateDataServerResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::UpdateDataServerResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::UpdateDataServerResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::UpdateDataServerResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::UpdateDataServerResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardInfoRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardInfoRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardInfoRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardInfoRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ShardInfoRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardInfoResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardInfoResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::ShardInfoResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::ShardInfoResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::ShardInfoResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardIDByKeyRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardIDByKeyRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardIDByKeyRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardIDByKeyRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetShardIDByKeyRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardIDByKeyResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardIDByKeyResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::GetShardIDByKeyResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::GetShardIDByKeyResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::GetShardIDByKeyResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo* Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerRequest*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::SyncShardInDataServerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerResponse*
-Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::SyncShardInDataServerResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

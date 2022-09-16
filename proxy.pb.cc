@@ -14,400 +14,646 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMDeleteParam_proxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMGetKvRetPair_proxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMGetParam_proxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMSetParam_proxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvPair_proxy_2eproto;
 namespace bedrock {
 namespace proxy {
-PROTOBUF_CONSTEXPR BedRockKvGetRequest::BedRockKvGetRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvGetRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvGetRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvGetRequestDefaultTypeInternal() {}
-  union {
-    BedRockKvGetRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvGetRequestDefaultTypeInternal _BedRockKvGetRequest_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvGetResponse::BedRockKvGetResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.value_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.err_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvGetResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvGetResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvGetResponseDefaultTypeInternal() {}
-  union {
-    BedRockKvGetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvGetResponseDefaultTypeInternal _BedRockKvGetResponse_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvSetRequest::BedRockKvSetRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.value_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvSetRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvSetRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvSetRequestDefaultTypeInternal() {}
-  union {
-    BedRockKvSetRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvSetRequestDefaultTypeInternal _BedRockKvSetRequest_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvSetResponse::BedRockKvSetResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.err_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvSetResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvSetResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvSetResponseDefaultTypeInternal() {}
-  union {
-    BedRockKvSetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvSetResponseDefaultTypeInternal _BedRockKvSetResponse_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvDeleteRequest::BedRockKvDeleteRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvDeleteRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvDeleteRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvDeleteRequestDefaultTypeInternal() {}
-  union {
-    BedRockKvDeleteRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvDeleteRequestDefaultTypeInternal _BedRockKvDeleteRequest_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvDeleteResponse::BedRockKvDeleteResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.err_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvDeleteResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvDeleteResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvDeleteResponseDefaultTypeInternal() {}
-  union {
-    BedRockKvDeleteResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvDeleteResponseDefaultTypeInternal _BedRockKvDeleteResponse_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMSetParam::BedRockKvMSetParam(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.value_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMSetParamDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMSetParamDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMSetParamDefaultTypeInternal() {}
-  union {
-    BedRockKvMSetParam _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMSetParamDefaultTypeInternal _BedRockKvMSetParam_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMSetRequest::BedRockKvMSetRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.params_)*/{}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMSetRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMSetRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMSetRequestDefaultTypeInternal() {}
-  union {
-    BedRockKvMSetRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMSetRequestDefaultTypeInternal _BedRockKvMSetRequest_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMSetResponse::BedRockKvMSetResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.err_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMSetResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMSetResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMSetResponseDefaultTypeInternal() {}
-  union {
-    BedRockKvMSetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMSetResponseDefaultTypeInternal _BedRockKvMSetResponse_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMGetParam::BedRockKvMGetParam(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMGetParamDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMGetParamDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMGetParamDefaultTypeInternal() {}
-  union {
-    BedRockKvMGetParam _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMGetParamDefaultTypeInternal _BedRockKvMGetParam_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMGetRequest::BedRockKvMGetRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.params_)*/{}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMGetRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMGetRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMGetRequestDefaultTypeInternal() {}
-  union {
-    BedRockKvMGetRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMGetRequestDefaultTypeInternal _BedRockKvMGetRequest_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMGetKvRetPair::BedRockKvMGetKvRetPair(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.value_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMGetKvRetPairDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMGetKvRetPairDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMGetKvRetPairDefaultTypeInternal() {}
-  union {
-    BedRockKvMGetKvRetPair _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMGetKvRetPairDefaultTypeInternal _BedRockKvMGetKvRetPair_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMGetResponse::BedRockKvMGetResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.kvs_)*/{}
-  , /*decltype(_impl_.err_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMGetResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMGetResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMGetResponseDefaultTypeInternal() {}
-  union {
-    BedRockKvMGetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMGetResponseDefaultTypeInternal _BedRockKvMGetResponse_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMDeleteParam::BedRockKvMDeleteParam(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMDeleteParamDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMDeleteParamDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMDeleteParamDefaultTypeInternal() {}
-  union {
-    BedRockKvMDeleteParam _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMDeleteParamDefaultTypeInternal _BedRockKvMDeleteParam_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMDeleteRequest::BedRockKvMDeleteRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.params_)*/{}
-  , /*decltype(_impl_.storage_id_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMDeleteRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMDeleteRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMDeleteRequestDefaultTypeInternal() {}
-  union {
-    BedRockKvMDeleteRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMDeleteRequestDefaultTypeInternal _BedRockKvMDeleteRequest_default_instance_;
-PROTOBUF_CONSTEXPR BedRockKvMDeleteResponse::BedRockKvMDeleteResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.err_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BedRockKvMDeleteResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BedRockKvMDeleteResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BedRockKvMDeleteResponseDefaultTypeInternal() {}
-  union {
-    BedRockKvMDeleteResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BedRockKvMDeleteResponseDefaultTypeInternal _BedRockKvMDeleteResponse_default_instance_;
+class BedRockKvGetRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvGetRequest> _instance;
+} _BedRockKvGetRequest_default_instance_;
+class BedRockKvGetResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvGetResponse> _instance;
+} _BedRockKvGetResponse_default_instance_;
+class BedRockKvSetRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvSetRequest> _instance;
+} _BedRockKvSetRequest_default_instance_;
+class BedRockKvSetResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvSetResponse> _instance;
+} _BedRockKvSetResponse_default_instance_;
+class BedRockKvDeleteRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvDeleteRequest> _instance;
+} _BedRockKvDeleteRequest_default_instance_;
+class BedRockKvDeleteResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvDeleteResponse> _instance;
+} _BedRockKvDeleteResponse_default_instance_;
+class BedRockKvMSetParamDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMSetParam> _instance;
+} _BedRockKvMSetParam_default_instance_;
+class BedRockKvMSetRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMSetRequest> _instance;
+} _BedRockKvMSetRequest_default_instance_;
+class BedRockKvMSetResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMSetResponse> _instance;
+} _BedRockKvMSetResponse_default_instance_;
+class BedRockKvMGetParamDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMGetParam> _instance;
+} _BedRockKvMGetParam_default_instance_;
+class BedRockKvMGetRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMGetRequest> _instance;
+} _BedRockKvMGetRequest_default_instance_;
+class BedRockKvMGetKvRetPairDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMGetKvRetPair> _instance;
+} _BedRockKvMGetKvRetPair_default_instance_;
+class BedRockKvMGetResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMGetResponse> _instance;
+} _BedRockKvMGetResponse_default_instance_;
+class BedRockKvMDeleteParamDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMDeleteParam> _instance;
+} _BedRockKvMDeleteParam_default_instance_;
+class BedRockKvMDeleteRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMDeleteRequest> _instance;
+} _BedRockKvMDeleteRequest_default_instance_;
+class BedRockKvMDeleteResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvMDeleteResponse> _instance;
+} _BedRockKvMDeleteResponse_default_instance_;
+class BedRockStartScanRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockStartScanRequest> _instance;
+} _BedRockStartScanRequest_default_instance_;
+class BedRockStartScanResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockStartScanResponse> _instance;
+} _BedRockStartScanResponse_default_instance_;
+class BedRockStopScanRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockStopScanRequest> _instance;
+} _BedRockStopScanRequest_default_instance_;
+class BedRockStopScanResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockStopScanResponse> _instance;
+} _BedRockStopScanResponse_default_instance_;
+class BedRockDoScanRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockDoScanRequest> _instance;
+} _BedRockDoScanRequest_default_instance_;
+class BedRockKvPairDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvPair> _instance;
+} _BedRockKvPair_default_instance_;
+class BedRockDoScanResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockDoScanResponse> _instance;
+} _BedRockDoScanResponse_default_instance_;
 }  // namespace proxy
 }  // namespace bedrock
-static ::_pb::Metadata file_level_metadata_proxy_2eproto[16];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_proxy_2eproto[1];
-static const ::_pb::ServiceDescriptor* file_level_service_descriptors_proxy_2eproto[1];
+static void InitDefaultsscc_info_BedRockDoScanRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_proxy_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  {
+    void* ptr = &::bedrock::proxy::_BedRockDoScanRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockDoScanRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockDoScanRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockDoScanRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockDoScanRequest_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockDoScanResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockDoScanResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockDoScanResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockDoScanResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BedRockDoScanResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_BedRockDoScanResponse_proxy_2eproto}, {
+      &scc_info_BedRockKvPair_proxy_2eproto.base,}};
+
+static void InitDefaultsscc_info_BedRockKvDeleteRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvDeleteRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvDeleteRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvDeleteRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvDeleteRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvDeleteRequest_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvDeleteResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvDeleteResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvDeleteResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvDeleteResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvDeleteResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvDeleteResponse_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvGetRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvGetRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvGetRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvGetRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvGetRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvGetRequest_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvGetResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvGetResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvGetResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvGetResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvGetResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvGetResponse_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvMDeleteParam_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMDeleteParam_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMDeleteParam();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMDeleteParam::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMDeleteParam_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvMDeleteParam_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvMDeleteRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMDeleteRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMDeleteRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMDeleteRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BedRockKvMDeleteRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_BedRockKvMDeleteRequest_proxy_2eproto}, {
+      &scc_info_BedRockKvMDeleteParam_proxy_2eproto.base,}};
+
+static void InitDefaultsscc_info_BedRockKvMDeleteResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMDeleteResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMDeleteResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMDeleteResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMDeleteResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvMDeleteResponse_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvMGetKvRetPair_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMGetKvRetPair_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMGetKvRetPair();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMGetKvRetPair::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMGetKvRetPair_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvMGetKvRetPair_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvMGetParam_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMGetParam_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMGetParam();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMGetParam::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMGetParam_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvMGetParam_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvMGetRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMGetRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMGetRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMGetRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BedRockKvMGetRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_BedRockKvMGetRequest_proxy_2eproto}, {
+      &scc_info_BedRockKvMGetParam_proxy_2eproto.base,}};
+
+static void InitDefaultsscc_info_BedRockKvMGetResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMGetResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMGetResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMGetResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BedRockKvMGetResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_BedRockKvMGetResponse_proxy_2eproto}, {
+      &scc_info_BedRockKvMGetKvRetPair_proxy_2eproto.base,}};
+
+static void InitDefaultsscc_info_BedRockKvMSetParam_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMSetParam_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMSetParam();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMSetParam::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMSetParam_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvMSetParam_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvMSetRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMSetRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMSetRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMSetRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_BedRockKvMSetRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_BedRockKvMSetRequest_proxy_2eproto}, {
+      &scc_info_BedRockKvMSetParam_proxy_2eproto.base,}};
+
+static void InitDefaultsscc_info_BedRockKvMSetResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvMSetResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvMSetResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvMSetResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMSetResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvMSetResponse_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvPair_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvPair_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvPair();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvPair::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvPair_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvPair_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvSetRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvSetRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvSetRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvSetRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvSetRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvSetRequest_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockKvSetResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockKvSetResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockKvSetResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockKvSetResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvSetResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockKvSetResponse_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockStartScanRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockStartScanRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockStartScanRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockStartScanRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockStartScanRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockStartScanRequest_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockStartScanResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockStartScanResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockStartScanResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockStartScanResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockStartScanResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockStartScanResponse_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockStopScanRequest_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockStopScanRequest_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockStopScanRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockStopScanRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockStopScanRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockStopScanRequest_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockStopScanResponse_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockStopScanResponse_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockStopScanResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockStopScanResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockStopScanResponse_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockStopScanResponse_proxy_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proxy_2eproto[23];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proxy_2eproto[1];
+static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* file_level_service_descriptors_proxy_2eproto[1];
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proxy_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetRequest, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetRequest, key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetResponse, _impl_.value_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetResponse, _impl_.err_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetResponse, value_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, _impl_.key_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, _impl_.value_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetRequest, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetResponse, _impl_.err_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvSetResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteRequest, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteRequest, key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteResponse, _impl_.err_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvDeleteResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetParam, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetParam, _impl_.key_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetParam, _impl_.value_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetParam, key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetParam, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetRequest, _impl_.params_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetRequest, params_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetResponse, _impl_.err_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMSetResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetParam, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetParam, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetParam, key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetRequest, _impl_.params_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetRequest, params_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetKvRetPair, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetKvRetPair, _impl_.key_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetKvRetPair, _impl_.value_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetKvRetPair, key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetKvRetPair, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetResponse, _impl_.kvs_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetResponse, _impl_.err_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetResponse, kvs_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMGetResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteParam, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteParam, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteParam, key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteRequest, _impl_.storage_id_),
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteRequest, _impl_.params_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteRequest, params_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteResponse, _impl_.err_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvMDeleteResponse, err_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanRequest, start_key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanRequest, end_key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanRequest, limit_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanResponse, iterator_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartScanResponse, err_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStopScanRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStopScanRequest, iterator_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStopScanResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStopScanResponse, err_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanRequest, iterator_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvPair, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvPair, key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvPair, value_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanResponse, kvs_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanResponse, no_left_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanResponse, err_),
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::bedrock::proxy::BedRockKvGetRequest)},
-  { 8, -1, -1, sizeof(::bedrock::proxy::BedRockKvGetResponse)},
-  { 16, -1, -1, sizeof(::bedrock::proxy::BedRockKvSetRequest)},
-  { 25, -1, -1, sizeof(::bedrock::proxy::BedRockKvSetResponse)},
-  { 32, -1, -1, sizeof(::bedrock::proxy::BedRockKvDeleteRequest)},
-  { 40, -1, -1, sizeof(::bedrock::proxy::BedRockKvDeleteResponse)},
-  { 47, -1, -1, sizeof(::bedrock::proxy::BedRockKvMSetParam)},
-  { 55, -1, -1, sizeof(::bedrock::proxy::BedRockKvMSetRequest)},
-  { 63, -1, -1, sizeof(::bedrock::proxy::BedRockKvMSetResponse)},
-  { 70, -1, -1, sizeof(::bedrock::proxy::BedRockKvMGetParam)},
-  { 77, -1, -1, sizeof(::bedrock::proxy::BedRockKvMGetRequest)},
-  { 85, -1, -1, sizeof(::bedrock::proxy::BedRockKvMGetKvRetPair)},
-  { 93, -1, -1, sizeof(::bedrock::proxy::BedRockKvMGetResponse)},
-  { 101, -1, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteParam)},
-  { 108, -1, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteRequest)},
-  { 116, -1, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteResponse)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, sizeof(::bedrock::proxy::BedRockKvGetRequest)},
+  { 7, -1, sizeof(::bedrock::proxy::BedRockKvGetResponse)},
+  { 14, -1, sizeof(::bedrock::proxy::BedRockKvSetRequest)},
+  { 22, -1, sizeof(::bedrock::proxy::BedRockKvSetResponse)},
+  { 28, -1, sizeof(::bedrock::proxy::BedRockKvDeleteRequest)},
+  { 35, -1, sizeof(::bedrock::proxy::BedRockKvDeleteResponse)},
+  { 41, -1, sizeof(::bedrock::proxy::BedRockKvMSetParam)},
+  { 48, -1, sizeof(::bedrock::proxy::BedRockKvMSetRequest)},
+  { 55, -1, sizeof(::bedrock::proxy::BedRockKvMSetResponse)},
+  { 61, -1, sizeof(::bedrock::proxy::BedRockKvMGetParam)},
+  { 67, -1, sizeof(::bedrock::proxy::BedRockKvMGetRequest)},
+  { 74, -1, sizeof(::bedrock::proxy::BedRockKvMGetKvRetPair)},
+  { 81, -1, sizeof(::bedrock::proxy::BedRockKvMGetResponse)},
+  { 88, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteParam)},
+  { 94, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteRequest)},
+  { 101, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteResponse)},
+  { 107, -1, sizeof(::bedrock::proxy::BedRockStartScanRequest)},
+  { 116, -1, sizeof(::bedrock::proxy::BedRockStartScanResponse)},
+  { 123, -1, sizeof(::bedrock::proxy::BedRockStopScanRequest)},
+  { 129, -1, sizeof(::bedrock::proxy::BedRockStopScanResponse)},
+  { 135, -1, sizeof(::bedrock::proxy::BedRockDoScanRequest)},
+  { 141, -1, sizeof(::bedrock::proxy::BedRockKvPair)},
+  { 148, -1, sizeof(::bedrock::proxy::BedRockDoScanResponse)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::bedrock::proxy::_BedRockKvGetRequest_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvGetResponse_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvSetRequest_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvSetResponse_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvDeleteRequest_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvDeleteResponse_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMSetParam_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMSetRequest_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMSetResponse_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMGetParam_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMGetRequest_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMGetKvRetPair_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMGetResponse_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMDeleteParam_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMDeleteRequest_default_instance_._instance,
-  &::bedrock::proxy::_BedRockKvMDeleteResponse_default_instance_._instance,
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvGetRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvGetResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvSetRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvSetResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvDeleteRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvDeleteResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMSetParam_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMSetRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMSetResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMGetParam_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMGetRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMGetKvRetPair_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMGetResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMDeleteParam_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMDeleteRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvMDeleteResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockStartScanRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockStartScanResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockStopScanRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockStopScanResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockDoScanRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvPair_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockDoScanResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_proxy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -438,40 +684,82 @@ const char descriptor_table_protodef_proxy_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "RockKvMDeleteRequest\022\022\n\nstorage_id\030\001 \001(\r"
   "\0224\n\006params\030\002 \003(\0132$.bedrock.proxy.BedRock"
   "KvMDeleteParam\">\n\030BedRockKvMDeleteRespon"
-  "se\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy.Error*F"
-  "\n\005Error\022\006\n\002OK\020\000\022\017\n\013NO_SUCH_KEY\020\001\022\026\n\022INVL"
-  "IAD_PARAMETERS\020\002\022\014\n\007UNKNOWN\020\377\0012\277\004\n\014Proxy"
-  "Service\022W\n\014BedRockKvSet\022\".bedrock.proxy."
-  "BedRockKvSetRequest\032#.bedrock.proxy.BedR"
-  "ockKvSetResponse\022W\n\014BedRockKvGet\022\".bedro"
-  "ck.proxy.BedRockKvGetRequest\032#.bedrock.p"
-  "roxy.BedRockKvGetResponse\022`\n\017BedRockKvDe"
-  "lete\022%.bedrock.proxy.BedRockKvDeleteRequ"
-  "est\032&.bedrock.proxy.BedRockKvDeleteRespo"
-  "nse\022Z\n\rBedRockKvMSet\022#.bedrock.proxy.Bed"
-  "RockKvMSetRequest\032$.bedrock.proxy.BedRoc"
-  "kKvMSetResponse\022Z\n\rBedRockKvMGet\022#.bedro"
-  "ck.proxy.BedRockKvMGetRequest\032$.bedrock."
-  "proxy.BedRockKvMGetResponse\022c\n\020BedRockKv"
-  "MDelete\022&.bedrock.proxy.BedRockKvMDelete"
-  "Request\032\'.bedrock.proxy.BedRockKvMDelete"
-  "ResponseB\003\200\001\001b\006proto3"
+  "se\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy.Error\"`"
+  "\n\027BedRockStartScanRequest\022\022\n\nstorage_id\030"
+  "\001 \001(\r\022\021\n\tstart_key\030\002 \001(\014\022\017\n\007end_key\030\003 \001("
+  "\014\022\r\n\005limit\030\004 \001(\005\"S\n\030BedRockStartScanResp"
+  "onse\022\023\n\013iterator_id\030\001 \001(\004\022\"\n\003err\030\377\001 \001(\0162"
+  "\024.bedrock.proxy.Error\"-\n\026BedRockStopScan"
+  "Request\022\023\n\013iterator_id\030\001 \001(\004\"=\n\027BedRockS"
+  "topScanResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock."
+  "proxy.Error\"+\n\024BedRockDoScanRequest\022\023\n\013i"
+  "terator_id\030\001 \001(\004\"+\n\rBedRockKvPair\022\013\n\003key"
+  "\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"w\n\025BedRockDoScanRe"
+  "sponse\022)\n\003kvs\030\001 \003(\0132\034.bedrock.proxy.BedR"
+  "ockKvPair\022\017\n\007no_left\030\002 \001(\010\022\"\n\003err\030\377\001 \001(\016"
+  "2\024.bedrock.proxy.Error*F\n\005Error\022\006\n\002OK\020\000\022"
+  "\017\n\013NO_SUCH_KEY\020\001\022\026\n\022INVLIAD_PARAMETERS\020\002"
+  "\022\014\n\007UNKNOWN\020\377\0012\342\006\n\014ProxyService\022W\n\014BedRo"
+  "ckKvSet\022\".bedrock.proxy.BedRockKvSetRequ"
+  "est\032#.bedrock.proxy.BedRockKvSetResponse"
+  "\022W\n\014BedRockKvGet\022\".bedrock.proxy.BedRock"
+  "KvGetRequest\032#.bedrock.proxy.BedRockKvGe"
+  "tResponse\022`\n\017BedRockKvDelete\022%.bedrock.p"
+  "roxy.BedRockKvDeleteRequest\032&.bedrock.pr"
+  "oxy.BedRockKvDeleteResponse\022Z\n\rBedRockKv"
+  "MSet\022#.bedrock.proxy.BedRockKvMSetReques"
+  "t\032$.bedrock.proxy.BedRockKvMSetResponse\022"
+  "Z\n\rBedRockKvMGet\022#.bedrock.proxy.BedRock"
+  "KvMGetRequest\032$.bedrock.proxy.BedRockKvM"
+  "GetResponse\022c\n\020BedRockKvMDelete\022&.bedroc"
+  "k.proxy.BedRockKvMDeleteRequest\032\'.bedroc"
+  "k.proxy.BedRockKvMDeleteResponse\022c\n\020BedR"
+  "ockStartScan\022&.bedrock.proxy.BedRockStar"
+  "tScanRequest\032\'.bedrock.proxy.BedRockStar"
+  "tScanResponse\022`\n\017BedRockStopScan\022%.bedro"
+  "ck.proxy.BedRockStopScanRequest\032&.bedroc"
+  "k.proxy.BedRockStopScanResponse\022Z\n\rBedRo"
+  "ckDoScan\022#.bedrock.proxy.BedRockDoScanRe"
+  "quest\032$.bedrock.proxy.BedRockDoScanRespo"
+  "nseB\003\200\001\001b\006proto3"
   ;
-static ::_pbi::once_flag descriptor_table_proxy_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_proxy_2eproto = {
-    false, false, 1781, descriptor_table_protodef_proxy_2eproto,
-    "proxy.proto",
-    &descriptor_table_proxy_2eproto_once, nullptr, 0, 16,
-    schemas, file_default_instances, TableStruct_proxy_2eproto::offsets,
-    file_level_metadata_proxy_2eproto, file_level_enum_descriptors_proxy_2eproto,
-    file_level_service_descriptors_proxy_2eproto,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proxy_2eproto_deps[1] = {
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_proxy_2eproto_getter() {
-  return &descriptor_table_proxy_2eproto;
-}
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proxy_2eproto_sccs[23] = {
+  &scc_info_BedRockDoScanRequest_proxy_2eproto.base,
+  &scc_info_BedRockDoScanResponse_proxy_2eproto.base,
+  &scc_info_BedRockKvDeleteRequest_proxy_2eproto.base,
+  &scc_info_BedRockKvDeleteResponse_proxy_2eproto.base,
+  &scc_info_BedRockKvGetRequest_proxy_2eproto.base,
+  &scc_info_BedRockKvGetResponse_proxy_2eproto.base,
+  &scc_info_BedRockKvMDeleteParam_proxy_2eproto.base,
+  &scc_info_BedRockKvMDeleteRequest_proxy_2eproto.base,
+  &scc_info_BedRockKvMDeleteResponse_proxy_2eproto.base,
+  &scc_info_BedRockKvMGetKvRetPair_proxy_2eproto.base,
+  &scc_info_BedRockKvMGetParam_proxy_2eproto.base,
+  &scc_info_BedRockKvMGetRequest_proxy_2eproto.base,
+  &scc_info_BedRockKvMGetResponse_proxy_2eproto.base,
+  &scc_info_BedRockKvMSetParam_proxy_2eproto.base,
+  &scc_info_BedRockKvMSetRequest_proxy_2eproto.base,
+  &scc_info_BedRockKvMSetResponse_proxy_2eproto.base,
+  &scc_info_BedRockKvPair_proxy_2eproto.base,
+  &scc_info_BedRockKvSetRequest_proxy_2eproto.base,
+  &scc_info_BedRockKvSetResponse_proxy_2eproto.base,
+  &scc_info_BedRockStartScanRequest_proxy_2eproto.base,
+  &scc_info_BedRockStartScanResponse_proxy_2eproto.base,
+  &scc_info_BedRockStopScanRequest_proxy_2eproto.base,
+  &scc_info_BedRockStopScanResponse_proxy_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proxy_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proxy_2eproto = {
+  false, false, descriptor_table_protodef_proxy_2eproto, "proxy.proto", 2576,
+  &descriptor_table_proxy_2eproto_once, descriptor_table_proxy_2eproto_sccs, descriptor_table_proxy_2eproto_deps, 23, 0,
+  schemas, file_default_instances, TableStruct_proxy_2eproto::offsets,
+  file_level_metadata_proxy_2eproto, 23, file_level_enum_descriptors_proxy_2eproto, file_level_service_descriptors_proxy_2eproto,
+};
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_proxy_2eproto(&descriptor_table_proxy_2eproto);
+static bool dynamic_init_dummy_proxy_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proxy_2eproto)), true);
 namespace bedrock {
 namespace proxy {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Error_descriptor() {
@@ -493,147 +781,138 @@ bool Error_IsValid(int value) {
 
 // ===================================================================
 
+void BedRockKvGetRequest::InitAsDefaultInstance() {
+}
 class BedRockKvGetRequest::_Internal {
  public:
 };
 
-BedRockKvGetRequest::BedRockKvGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvGetRequest::BedRockKvGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvGetRequest)
 }
 BedRockKvGetRequest::BedRockKvGetRequest(const BedRockKvGetRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvGetRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvGetRequest)
 }
 
-inline void BedRockKvGetRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvGetRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvGetRequest_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  storage_id_ = 0u;
 }
 
 BedRockKvGetRequest::~BedRockKvGetRequest() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvGetRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvGetRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
+void BedRockKvGetRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvGetRequest::ArenaDtor(void* object) {
+  BedRockKvGetRequest* _this = reinterpret_cast< BedRockKvGetRequest* >(object);
+  (void)_this;
+}
+void BedRockKvGetRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvGetRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvGetRequest& BedRockKvGetRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvGetRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvGetRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvGetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
-  _impl_.storage_id_ = 0u;
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvGetRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvGetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes key = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvGetRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvGetRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvGetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvGetRequest)
@@ -644,47 +923,68 @@ size_t BedRockKvGetRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvGetRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvGetRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvGetRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvGetRequest::GetClassData() const { return &_class_data_; }
+void BedRockKvGetRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvGetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvGetRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvGetRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvGetRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvGetRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvGetRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvGetRequest*>(&to_msg);
-  auto& from = static_cast<const BedRockKvGetRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvGetRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvGetRequest::MergeFrom(const BedRockKvGetRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvGetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvGetRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvGetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvGetRequest::CopyFrom(const BedRockKvGetRequest& from) {
@@ -700,167 +1000,152 @@ bool BedRockKvGetRequest::IsInitialized() const {
 
 void BedRockKvGetRequest::InternalSwap(BedRockKvGetRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvGetRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvGetResponse::InitAsDefaultInstance() {
+}
 class BedRockKvGetResponse::_Internal {
  public:
 };
 
-BedRockKvGetResponse::BedRockKvGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvGetResponse::BedRockKvGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvGetResponse)
 }
 BedRockKvGetResponse::BedRockKvGetResponse(const BedRockKvGetResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvGetResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.value_){}
-    , decltype(_impl_.err_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    _this->_impl_.value_.Set(from._internal_value(), 
-      _this->GetArenaForAllocation());
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
   }
-  _this->_impl_.err_ = from._impl_.err_;
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvGetResponse)
 }
 
-inline void BedRockKvGetResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.value_){}
-    , decltype(_impl_.err_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvGetResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvGetResponse_proxy_2eproto.base);
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  err_ = 0;
 }
 
 BedRockKvGetResponse::~BedRockKvGetResponse() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvGetResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvGetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.value_.Destroy();
+void BedRockKvGetResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvGetResponse::ArenaDtor(void* object) {
+  BedRockKvGetResponse* _this = reinterpret_cast< BedRockKvGetResponse* >(object);
+  (void)_this;
+}
+void BedRockKvGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvGetResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvGetResponse& BedRockKvGetResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvGetResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvGetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvGetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.value_.ClearToEmpty();
-  _impl_.err_ = 0;
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvGetResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes value = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .bedrock.proxy.Error err = 255;
       case 255:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvGetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvGetResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvGetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes value = 1;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_value(), target);
   }
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       255, this->_internal_err(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvGetResponse)
@@ -871,48 +1156,67 @@ size_t BedRockKvGetResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvGetResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes value = 1;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_value());
   }
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_err());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvGetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvGetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvGetResponse::GetClassData() const { return &_class_data_; }
+void BedRockKvGetResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvGetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvGetResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvGetResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvGetResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvGetResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvGetResponse*>(&to_msg);
-  auto& from = static_cast<const BedRockKvGetResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvGetResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvGetResponse::MergeFrom(const BedRockKvGetResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvGetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_value().empty()) {
-    _this->_internal_set_value(from._internal_value());
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
   }
-  if (from._internal_err() != 0) {
-    _this->_internal_set_err(from._internal_err());
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvGetResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvGetResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvGetResponse::CopyFrom(const BedRockKvGetResponse& from) {
@@ -928,196 +1232,172 @@ bool BedRockKvGetResponse::IsInitialized() const {
 
 void BedRockKvGetResponse::InternalSwap(BedRockKvGetResponse* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.value_, lhs_arena,
-      &other->_impl_.value_, rhs_arena
-  );
-  swap(_impl_.err_, other->_impl_.err_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvGetResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvSetRequest::InitAsDefaultInstance() {
+}
 class BedRockKvSetRequest::_Internal {
  public:
 };
 
-BedRockKvSetRequest::BedRockKvSetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvSetRequest::BedRockKvSetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvSetRequest)
 }
 BedRockKvSetRequest::BedRockKvSetRequest(const BedRockKvSetRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvSetRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.value_){}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    _this->_impl_.value_.Set(from._internal_value(), 
-      _this->GetArenaForAllocation());
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
   }
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvSetRequest)
 }
 
-inline void BedRockKvSetRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.value_){}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvSetRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvSetRequest_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  storage_id_ = 0u;
 }
 
 BedRockKvSetRequest::~BedRockKvSetRequest() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvSetRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvSetRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
-  _impl_.value_.Destroy();
+void BedRockKvSetRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvSetRequest::ArenaDtor(void* object) {
+  BedRockKvSetRequest* _this = reinterpret_cast< BedRockKvSetRequest* >(object);
+  (void)_this;
+}
+void BedRockKvSetRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvSetRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvSetRequest& BedRockKvSetRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvSetRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvSetRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvSetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
-  _impl_.value_.ClearToEmpty();
-  _impl_.storage_id_ = 0u;
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvSetRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvSetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes key = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes value = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_value();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvSetRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvSetRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvSetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_key(), target);
   }
 
   // bytes value = 3;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvSetRequest)
@@ -1128,57 +1408,78 @@ size_t BedRockKvSetRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvSetRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
   // bytes value = 3;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_value());
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvSetRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvSetRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvSetRequest::GetClassData() const { return &_class_data_; }
+void BedRockKvSetRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvSetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvSetRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvSetRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvSetRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvSetRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvSetRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvSetRequest*>(&to_msg);
-  auto& from = static_cast<const BedRockKvSetRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvSetRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvSetRequest::MergeFrom(const BedRockKvSetRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvSetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  if (!from._internal_value().empty()) {
-    _this->_internal_set_value(from._internal_value());
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvSetRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvSetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvSetRequest::CopyFrom(const BedRockKvSetRequest& from) {
@@ -1194,140 +1495,130 @@ bool BedRockKvSetRequest::IsInitialized() const {
 
 void BedRockKvSetRequest::InternalSwap(BedRockKvSetRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.value_, lhs_arena,
-      &other->_impl_.value_, rhs_arena
-  );
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvSetRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvSetResponse::InitAsDefaultInstance() {
+}
 class BedRockKvSetResponse::_Internal {
  public:
 };
 
-BedRockKvSetResponse::BedRockKvSetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvSetResponse::BedRockKvSetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvSetResponse)
 }
 BedRockKvSetResponse::BedRockKvSetResponse(const BedRockKvSetResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvSetResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.err_ = from._impl_.err_;
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvSetResponse)
 }
 
-inline void BedRockKvSetResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvSetResponse::SharedCtor() {
+  err_ = 0;
 }
 
 BedRockKvSetResponse::~BedRockKvSetResponse() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvSetResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvSetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void BedRockKvSetResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvSetResponse::ArenaDtor(void* object) {
+  BedRockKvSetResponse* _this = reinterpret_cast< BedRockKvSetResponse* >(object);
+  (void)_this;
+}
+void BedRockKvSetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvSetResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvSetResponse& BedRockKvSetResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvSetResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvSetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvSetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.err_ = 0;
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvSetResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvSetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .bedrock.proxy.Error err = 255;
       case 255:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvSetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvSetResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvSetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       255, this->_internal_err(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvSetResponse)
@@ -1338,38 +1629,57 @@ size_t BedRockKvSetResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvSetResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_err());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvSetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvSetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvSetResponse::GetClassData() const { return &_class_data_; }
+void BedRockKvSetResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvSetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvSetResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvSetResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvSetResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvSetResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvSetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvSetResponse*>(&to_msg);
-  auto& from = static_cast<const BedRockKvSetResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvSetResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvSetResponse::MergeFrom(const BedRockKvSetResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvSetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_err() != 0) {
-    _this->_internal_set_err(from._internal_err());
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvSetResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvSetResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvSetResponse::CopyFrom(const BedRockKvSetResponse& from) {
@@ -1385,159 +1695,149 @@ bool BedRockKvSetResponse::IsInitialized() const {
 
 void BedRockKvSetResponse::InternalSwap(BedRockKvSetResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.err_, other->_impl_.err_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvSetResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvDeleteRequest::InitAsDefaultInstance() {
+}
 class BedRockKvDeleteRequest::_Internal {
  public:
 };
 
-BedRockKvDeleteRequest::BedRockKvDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvDeleteRequest::BedRockKvDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvDeleteRequest)
 }
 BedRockKvDeleteRequest::BedRockKvDeleteRequest(const BedRockKvDeleteRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvDeleteRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvDeleteRequest)
 }
 
-inline void BedRockKvDeleteRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvDeleteRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvDeleteRequest_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  storage_id_ = 0u;
 }
 
 BedRockKvDeleteRequest::~BedRockKvDeleteRequest() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvDeleteRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvDeleteRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
+void BedRockKvDeleteRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvDeleteRequest::ArenaDtor(void* object) {
+  BedRockKvDeleteRequest* _this = reinterpret_cast< BedRockKvDeleteRequest* >(object);
+  (void)_this;
+}
+void BedRockKvDeleteRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvDeleteRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvDeleteRequest& BedRockKvDeleteRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvDeleteRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvDeleteRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvDeleteRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
-  _impl_.storage_id_ = 0u;
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvDeleteRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvDeleteRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes key = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvDeleteRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvDeleteRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvDeleteRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvDeleteRequest)
@@ -1548,47 +1848,68 @@ size_t BedRockKvDeleteRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvDeleteRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 2;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvDeleteRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvDeleteRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvDeleteRequest::GetClassData() const { return &_class_data_; }
+void BedRockKvDeleteRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvDeleteRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvDeleteRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvDeleteRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvDeleteRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvDeleteRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvDeleteRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvDeleteRequest*>(&to_msg);
-  auto& from = static_cast<const BedRockKvDeleteRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvDeleteRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvDeleteRequest::MergeFrom(const BedRockKvDeleteRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvDeleteRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvDeleteRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvDeleteRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvDeleteRequest::CopyFrom(const BedRockKvDeleteRequest& from) {
@@ -1604,136 +1925,129 @@ bool BedRockKvDeleteRequest::IsInitialized() const {
 
 void BedRockKvDeleteRequest::InternalSwap(BedRockKvDeleteRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvDeleteRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvDeleteResponse::InitAsDefaultInstance() {
+}
 class BedRockKvDeleteResponse::_Internal {
  public:
 };
 
-BedRockKvDeleteResponse::BedRockKvDeleteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvDeleteResponse::BedRockKvDeleteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvDeleteResponse)
 }
 BedRockKvDeleteResponse::BedRockKvDeleteResponse(const BedRockKvDeleteResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvDeleteResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.err_ = from._impl_.err_;
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvDeleteResponse)
 }
 
-inline void BedRockKvDeleteResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvDeleteResponse::SharedCtor() {
+  err_ = 0;
 }
 
 BedRockKvDeleteResponse::~BedRockKvDeleteResponse() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvDeleteResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvDeleteResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void BedRockKvDeleteResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvDeleteResponse::ArenaDtor(void* object) {
+  BedRockKvDeleteResponse* _this = reinterpret_cast< BedRockKvDeleteResponse* >(object);
+  (void)_this;
+}
+void BedRockKvDeleteResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvDeleteResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvDeleteResponse& BedRockKvDeleteResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvDeleteResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvDeleteResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvDeleteResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.err_ = 0;
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvDeleteResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvDeleteResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .bedrock.proxy.Error err = 255;
       case 255:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvDeleteResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvDeleteResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvDeleteResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       255, this->_internal_err(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvDeleteResponse)
@@ -1744,38 +2058,57 @@ size_t BedRockKvDeleteResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvDeleteResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_err());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvDeleteResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvDeleteResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvDeleteResponse::GetClassData() const { return &_class_data_; }
+void BedRockKvDeleteResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvDeleteResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvDeleteResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvDeleteResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvDeleteResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvDeleteResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvDeleteResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvDeleteResponse*>(&to_msg);
-  auto& from = static_cast<const BedRockKvDeleteResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvDeleteResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvDeleteResponse::MergeFrom(const BedRockKvDeleteResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvDeleteResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_err() != 0) {
-    _this->_internal_set_err(from._internal_err());
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvDeleteResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvDeleteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvDeleteResponse::CopyFrom(const BedRockKvDeleteResponse& from) {
@@ -1791,172 +2124,155 @@ bool BedRockKvDeleteResponse::IsInitialized() const {
 
 void BedRockKvDeleteResponse::InternalSwap(BedRockKvDeleteResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.err_, other->_impl_.err_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvDeleteResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[5]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMSetParam::InitAsDefaultInstance() {
+}
 class BedRockKvMSetParam::_Internal {
  public:
 };
 
-BedRockKvMSetParam::BedRockKvMSetParam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMSetParam::BedRockKvMSetParam(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMSetParam)
 }
 BedRockKvMSetParam::BedRockKvMSetParam(const BedRockKvMSetParam& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMSetParam* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.value_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    _this->_impl_.value_.Set(from._internal_value(), 
-      _this->GetArenaForAllocation());
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMSetParam)
 }
 
-inline void BedRockKvMSetParam::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.value_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvMSetParam::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMSetParam_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BedRockKvMSetParam::~BedRockKvMSetParam() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMSetParam)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMSetParam::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
-  _impl_.value_.Destroy();
+void BedRockKvMSetParam::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvMSetParam::ArenaDtor(void* object) {
+  BedRockKvMSetParam* _this = reinterpret_cast< BedRockKvMSetParam* >(object);
+  (void)_this;
+}
+void BedRockKvMSetParam::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMSetParam::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMSetParam& BedRockKvMSetParam::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMSetParam_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMSetParam::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMSetParam)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
-  _impl_.value_.ClearToEmpty();
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMSetParam::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMSetParam::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes value = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_value();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMSetParam::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMSetParam::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMSetParam)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_key(), target);
   }
 
   // bytes value = 2;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMSetParam)
@@ -1967,49 +2283,68 @@ size_t BedRockKvMSetParam::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMSetParam)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
   // bytes value = 2;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_value());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMSetParam::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMSetParam::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMSetParam::GetClassData() const { return &_class_data_; }
+void BedRockKvMSetParam::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMSetParam)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMSetParam* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMSetParam>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMSetParam)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMSetParam)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMSetParam::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMSetParam*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMSetParam&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMSetParam)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMSetParam::MergeFrom(const BedRockKvMSetParam& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMSetParam)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  if (!from._internal_value().empty()) {
-    _this->_internal_set_value(from._internal_value());
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMSetParam::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMSetParam)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMSetParam::CopyFrom(const BedRockKvMSetParam& from) {
@@ -2025,107 +2360,98 @@ bool BedRockKvMSetParam::IsInitialized() const {
 
 void BedRockKvMSetParam::InternalSwap(BedRockKvMSetParam* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.value_, lhs_arena,
-      &other->_impl_.value_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMSetParam::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[6]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMSetRequest::InitAsDefaultInstance() {
+}
 class BedRockKvMSetRequest::_Internal {
  public:
 };
 
-BedRockKvMSetRequest::BedRockKvMSetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMSetRequest::BedRockKvMSetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  params_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMSetRequest)
 }
 BedRockKvMSetRequest::BedRockKvMSetRequest(const BedRockKvMSetRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMSetRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.params_){from._impl_.params_}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      params_(from.params_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMSetRequest)
 }
 
-inline void BedRockKvMSetRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.params_){arena}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvMSetRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMSetRequest_proxy_2eproto.base);
+  storage_id_ = 0u;
 }
 
 BedRockKvMSetRequest::~BedRockKvMSetRequest() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMSetRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMSetRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.params_.~RepeatedPtrField();
+void BedRockKvMSetRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvMSetRequest::ArenaDtor(void* object) {
+  BedRockKvMSetRequest* _this = reinterpret_cast< BedRockKvMSetRequest* >(object);
+  (void)_this;
+}
+void BedRockKvMSetRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMSetRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMSetRequest& BedRockKvMSetRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMSetRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMSetRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMSetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.params_.Clear();
-  _impl_.storage_id_ = 0u;
+  params_.Clear();
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMSetRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMSetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .bedrock.proxy.BedRockKvMSetParam params = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2133,54 +2459,52 @@ const char* BedRockKvMSetRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMSetRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMSetRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMSetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // repeated .bedrock.proxy.BedRockKvMSetParam params = 2;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_params_size()); i < n; i++) {
-    const auto& repfield = this->_internal_params(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_params_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(2, this->_internal_params(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMSetRequest)
@@ -2191,45 +2515,66 @@ size_t BedRockKvMSetRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMSetRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.proxy.BedRockKvMSetParam params = 2;
   total_size += 1UL * this->_internal_params_size();
-  for (const auto& msg : this->_impl_.params_) {
+  for (const auto& msg : this->params_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMSetRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMSetRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMSetRequest::GetClassData() const { return &_class_data_; }
+void BedRockKvMSetRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMSetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMSetRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMSetRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMSetRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMSetRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMSetRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMSetRequest*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMSetRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMSetRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMSetRequest::MergeFrom(const BedRockKvMSetRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMSetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.params_.MergeFrom(from._impl_.params_);
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  params_.MergeFrom(from.params_);
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMSetRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMSetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMSetRequest::CopyFrom(const BedRockKvMSetRequest& from) {
@@ -2245,131 +2590,129 @@ bool BedRockKvMSetRequest::IsInitialized() const {
 
 void BedRockKvMSetRequest::InternalSwap(BedRockKvMSetRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.params_.InternalSwap(&other->_impl_.params_);
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  params_.InternalSwap(&other->params_);
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMSetRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[7]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMSetResponse::InitAsDefaultInstance() {
+}
 class BedRockKvMSetResponse::_Internal {
  public:
 };
 
-BedRockKvMSetResponse::BedRockKvMSetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMSetResponse::BedRockKvMSetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMSetResponse)
 }
 BedRockKvMSetResponse::BedRockKvMSetResponse(const BedRockKvMSetResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMSetResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.err_ = from._impl_.err_;
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMSetResponse)
 }
 
-inline void BedRockKvMSetResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvMSetResponse::SharedCtor() {
+  err_ = 0;
 }
 
 BedRockKvMSetResponse::~BedRockKvMSetResponse() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMSetResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMSetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void BedRockKvMSetResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvMSetResponse::ArenaDtor(void* object) {
+  BedRockKvMSetResponse* _this = reinterpret_cast< BedRockKvMSetResponse* >(object);
+  (void)_this;
+}
+void BedRockKvMSetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMSetResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMSetResponse& BedRockKvMSetResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMSetResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMSetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMSetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.err_ = 0;
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMSetResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMSetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .bedrock.proxy.Error err = 255;
       case 255:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMSetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMSetResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMSetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       255, this->_internal_err(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMSetResponse)
@@ -2380,38 +2723,57 @@ size_t BedRockKvMSetResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMSetResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_err());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMSetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMSetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMSetResponse::GetClassData() const { return &_class_data_; }
+void BedRockKvMSetResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMSetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMSetResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMSetResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMSetResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMSetResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMSetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMSetResponse*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMSetResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMSetResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMSetResponse::MergeFrom(const BedRockKvMSetResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMSetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_err() != 0) {
-    _this->_internal_set_err(from._internal_err());
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMSetResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMSetResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMSetResponse::CopyFrom(const BedRockKvMSetResponse& from) {
@@ -2427,141 +2789,133 @@ bool BedRockKvMSetResponse::IsInitialized() const {
 
 void BedRockKvMSetResponse::InternalSwap(BedRockKvMSetResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.err_, other->_impl_.err_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMSetResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[8]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMGetParam::InitAsDefaultInstance() {
+}
 class BedRockKvMGetParam::_Internal {
  public:
 };
 
-BedRockKvMGetParam::BedRockKvMGetParam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMGetParam::BedRockKvMGetParam(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMGetParam)
 }
 BedRockKvMGetParam::BedRockKvMGetParam(const BedRockKvMGetParam& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMGetParam* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMGetParam)
 }
 
-inline void BedRockKvMGetParam::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvMGetParam::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMGetParam_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BedRockKvMGetParam::~BedRockKvMGetParam() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMGetParam)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMGetParam::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
+void BedRockKvMGetParam::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvMGetParam::ArenaDtor(void* object) {
+  BedRockKvMGetParam* _this = reinterpret_cast< BedRockKvMGetParam* >(object);
+  (void)_this;
+}
+void BedRockKvMGetParam::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMGetParam::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMGetParam& BedRockKvMGetParam::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMGetParam_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMGetParam::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMGetParam)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMGetParam::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMGetParam::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMGetParam::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMGetParam::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMGetParam)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMGetParam)
@@ -2572,39 +2926,58 @@ size_t BedRockKvMGetParam::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMGetParam)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMGetParam::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMGetParam::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMGetParam::GetClassData() const { return &_class_data_; }
+void BedRockKvMGetParam::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMGetParam)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMGetParam* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMGetParam>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMGetParam)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMGetParam)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMGetParam::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMGetParam*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMGetParam&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetParam)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMGetParam::MergeFrom(const BedRockKvMGetParam& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetParam)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMGetParam::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMGetParam)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMGetParam::CopyFrom(const BedRockKvMGetParam& from) {
@@ -2620,103 +2993,97 @@ bool BedRockKvMGetParam::IsInitialized() const {
 
 void BedRockKvMGetParam::InternalSwap(BedRockKvMGetParam* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMGetParam::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[9]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMGetRequest::InitAsDefaultInstance() {
+}
 class BedRockKvMGetRequest::_Internal {
  public:
 };
 
-BedRockKvMGetRequest::BedRockKvMGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMGetRequest::BedRockKvMGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  params_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMGetRequest)
 }
 BedRockKvMGetRequest::BedRockKvMGetRequest(const BedRockKvMGetRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMGetRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.params_){from._impl_.params_}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      params_(from.params_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMGetRequest)
 }
 
-inline void BedRockKvMGetRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.params_){arena}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvMGetRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMGetRequest_proxy_2eproto.base);
+  storage_id_ = 0u;
 }
 
 BedRockKvMGetRequest::~BedRockKvMGetRequest() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMGetRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMGetRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.params_.~RepeatedPtrField();
+void BedRockKvMGetRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvMGetRequest::ArenaDtor(void* object) {
+  BedRockKvMGetRequest* _this = reinterpret_cast< BedRockKvMGetRequest* >(object);
+  (void)_this;
+}
+void BedRockKvMGetRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMGetRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMGetRequest& BedRockKvMGetRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMGetRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMGetRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMGetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.params_.Clear();
-  _impl_.storage_id_ = 0u;
+  params_.Clear();
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMGetRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMGetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .bedrock.proxy.BedRockKvMGetParam params = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2724,54 +3091,52 @@ const char* BedRockKvMGetRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMGetRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMGetRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMGetRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // repeated .bedrock.proxy.BedRockKvMGetParam params = 2;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_params_size()); i < n; i++) {
-    const auto& repfield = this->_internal_params(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_params_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(2, this->_internal_params(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMGetRequest)
@@ -2782,45 +3147,66 @@ size_t BedRockKvMGetRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMGetRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.proxy.BedRockKvMGetParam params = 2;
   total_size += 1UL * this->_internal_params_size();
-  for (const auto& msg : this->_impl_.params_) {
+  for (const auto& msg : this->params_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMGetRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMGetRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMGetRequest::GetClassData() const { return &_class_data_; }
+void BedRockKvMGetRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMGetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMGetRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMGetRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMGetRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMGetRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMGetRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMGetRequest*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMGetRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMGetRequest::MergeFrom(const BedRockKvMGetRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.params_.MergeFrom(from._impl_.params_);
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  params_.MergeFrom(from.params_);
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMGetRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMGetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMGetRequest::CopyFrom(const BedRockKvMGetRequest& from) {
@@ -2836,173 +3222,156 @@ bool BedRockKvMGetRequest::IsInitialized() const {
 
 void BedRockKvMGetRequest::InternalSwap(BedRockKvMGetRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.params_.InternalSwap(&other->_impl_.params_);
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  params_.InternalSwap(&other->params_);
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMGetRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[10]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMGetKvRetPair::InitAsDefaultInstance() {
+}
 class BedRockKvMGetKvRetPair::_Internal {
  public:
 };
 
-BedRockKvMGetKvRetPair::BedRockKvMGetKvRetPair(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMGetKvRetPair::BedRockKvMGetKvRetPair(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMGetKvRetPair)
 }
 BedRockKvMGetKvRetPair::BedRockKvMGetKvRetPair(const BedRockKvMGetKvRetPair& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMGetKvRetPair* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.value_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    _this->_impl_.value_.Set(from._internal_value(), 
-      _this->GetArenaForAllocation());
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMGetKvRetPair)
 }
 
-inline void BedRockKvMGetKvRetPair::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , decltype(_impl_.value_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.value_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.value_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvMGetKvRetPair::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMGetKvRetPair_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BedRockKvMGetKvRetPair::~BedRockKvMGetKvRetPair() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMGetKvRetPair)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMGetKvRetPair::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
-  _impl_.value_.Destroy();
+void BedRockKvMGetKvRetPair::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvMGetKvRetPair::ArenaDtor(void* object) {
+  BedRockKvMGetKvRetPair* _this = reinterpret_cast< BedRockKvMGetKvRetPair* >(object);
+  (void)_this;
+}
+void BedRockKvMGetKvRetPair::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMGetKvRetPair::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMGetKvRetPair& BedRockKvMGetKvRetPair::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMGetKvRetPair_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMGetKvRetPair::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMGetKvRetPair)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
-  _impl_.value_.ClearToEmpty();
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMGetKvRetPair::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMGetKvRetPair::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes value = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_value();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMGetKvRetPair::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMGetKvRetPair::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMGetKvRetPair)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_key(), target);
   }
 
   // bytes value = 2;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMGetKvRetPair)
@@ -3013,49 +3382,68 @@ size_t BedRockKvMGetKvRetPair::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMGetKvRetPair)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
   // bytes value = 2;
-  if (!this->_internal_value().empty()) {
+  if (this->value().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_value());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMGetKvRetPair::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMGetKvRetPair::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMGetKvRetPair::GetClassData() const { return &_class_data_; }
+void BedRockKvMGetKvRetPair::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMGetKvRetPair)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMGetKvRetPair* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMGetKvRetPair>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMGetKvRetPair)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMGetKvRetPair)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMGetKvRetPair::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMGetKvRetPair*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMGetKvRetPair&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetKvRetPair)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMGetKvRetPair::MergeFrom(const BedRockKvMGetKvRetPair& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetKvRetPair)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  if (!from._internal_value().empty()) {
-    _this->_internal_set_value(from._internal_value());
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMGetKvRetPair::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMGetKvRetPair)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMGetKvRetPair::CopyFrom(const BedRockKvMGetKvRetPair& from) {
@@ -3071,99 +3459,91 @@ bool BedRockKvMGetKvRetPair::IsInitialized() const {
 
 void BedRockKvMGetKvRetPair::InternalSwap(BedRockKvMGetKvRetPair* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.value_, lhs_arena,
-      &other->_impl_.value_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMGetKvRetPair::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[11]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMGetResponse::InitAsDefaultInstance() {
+}
 class BedRockKvMGetResponse::_Internal {
  public:
 };
 
-BedRockKvMGetResponse::BedRockKvMGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMGetResponse::BedRockKvMGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  kvs_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMGetResponse)
 }
 BedRockKvMGetResponse::BedRockKvMGetResponse(const BedRockKvMGetResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMGetResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.kvs_){from._impl_.kvs_}
-    , decltype(_impl_.err_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      kvs_(from.kvs_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.err_ = from._impl_.err_;
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMGetResponse)
 }
 
-inline void BedRockKvMGetResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.kvs_){arena}
-    , decltype(_impl_.err_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvMGetResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMGetResponse_proxy_2eproto.base);
+  err_ = 0;
 }
 
 BedRockKvMGetResponse::~BedRockKvMGetResponse() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMGetResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMGetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.kvs_.~RepeatedPtrField();
+void BedRockKvMGetResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvMGetResponse::ArenaDtor(void* object) {
+  BedRockKvMGetResponse* _this = reinterpret_cast< BedRockKvMGetResponse* >(object);
+  (void)_this;
+}
+void BedRockKvMGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMGetResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMGetResponse& BedRockKvMGetResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMGetResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMGetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMGetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.kvs_.Clear();
-  _impl_.err_ = 0;
+  kvs_.Clear();
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMGetResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .bedrock.proxy.BedRockKvMGetKvRetPair kvs = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -3171,64 +3551,61 @@ const char* BedRockKvMGetResponse::_InternalParse(const char* ptr, ::_pbi::Parse
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // .bedrock.proxy.Error err = 255;
       case 255:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMGetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMGetResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMGetResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .bedrock.proxy.BedRockKvMGetKvRetPair kvs = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_kvs_size()); i < n; i++) {
-    const auto& repfield = this->_internal_kvs(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_kvs_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(1, this->_internal_kvs(i), target, stream);
   }
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       255, this->_internal_err(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMGetResponse)
@@ -3239,46 +3616,65 @@ size_t BedRockKvMGetResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMGetResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.proxy.BedRockKvMGetKvRetPair kvs = 1;
   total_size += 1UL * this->_internal_kvs_size();
-  for (const auto& msg : this->_impl_.kvs_) {
+  for (const auto& msg : this->kvs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_err());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMGetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMGetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMGetResponse::GetClassData() const { return &_class_data_; }
+void BedRockKvMGetResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMGetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMGetResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMGetResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMGetResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMGetResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMGetResponse*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMGetResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMGetResponse::MergeFrom(const BedRockKvMGetResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMGetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.kvs_.MergeFrom(from._impl_.kvs_);
-  if (from._internal_err() != 0) {
-    _this->_internal_set_err(from._internal_err());
+  kvs_.MergeFrom(from.kvs_);
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMGetResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMGetResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMGetResponse::CopyFrom(const BedRockKvMGetResponse& from) {
@@ -3294,142 +3690,134 @@ bool BedRockKvMGetResponse::IsInitialized() const {
 
 void BedRockKvMGetResponse::InternalSwap(BedRockKvMGetResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.kvs_.InternalSwap(&other->_impl_.kvs_);
-  swap(_impl_.err_, other->_impl_.err_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  kvs_.InternalSwap(&other->kvs_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMGetResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[12]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMDeleteParam::InitAsDefaultInstance() {
+}
 class BedRockKvMDeleteParam::_Internal {
  public:
 };
 
-BedRockKvMDeleteParam::BedRockKvMDeleteParam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMDeleteParam::BedRockKvMDeleteParam(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMDeleteParam)
 }
 BedRockKvMDeleteParam::BedRockKvMDeleteParam(const BedRockKvMDeleteParam& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMDeleteParam* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), 
-      _this->GetArenaForAllocation());
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMDeleteParam)
 }
 
-inline void BedRockKvMDeleteParam::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void BedRockKvMDeleteParam::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMDeleteParam_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BedRockKvMDeleteParam::~BedRockKvMDeleteParam() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMDeleteParam)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMDeleteParam::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.key_.Destroy();
+void BedRockKvMDeleteParam::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BedRockKvMDeleteParam::ArenaDtor(void* object) {
+  BedRockKvMDeleteParam* _this = reinterpret_cast< BedRockKvMDeleteParam* >(object);
+  (void)_this;
+}
+void BedRockKvMDeleteParam::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMDeleteParam::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMDeleteParam& BedRockKvMDeleteParam::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMDeleteParam_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMDeleteParam::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMDeleteParam)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.key_.ClearToEmpty();
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMDeleteParam::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMDeleteParam::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMDeleteParam::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMDeleteParam::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMDeleteParam)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMDeleteParam)
@@ -3440,39 +3828,58 @@ size_t BedRockKvMDeleteParam::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMDeleteParam)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes key = 1;
-  if (!this->_internal_key().empty()) {
+  if (this->key().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMDeleteParam::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMDeleteParam::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMDeleteParam::GetClassData() const { return &_class_data_; }
+void BedRockKvMDeleteParam::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMDeleteParam)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMDeleteParam* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMDeleteParam>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMDeleteParam)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMDeleteParam)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMDeleteParam::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMDeleteParam*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMDeleteParam&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMDeleteParam)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMDeleteParam::MergeFrom(const BedRockKvMDeleteParam& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMDeleteParam)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_key().empty()) {
-    _this->_internal_set_key(from._internal_key());
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMDeleteParam::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMDeleteParam)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMDeleteParam::CopyFrom(const BedRockKvMDeleteParam& from) {
@@ -3488,103 +3895,97 @@ bool BedRockKvMDeleteParam::IsInitialized() const {
 
 void BedRockKvMDeleteParam::InternalSwap(BedRockKvMDeleteParam* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.key_, lhs_arena,
-      &other->_impl_.key_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMDeleteParam::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[13]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMDeleteRequest::InitAsDefaultInstance() {
+}
 class BedRockKvMDeleteRequest::_Internal {
  public:
 };
 
-BedRockKvMDeleteRequest::BedRockKvMDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMDeleteRequest::BedRockKvMDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  params_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMDeleteRequest)
 }
 BedRockKvMDeleteRequest::BedRockKvMDeleteRequest(const BedRockKvMDeleteRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMDeleteRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.params_){from._impl_.params_}
-    , decltype(_impl_.storage_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      params_(from.params_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.storage_id_ = from._impl_.storage_id_;
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMDeleteRequest)
 }
 
-inline void BedRockKvMDeleteRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.params_){arena}
-    , decltype(_impl_.storage_id_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvMDeleteRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvMDeleteRequest_proxy_2eproto.base);
+  storage_id_ = 0u;
 }
 
 BedRockKvMDeleteRequest::~BedRockKvMDeleteRequest() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMDeleteRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMDeleteRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.params_.~RepeatedPtrField();
+void BedRockKvMDeleteRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvMDeleteRequest::ArenaDtor(void* object) {
+  BedRockKvMDeleteRequest* _this = reinterpret_cast< BedRockKvMDeleteRequest* >(object);
+  (void)_this;
+}
+void BedRockKvMDeleteRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMDeleteRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMDeleteRequest& BedRockKvMDeleteRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMDeleteRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMDeleteRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMDeleteRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.params_.Clear();
-  _impl_.storage_id_ = 0u;
+  params_.Clear();
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMDeleteRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMDeleteRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 storage_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // repeated .bedrock.proxy.BedRockKvMDeleteParam params = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -3592,54 +3993,52 @@ const char* BedRockKvMDeleteRequest::_InternalParse(const char* ptr, ::_pbi::Par
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMDeleteRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMDeleteRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMDeleteRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
+  if (this->storage_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
   }
 
   // repeated .bedrock.proxy.BedRockKvMDeleteParam params = 2;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_params_size()); i < n; i++) {
-    const auto& repfield = this->_internal_params(i);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_params_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+      InternalWriteMessage(2, this->_internal_params(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMDeleteRequest)
@@ -3650,45 +4049,66 @@ size_t BedRockKvMDeleteRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMDeleteRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .bedrock.proxy.BedRockKvMDeleteParam params = 2;
   total_size += 1UL * this->_internal_params_size();
-  for (const auto& msg : this->_impl_.params_) {
+  for (const auto& msg : this->params_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // uint32 storage_id = 1;
-  if (this->_internal_storage_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_storage_id());
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMDeleteRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMDeleteRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMDeleteRequest::GetClassData() const { return &_class_data_; }
+void BedRockKvMDeleteRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMDeleteRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMDeleteRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMDeleteRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMDeleteRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMDeleteRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMDeleteRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMDeleteRequest*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMDeleteRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMDeleteRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMDeleteRequest::MergeFrom(const BedRockKvMDeleteRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMDeleteRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.params_.MergeFrom(from._impl_.params_);
-  if (from._internal_storage_id() != 0) {
-    _this->_internal_set_storage_id(from._internal_storage_id());
+  params_.MergeFrom(from.params_);
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMDeleteRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMDeleteRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMDeleteRequest::CopyFrom(const BedRockKvMDeleteRequest& from) {
@@ -3704,131 +4124,129 @@ bool BedRockKvMDeleteRequest::IsInitialized() const {
 
 void BedRockKvMDeleteRequest::InternalSwap(BedRockKvMDeleteRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.params_.InternalSwap(&other->_impl_.params_);
-  swap(_impl_.storage_id_, other->_impl_.storage_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  params_.InternalSwap(&other->params_);
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMDeleteRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[14]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
+void BedRockKvMDeleteResponse::InitAsDefaultInstance() {
+}
 class BedRockKvMDeleteResponse::_Internal {
  public:
 };
 
-BedRockKvMDeleteResponse::BedRockKvMDeleteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+BedRockKvMDeleteResponse::BedRockKvMDeleteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvMDeleteResponse)
 }
 BedRockKvMDeleteResponse::BedRockKvMDeleteResponse(const BedRockKvMDeleteResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BedRockKvMDeleteResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.err_ = from._impl_.err_;
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvMDeleteResponse)
 }
 
-inline void BedRockKvMDeleteResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.err_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+void BedRockKvMDeleteResponse::SharedCtor() {
+  err_ = 0;
 }
 
 BedRockKvMDeleteResponse::~BedRockKvMDeleteResponse() {
   // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvMDeleteResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void BedRockKvMDeleteResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void BedRockKvMDeleteResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BedRockKvMDeleteResponse::ArenaDtor(void* object) {
+  BedRockKvMDeleteResponse* _this = reinterpret_cast< BedRockKvMDeleteResponse* >(object);
+  (void)_this;
+}
+void BedRockKvMDeleteResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BedRockKvMDeleteResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
+const BedRockKvMDeleteResponse& BedRockKvMDeleteResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvMDeleteResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
 
 void BedRockKvMDeleteResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvMDeleteResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.err_ = 0;
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BedRockKvMDeleteResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BedRockKvMDeleteResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .bedrock.proxy.Error err = 255;
       case 255:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* BedRockKvMDeleteResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvMDeleteResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvMDeleteResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       255, this->_internal_err(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvMDeleteResponse)
@@ -3839,38 +4257,57 @@ size_t BedRockKvMDeleteResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvMDeleteResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .bedrock.proxy.Error err = 255;
-  if (this->_internal_err() != 0) {
+  if (this->err() != 0) {
     total_size += 2 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_err());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BedRockKvMDeleteResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BedRockKvMDeleteResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BedRockKvMDeleteResponse::GetClassData() const { return &_class_data_; }
+void BedRockKvMDeleteResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvMDeleteResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvMDeleteResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvMDeleteResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvMDeleteResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvMDeleteResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void BedRockKvMDeleteResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BedRockKvMDeleteResponse*>(&to_msg);
-  auto& from = static_cast<const BedRockKvMDeleteResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMDeleteResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void BedRockKvMDeleteResponse::MergeFrom(const BedRockKvMDeleteResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvMDeleteResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_err() != 0) {
-    _this->_internal_set_err(from._internal_err());
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BedRockKvMDeleteResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvMDeleteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void BedRockKvMDeleteResponse::CopyFrom(const BedRockKvMDeleteResponse& from) {
@@ -3886,15 +4323,1636 @@ bool BedRockKvMDeleteResponse::IsInitialized() const {
 
 void BedRockKvMDeleteResponse::InternalSwap(BedRockKvMDeleteResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.err_, other->_impl_.err_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvMDeleteResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proxy_2eproto_getter, &descriptor_table_proxy_2eproto_once,
-      file_level_metadata_proxy_2eproto[15]);
+  return GetMetadataStatic();
 }
+
+
+// ===================================================================
+
+void BedRockStartScanRequest::InitAsDefaultInstance() {
+}
+class BedRockStartScanRequest::_Internal {
+ public:
+};
+
+BedRockStartScanRequest::BedRockStartScanRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockStartScanRequest)
+}
+BedRockStartScanRequest::BedRockStartScanRequest(const BedRockStartScanRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  start_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_start_key().empty()) {
+    start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_start_key(),
+      GetArena());
+  }
+  end_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_end_key().empty()) {
+    end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_end_key(),
+      GetArena());
+  }
+  ::memcpy(&storage_id_, &from.storage_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&limit_) -
+    reinterpret_cast<char*>(&storage_id_)) + sizeof(limit_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockStartScanRequest)
+}
+
+void BedRockStartScanRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockStartScanRequest_proxy_2eproto.base);
+  start_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  end_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&limit_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(limit_));
+}
+
+BedRockStartScanRequest::~BedRockStartScanRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockStartScanRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockStartScanRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  start_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  end_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void BedRockStartScanRequest::ArenaDtor(void* object) {
+  BedRockStartScanRequest* _this = reinterpret_cast< BedRockStartScanRequest* >(object);
+  (void)_this;
+}
+void BedRockStartScanRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockStartScanRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockStartScanRequest& BedRockStartScanRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockStartScanRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockStartScanRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockStartScanRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  start_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  end_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::memset(&storage_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&limit_) -
+      reinterpret_cast<char*>(&storage_id_)) + sizeof(limit_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockStartScanRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 storage_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes start_key = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_start_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes end_key = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_end_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 limit = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockStartScanRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockStartScanRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+  }
+
+  // bytes start_key = 2;
+  if (this->start_key().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_start_key(), target);
+  }
+
+  // bytes end_key = 3;
+  if (this->end_key().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_end_key(), target);
+  }
+
+  // int32 limit = 4;
+  if (this->limit() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_limit(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockStartScanRequest)
+  return target;
+}
+
+size_t BedRockStartScanRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockStartScanRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes start_key = 2;
+  if (this->start_key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_start_key());
+  }
+
+  // bytes end_key = 3;
+  if (this->end_key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_end_key());
+  }
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
+  }
+
+  // int32 limit = 4;
+  if (this->limit() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_limit());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockStartScanRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockStartScanRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockStartScanRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockStartScanRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockStartScanRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockStartScanRequest)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockStartScanRequest::MergeFrom(const BedRockStartScanRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockStartScanRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.start_key().size() > 0) {
+    _internal_set_start_key(from._internal_start_key());
+  }
+  if (from.end_key().size() > 0) {
+    _internal_set_end_key(from._internal_end_key());
+  }
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
+  }
+  if (from.limit() != 0) {
+    _internal_set_limit(from._internal_limit());
+  }
+}
+
+void BedRockStartScanRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockStartScanRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockStartScanRequest::CopyFrom(const BedRockStartScanRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockStartScanRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockStartScanRequest::IsInitialized() const {
+  return true;
+}
+
+void BedRockStartScanRequest::InternalSwap(BedRockStartScanRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  start_key_.Swap(&other->start_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  end_key_.Swap(&other->end_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BedRockStartScanRequest, limit_)
+      + sizeof(BedRockStartScanRequest::limit_)
+      - PROTOBUF_FIELD_OFFSET(BedRockStartScanRequest, storage_id_)>(
+          reinterpret_cast<char*>(&storage_id_),
+          reinterpret_cast<char*>(&other->storage_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockStartScanRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockStartScanResponse::InitAsDefaultInstance() {
+}
+class BedRockStartScanResponse::_Internal {
+ public:
+};
+
+BedRockStartScanResponse::BedRockStartScanResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockStartScanResponse)
+}
+BedRockStartScanResponse::BedRockStartScanResponse(const BedRockStartScanResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&iterator_id_, &from.iterator_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&err_) -
+    reinterpret_cast<char*>(&iterator_id_)) + sizeof(err_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockStartScanResponse)
+}
+
+void BedRockStartScanResponse::SharedCtor() {
+  ::memset(&iterator_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&err_) -
+      reinterpret_cast<char*>(&iterator_id_)) + sizeof(err_));
+}
+
+BedRockStartScanResponse::~BedRockStartScanResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockStartScanResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockStartScanResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void BedRockStartScanResponse::ArenaDtor(void* object) {
+  BedRockStartScanResponse* _this = reinterpret_cast< BedRockStartScanResponse* >(object);
+  (void)_this;
+}
+void BedRockStartScanResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockStartScanResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockStartScanResponse& BedRockStartScanResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockStartScanResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockStartScanResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockStartScanResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&iterator_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&err_) -
+      reinterpret_cast<char*>(&iterator_id_)) + sizeof(err_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockStartScanResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 iterator_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          iterator_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .bedrock.proxy.Error err = 255;
+      case 255:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockStartScanResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockStartScanResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 iterator_id = 1;
+  if (this->iterator_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_iterator_id(), target);
+  }
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      255, this->_internal_err(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockStartScanResponse)
+  return target;
+}
+
+size_t BedRockStartScanResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockStartScanResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 iterator_id = 1;
+  if (this->iterator_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_iterator_id());
+  }
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockStartScanResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockStartScanResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockStartScanResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockStartScanResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockStartScanResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockStartScanResponse)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockStartScanResponse::MergeFrom(const BedRockStartScanResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockStartScanResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.iterator_id() != 0) {
+    _internal_set_iterator_id(from._internal_iterator_id());
+  }
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
+  }
+}
+
+void BedRockStartScanResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockStartScanResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockStartScanResponse::CopyFrom(const BedRockStartScanResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockStartScanResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockStartScanResponse::IsInitialized() const {
+  return true;
+}
+
+void BedRockStartScanResponse::InternalSwap(BedRockStartScanResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BedRockStartScanResponse, err_)
+      + sizeof(BedRockStartScanResponse::err_)
+      - PROTOBUF_FIELD_OFFSET(BedRockStartScanResponse, iterator_id_)>(
+          reinterpret_cast<char*>(&iterator_id_),
+          reinterpret_cast<char*>(&other->iterator_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockStartScanResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockStopScanRequest::InitAsDefaultInstance() {
+}
+class BedRockStopScanRequest::_Internal {
+ public:
+};
+
+BedRockStopScanRequest::BedRockStopScanRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockStopScanRequest)
+}
+BedRockStopScanRequest::BedRockStopScanRequest(const BedRockStopScanRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  iterator_id_ = from.iterator_id_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockStopScanRequest)
+}
+
+void BedRockStopScanRequest::SharedCtor() {
+  iterator_id_ = PROTOBUF_ULONGLONG(0);
+}
+
+BedRockStopScanRequest::~BedRockStopScanRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockStopScanRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockStopScanRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void BedRockStopScanRequest::ArenaDtor(void* object) {
+  BedRockStopScanRequest* _this = reinterpret_cast< BedRockStopScanRequest* >(object);
+  (void)_this;
+}
+void BedRockStopScanRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockStopScanRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockStopScanRequest& BedRockStopScanRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockStopScanRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockStopScanRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockStopScanRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  iterator_id_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockStopScanRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 iterator_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          iterator_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockStopScanRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockStopScanRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 iterator_id = 1;
+  if (this->iterator_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_iterator_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockStopScanRequest)
+  return target;
+}
+
+size_t BedRockStopScanRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockStopScanRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 iterator_id = 1;
+  if (this->iterator_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_iterator_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockStopScanRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockStopScanRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockStopScanRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockStopScanRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockStopScanRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockStopScanRequest)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockStopScanRequest::MergeFrom(const BedRockStopScanRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockStopScanRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.iterator_id() != 0) {
+    _internal_set_iterator_id(from._internal_iterator_id());
+  }
+}
+
+void BedRockStopScanRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockStopScanRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockStopScanRequest::CopyFrom(const BedRockStopScanRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockStopScanRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockStopScanRequest::IsInitialized() const {
+  return true;
+}
+
+void BedRockStopScanRequest::InternalSwap(BedRockStopScanRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(iterator_id_, other->iterator_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockStopScanRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockStopScanResponse::InitAsDefaultInstance() {
+}
+class BedRockStopScanResponse::_Internal {
+ public:
+};
+
+BedRockStopScanResponse::BedRockStopScanResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockStopScanResponse)
+}
+BedRockStopScanResponse::BedRockStopScanResponse(const BedRockStopScanResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  err_ = from.err_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockStopScanResponse)
+}
+
+void BedRockStopScanResponse::SharedCtor() {
+  err_ = 0;
+}
+
+BedRockStopScanResponse::~BedRockStopScanResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockStopScanResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockStopScanResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void BedRockStopScanResponse::ArenaDtor(void* object) {
+  BedRockStopScanResponse* _this = reinterpret_cast< BedRockStopScanResponse* >(object);
+  (void)_this;
+}
+void BedRockStopScanResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockStopScanResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockStopScanResponse& BedRockStopScanResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockStopScanResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockStopScanResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockStopScanResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  err_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockStopScanResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .bedrock.proxy.Error err = 255;
+      case 255:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockStopScanResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockStopScanResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      255, this->_internal_err(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockStopScanResponse)
+  return target;
+}
+
+size_t BedRockStopScanResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockStopScanResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockStopScanResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockStopScanResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockStopScanResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockStopScanResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockStopScanResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockStopScanResponse)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockStopScanResponse::MergeFrom(const BedRockStopScanResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockStopScanResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
+  }
+}
+
+void BedRockStopScanResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockStopScanResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockStopScanResponse::CopyFrom(const BedRockStopScanResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockStopScanResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockStopScanResponse::IsInitialized() const {
+  return true;
+}
+
+void BedRockStopScanResponse::InternalSwap(BedRockStopScanResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockStopScanResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockDoScanRequest::InitAsDefaultInstance() {
+}
+class BedRockDoScanRequest::_Internal {
+ public:
+};
+
+BedRockDoScanRequest::BedRockDoScanRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockDoScanRequest)
+}
+BedRockDoScanRequest::BedRockDoScanRequest(const BedRockDoScanRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  iterator_id_ = from.iterator_id_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockDoScanRequest)
+}
+
+void BedRockDoScanRequest::SharedCtor() {
+  iterator_id_ = PROTOBUF_ULONGLONG(0);
+}
+
+BedRockDoScanRequest::~BedRockDoScanRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockDoScanRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockDoScanRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void BedRockDoScanRequest::ArenaDtor(void* object) {
+  BedRockDoScanRequest* _this = reinterpret_cast< BedRockDoScanRequest* >(object);
+  (void)_this;
+}
+void BedRockDoScanRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockDoScanRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockDoScanRequest& BedRockDoScanRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockDoScanRequest_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockDoScanRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockDoScanRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  iterator_id_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockDoScanRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 iterator_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          iterator_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockDoScanRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockDoScanRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 iterator_id = 1;
+  if (this->iterator_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_iterator_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockDoScanRequest)
+  return target;
+}
+
+size_t BedRockDoScanRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockDoScanRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 iterator_id = 1;
+  if (this->iterator_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_iterator_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockDoScanRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockDoScanRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockDoScanRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockDoScanRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockDoScanRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockDoScanRequest)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockDoScanRequest::MergeFrom(const BedRockDoScanRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockDoScanRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.iterator_id() != 0) {
+    _internal_set_iterator_id(from._internal_iterator_id());
+  }
+}
+
+void BedRockDoScanRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockDoScanRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockDoScanRequest::CopyFrom(const BedRockDoScanRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockDoScanRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockDoScanRequest::IsInitialized() const {
+  return true;
+}
+
+void BedRockDoScanRequest::InternalSwap(BedRockDoScanRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(iterator_id_, other->iterator_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockDoScanRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockKvPair::InitAsDefaultInstance() {
+}
+class BedRockKvPair::_Internal {
+ public:
+};
+
+BedRockKvPair::BedRockKvPair(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockKvPair)
+}
+BedRockKvPair::BedRockKvPair(const BedRockKvPair& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_key().empty()) {
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
+  }
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockKvPair)
+}
+
+void BedRockKvPair::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockKvPair_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+BedRockKvPair::~BedRockKvPair() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockKvPair)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockKvPair::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void BedRockKvPair::ArenaDtor(void* object) {
+  BedRockKvPair* _this = reinterpret_cast< BedRockKvPair* >(object);
+  (void)_this;
+}
+void BedRockKvPair::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockKvPair::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockKvPair& BedRockKvPair::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockKvPair_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockKvPair::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockKvPair)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockKvPair::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes key = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes value = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockKvPair::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockKvPair)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes key = 1;
+  if (this->key().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_key(), target);
+  }
+
+  // bytes value = 2;
+  if (this->value().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_value(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockKvPair)
+  return target;
+}
+
+size_t BedRockKvPair::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockKvPair)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes key = 1;
+  if (this->key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_key());
+  }
+
+  // bytes value = 2;
+  if (this->value().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_value());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockKvPair::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockKvPair)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockKvPair* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockKvPair>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockKvPair)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockKvPair)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockKvPair::MergeFrom(const BedRockKvPair& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockKvPair)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
+  }
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
+  }
+}
+
+void BedRockKvPair::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockKvPair)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockKvPair::CopyFrom(const BedRockKvPair& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockKvPair)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockKvPair::IsInitialized() const {
+  return true;
+}
+
+void BedRockKvPair::InternalSwap(BedRockKvPair* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockKvPair::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockDoScanResponse::InitAsDefaultInstance() {
+}
+class BedRockDoScanResponse::_Internal {
+ public:
+};
+
+BedRockDoScanResponse::BedRockDoScanResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  kvs_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockDoScanResponse)
+}
+BedRockDoScanResponse::BedRockDoScanResponse(const BedRockDoScanResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      kvs_(from.kvs_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&no_left_, &from.no_left_,
+    static_cast<size_t>(reinterpret_cast<char*>(&err_) -
+    reinterpret_cast<char*>(&no_left_)) + sizeof(err_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockDoScanResponse)
+}
+
+void BedRockDoScanResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockDoScanResponse_proxy_2eproto.base);
+  ::memset(&no_left_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&err_) -
+      reinterpret_cast<char*>(&no_left_)) + sizeof(err_));
+}
+
+BedRockDoScanResponse::~BedRockDoScanResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockDoScanResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockDoScanResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void BedRockDoScanResponse::ArenaDtor(void* object) {
+  BedRockDoScanResponse* _this = reinterpret_cast< BedRockDoScanResponse* >(object);
+  (void)_this;
+}
+void BedRockDoScanResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockDoScanResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockDoScanResponse& BedRockDoScanResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockDoScanResponse_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockDoScanResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockDoScanResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  kvs_.Clear();
+  ::memset(&no_left_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&err_) -
+      reinterpret_cast<char*>(&no_left_)) + sizeof(err_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockDoScanResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .bedrock.proxy.BedRockKvPair kvs = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_kvs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bool no_left = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          no_left_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .bedrock.proxy.Error err = 255;
+      case 255:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockDoScanResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockDoScanResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .bedrock.proxy.BedRockKvPair kvs = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_kvs_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_kvs(i), target, stream);
+  }
+
+  // bool no_left = 2;
+  if (this->no_left() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_no_left(), target);
+  }
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      255, this->_internal_err(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockDoScanResponse)
+  return target;
+}
+
+size_t BedRockDoScanResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockDoScanResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .bedrock.proxy.BedRockKvPair kvs = 1;
+  total_size += 1UL * this->_internal_kvs_size();
+  for (const auto& msg : this->kvs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // bool no_left = 2;
+  if (this->no_left() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockDoScanResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockDoScanResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockDoScanResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockDoScanResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockDoScanResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockDoScanResponse)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockDoScanResponse::MergeFrom(const BedRockDoScanResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockDoScanResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  kvs_.MergeFrom(from.kvs_);
+  if (from.no_left() != 0) {
+    _internal_set_no_left(from._internal_no_left());
+  }
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
+  }
+}
+
+void BedRockDoScanResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockDoScanResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockDoScanResponse::CopyFrom(const BedRockDoScanResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockDoScanResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockDoScanResponse::IsInitialized() const {
+  return true;
+}
+
+void BedRockDoScanResponse::InternalSwap(BedRockDoScanResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  kvs_.InternalSwap(&other->kvs_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BedRockDoScanResponse, err_)
+      + sizeof(BedRockDoScanResponse::err_)
+      - PROTOBUF_FIELD_OFFSET(BedRockDoScanResponse, no_left_)>(
+          reinterpret_cast<char*>(&no_left_),
+          reinterpret_cast<char*>(&other->no_left_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockDoScanResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 
 // ===================================================================
 
@@ -3957,6 +6015,30 @@ void ProxyService::BedRockKvMDelete(::PROTOBUF_NAMESPACE_ID::RpcController* cont
   done->Run();
 }
 
+void ProxyService::BedRockStartScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::proxy::BedRockStartScanRequest*,
+                         ::bedrock::proxy::BedRockStartScanResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method BedRockStartScan() not implemented.");
+  done->Run();
+}
+
+void ProxyService::BedRockStopScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::proxy::BedRockStopScanRequest*,
+                         ::bedrock::proxy::BedRockStopScanResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method BedRockStopScan() not implemented.");
+  done->Run();
+}
+
+void ProxyService::BedRockDoScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::proxy::BedRockDoScanRequest*,
+                         ::bedrock::proxy::BedRockDoScanResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method BedRockDoScan() not implemented.");
+  done->Run();
+}
+
 void ProxyService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method,
                              ::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                              const ::PROTOBUF_NAMESPACE_ID::Message* request,
@@ -4012,6 +6094,30 @@ void ProxyService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* m
                  response),
              done);
       break;
+    case 6:
+      BedRockStartScan(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::proxy::BedRockStartScanRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockStartScanResponse*>(
+                 response),
+             done);
+      break;
+    case 7:
+      BedRockStopScan(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::proxy::BedRockStopScanRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockStopScanResponse*>(
+                 response),
+             done);
+      break;
+    case 8:
+      BedRockDoScan(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::proxy::BedRockDoScanRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::proxy::BedRockDoScanResponse*>(
+                 response),
+             done);
+      break;
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       break;
@@ -4034,6 +6140,12 @@ const ::PROTOBUF_NAMESPACE_ID::Message& ProxyService::GetRequestPrototype(
       return ::bedrock::proxy::BedRockKvMGetRequest::default_instance();
     case 5:
       return ::bedrock::proxy::BedRockKvMDeleteRequest::default_instance();
+    case 6:
+      return ::bedrock::proxy::BedRockStartScanRequest::default_instance();
+    case 7:
+      return ::bedrock::proxy::BedRockStopScanRequest::default_instance();
+    case 8:
+      return ::bedrock::proxy::BedRockDoScanRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -4057,6 +6169,12 @@ const ::PROTOBUF_NAMESPACE_ID::Message& ProxyService::GetResponsePrototype(
       return ::bedrock::proxy::BedRockKvMGetResponse::default_instance();
     case 5:
       return ::bedrock::proxy::BedRockKvMDeleteResponse::default_instance();
+    case 6:
+      return ::bedrock::proxy::BedRockStartScanResponse::default_instance();
+    case 7:
+      return ::bedrock::proxy::BedRockStopScanResponse::default_instance();
+    case 8:
+      return ::bedrock::proxy::BedRockDoScanResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -4117,74 +6235,100 @@ void ProxyService_Stub::BedRockKvMDelete(::PROTOBUF_NAMESPACE_ID::RpcController*
   channel_->CallMethod(descriptor()->method(5),
                        controller, request, response, done);
 }
+void ProxyService_Stub::BedRockStartScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::proxy::BedRockStartScanRequest* request,
+                              ::bedrock::proxy::BedRockStartScanResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(6),
+                       controller, request, response, done);
+}
+void ProxyService_Stub::BedRockStopScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::proxy::BedRockStopScanRequest* request,
+                              ::bedrock::proxy::BedRockStopScanResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(7),
+                       controller, request, response, done);
+}
+void ProxyService_Stub::BedRockDoScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::proxy::BedRockDoScanRequest* request,
+                              ::bedrock::proxy::BedRockDoScanResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(8),
+                       controller, request, response, done);
+}
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace proxy
 }  // namespace bedrock
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvGetRequest*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvGetRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvGetRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvGetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvGetRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvGetResponse*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvGetResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvGetResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvGetResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvGetResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvSetRequest*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvSetRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvSetRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvSetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvSetRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvSetResponse*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvSetResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvSetResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvSetResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvSetResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvDeleteRequest*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvDeleteRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvDeleteRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvDeleteRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvDeleteRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvDeleteResponse*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvDeleteResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvDeleteResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvDeleteResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvDeleteResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMSetParam*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMSetParam >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMSetParam* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMSetParam >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMSetParam >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMSetRequest*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMSetRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMSetRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMSetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMSetRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMSetResponse*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMSetResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMSetResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMSetResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMSetResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetParam*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetParam >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetParam* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetParam >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMGetParam >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetRequest*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMGetRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetKvRetPair*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetKvRetPair >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetKvRetPair* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetKvRetPair >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMGetKvRetPair >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetResponse*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMGetResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMGetResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMGetResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMDeleteParam*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMDeleteParam >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMDeleteParam* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMDeleteParam >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMDeleteParam >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMDeleteRequest*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMDeleteRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMDeleteRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMDeleteRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMDeleteRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMDeleteResponse*
-Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMDeleteResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvMDeleteResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvMDeleteResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvMDeleteResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockStartScanRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockStartScanRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockStartScanRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockStartScanResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockStartScanResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockStartScanResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockStopScanRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockStopScanRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockStopScanRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockStopScanResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockStopScanResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockStopScanResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockDoScanRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockDoScanRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockDoScanRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvPair* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvPair >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvPair >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockDoScanResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockDoScanResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockDoScanResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
