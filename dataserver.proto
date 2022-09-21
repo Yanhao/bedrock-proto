@@ -205,6 +205,30 @@ message DataServerLeaveRequest {
 message DataServerLeaveResponse {
 }
 
+message StartTxRequest {
+}
+
+message StartTxResponse {
+}
+
+message PrepareTxRequest {
+}
+
+message PrepareTxResponse {
+}
+
+message CommitTxRequest {
+}
+
+message CommitTxResponse {
+}
+
+message CancelTxRequest {
+}
+
+message CancelTxResponse {
+}
+
 service DataService {
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
     rpc DeleteShard(DeleteShardRequest) returns (google.protobuf.Empty);
@@ -228,6 +252,11 @@ service DataService {
     rpc ShardInstallSnapshot(stream ShardInstallSnapshotRequest) returns (ShardInstallSnapshotResponse);
 
     rpc MigrateShard(stream MigrateShardRequest) returns (MigrateShardResponse);
+
+    rpc StartTx(StartTxRequest) returns (StartTxResponse);
+    rpc PrepareTx(PrepareTxRequest) returns (PrepareTxResponse);
+    rpc CommitTx(CommitTxRequest) returns (CommitTxResponse);
+    rpc CancelTx(CancelTxRequest) returns (CancelTxResponse);
 
     // rpc ShardWriteReplica(ShardWriteReplicaRequest) returns (ShardWriteReplicaResponse);
     // rpc ShardInstallSnap(ShardInstallSnapRequest) returns (ShardInstallSnapResponse);

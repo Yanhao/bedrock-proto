@@ -125,6 +125,24 @@ message BedRockDoScanResponse {
     Error err = 255;
 }
 
+message BedRockStartTxRequest {
+}
+
+message BedRockStartTxResponse {
+}
+
+message BedRockCommitTxRequest {
+}
+
+message BedRockCommitTxResponse {
+}
+
+message BedRockRollbackTxRequest {
+}
+
+message BedRockRollbackTxResponse {
+}
+
 service ProxyService {
     rpc BedRockKvSet(BedRockKvSetRequest) returns (BedRockKvSetResponse);
     rpc BedRockKvGet(BedRockKvGetRequest) returns (BedRockKvGetResponse);
@@ -137,4 +155,8 @@ service ProxyService {
     rpc BedRockStartScan(BedRockStartScanRequest) returns (BedRockStartScanResponse);
     rpc BedRockStopScan(BedRockStopScanRequest) returns (BedRockStopScanResponse);
     rpc BedRockDoScan(BedRockDoScanRequest) returns (BedRockDoScanResponse);
+
+    rpc BedRockStartTx(BedRockStartTxRequest) returns (BedRockStartTxResponse);
+    rpc BedRockCommitTx(BedRockCommitTxRequest) returns (BedRockCommitTxResponse);
+    rpc BedRockRollbackTx(BedRockRollbackTxRequest) returns (BedRockRollbackTxResponse);
 }
