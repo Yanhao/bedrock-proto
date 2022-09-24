@@ -125,22 +125,50 @@ message BedRockDoScanResponse {
     Error err = 255;
 }
 
+enum BedRockTxLockType {
+    SHARED = 0;
+    EXCLUSIVE = 1;
+}
+
+message BedRockTxRecordLock {
+    BedRockTxLockType lock_type = 1;
+    bytes key = 2;
+}
+
+message BedRockTxRangeLock {
+    BedRockTxLockType lock_type = 1;
+    bytes start_key = 2;
+    bytes end_key = 3;
+}
+
 message BedRockStartTxRequest {
+    uint32 storage_id = 1;
+    repeated BedRockTxRecordLock record_locks = 2;
+    repeated BedRockTxRangeLock range_locks = 3;
 }
 
 message BedRockStartTxResponse {
+    uint64 tx_id = 1;
+
+    Error err = 255;
 }
 
 message BedRockCommitTxRequest {
+    uint32 storage_id = 1;
+    uint64 tx_id = 2;
 }
 
 message BedRockCommitTxResponse {
+    Error err = 255;
 }
 
 message BedRockRollbackTxRequest {
+    uint32 storage_id = 1;
+    uint64 tx_id = 2;
 }
 
 message BedRockRollbackTxResponse {
+    Error err = 255;
 }
 
 service ProxyService {
