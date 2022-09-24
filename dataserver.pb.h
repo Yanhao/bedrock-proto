@@ -51,7 +51,7 @@ struct TableStruct_dataserver_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[46]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[54]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -66,6 +66,18 @@ extern AddShardReplicaRequestDefaultTypeInternal _AddShardReplicaRequest_default
 class AddShardReplicaResponse;
 class AddShardReplicaResponseDefaultTypeInternal;
 extern AddShardReplicaResponseDefaultTypeInternal _AddShardReplicaResponse_default_instance_;
+class CancelTxRequest;
+class CancelTxRequestDefaultTypeInternal;
+extern CancelTxRequestDefaultTypeInternal _CancelTxRequest_default_instance_;
+class CancelTxResponse;
+class CancelTxResponseDefaultTypeInternal;
+extern CancelTxResponseDefaultTypeInternal _CancelTxResponse_default_instance_;
+class CommitTxRequest;
+class CommitTxRequestDefaultTypeInternal;
+extern CommitTxRequestDefaultTypeInternal _CommitTxRequest_default_instance_;
+class CommitTxResponse;
+class CommitTxResponseDefaultTypeInternal;
+extern CommitTxResponseDefaultTypeInternal _CommitTxResponse_default_instance_;
 class CreateShardRequest;
 class CreateShardRequestDefaultTypeInternal;
 extern CreateShardRequestDefaultTypeInternal _CreateShardRequest_default_instance_;
@@ -120,6 +132,12 @@ extern MigrateShardRequest_EntryDefaultTypeInternal _MigrateShardRequest_Entry_d
 class MigrateShardResponse;
 class MigrateShardResponseDefaultTypeInternal;
 extern MigrateShardResponseDefaultTypeInternal _MigrateShardResponse_default_instance_;
+class PrepareTxRequest;
+class PrepareTxRequestDefaultTypeInternal;
+extern PrepareTxRequestDefaultTypeInternal _PrepareTxRequest_default_instance_;
+class PrepareTxResponse;
+class PrepareTxResponseDefaultTypeInternal;
+extern PrepareTxResponseDefaultTypeInternal _PrepareTxResponse_default_instance_;
 class PullShardDataRequest;
 class PullShardDataRequestDefaultTypeInternal;
 extern PullShardDataRequestDefaultTypeInternal _PullShardDataRequest_default_instance_;
@@ -186,6 +204,12 @@ extern SplitShardRequestDefaultTypeInternal _SplitShardRequest_default_instance_
 class SplitShardResponse;
 class SplitShardResponseDefaultTypeInternal;
 extern SplitShardResponseDefaultTypeInternal _SplitShardResponse_default_instance_;
+class StartTxRequest;
+class StartTxRequestDefaultTypeInternal;
+extern StartTxRequestDefaultTypeInternal _StartTxRequest_default_instance_;
+class StartTxResponse;
+class StartTxResponseDefaultTypeInternal;
+extern StartTxResponseDefaultTypeInternal _StartTxResponse_default_instance_;
 class TransferShardLeaderRequest;
 class TransferShardLeaderRequestDefaultTypeInternal;
 extern TransferShardLeaderRequestDefaultTypeInternal _TransferShardLeaderRequest_default_instance_;
@@ -203,6 +227,10 @@ extern UnlockShardResponseDefaultTypeInternal _UnlockShardResponse_default_insta
 PROTOBUF_NAMESPACE_OPEN
 template<> ::bedrock::dataserver::AddShardReplicaRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::AddShardReplicaRequest>(Arena*);
 template<> ::bedrock::dataserver::AddShardReplicaResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::AddShardReplicaResponse>(Arena*);
+template<> ::bedrock::dataserver::CancelTxRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::CancelTxRequest>(Arena*);
+template<> ::bedrock::dataserver::CancelTxResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::CancelTxResponse>(Arena*);
+template<> ::bedrock::dataserver::CommitTxRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::CommitTxRequest>(Arena*);
+template<> ::bedrock::dataserver::CommitTxResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::CommitTxResponse>(Arena*);
 template<> ::bedrock::dataserver::CreateShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::CreateShardRequest>(Arena*);
 template<> ::bedrock::dataserver::CreateShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::CreateShardResponse>(Arena*);
 template<> ::bedrock::dataserver::DataServerJoinRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::DataServerJoinRequest>(Arena*);
@@ -221,6 +249,8 @@ template<> ::bedrock::dataserver::MergeShardResponse* Arena::CreateMaybeMessage<
 template<> ::bedrock::dataserver::MigrateShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::MigrateShardRequest>(Arena*);
 template<> ::bedrock::dataserver::MigrateShardRequest_Entry* Arena::CreateMaybeMessage<::bedrock::dataserver::MigrateShardRequest_Entry>(Arena*);
 template<> ::bedrock::dataserver::MigrateShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::MigrateShardResponse>(Arena*);
+template<> ::bedrock::dataserver::PrepareTxRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::PrepareTxRequest>(Arena*);
+template<> ::bedrock::dataserver::PrepareTxResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::PrepareTxResponse>(Arena*);
 template<> ::bedrock::dataserver::PullShardDataRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::PullShardDataRequest>(Arena*);
 template<> ::bedrock::dataserver::PullShardDataResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::PullShardDataResponse>(Arena*);
 template<> ::bedrock::dataserver::ShardAppendLogRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardAppendLogRequest>(Arena*);
@@ -243,6 +273,8 @@ template<> ::bedrock::dataserver::ShardWriteRequest* Arena::CreateMaybeMessage<:
 template<> ::bedrock::dataserver::ShardWriteResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::ShardWriteResponse>(Arena*);
 template<> ::bedrock::dataserver::SplitShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::SplitShardRequest>(Arena*);
 template<> ::bedrock::dataserver::SplitShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::SplitShardResponse>(Arena*);
+template<> ::bedrock::dataserver::StartTxRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::StartTxRequest>(Arena*);
+template<> ::bedrock::dataserver::StartTxResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::StartTxResponse>(Arena*);
 template<> ::bedrock::dataserver::TransferShardLeaderRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::TransferShardLeaderRequest>(Arena*);
 template<> ::bedrock::dataserver::TransferShardLeaderResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::TransferShardLeaderResponse>(Arena*);
 template<> ::bedrock::dataserver::UnlockShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::UnlockShardRequest>(Arena*);
@@ -7342,6 +7374,998 @@ class DataServerLeaveResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dataserver_2eproto;
 };
+// -------------------------------------------------------------------
+
+class StartTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.StartTxRequest) */ {
+ public:
+  inline StartTxRequest() : StartTxRequest(nullptr) {};
+  virtual ~StartTxRequest();
+
+  StartTxRequest(const StartTxRequest& from);
+  StartTxRequest(StartTxRequest&& from) noexcept
+    : StartTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline StartTxRequest& operator=(const StartTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StartTxRequest& operator=(StartTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StartTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StartTxRequest* internal_default_instance() {
+    return reinterpret_cast<const StartTxRequest*>(
+               &_StartTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    46;
+
+  friend void swap(StartTxRequest& a, StartTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StartTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StartTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StartTxRequest* New() const final {
+    return CreateMaybeMessage<StartTxRequest>(nullptr);
+  }
+
+  StartTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StartTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StartTxRequest& from);
+  void MergeFrom(const StartTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StartTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.StartTxRequest";
+  }
+  protected:
+  explicit StartTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.StartTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StartTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.StartTxResponse) */ {
+ public:
+  inline StartTxResponse() : StartTxResponse(nullptr) {};
+  virtual ~StartTxResponse();
+
+  StartTxResponse(const StartTxResponse& from);
+  StartTxResponse(StartTxResponse&& from) noexcept
+    : StartTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline StartTxResponse& operator=(const StartTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StartTxResponse& operator=(StartTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StartTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StartTxResponse* internal_default_instance() {
+    return reinterpret_cast<const StartTxResponse*>(
+               &_StartTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    47;
+
+  friend void swap(StartTxResponse& a, StartTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StartTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StartTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StartTxResponse* New() const final {
+    return CreateMaybeMessage<StartTxResponse>(nullptr);
+  }
+
+  StartTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StartTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StartTxResponse& from);
+  void MergeFrom(const StartTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StartTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.StartTxResponse";
+  }
+  protected:
+  explicit StartTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.StartTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PrepareTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.PrepareTxRequest) */ {
+ public:
+  inline PrepareTxRequest() : PrepareTxRequest(nullptr) {};
+  virtual ~PrepareTxRequest();
+
+  PrepareTxRequest(const PrepareTxRequest& from);
+  PrepareTxRequest(PrepareTxRequest&& from) noexcept
+    : PrepareTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline PrepareTxRequest& operator=(const PrepareTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PrepareTxRequest& operator=(PrepareTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PrepareTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PrepareTxRequest* internal_default_instance() {
+    return reinterpret_cast<const PrepareTxRequest*>(
+               &_PrepareTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    48;
+
+  friend void swap(PrepareTxRequest& a, PrepareTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PrepareTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PrepareTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PrepareTxRequest* New() const final {
+    return CreateMaybeMessage<PrepareTxRequest>(nullptr);
+  }
+
+  PrepareTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PrepareTxRequest& from);
+  void MergeFrom(const PrepareTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PrepareTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.PrepareTxRequest";
+  }
+  protected:
+  explicit PrepareTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.PrepareTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PrepareTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.PrepareTxResponse) */ {
+ public:
+  inline PrepareTxResponse() : PrepareTxResponse(nullptr) {};
+  virtual ~PrepareTxResponse();
+
+  PrepareTxResponse(const PrepareTxResponse& from);
+  PrepareTxResponse(PrepareTxResponse&& from) noexcept
+    : PrepareTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline PrepareTxResponse& operator=(const PrepareTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PrepareTxResponse& operator=(PrepareTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PrepareTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PrepareTxResponse* internal_default_instance() {
+    return reinterpret_cast<const PrepareTxResponse*>(
+               &_PrepareTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    49;
+
+  friend void swap(PrepareTxResponse& a, PrepareTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PrepareTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PrepareTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PrepareTxResponse* New() const final {
+    return CreateMaybeMessage<PrepareTxResponse>(nullptr);
+  }
+
+  PrepareTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PrepareTxResponse& from);
+  void MergeFrom(const PrepareTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PrepareTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.PrepareTxResponse";
+  }
+  protected:
+  explicit PrepareTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.PrepareTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CommitTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.CommitTxRequest) */ {
+ public:
+  inline CommitTxRequest() : CommitTxRequest(nullptr) {};
+  virtual ~CommitTxRequest();
+
+  CommitTxRequest(const CommitTxRequest& from);
+  CommitTxRequest(CommitTxRequest&& from) noexcept
+    : CommitTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CommitTxRequest& operator=(const CommitTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommitTxRequest& operator=(CommitTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CommitTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CommitTxRequest* internal_default_instance() {
+    return reinterpret_cast<const CommitTxRequest*>(
+               &_CommitTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    50;
+
+  friend void swap(CommitTxRequest& a, CommitTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommitTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommitTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CommitTxRequest* New() const final {
+    return CreateMaybeMessage<CommitTxRequest>(nullptr);
+  }
+
+  CommitTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CommitTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CommitTxRequest& from);
+  void MergeFrom(const CommitTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommitTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.CommitTxRequest";
+  }
+  protected:
+  explicit CommitTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.CommitTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CommitTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.CommitTxResponse) */ {
+ public:
+  inline CommitTxResponse() : CommitTxResponse(nullptr) {};
+  virtual ~CommitTxResponse();
+
+  CommitTxResponse(const CommitTxResponse& from);
+  CommitTxResponse(CommitTxResponse&& from) noexcept
+    : CommitTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CommitTxResponse& operator=(const CommitTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommitTxResponse& operator=(CommitTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CommitTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CommitTxResponse* internal_default_instance() {
+    return reinterpret_cast<const CommitTxResponse*>(
+               &_CommitTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    51;
+
+  friend void swap(CommitTxResponse& a, CommitTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommitTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommitTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CommitTxResponse* New() const final {
+    return CreateMaybeMessage<CommitTxResponse>(nullptr);
+  }
+
+  CommitTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CommitTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CommitTxResponse& from);
+  void MergeFrom(const CommitTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommitTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.CommitTxResponse";
+  }
+  protected:
+  explicit CommitTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.CommitTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CancelTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.CancelTxRequest) */ {
+ public:
+  inline CancelTxRequest() : CancelTxRequest(nullptr) {};
+  virtual ~CancelTxRequest();
+
+  CancelTxRequest(const CancelTxRequest& from);
+  CancelTxRequest(CancelTxRequest&& from) noexcept
+    : CancelTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CancelTxRequest& operator=(const CancelTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CancelTxRequest& operator=(CancelTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CancelTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CancelTxRequest* internal_default_instance() {
+    return reinterpret_cast<const CancelTxRequest*>(
+               &_CancelTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    52;
+
+  friend void swap(CancelTxRequest& a, CancelTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CancelTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CancelTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CancelTxRequest* New() const final {
+    return CreateMaybeMessage<CancelTxRequest>(nullptr);
+  }
+
+  CancelTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CancelTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CancelTxRequest& from);
+  void MergeFrom(const CancelTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CancelTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.CancelTxRequest";
+  }
+  protected:
+  explicit CancelTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.CancelTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CancelTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.CancelTxResponse) */ {
+ public:
+  inline CancelTxResponse() : CancelTxResponse(nullptr) {};
+  virtual ~CancelTxResponse();
+
+  CancelTxResponse(const CancelTxResponse& from);
+  CancelTxResponse(CancelTxResponse&& from) noexcept
+    : CancelTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CancelTxResponse& operator=(const CancelTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CancelTxResponse& operator=(CancelTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CancelTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CancelTxResponse* internal_default_instance() {
+    return reinterpret_cast<const CancelTxResponse*>(
+               &_CancelTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    53;
+
+  friend void swap(CancelTxResponse& a, CancelTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CancelTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CancelTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CancelTxResponse* New() const final {
+    return CreateMaybeMessage<CancelTxResponse>(nullptr);
+  }
+
+  CancelTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CancelTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CancelTxResponse& from);
+  void MergeFrom(const CancelTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CancelTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.CancelTxResponse";
+  }
+  protected:
+  explicit CancelTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.CancelTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
 // ===================================================================
 
 class DataService_Stub;
@@ -7404,6 +8428,22 @@ class DataService : public ::PROTOBUF_NAMESPACE_ID::Service {
   virtual void MigrateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::MigrateShardRequest* request,
                        ::bedrock::dataserver::MigrateShardResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void StartTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::StartTxRequest* request,
+                       ::bedrock::dataserver::StartTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void PrepareTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::PrepareTxRequest* request,
+                       ::bedrock::dataserver::PrepareTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void CommitTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::CommitTxRequest* request,
+                       ::bedrock::dataserver::CommitTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void CancelTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::CancelTxRequest* request,
+                       ::bedrock::dataserver::CancelTxResponse* response,
                        ::google::protobuf::Closure* done);
 
   // implements Service ----------------------------------------------
@@ -7481,6 +8521,22 @@ class DataService_Stub : public DataService {
   void MigrateShard(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::MigrateShardRequest* request,
                        ::bedrock::dataserver::MigrateShardResponse* response,
+                       ::google::protobuf::Closure* done);
+  void StartTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::StartTxRequest* request,
+                       ::bedrock::dataserver::StartTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  void PrepareTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::PrepareTxRequest* request,
+                       ::bedrock::dataserver::PrepareTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  void CommitTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::CommitTxRequest* request,
+                       ::bedrock::dataserver::CommitTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  void CancelTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::CancelTxRequest* request,
+                       ::bedrock::dataserver::CancelTxResponse* response,
                        ::google::protobuf::Closure* done);
  private:
   ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel_;
@@ -11260,9 +12316,57 @@ inline void ShardInstallSnapshotRequest::set_last_wal_index(::PROTOBUF_NAMESPACE
 
 // DataServerLeaveResponse
 
+// -------------------------------------------------------------------
+
+// StartTxRequest
+
+// -------------------------------------------------------------------
+
+// StartTxResponse
+
+// -------------------------------------------------------------------
+
+// PrepareTxRequest
+
+// -------------------------------------------------------------------
+
+// PrepareTxResponse
+
+// -------------------------------------------------------------------
+
+// CommitTxRequest
+
+// -------------------------------------------------------------------
+
+// CommitTxResponse
+
+// -------------------------------------------------------------------
+
+// CancelTxRequest
+
+// -------------------------------------------------------------------
+
+// CancelTxResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

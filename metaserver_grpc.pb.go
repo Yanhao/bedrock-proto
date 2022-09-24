@@ -41,6 +41,7 @@ type MetaServiceClient interface {
 	ListDataServer(ctx context.Context, in *ListDataServerRequest, opts ...grpc.CallOption) (*ListDataServerResponse, error)
 	UpdateDataServer(ctx context.Context, in *UpdateDataServerRequest, opts ...grpc.CallOption) (*UpdateDataServerResponse, error)
 	SyncShardInDataServer(ctx context.Context, opts ...grpc.CallOption) (MetaService_SyncShardInDataServerClient, error)
+	AllocateTxIDs(ctx context.Context, in *AllocateTxIDsRequest, opts ...grpc.CallOption) (*AllocateTxIDsResponse, error)
 }
 
 type metaServiceClient struct {
@@ -229,6 +230,15 @@ func (x *metaServiceSyncShardInDataServerClient) CloseAndRecv() (*SyncShardInDat
 	return m, nil
 }
 
+func (c *metaServiceClient) AllocateTxIDs(ctx context.Context, in *AllocateTxIDsRequest, opts ...grpc.CallOption) (*AllocateTxIDsResponse, error) {
+	out := new(AllocateTxIDsResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.metaserver.MetaService/AllocateTxIDs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MetaServiceServer is the server API for MetaService service.
 // All implementations must embed UnimplementedMetaServiceServer
 // for forward compatibility
@@ -251,6 +261,7 @@ type MetaServiceServer interface {
 	ListDataServer(context.Context, *ListDataServerRequest) (*ListDataServerResponse, error)
 	UpdateDataServer(context.Context, *UpdateDataServerRequest) (*UpdateDataServerResponse, error)
 	SyncShardInDataServer(MetaService_SyncShardInDataServerServer) error
+	AllocateTxIDs(context.Context, *AllocateTxIDsRequest) (*AllocateTxIDsResponse, error)
 	mustEmbedUnimplementedMetaServiceServer()
 }
 
@@ -308,6 +319,9 @@ func (UnimplementedMetaServiceServer) UpdateDataServer(context.Context, *UpdateD
 }
 func (UnimplementedMetaServiceServer) SyncShardInDataServer(MetaService_SyncShardInDataServerServer) error {
 	return status.Errorf(codes.Unimplemented, "method SyncShardInDataServer not implemented")
+}
+func (UnimplementedMetaServiceServer) AllocateTxIDs(context.Context, *AllocateTxIDsRequest) (*AllocateTxIDsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AllocateTxIDs not implemented")
 }
 func (UnimplementedMetaServiceServer) mustEmbedUnimplementedMetaServiceServer() {}
 
@@ -636,6 +650,24 @@ func (x *metaServiceSyncShardInDataServerServer) Recv() (*SyncShardInDataServerR
 	return m, nil
 }
 
+func _MetaService_AllocateTxIDs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AllocateTxIDsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MetaServiceServer).AllocateTxIDs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.metaserver.MetaService/AllocateTxIDs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MetaServiceServer).AllocateTxIDs(ctx, req.(*AllocateTxIDsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // MetaService_ServiceDesc is the grpc.ServiceDesc for MetaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -706,6 +738,10 @@ var MetaService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateDataServer",
 			Handler:    _MetaService_UpdateDataServer_Handler,
+		},
+		{
+			MethodName: "AllocateTxIDs",
+			Handler:    _MetaService_AllocateTxIDs_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -222,6 +222,14 @@ message SyncShardInDataServerRequest {
 message SyncShardInDataServerResponse {
 }
 
+message AllocateTxIDsRequest {
+    uint32 count = 1;
+}
+
+message AllocateTxIDsResponse {
+    repeated uint64 tx_ids  = 1;
+}
+
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
@@ -244,4 +252,6 @@ service MetaService {
     rpc ListDataServer (ListDataServerRequest) returns (ListDataServerResponse);
     rpc UpdateDataServer (UpdateDataServerRequest) returns (UpdateDataServerResponse);
     rpc SyncShardInDataServer(stream SyncShardInDataServerRequest) returns (SyncShardInDataServerResponse);
+
+    rpc AllocateTxIDs(AllocateTxIDsRequest) returns (AllocateTxIDsResponse);
 }

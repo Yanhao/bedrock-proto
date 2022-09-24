@@ -202,6 +202,14 @@ class SyncShardInDataServerResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SyncShardInDataServerResponse> _instance;
 } _SyncShardInDataServerResponse_default_instance_;
+class AllocateTxIDsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AllocateTxIDsRequest> _instance;
+} _AllocateTxIDsRequest_default_instance_;
+class AllocateTxIDsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AllocateTxIDsResponse> _instance;
+} _AllocateTxIDsResponse_default_instance_;
 }  // namespace metaserver
 }  // namespace bedrock
 static void InitDefaultsscc_info_AddDataServerRequest_metaserver_2eproto() {
@@ -231,6 +239,34 @@ static void InitDefaultsscc_info_AddDataServerResponse_metaserver_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddDataServerResponse_metaserver_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddDataServerResponse_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_AllocateTxIDsRequest_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_AllocateTxIDsRequest_default_instance_;
+    new (ptr) ::bedrock::metaserver::AllocateTxIDsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::AllocateTxIDsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AllocateTxIDsRequest_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AllocateTxIDsRequest_metaserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_AllocateTxIDsResponse_metaserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::metaserver::_AllocateTxIDsResponse_default_instance_;
+    new (ptr) ::bedrock::metaserver::AllocateTxIDsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::metaserver::AllocateTxIDsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AllocateTxIDsResponse_metaserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AllocateTxIDsResponse_metaserver_2eproto}, {}};
 
 static void InitDefaultsscc_info_CreateShardRequest_metaserver_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -836,7 +872,7 @@ static void InitDefaultsscc_info_UpdateDataServerResponse_metaserver_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateDataServerResponse_metaserver_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateDataServerResponse_metaserver_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_metaserver_2eproto[44];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_metaserver_2eproto[46];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_metaserver_2eproto = nullptr;
 static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* file_level_service_descriptors_metaserver_2eproto[1];
 
@@ -1138,6 +1174,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_metaserver_2eproto::offsets[] 
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AllocateTxIDsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AllocateTxIDsRequest, count_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AllocateTxIDsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::metaserver::AllocateTxIDsResponse, tx_ids_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::bedrock::metaserver::Storage)},
@@ -1184,6 +1232,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 273, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerRequest_SyncShardInfo)},
   { 283, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerRequest)},
   { 292, -1, sizeof(::bedrock::metaserver::SyncShardInDataServerResponse)},
+  { 297, -1, sizeof(::bedrock::metaserver::AllocateTxIDsRequest)},
+  { 303, -1, sizeof(::bedrock::metaserver::AllocateTxIDsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1231,6 +1281,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_SyncShardInDataServerRequest_SyncShardInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_SyncShardInDataServerRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_SyncShardInDataServerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_AllocateTxIDsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::metaserver::_AllocateTxIDsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -1313,7 +1365,9 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "\022-\n\tcreate_ts\030\003 \001(\0132\032.google.protobuf.Ti"
   "mestamp\022\016\n\006leader\030\004 \001(\t\0224\n\020leader_change"
   "_ts\030\005 \001(\0132\032.google.protobuf.Timestamp\"\037\n"
-  "\035SyncShardInDataServerResponse2\330\r\n\013MetaS"
+  "\035SyncShardInDataServerResponse\"%\n\024Alloca"
+  "teTxIDsRequest\022\r\n\005count\030\001 \001(\r\"\'\n\025Allocat"
+  "eTxIDsResponse\022\016\n\006tx_ids\030\001 \003(\0042\276\016\n\013MetaS"
   "ervice\022I\n\tHeartBeat\022$.bedrock.metaserver"
   ".HeartBeatRequest\032\026.google.protobuf.Empt"
   "y\022g\n\016GetShardRoutes\022).bedrock.metaserver"
@@ -1357,17 +1411,21 @@ const char descriptor_table_protodef_metaserver_2eproto[] PROTOBUF_SECTION_VARIA
   "ataServerResponse\022~\n\025SyncShardInDataServ"
   "er\0220.bedrock.metaserver.SyncShardInDataS"
   "erverRequest\0321.bedrock.metaserver.SyncSh"
-  "ardInDataServerResponse(\001B.Z)sr.ht/moyan"
-  "hao/bedrock-metaserver/service\200\001\001b\006proto"
-  "3"
+  "ardInDataServerResponse(\001\022d\n\rAllocateTxI"
+  "Ds\022(.bedrock.metaserver.AllocateTxIDsReq"
+  "uest\032).bedrock.metaserver.AllocateTxIDsR"
+  "esponseB.Z)sr.ht/moyanhao/bedrock-metase"
+  "rver/service\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_metaserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_metaserver_2eproto_sccs[44] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_metaserver_2eproto_sccs[46] = {
   &scc_info_AddDataServerRequest_metaserver_2eproto.base,
   &scc_info_AddDataServerResponse_metaserver_2eproto.base,
+  &scc_info_AllocateTxIDsRequest_metaserver_2eproto.base,
+  &scc_info_AllocateTxIDsResponse_metaserver_2eproto.base,
   &scc_info_CreateShardRequest_metaserver_2eproto.base,
   &scc_info_CreateShardResponse_metaserver_2eproto.base,
   &scc_info_CreateStorageRequest_metaserver_2eproto.base,
@@ -1413,10 +1471,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_met
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_metaserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_metaserver_2eproto = {
-  false, false, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 5001,
-  &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_sccs, descriptor_table_metaserver_2eproto_deps, 44, 2,
+  false, false, descriptor_table_protodef_metaserver_2eproto, "metaserver.proto", 5183,
+  &descriptor_table_metaserver_2eproto_once, descriptor_table_metaserver_2eproto_sccs, descriptor_table_metaserver_2eproto_deps, 46, 2,
   schemas, file_default_instances, TableStruct_metaserver_2eproto::offsets,
-  file_level_metadata_metaserver_2eproto, 44, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
+  file_level_metadata_metaserver_2eproto, 46, file_level_enum_descriptors_metaserver_2eproto, file_level_service_descriptors_metaserver_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -11645,6 +11703,412 @@ void SyncShardInDataServerResponse::InternalSwap(SyncShardInDataServerResponse* 
 
 // ===================================================================
 
+void AllocateTxIDsRequest::InitAsDefaultInstance() {
+}
+class AllocateTxIDsRequest::_Internal {
+ public:
+};
+
+AllocateTxIDsRequest::AllocateTxIDsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.AllocateTxIDsRequest)
+}
+AllocateTxIDsRequest::AllocateTxIDsRequest(const AllocateTxIDsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  count_ = from.count_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.AllocateTxIDsRequest)
+}
+
+void AllocateTxIDsRequest::SharedCtor() {
+  count_ = 0u;
+}
+
+AllocateTxIDsRequest::~AllocateTxIDsRequest() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.AllocateTxIDsRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AllocateTxIDsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void AllocateTxIDsRequest::ArenaDtor(void* object) {
+  AllocateTxIDsRequest* _this = reinterpret_cast< AllocateTxIDsRequest* >(object);
+  (void)_this;
+}
+void AllocateTxIDsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AllocateTxIDsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AllocateTxIDsRequest& AllocateTxIDsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AllocateTxIDsRequest_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AllocateTxIDsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.AllocateTxIDsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  count_ = 0u;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AllocateTxIDsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 count = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AllocateTxIDsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.AllocateTxIDsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 count = 1;
+  if (this->count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_count(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.AllocateTxIDsRequest)
+  return target;
+}
+
+size_t AllocateTxIDsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.AllocateTxIDsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 count = 1;
+  if (this->count() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_count());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AllocateTxIDsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.AllocateTxIDsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AllocateTxIDsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AllocateTxIDsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.AllocateTxIDsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.AllocateTxIDsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AllocateTxIDsRequest::MergeFrom(const AllocateTxIDsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.AllocateTxIDsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.count() != 0) {
+    _internal_set_count(from._internal_count());
+  }
+}
+
+void AllocateTxIDsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.AllocateTxIDsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AllocateTxIDsRequest::CopyFrom(const AllocateTxIDsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.AllocateTxIDsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AllocateTxIDsRequest::IsInitialized() const {
+  return true;
+}
+
+void AllocateTxIDsRequest::InternalSwap(AllocateTxIDsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(count_, other->count_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AllocateTxIDsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AllocateTxIDsResponse::InitAsDefaultInstance() {
+}
+class AllocateTxIDsResponse::_Internal {
+ public:
+};
+
+AllocateTxIDsResponse::AllocateTxIDsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  tx_ids_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.metaserver.AllocateTxIDsResponse)
+}
+AllocateTxIDsResponse::AllocateTxIDsResponse(const AllocateTxIDsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      tx_ids_(from.tx_ids_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:bedrock.metaserver.AllocateTxIDsResponse)
+}
+
+void AllocateTxIDsResponse::SharedCtor() {
+}
+
+AllocateTxIDsResponse::~AllocateTxIDsResponse() {
+  // @@protoc_insertion_point(destructor:bedrock.metaserver.AllocateTxIDsResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AllocateTxIDsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void AllocateTxIDsResponse::ArenaDtor(void* object) {
+  AllocateTxIDsResponse* _this = reinterpret_cast< AllocateTxIDsResponse* >(object);
+  (void)_this;
+}
+void AllocateTxIDsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AllocateTxIDsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AllocateTxIDsResponse& AllocateTxIDsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AllocateTxIDsResponse_metaserver_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AllocateTxIDsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.metaserver.AllocateTxIDsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  tx_ids_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AllocateTxIDsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated uint64 tx_ids = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt64Parser(_internal_mutable_tx_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
+          _internal_add_tx_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AllocateTxIDsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.metaserver.AllocateTxIDsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated uint64 tx_ids = 1;
+  {
+    int byte_size = _tx_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteUInt64Packed(
+          1, _internal_tx_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.metaserver.AllocateTxIDsResponse)
+  return target;
+}
+
+size_t AllocateTxIDsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.metaserver.AllocateTxIDsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated uint64 tx_ids = 1;
+  {
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      UInt64Size(this->tx_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _tx_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AllocateTxIDsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.metaserver.AllocateTxIDsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AllocateTxIDsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AllocateTxIDsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.metaserver.AllocateTxIDsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.metaserver.AllocateTxIDsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AllocateTxIDsResponse::MergeFrom(const AllocateTxIDsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.metaserver.AllocateTxIDsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  tx_ids_.MergeFrom(from.tx_ids_);
+}
+
+void AllocateTxIDsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.metaserver.AllocateTxIDsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AllocateTxIDsResponse::CopyFrom(const AllocateTxIDsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.metaserver.AllocateTxIDsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AllocateTxIDsResponse::IsInitialized() const {
+  return true;
+}
+
+void AllocateTxIDsResponse::InternalSwap(AllocateTxIDsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  tx_ids_.InternalSwap(&other->tx_ids_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AllocateTxIDsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 MetaService::~MetaService() {}
 
 const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* MetaService::descriptor() {
@@ -11792,6 +12256,14 @@ void MetaService::SyncShardInDataServer(::PROTOBUF_NAMESPACE_ID::RpcController* 
   done->Run();
 }
 
+void MetaService::AllocateTxIDs(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::bedrock::metaserver::AllocateTxIDsRequest*,
+                         ::bedrock::metaserver::AllocateTxIDsResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method AllocateTxIDs() not implemented.");
+  done->Run();
+}
+
 void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method,
                              ::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                              const ::PROTOBUF_NAMESPACE_ID::Message* request,
@@ -11935,6 +12407,14 @@ void MetaService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* me
                  response),
              done);
       break;
+    case 17:
+      AllocateTxIDs(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::bedrock::metaserver::AllocateTxIDsRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::bedrock::metaserver::AllocateTxIDsResponse*>(
+                 response),
+             done);
+      break;
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       break;
@@ -11979,6 +12459,8 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MetaService::GetRequestPrototype(
       return ::bedrock::metaserver::UpdateDataServerRequest::default_instance();
     case 16:
       return ::bedrock::metaserver::SyncShardInDataServerRequest::default_instance();
+    case 17:
+      return ::bedrock::metaserver::AllocateTxIDsRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -12024,6 +12506,8 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MetaService::GetResponsePrototype(
       return ::bedrock::metaserver::UpdateDataServerResponse::default_instance();
     case 16:
       return ::bedrock::metaserver::SyncShardInDataServerResponse::default_instance();
+    case 17:
+      return ::bedrock::metaserver::AllocateTxIDsResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -12159,6 +12643,13 @@ void MetaService_Stub::SyncShardInDataServer(::PROTOBUF_NAMESPACE_ID::RpcControl
                               ::bedrock::metaserver::SyncShardInDataServerResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(16),
+                       controller, request, response, done);
+}
+void MetaService_Stub::AllocateTxIDs(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::bedrock::metaserver::AllocateTxIDsRequest* request,
+                              ::bedrock::metaserver::AllocateTxIDsResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(17),
                        controller, request, response, done);
 }
 
@@ -12297,6 +12788,12 @@ template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerRequest
 }
 template<> PROTOBUF_NOINLINE ::bedrock::metaserver::SyncShardInDataServerResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::SyncShardInDataServerResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::metaserver::SyncShardInDataServerResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::AllocateTxIDsRequest* Arena::CreateMaybeMessage< ::bedrock::metaserver::AllocateTxIDsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::metaserver::AllocateTxIDsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::metaserver::AllocateTxIDsResponse* Arena::CreateMaybeMessage< ::bedrock::metaserver::AllocateTxIDsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::metaserver::AllocateTxIDsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

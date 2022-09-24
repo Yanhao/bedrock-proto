@@ -49,7 +49,7 @@ struct TableStruct_proxy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -58,6 +58,12 @@ struct TableStruct_proxy_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proxy_2eproto;
 namespace bedrock {
 namespace proxy {
+class BedRockCommitTxRequest;
+class BedRockCommitTxRequestDefaultTypeInternal;
+extern BedRockCommitTxRequestDefaultTypeInternal _BedRockCommitTxRequest_default_instance_;
+class BedRockCommitTxResponse;
+class BedRockCommitTxResponseDefaultTypeInternal;
+extern BedRockCommitTxResponseDefaultTypeInternal _BedRockCommitTxResponse_default_instance_;
 class BedRockDoScanRequest;
 class BedRockDoScanRequestDefaultTypeInternal;
 extern BedRockDoScanRequestDefaultTypeInternal _BedRockDoScanRequest_default_instance_;
@@ -115,12 +121,24 @@ extern BedRockKvSetRequestDefaultTypeInternal _BedRockKvSetRequest_default_insta
 class BedRockKvSetResponse;
 class BedRockKvSetResponseDefaultTypeInternal;
 extern BedRockKvSetResponseDefaultTypeInternal _BedRockKvSetResponse_default_instance_;
+class BedRockRollbackTxRequest;
+class BedRockRollbackTxRequestDefaultTypeInternal;
+extern BedRockRollbackTxRequestDefaultTypeInternal _BedRockRollbackTxRequest_default_instance_;
+class BedRockRollbackTxResponse;
+class BedRockRollbackTxResponseDefaultTypeInternal;
+extern BedRockRollbackTxResponseDefaultTypeInternal _BedRockRollbackTxResponse_default_instance_;
 class BedRockStartScanRequest;
 class BedRockStartScanRequestDefaultTypeInternal;
 extern BedRockStartScanRequestDefaultTypeInternal _BedRockStartScanRequest_default_instance_;
 class BedRockStartScanResponse;
 class BedRockStartScanResponseDefaultTypeInternal;
 extern BedRockStartScanResponseDefaultTypeInternal _BedRockStartScanResponse_default_instance_;
+class BedRockStartTxRequest;
+class BedRockStartTxRequestDefaultTypeInternal;
+extern BedRockStartTxRequestDefaultTypeInternal _BedRockStartTxRequest_default_instance_;
+class BedRockStartTxResponse;
+class BedRockStartTxResponseDefaultTypeInternal;
+extern BedRockStartTxResponseDefaultTypeInternal _BedRockStartTxResponse_default_instance_;
 class BedRockStopScanRequest;
 class BedRockStopScanRequestDefaultTypeInternal;
 extern BedRockStopScanRequestDefaultTypeInternal _BedRockStopScanRequest_default_instance_;
@@ -130,6 +148,8 @@ extern BedRockStopScanResponseDefaultTypeInternal _BedRockStopScanResponse_defau
 }  // namespace proxy
 }  // namespace bedrock
 PROTOBUF_NAMESPACE_OPEN
+template<> ::bedrock::proxy::BedRockCommitTxRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockCommitTxRequest>(Arena*);
+template<> ::bedrock::proxy::BedRockCommitTxResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockCommitTxResponse>(Arena*);
 template<> ::bedrock::proxy::BedRockDoScanRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockDoScanRequest>(Arena*);
 template<> ::bedrock::proxy::BedRockDoScanResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockDoScanResponse>(Arena*);
 template<> ::bedrock::proxy::BedRockKvDeleteRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockKvDeleteRequest>(Arena*);
@@ -149,8 +169,12 @@ template<> ::bedrock::proxy::BedRockKvMSetResponse* Arena::CreateMaybeMessage<::
 template<> ::bedrock::proxy::BedRockKvPair* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockKvPair>(Arena*);
 template<> ::bedrock::proxy::BedRockKvSetRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockKvSetRequest>(Arena*);
 template<> ::bedrock::proxy::BedRockKvSetResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockKvSetResponse>(Arena*);
+template<> ::bedrock::proxy::BedRockRollbackTxRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockRollbackTxRequest>(Arena*);
+template<> ::bedrock::proxy::BedRockRollbackTxResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockRollbackTxResponse>(Arena*);
 template<> ::bedrock::proxy::BedRockStartScanRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockStartScanRequest>(Arena*);
 template<> ::bedrock::proxy::BedRockStartScanResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockStartScanResponse>(Arena*);
+template<> ::bedrock::proxy::BedRockStartTxRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockStartTxRequest>(Arena*);
+template<> ::bedrock::proxy::BedRockStartTxResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockStartTxResponse>(Arena*);
 template<> ::bedrock::proxy::BedRockStopScanRequest* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockStopScanRequest>(Arena*);
 template<> ::bedrock::proxy::BedRockStopScanResponse* Arena::CreateMaybeMessage<::bedrock::proxy::BedRockStopScanResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -3818,6 +3842,750 @@ class BedRockDoScanResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proxy_2eproto;
 };
+// -------------------------------------------------------------------
+
+class BedRockStartTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.proxy.BedRockStartTxRequest) */ {
+ public:
+  inline BedRockStartTxRequest() : BedRockStartTxRequest(nullptr) {};
+  virtual ~BedRockStartTxRequest();
+
+  BedRockStartTxRequest(const BedRockStartTxRequest& from);
+  BedRockStartTxRequest(BedRockStartTxRequest&& from) noexcept
+    : BedRockStartTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline BedRockStartTxRequest& operator=(const BedRockStartTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BedRockStartTxRequest& operator=(BedRockStartTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BedRockStartTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BedRockStartTxRequest* internal_default_instance() {
+    return reinterpret_cast<const BedRockStartTxRequest*>(
+               &_BedRockStartTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(BedRockStartTxRequest& a, BedRockStartTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BedRockStartTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BedRockStartTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BedRockStartTxRequest* New() const final {
+    return CreateMaybeMessage<BedRockStartTxRequest>(nullptr);
+  }
+
+  BedRockStartTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BedRockStartTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BedRockStartTxRequest& from);
+  void MergeFrom(const BedRockStartTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BedRockStartTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.proxy.BedRockStartTxRequest";
+  }
+  protected:
+  explicit BedRockStartTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proxy_2eproto);
+    return ::descriptor_table_proxy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.proxy.BedRockStartTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BedRockStartTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.proxy.BedRockStartTxResponse) */ {
+ public:
+  inline BedRockStartTxResponse() : BedRockStartTxResponse(nullptr) {};
+  virtual ~BedRockStartTxResponse();
+
+  BedRockStartTxResponse(const BedRockStartTxResponse& from);
+  BedRockStartTxResponse(BedRockStartTxResponse&& from) noexcept
+    : BedRockStartTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline BedRockStartTxResponse& operator=(const BedRockStartTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BedRockStartTxResponse& operator=(BedRockStartTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BedRockStartTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BedRockStartTxResponse* internal_default_instance() {
+    return reinterpret_cast<const BedRockStartTxResponse*>(
+               &_BedRockStartTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(BedRockStartTxResponse& a, BedRockStartTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BedRockStartTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BedRockStartTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BedRockStartTxResponse* New() const final {
+    return CreateMaybeMessage<BedRockStartTxResponse>(nullptr);
+  }
+
+  BedRockStartTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BedRockStartTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BedRockStartTxResponse& from);
+  void MergeFrom(const BedRockStartTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BedRockStartTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.proxy.BedRockStartTxResponse";
+  }
+  protected:
+  explicit BedRockStartTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proxy_2eproto);
+    return ::descriptor_table_proxy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.proxy.BedRockStartTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BedRockCommitTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.proxy.BedRockCommitTxRequest) */ {
+ public:
+  inline BedRockCommitTxRequest() : BedRockCommitTxRequest(nullptr) {};
+  virtual ~BedRockCommitTxRequest();
+
+  BedRockCommitTxRequest(const BedRockCommitTxRequest& from);
+  BedRockCommitTxRequest(BedRockCommitTxRequest&& from) noexcept
+    : BedRockCommitTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline BedRockCommitTxRequest& operator=(const BedRockCommitTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BedRockCommitTxRequest& operator=(BedRockCommitTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BedRockCommitTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BedRockCommitTxRequest* internal_default_instance() {
+    return reinterpret_cast<const BedRockCommitTxRequest*>(
+               &_BedRockCommitTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(BedRockCommitTxRequest& a, BedRockCommitTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BedRockCommitTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BedRockCommitTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BedRockCommitTxRequest* New() const final {
+    return CreateMaybeMessage<BedRockCommitTxRequest>(nullptr);
+  }
+
+  BedRockCommitTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BedRockCommitTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BedRockCommitTxRequest& from);
+  void MergeFrom(const BedRockCommitTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BedRockCommitTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.proxy.BedRockCommitTxRequest";
+  }
+  protected:
+  explicit BedRockCommitTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proxy_2eproto);
+    return ::descriptor_table_proxy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.proxy.BedRockCommitTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BedRockCommitTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.proxy.BedRockCommitTxResponse) */ {
+ public:
+  inline BedRockCommitTxResponse() : BedRockCommitTxResponse(nullptr) {};
+  virtual ~BedRockCommitTxResponse();
+
+  BedRockCommitTxResponse(const BedRockCommitTxResponse& from);
+  BedRockCommitTxResponse(BedRockCommitTxResponse&& from) noexcept
+    : BedRockCommitTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline BedRockCommitTxResponse& operator=(const BedRockCommitTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BedRockCommitTxResponse& operator=(BedRockCommitTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BedRockCommitTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BedRockCommitTxResponse* internal_default_instance() {
+    return reinterpret_cast<const BedRockCommitTxResponse*>(
+               &_BedRockCommitTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(BedRockCommitTxResponse& a, BedRockCommitTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BedRockCommitTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BedRockCommitTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BedRockCommitTxResponse* New() const final {
+    return CreateMaybeMessage<BedRockCommitTxResponse>(nullptr);
+  }
+
+  BedRockCommitTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BedRockCommitTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BedRockCommitTxResponse& from);
+  void MergeFrom(const BedRockCommitTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BedRockCommitTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.proxy.BedRockCommitTxResponse";
+  }
+  protected:
+  explicit BedRockCommitTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proxy_2eproto);
+    return ::descriptor_table_proxy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.proxy.BedRockCommitTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BedRockRollbackTxRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.proxy.BedRockRollbackTxRequest) */ {
+ public:
+  inline BedRockRollbackTxRequest() : BedRockRollbackTxRequest(nullptr) {};
+  virtual ~BedRockRollbackTxRequest();
+
+  BedRockRollbackTxRequest(const BedRockRollbackTxRequest& from);
+  BedRockRollbackTxRequest(BedRockRollbackTxRequest&& from) noexcept
+    : BedRockRollbackTxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline BedRockRollbackTxRequest& operator=(const BedRockRollbackTxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BedRockRollbackTxRequest& operator=(BedRockRollbackTxRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BedRockRollbackTxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BedRockRollbackTxRequest* internal_default_instance() {
+    return reinterpret_cast<const BedRockRollbackTxRequest*>(
+               &_BedRockRollbackTxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(BedRockRollbackTxRequest& a, BedRockRollbackTxRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BedRockRollbackTxRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BedRockRollbackTxRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BedRockRollbackTxRequest* New() const final {
+    return CreateMaybeMessage<BedRockRollbackTxRequest>(nullptr);
+  }
+
+  BedRockRollbackTxRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BedRockRollbackTxRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BedRockRollbackTxRequest& from);
+  void MergeFrom(const BedRockRollbackTxRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BedRockRollbackTxRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.proxy.BedRockRollbackTxRequest";
+  }
+  protected:
+  explicit BedRockRollbackTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proxy_2eproto);
+    return ::descriptor_table_proxy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.proxy.BedRockRollbackTxRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BedRockRollbackTxResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.proxy.BedRockRollbackTxResponse) */ {
+ public:
+  inline BedRockRollbackTxResponse() : BedRockRollbackTxResponse(nullptr) {};
+  virtual ~BedRockRollbackTxResponse();
+
+  BedRockRollbackTxResponse(const BedRockRollbackTxResponse& from);
+  BedRockRollbackTxResponse(BedRockRollbackTxResponse&& from) noexcept
+    : BedRockRollbackTxResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline BedRockRollbackTxResponse& operator=(const BedRockRollbackTxResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BedRockRollbackTxResponse& operator=(BedRockRollbackTxResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const BedRockRollbackTxResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BedRockRollbackTxResponse* internal_default_instance() {
+    return reinterpret_cast<const BedRockRollbackTxResponse*>(
+               &_BedRockRollbackTxResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(BedRockRollbackTxResponse& a, BedRockRollbackTxResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BedRockRollbackTxResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BedRockRollbackTxResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BedRockRollbackTxResponse* New() const final {
+    return CreateMaybeMessage<BedRockRollbackTxResponse>(nullptr);
+  }
+
+  BedRockRollbackTxResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BedRockRollbackTxResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const BedRockRollbackTxResponse& from);
+  void MergeFrom(const BedRockRollbackTxResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BedRockRollbackTxResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.proxy.BedRockRollbackTxResponse";
+  }
+  protected:
+  explicit BedRockRollbackTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proxy_2eproto);
+    return ::descriptor_table_proxy_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.proxy.BedRockRollbackTxResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proxy_2eproto;
+};
 // ===================================================================
 
 class ProxyService_Stub;
@@ -3868,6 +4636,18 @@ class ProxyService : public ::PROTOBUF_NAMESPACE_ID::Service {
   virtual void BedRockDoScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockDoScanRequest* request,
                        ::bedrock::proxy::BedRockDoScanResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void BedRockStartTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::proxy::BedRockStartTxRequest* request,
+                       ::bedrock::proxy::BedRockStartTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void BedRockCommitTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::proxy::BedRockCommitTxRequest* request,
+                       ::bedrock::proxy::BedRockCommitTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void BedRockRollbackTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::proxy::BedRockRollbackTxRequest* request,
+                       ::bedrock::proxy::BedRockRollbackTxResponse* response,
                        ::google::protobuf::Closure* done);
 
   // implements Service ----------------------------------------------
@@ -3933,6 +4713,18 @@ class ProxyService_Stub : public ProxyService {
   void BedRockDoScan(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::proxy::BedRockDoScanRequest* request,
                        ::bedrock::proxy::BedRockDoScanResponse* response,
+                       ::google::protobuf::Closure* done);
+  void BedRockStartTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::proxy::BedRockStartTxRequest* request,
+                       ::bedrock::proxy::BedRockStartTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  void BedRockCommitTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::proxy::BedRockCommitTxRequest* request,
+                       ::bedrock::proxy::BedRockCommitTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  void BedRockRollbackTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::proxy::BedRockRollbackTxRequest* request,
+                       ::bedrock::proxy::BedRockRollbackTxResponse* response,
                        ::google::protobuf::Closure* done);
  private:
   ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel_;
@@ -5870,9 +6662,45 @@ inline void BedRockDoScanResponse::set_err(::bedrock::proxy::Error value) {
   // @@protoc_insertion_point(field_set:bedrock.proxy.BedRockDoScanResponse.err)
 }
 
+// -------------------------------------------------------------------
+
+// BedRockStartTxRequest
+
+// -------------------------------------------------------------------
+
+// BedRockStartTxResponse
+
+// -------------------------------------------------------------------
+
+// BedRockCommitTxRequest
+
+// -------------------------------------------------------------------
+
+// BedRockCommitTxResponse
+
+// -------------------------------------------------------------------
+
+// BedRockRollbackTxRequest
+
+// -------------------------------------------------------------------
+
+// BedRockRollbackTxResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

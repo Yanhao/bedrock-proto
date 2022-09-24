@@ -38,6 +38,10 @@ type DataServiceClient interface {
 	ShardAppendLog(ctx context.Context, in *ShardAppendLogRequest, opts ...grpc.CallOption) (*ShardAppendLogResponse, error)
 	ShardInstallSnapshot(ctx context.Context, opts ...grpc.CallOption) (DataService_ShardInstallSnapshotClient, error)
 	MigrateShard(ctx context.Context, opts ...grpc.CallOption) (DataService_MigrateShardClient, error)
+	StartTx(ctx context.Context, in *StartTxRequest, opts ...grpc.CallOption) (*StartTxResponse, error)
+	PrepareTx(ctx context.Context, in *PrepareTxRequest, opts ...grpc.CallOption) (*PrepareTxResponse, error)
+	CommitTx(ctx context.Context, in *CommitTxRequest, opts ...grpc.CallOption) (*CommitTxResponse, error)
+	CancelTx(ctx context.Context, in *CancelTxRequest, opts ...grpc.CallOption) (*CancelTxResponse, error)
 }
 
 type dataServiceClient struct {
@@ -206,6 +210,42 @@ func (x *dataServiceMigrateShardClient) CloseAndRecv() (*MigrateShardResponse, e
 	return m, nil
 }
 
+func (c *dataServiceClient) StartTx(ctx context.Context, in *StartTxRequest, opts ...grpc.CallOption) (*StartTxResponse, error) {
+	out := new(StartTxResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/StartTx", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) PrepareTx(ctx context.Context, in *PrepareTxRequest, opts ...grpc.CallOption) (*PrepareTxResponse, error) {
+	out := new(PrepareTxResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/PrepareTx", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CommitTx(ctx context.Context, in *CommitTxRequest, opts ...grpc.CallOption) (*CommitTxResponse, error) {
+	out := new(CommitTxResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/CommitTx", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) CancelTx(ctx context.Context, in *CancelTxRequest, opts ...grpc.CallOption) (*CancelTxResponse, error) {
+	out := new(CancelTxResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/CancelTx", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -225,6 +265,10 @@ type DataServiceServer interface {
 	ShardAppendLog(context.Context, *ShardAppendLogRequest) (*ShardAppendLogResponse, error)
 	ShardInstallSnapshot(DataService_ShardInstallSnapshotServer) error
 	MigrateShard(DataService_MigrateShardServer) error
+	StartTx(context.Context, *StartTxRequest) (*StartTxResponse, error)
+	PrepareTx(context.Context, *PrepareTxRequest) (*PrepareTxResponse, error)
+	CommitTx(context.Context, *CommitTxRequest) (*CommitTxResponse, error)
+	CancelTx(context.Context, *CancelTxRequest) (*CancelTxResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -267,6 +311,18 @@ func (UnimplementedDataServiceServer) ShardInstallSnapshot(DataService_ShardInst
 }
 func (UnimplementedDataServiceServer) MigrateShard(DataService_MigrateShardServer) error {
 	return status.Errorf(codes.Unimplemented, "method MigrateShard not implemented")
+}
+func (UnimplementedDataServiceServer) StartTx(context.Context, *StartTxRequest) (*StartTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StartTx not implemented")
+}
+func (UnimplementedDataServiceServer) PrepareTx(context.Context, *PrepareTxRequest) (*PrepareTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrepareTx not implemented")
+}
+func (UnimplementedDataServiceServer) CommitTx(context.Context, *CommitTxRequest) (*CommitTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CommitTx not implemented")
+}
+func (UnimplementedDataServiceServer) CancelTx(context.Context, *CancelTxRequest) (*CancelTxResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelTx not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -513,6 +569,78 @@ func (x *dataServiceMigrateShardServer) Recv() (*MigrateShardRequest, error) {
 	return m, nil
 }
 
+func _DataService_StartTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StartTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).StartTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/StartTx",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).StartTx(ctx, req.(*StartTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_PrepareTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).PrepareTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/PrepareTx",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).PrepareTx(ctx, req.(*PrepareTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CommitTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CommitTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CommitTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/CommitTx",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CommitTx(ctx, req.(*CommitTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_CancelTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelTxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).CancelTx(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/CancelTx",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).CancelTx(ctx, req.(*CancelTxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -559,6 +687,22 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ShardAppendLog",
 			Handler:    _DataService_ShardAppendLog_Handler,
+		},
+		{
+			MethodName: "StartTx",
+			Handler:    _DataService_StartTx_Handler,
+		},
+		{
+			MethodName: "PrepareTx",
+			Handler:    _DataService_PrepareTx_Handler,
+		},
+		{
+			MethodName: "CommitTx",
+			Handler:    _DataService_CommitTx_Handler,
+		},
+		{
+			MethodName: "CancelTx",
+			Handler:    _DataService_CancelTx_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
