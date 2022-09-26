@@ -19,8 +19,14 @@ extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal:
 extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMGetParam_proxy_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvMSetParam_proxy_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockKvPair_proxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockTxRangeLock_proxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proxy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockTxRecordLock_proxy_2eproto;
 namespace bedrock {
 namespace proxy {
+class TxRecordDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TxRecord> _instance;
+} _TxRecord_default_instance_;
 class BedRockKvGetRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockKvGetRequest> _instance;
@@ -113,6 +119,14 @@ class BedRockDoScanResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockDoScanResponse> _instance;
 } _BedRockDoScanResponse_default_instance_;
+class BedRockTxRecordLockDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockTxRecordLock> _instance;
+} _BedRockTxRecordLock_default_instance_;
+class BedRockTxRangeLockDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockTxRangeLock> _instance;
+} _BedRockTxRangeLock_default_instance_;
 class BedRockStartTxRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BedRockStartTxRequest> _instance;
@@ -505,8 +519,10 @@ static void InitDefaultsscc_info_BedRockStartTxRequest_proxy_2eproto() {
   ::bedrock::proxy::BedRockStartTxRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockStartTxRequest_proxy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockStartTxRequest_proxy_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_BedRockStartTxRequest_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_BedRockStartTxRequest_proxy_2eproto}, {
+      &scc_info_BedRockTxRecordLock_proxy_2eproto.base,
+      &scc_info_BedRockTxRangeLock_proxy_2eproto.base,}};
 
 static void InitDefaultsscc_info_BedRockStartTxResponse_proxy_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -550,11 +566,61 @@ static void InitDefaultsscc_info_BedRockStopScanResponse_proxy_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockStopScanResponse_proxy_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockStopScanResponse_proxy_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proxy_2eproto[29];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proxy_2eproto[1];
+static void InitDefaultsscc_info_BedRockTxRangeLock_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockTxRangeLock_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockTxRangeLock();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockTxRangeLock::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockTxRangeLock_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockTxRangeLock_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_BedRockTxRecordLock_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_BedRockTxRecordLock_default_instance_;
+    new (ptr) ::bedrock::proxy::BedRockTxRecordLock();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::BedRockTxRecordLock::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BedRockTxRecordLock_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BedRockTxRecordLock_proxy_2eproto}, {}};
+
+static void InitDefaultsscc_info_TxRecord_proxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bedrock::proxy::_TxRecord_default_instance_;
+    new (ptr) ::bedrock::proxy::TxRecord();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bedrock::proxy::TxRecord::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TxRecord_proxy_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TxRecord_proxy_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proxy_2eproto[32];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proxy_2eproto[3];
 static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* file_level_service_descriptors_proxy_2eproto[1];
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proxy_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::TxRecord, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::TxRecord, tx_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::TxRecord, status_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::TxRecord, heartbeat_ts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockKvGetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -712,69 +778,99 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proxy_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanResponse, no_left_),
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockDoScanResponse, err_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRecordLock, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRecordLock, lock_type_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRecordLock, key_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRangeLock, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRangeLock, lock_type_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRangeLock, start_key_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockTxRangeLock, end_key_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxRequest, record_locks_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxRequest, range_locks_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxResponse, tx_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockStartTxResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockCommitTxRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockCommitTxRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockCommitTxRequest, tx_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockCommitTxResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockCommitTxResponse, err_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockRollbackTxRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockRollbackTxRequest, storage_id_),
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockRollbackTxRequest, tx_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockRollbackTxResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bedrock::proxy::BedRockRollbackTxResponse, err_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::bedrock::proxy::BedRockKvGetRequest)},
-  { 7, -1, sizeof(::bedrock::proxy::BedRockKvGetResponse)},
-  { 14, -1, sizeof(::bedrock::proxy::BedRockKvSetRequest)},
-  { 22, -1, sizeof(::bedrock::proxy::BedRockKvSetResponse)},
-  { 28, -1, sizeof(::bedrock::proxy::BedRockKvDeleteRequest)},
-  { 35, -1, sizeof(::bedrock::proxy::BedRockKvDeleteResponse)},
-  { 41, -1, sizeof(::bedrock::proxy::BedRockKvMSetParam)},
-  { 48, -1, sizeof(::bedrock::proxy::BedRockKvMSetRequest)},
-  { 55, -1, sizeof(::bedrock::proxy::BedRockKvMSetResponse)},
-  { 61, -1, sizeof(::bedrock::proxy::BedRockKvMGetParam)},
-  { 67, -1, sizeof(::bedrock::proxy::BedRockKvMGetRequest)},
-  { 74, -1, sizeof(::bedrock::proxy::BedRockKvMGetKvRetPair)},
-  { 81, -1, sizeof(::bedrock::proxy::BedRockKvMGetResponse)},
-  { 88, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteParam)},
-  { 94, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteRequest)},
-  { 101, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteResponse)},
-  { 107, -1, sizeof(::bedrock::proxy::BedRockStartScanRequest)},
-  { 116, -1, sizeof(::bedrock::proxy::BedRockStartScanResponse)},
-  { 123, -1, sizeof(::bedrock::proxy::BedRockStopScanRequest)},
-  { 129, -1, sizeof(::bedrock::proxy::BedRockStopScanResponse)},
-  { 135, -1, sizeof(::bedrock::proxy::BedRockDoScanRequest)},
-  { 141, -1, sizeof(::bedrock::proxy::BedRockKvPair)},
-  { 148, -1, sizeof(::bedrock::proxy::BedRockDoScanResponse)},
-  { 156, -1, sizeof(::bedrock::proxy::BedRockStartTxRequest)},
-  { 161, -1, sizeof(::bedrock::proxy::BedRockStartTxResponse)},
-  { 166, -1, sizeof(::bedrock::proxy::BedRockCommitTxRequest)},
-  { 171, -1, sizeof(::bedrock::proxy::BedRockCommitTxResponse)},
-  { 176, -1, sizeof(::bedrock::proxy::BedRockRollbackTxRequest)},
-  { 181, -1, sizeof(::bedrock::proxy::BedRockRollbackTxResponse)},
+  { 0, -1, sizeof(::bedrock::proxy::TxRecord)},
+  { 8, -1, sizeof(::bedrock::proxy::BedRockKvGetRequest)},
+  { 15, -1, sizeof(::bedrock::proxy::BedRockKvGetResponse)},
+  { 22, -1, sizeof(::bedrock::proxy::BedRockKvSetRequest)},
+  { 30, -1, sizeof(::bedrock::proxy::BedRockKvSetResponse)},
+  { 36, -1, sizeof(::bedrock::proxy::BedRockKvDeleteRequest)},
+  { 43, -1, sizeof(::bedrock::proxy::BedRockKvDeleteResponse)},
+  { 49, -1, sizeof(::bedrock::proxy::BedRockKvMSetParam)},
+  { 56, -1, sizeof(::bedrock::proxy::BedRockKvMSetRequest)},
+  { 63, -1, sizeof(::bedrock::proxy::BedRockKvMSetResponse)},
+  { 69, -1, sizeof(::bedrock::proxy::BedRockKvMGetParam)},
+  { 75, -1, sizeof(::bedrock::proxy::BedRockKvMGetRequest)},
+  { 82, -1, sizeof(::bedrock::proxy::BedRockKvMGetKvRetPair)},
+  { 89, -1, sizeof(::bedrock::proxy::BedRockKvMGetResponse)},
+  { 96, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteParam)},
+  { 102, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteRequest)},
+  { 109, -1, sizeof(::bedrock::proxy::BedRockKvMDeleteResponse)},
+  { 115, -1, sizeof(::bedrock::proxy::BedRockStartScanRequest)},
+  { 124, -1, sizeof(::bedrock::proxy::BedRockStartScanResponse)},
+  { 131, -1, sizeof(::bedrock::proxy::BedRockStopScanRequest)},
+  { 137, -1, sizeof(::bedrock::proxy::BedRockStopScanResponse)},
+  { 143, -1, sizeof(::bedrock::proxy::BedRockDoScanRequest)},
+  { 149, -1, sizeof(::bedrock::proxy::BedRockKvPair)},
+  { 156, -1, sizeof(::bedrock::proxy::BedRockDoScanResponse)},
+  { 164, -1, sizeof(::bedrock::proxy::BedRockTxRecordLock)},
+  { 171, -1, sizeof(::bedrock::proxy::BedRockTxRangeLock)},
+  { 179, -1, sizeof(::bedrock::proxy::BedRockStartTxRequest)},
+  { 187, -1, sizeof(::bedrock::proxy::BedRockStartTxResponse)},
+  { 194, -1, sizeof(::bedrock::proxy::BedRockCommitTxRequest)},
+  { 201, -1, sizeof(::bedrock::proxy::BedRockCommitTxResponse)},
+  { 207, -1, sizeof(::bedrock::proxy::BedRockRollbackTxRequest)},
+  { 214, -1, sizeof(::bedrock::proxy::BedRockRollbackTxResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_TxRecord_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvGetRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvGetResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvSetRequest_default_instance_),
@@ -798,6 +894,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockDoScanRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockKvPair_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockDoScanResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockTxRecordLock_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockTxRangeLock_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockStartTxRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockStartTxResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bedrock::proxy::_BedRockCommitTxRequest_default_instance_),
@@ -807,86 +905,104 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_proxy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\013proxy.proto\022\rbedrock.proxy\"6\n\023BedRockK"
-  "vGetRequest\022\022\n\nstorage_id\030\001 \001(\r\022\013\n\003key\030\002"
-  " \001(\014\"I\n\024BedRockKvGetResponse\022\r\n\005value\030\001 "
-  "\001(\014\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy.Error\""
-  "E\n\023BedRockKvSetRequest\022\022\n\nstorage_id\030\001 \001"
-  "(\r\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\":\n\024BedRoc"
-  "kKvSetResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.p"
-  "roxy.Error\"9\n\026BedRockKvDeleteRequest\022\022\n\n"
-  "storage_id\030\001 \001(\r\022\013\n\003key\030\002 \001(\014\"=\n\027BedRock"
-  "KvDeleteResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock"
-  ".proxy.Error\"0\n\022BedRockKvMSetParam\022\013\n\003ke"
-  "y\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"]\n\024BedRockKvMSetR"
-  "equest\022\022\n\nstorage_id\030\001 \001(\r\0221\n\006params\030\002 \003"
-  "(\0132!.bedrock.proxy.BedRockKvMSetParam\";\n"
-  "\025BedRockKvMSetResponse\022\"\n\003err\030\377\001 \001(\0162\024.b"
-  "edrock.proxy.Error\"!\n\022BedRockKvMGetParam"
-  "\022\013\n\003key\030\001 \001(\014\"]\n\024BedRockKvMGetRequest\022\022\n"
-  "\nstorage_id\030\001 \001(\r\0221\n\006params\030\002 \003(\0132!.bedr"
-  "ock.proxy.BedRockKvMGetParam\"4\n\026BedRockK"
-  "vMGetKvRetPair\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001"
-  "(\014\"o\n\025BedRockKvMGetResponse\0222\n\003kvs\030\001 \003(\013"
-  "2%.bedrock.proxy.BedRockKvMGetKvRetPair\022"
-  "\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy.Error\"$\n\025B"
-  "edRockKvMDeleteParam\022\013\n\003key\030\001 \001(\014\"c\n\027Bed"
-  "RockKvMDeleteRequest\022\022\n\nstorage_id\030\001 \001(\r"
-  "\0224\n\006params\030\002 \003(\0132$.bedrock.proxy.BedRock"
-  "KvMDeleteParam\">\n\030BedRockKvMDeleteRespon"
-  "se\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy.Error\"`"
-  "\n\027BedRockStartScanRequest\022\022\n\nstorage_id\030"
-  "\001 \001(\r\022\021\n\tstart_key\030\002 \001(\014\022\017\n\007end_key\030\003 \001("
-  "\014\022\r\n\005limit\030\004 \001(\005\"S\n\030BedRockStartScanResp"
-  "onse\022\023\n\013iterator_id\030\001 \001(\004\022\"\n\003err\030\377\001 \001(\0162"
-  "\024.bedrock.proxy.Error\"-\n\026BedRockStopScan"
-  "Request\022\023\n\013iterator_id\030\001 \001(\004\"=\n\027BedRockS"
-  "topScanResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock."
-  "proxy.Error\"+\n\024BedRockDoScanRequest\022\023\n\013i"
-  "terator_id\030\001 \001(\004\"+\n\rBedRockKvPair\022\013\n\003key"
-  "\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"w\n\025BedRockDoScanRe"
-  "sponse\022)\n\003kvs\030\001 \003(\0132\034.bedrock.proxy.BedR"
-  "ockKvPair\022\017\n\007no_left\030\002 \001(\010\022\"\n\003err\030\377\001 \001(\016"
-  "2\024.bedrock.proxy.Error\"\027\n\025BedRockStartTx"
-  "Request\"\030\n\026BedRockStartTxResponse\"\030\n\026Bed"
-  "RockCommitTxRequest\"\031\n\027BedRockCommitTxRe"
-  "sponse\"\032\n\030BedRockRollbackTxRequest\"\033\n\031Be"
-  "dRockRollbackTxResponse*F\n\005Error\022\006\n\002OK\020\000"
-  "\022\017\n\013NO_SUCH_KEY\020\001\022\026\n\022INVLIAD_PARAMETERS\020"
-  "\002\022\014\n\007UNKNOWN\020\377\0012\213\t\n\014ProxyService\022W\n\014BedR"
-  "ockKvSet\022\".bedrock.proxy.BedRockKvSetReq"
-  "uest\032#.bedrock.proxy.BedRockKvSetRespons"
-  "e\022W\n\014BedRockKvGet\022\".bedrock.proxy.BedRoc"
-  "kKvGetRequest\032#.bedrock.proxy.BedRockKvG"
-  "etResponse\022`\n\017BedRockKvDelete\022%.bedrock."
-  "proxy.BedRockKvDeleteRequest\032&.bedrock.p"
-  "roxy.BedRockKvDeleteResponse\022Z\n\rBedRockK"
-  "vMSet\022#.bedrock.proxy.BedRockKvMSetReque"
-  "st\032$.bedrock.proxy.BedRockKvMSetResponse"
-  "\022Z\n\rBedRockKvMGet\022#.bedrock.proxy.BedRoc"
-  "kKvMGetRequest\032$.bedrock.proxy.BedRockKv"
-  "MGetResponse\022c\n\020BedRockKvMDelete\022&.bedro"
-  "ck.proxy.BedRockKvMDeleteRequest\032\'.bedro"
-  "ck.proxy.BedRockKvMDeleteResponse\022c\n\020Bed"
-  "RockStartScan\022&.bedrock.proxy.BedRockSta"
-  "rtScanRequest\032\'.bedrock.proxy.BedRockSta"
-  "rtScanResponse\022`\n\017BedRockStopScan\022%.bedr"
-  "ock.proxy.BedRockStopScanRequest\032&.bedro"
-  "ck.proxy.BedRockStopScanResponse\022Z\n\rBedR"
-  "ockDoScan\022#.bedrock.proxy.BedRockDoScanR"
-  "equest\032$.bedrock.proxy.BedRockDoScanResp"
-  "onse\022]\n\016BedRockStartTx\022$.bedrock.proxy.B"
-  "edRockStartTxRequest\032%.bedrock.proxy.Bed"
-  "RockStartTxResponse\022`\n\017BedRockCommitTx\022%"
-  ".bedrock.proxy.BedRockCommitTxRequest\032&."
-  "bedrock.proxy.BedRockCommitTxResponse\022f\n"
-  "\021BedRockRollbackTx\022\'.bedrock.proxy.BedRo"
-  "ckRollbackTxRequest\032(.bedrock.proxy.BedR"
-  "ockRollbackTxResponseB\003\200\001\001b\006proto3"
+  "\n\013proxy.proto\022\rbedrock.proxy\"X\n\010TxRecord"
+  "\022\r\n\005tx_id\030\001 \001(\004\022\'\n\006status\030\002 \001(\0162\027.bedroc"
+  "k.proxy.TxStatus\022\024\n\014heartbeat_ts\030\003 \001(\004\"6"
+  "\n\023BedRockKvGetRequest\022\022\n\nstorage_id\030\001 \001("
+  "\r\022\013\n\003key\030\002 \001(\014\"I\n\024BedRockKvGetResponse\022\r"
+  "\n\005value\030\001 \001(\014\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.pr"
+  "oxy.Error\"E\n\023BedRockKvSetRequest\022\022\n\nstor"
+  "age_id\030\001 \001(\r\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014"
+  "\":\n\024BedRockKvSetResponse\022\"\n\003err\030\377\001 \001(\0162\024"
+  ".bedrock.proxy.Error\"9\n\026BedRockKvDeleteR"
+  "equest\022\022\n\nstorage_id\030\001 \001(\r\022\013\n\003key\030\002 \001(\014\""
+  "=\n\027BedRockKvDeleteResponse\022\"\n\003err\030\377\001 \001(\016"
+  "2\024.bedrock.proxy.Error\"0\n\022BedRockKvMSetP"
+  "aram\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"]\n\024BedR"
+  "ockKvMSetRequest\022\022\n\nstorage_id\030\001 \001(\r\0221\n\006"
+  "params\030\002 \003(\0132!.bedrock.proxy.BedRockKvMS"
+  "etParam\";\n\025BedRockKvMSetResponse\022\"\n\003err\030"
+  "\377\001 \001(\0162\024.bedrock.proxy.Error\"!\n\022BedRockK"
+  "vMGetParam\022\013\n\003key\030\001 \001(\014\"]\n\024BedRockKvMGet"
+  "Request\022\022\n\nstorage_id\030\001 \001(\r\0221\n\006params\030\002 "
+  "\003(\0132!.bedrock.proxy.BedRockKvMGetParam\"4"
+  "\n\026BedRockKvMGetKvRetPair\022\013\n\003key\030\001 \001(\014\022\r\n"
+  "\005value\030\002 \001(\014\"o\n\025BedRockKvMGetResponse\0222\n"
+  "\003kvs\030\001 \003(\0132%.bedrock.proxy.BedRockKvMGet"
+  "KvRetPair\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy."
+  "Error\"$\n\025BedRockKvMDeleteParam\022\013\n\003key\030\001 "
+  "\001(\014\"c\n\027BedRockKvMDeleteRequest\022\022\n\nstorag"
+  "e_id\030\001 \001(\r\0224\n\006params\030\002 \003(\0132$.bedrock.pro"
+  "xy.BedRockKvMDeleteParam\">\n\030BedRockKvMDe"
+  "leteResponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.pro"
+  "xy.Error\"`\n\027BedRockStartScanRequest\022\022\n\ns"
+  "torage_id\030\001 \001(\r\022\021\n\tstart_key\030\002 \001(\014\022\017\n\007en"
+  "d_key\030\003 \001(\014\022\r\n\005limit\030\004 \001(\005\"S\n\030BedRockSta"
+  "rtScanResponse\022\023\n\013iterator_id\030\001 \001(\004\022\"\n\003e"
+  "rr\030\377\001 \001(\0162\024.bedrock.proxy.Error\"-\n\026BedRo"
+  "ckStopScanRequest\022\023\n\013iterator_id\030\001 \001(\004\"="
+  "\n\027BedRockStopScanResponse\022\"\n\003err\030\377\001 \001(\0162"
+  "\024.bedrock.proxy.Error\"+\n\024BedRockDoScanRe"
+  "quest\022\023\n\013iterator_id\030\001 \001(\004\"+\n\rBedRockKvP"
+  "air\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"w\n\025BedRo"
+  "ckDoScanResponse\022)\n\003kvs\030\001 \003(\0132\034.bedrock."
+  "proxy.BedRockKvPair\022\017\n\007no_left\030\002 \001(\010\022\"\n\003"
+  "err\030\377\001 \001(\0162\024.bedrock.proxy.Error\"W\n\023BedR"
+  "ockTxRecordLock\0223\n\tlock_type\030\001 \001(\0162 .bed"
+  "rock.proxy.BedRockTxLockType\022\013\n\003key\030\002 \001("
+  "\014\"m\n\022BedRockTxRangeLock\0223\n\tlock_type\030\001 \001"
+  "(\0162 .bedrock.proxy.BedRockTxLockType\022\021\n\t"
+  "start_key\030\002 \001(\014\022\017\n\007end_key\030\003 \001(\014\"\235\001\n\025Bed"
+  "RockStartTxRequest\022\022\n\nstorage_id\030\001 \001(\r\0228"
+  "\n\014record_locks\030\002 \003(\0132\".bedrock.proxy.Bed"
+  "RockTxRecordLock\0226\n\013range_locks\030\003 \003(\0132!."
+  "bedrock.proxy.BedRockTxRangeLock\"K\n\026BedR"
+  "ockStartTxResponse\022\r\n\005tx_id\030\001 \001(\004\022\"\n\003err"
+  "\030\377\001 \001(\0162\024.bedrock.proxy.Error\";\n\026BedRock"
+  "CommitTxRequest\022\022\n\nstorage_id\030\001 \001(\r\022\r\n\005t"
+  "x_id\030\002 \001(\004\"=\n\027BedRockCommitTxResponse\022\"\n"
+  "\003err\030\377\001 \001(\0162\024.bedrock.proxy.Error\"=\n\030Bed"
+  "RockRollbackTxRequest\022\022\n\nstorage_id\030\001 \001("
+  "\r\022\r\n\005tx_id\030\002 \001(\004\"\?\n\031BedRockRollbackTxRes"
+  "ponse\022\"\n\003err\030\377\001 \001(\0162\024.bedrock.proxy.Erro"
+  "r*#\n\010TxStatus\022\t\n\005START\020\000\022\014\n\010FINISHED\020\001*F"
+  "\n\005Error\022\006\n\002OK\020\000\022\017\n\013NO_SUCH_KEY\020\001\022\026\n\022INVL"
+  "IAD_PARAMETERS\020\002\022\014\n\007UNKNOWN\020\377\001*.\n\021BedRoc"
+  "kTxLockType\022\n\n\006SHARED\020\000\022\r\n\tEXCLUSIVE\020\0012\213"
+  "\t\n\014ProxyService\022W\n\014BedRockKvSet\022\".bedroc"
+  "k.proxy.BedRockKvSetRequest\032#.bedrock.pr"
+  "oxy.BedRockKvSetResponse\022W\n\014BedRockKvGet"
+  "\022\".bedrock.proxy.BedRockKvGetRequest\032#.b"
+  "edrock.proxy.BedRockKvGetResponse\022`\n\017Bed"
+  "RockKvDelete\022%.bedrock.proxy.BedRockKvDe"
+  "leteRequest\032&.bedrock.proxy.BedRockKvDel"
+  "eteResponse\022Z\n\rBedRockKvMSet\022#.bedrock.p"
+  "roxy.BedRockKvMSetRequest\032$.bedrock.prox"
+  "y.BedRockKvMSetResponse\022Z\n\rBedRockKvMGet"
+  "\022#.bedrock.proxy.BedRockKvMGetRequest\032$."
+  "bedrock.proxy.BedRockKvMGetResponse\022c\n\020B"
+  "edRockKvMDelete\022&.bedrock.proxy.BedRockK"
+  "vMDeleteRequest\032\'.bedrock.proxy.BedRockK"
+  "vMDeleteResponse\022c\n\020BedRockStartScan\022&.b"
+  "edrock.proxy.BedRockStartScanRequest\032\'.b"
+  "edrock.proxy.BedRockStartScanResponse\022`\n"
+  "\017BedRockStopScan\022%.bedrock.proxy.BedRock"
+  "StopScanRequest\032&.bedrock.proxy.BedRockS"
+  "topScanResponse\022Z\n\rBedRockDoScan\022#.bedro"
+  "ck.proxy.BedRockDoScanRequest\032$.bedrock."
+  "proxy.BedRockDoScanResponse\022]\n\016BedRockSt"
+  "artTx\022$.bedrock.proxy.BedRockStartTxRequ"
+  "est\032%.bedrock.proxy.BedRockStartTxRespon"
+  "se\022`\n\017BedRockCommitTx\022%.bedrock.proxy.Be"
+  "dRockCommitTxRequest\032&.bedrock.proxy.Bed"
+  "RockCommitTxResponse\022f\n\021BedRockRollbackT"
+  "x\022\'.bedrock.proxy.BedRockRollbackTxReque"
+  "st\032(.bedrock.proxy.BedRockRollbackTxResp"
+  "onseB\003\200\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proxy_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proxy_2eproto_sccs[29] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proxy_2eproto_sccs[32] = {
   &scc_info_BedRockCommitTxRequest_proxy_2eproto.base,
   &scc_info_BedRockCommitTxResponse_proxy_2eproto.base,
   &scc_info_BedRockDoScanRequest_proxy_2eproto.base,
@@ -916,22 +1032,39 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_BedRockStartTxResponse_proxy_2eproto.base,
   &scc_info_BedRockStopScanRequest_proxy_2eproto.base,
   &scc_info_BedRockStopScanResponse_proxy_2eproto.base,
+  &scc_info_BedRockTxRangeLock_proxy_2eproto.base,
+  &scc_info_BedRockTxRecordLock_proxy_2eproto.base,
+  &scc_info_TxRecord_proxy_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proxy_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proxy_2eproto = {
-  false, false, descriptor_table_protodef_proxy_2eproto, "proxy.proto", 3034,
-  &descriptor_table_proxy_2eproto_once, descriptor_table_proxy_2eproto_sccs, descriptor_table_proxy_2eproto_deps, 29, 0,
+  false, false, descriptor_table_protodef_proxy_2eproto, "proxy.proto", 3737,
+  &descriptor_table_proxy_2eproto_once, descriptor_table_proxy_2eproto_sccs, descriptor_table_proxy_2eproto_deps, 32, 0,
   schemas, file_default_instances, TableStruct_proxy_2eproto::offsets,
-  file_level_metadata_proxy_2eproto, 29, file_level_enum_descriptors_proxy_2eproto, file_level_service_descriptors_proxy_2eproto,
+  file_level_metadata_proxy_2eproto, 32, file_level_enum_descriptors_proxy_2eproto, file_level_service_descriptors_proxy_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_proxy_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proxy_2eproto)), true);
 namespace bedrock {
 namespace proxy {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Error_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TxStatus_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proxy_2eproto);
   return file_level_enum_descriptors_proxy_2eproto[0];
+}
+bool TxStatus_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Error_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proxy_2eproto);
+  return file_level_enum_descriptors_proxy_2eproto[1];
 }
 bool Error_IsValid(int value) {
   switch (value) {
@@ -943,6 +1076,275 @@ bool Error_IsValid(int value) {
     default:
       return false;
   }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BedRockTxLockType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proxy_2eproto);
+  return file_level_enum_descriptors_proxy_2eproto[2];
+}
+bool BedRockTxLockType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+
+// ===================================================================
+
+void TxRecord::InitAsDefaultInstance() {
+}
+class TxRecord::_Internal {
+ public:
+};
+
+TxRecord::TxRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.TxRecord)
+}
+TxRecord::TxRecord(const TxRecord& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&tx_id_, &from.tx_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&status_) -
+    reinterpret_cast<char*>(&tx_id_)) + sizeof(status_));
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.TxRecord)
+}
+
+void TxRecord::SharedCtor() {
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&status_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(status_));
+}
+
+TxRecord::~TxRecord() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.TxRecord)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void TxRecord::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void TxRecord::ArenaDtor(void* object) {
+  TxRecord* _this = reinterpret_cast< TxRecord* >(object);
+  (void)_this;
+}
+void TxRecord::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TxRecord::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TxRecord& TxRecord::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TxRecord_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TxRecord::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.TxRecord)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&status_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(status_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TxRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 tx_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          tx_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .bedrock.proxy.TxStatus status = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::bedrock::proxy::TxStatus>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint64 heartbeat_ts = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          heartbeat_ts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TxRecord::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.TxRecord)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 tx_id = 1;
+  if (this->tx_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_tx_id(), target);
+  }
+
+  // .bedrock.proxy.TxStatus status = 2;
+  if (this->status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_status(), target);
+  }
+
+  // uint64 heartbeat_ts = 3;
+  if (this->heartbeat_ts() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_heartbeat_ts(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.TxRecord)
+  return target;
+}
+
+size_t TxRecord::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.TxRecord)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 tx_id = 1;
+  if (this->tx_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_tx_id());
+  }
+
+  // uint64 heartbeat_ts = 3;
+  if (this->heartbeat_ts() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_heartbeat_ts());
+  }
+
+  // .bedrock.proxy.TxStatus status = 2;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TxRecord::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.TxRecord)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TxRecord* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TxRecord>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.TxRecord)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.TxRecord)
+    MergeFrom(*source);
+  }
+}
+
+void TxRecord::MergeFrom(const TxRecord& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.TxRecord)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.tx_id() != 0) {
+    _internal_set_tx_id(from._internal_tx_id());
+  }
+  if (from.heartbeat_ts() != 0) {
+    _internal_set_heartbeat_ts(from._internal_heartbeat_ts());
+  }
+  if (from.status() != 0) {
+    _internal_set_status(from._internal_status());
+  }
+}
+
+void TxRecord::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.TxRecord)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TxRecord::CopyFrom(const TxRecord& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.TxRecord)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TxRecord::IsInitialized() const {
+  return true;
+}
+
+void TxRecord::InternalSwap(TxRecord* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TxRecord, status_)
+      + sizeof(TxRecord::status_)
+      - PROTOBUF_FIELD_OFFSET(TxRecord, tx_id_)>(
+          reinterpret_cast<char*>(&tx_id_),
+          reinterpret_cast<char*>(&other->tx_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TxRecord::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -6123,6 +6525,503 @@ void BedRockDoScanResponse::InternalSwap(BedRockDoScanResponse* other) {
 
 // ===================================================================
 
+void BedRockTxRecordLock::InitAsDefaultInstance() {
+}
+class BedRockTxRecordLock::_Internal {
+ public:
+};
+
+BedRockTxRecordLock::BedRockTxRecordLock(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockTxRecordLock)
+}
+BedRockTxRecordLock::BedRockTxRecordLock(const BedRockTxRecordLock& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_key().empty()) {
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
+  }
+  lock_type_ = from.lock_type_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockTxRecordLock)
+}
+
+void BedRockTxRecordLock::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockTxRecordLock_proxy_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  lock_type_ = 0;
+}
+
+BedRockTxRecordLock::~BedRockTxRecordLock() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockTxRecordLock)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockTxRecordLock::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void BedRockTxRecordLock::ArenaDtor(void* object) {
+  BedRockTxRecordLock* _this = reinterpret_cast< BedRockTxRecordLock* >(object);
+  (void)_this;
+}
+void BedRockTxRecordLock::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockTxRecordLock::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockTxRecordLock& BedRockTxRecordLock::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockTxRecordLock_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockTxRecordLock::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockTxRecordLock)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  lock_type_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockTxRecordLock::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .bedrock.proxy.BedRockTxLockType lock_type = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_lock_type(static_cast<::bedrock::proxy::BedRockTxLockType>(val));
+        } else goto handle_unusual;
+        continue;
+      // bytes key = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockTxRecordLock::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockTxRecordLock)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .bedrock.proxy.BedRockTxLockType lock_type = 1;
+  if (this->lock_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_lock_type(), target);
+  }
+
+  // bytes key = 2;
+  if (this->key().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_key(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockTxRecordLock)
+  return target;
+}
+
+size_t BedRockTxRecordLock::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockTxRecordLock)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes key = 2;
+  if (this->key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_key());
+  }
+
+  // .bedrock.proxy.BedRockTxLockType lock_type = 1;
+  if (this->lock_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_lock_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockTxRecordLock::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockTxRecordLock)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockTxRecordLock* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockTxRecordLock>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockTxRecordLock)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockTxRecordLock)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockTxRecordLock::MergeFrom(const BedRockTxRecordLock& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockTxRecordLock)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.key().size() > 0) {
+    _internal_set_key(from._internal_key());
+  }
+  if (from.lock_type() != 0) {
+    _internal_set_lock_type(from._internal_lock_type());
+  }
+}
+
+void BedRockTxRecordLock::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockTxRecordLock)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockTxRecordLock::CopyFrom(const BedRockTxRecordLock& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockTxRecordLock)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockTxRecordLock::IsInitialized() const {
+  return true;
+}
+
+void BedRockTxRecordLock::InternalSwap(BedRockTxRecordLock* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(lock_type_, other->lock_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockTxRecordLock::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void BedRockTxRangeLock::InitAsDefaultInstance() {
+}
+class BedRockTxRangeLock::_Internal {
+ public:
+};
+
+BedRockTxRangeLock::BedRockTxRangeLock(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockTxRangeLock)
+}
+BedRockTxRangeLock::BedRockTxRangeLock(const BedRockTxRangeLock& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  start_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_start_key().empty()) {
+    start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_start_key(),
+      GetArena());
+  }
+  end_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_end_key().empty()) {
+    end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_end_key(),
+      GetArena());
+  }
+  lock_type_ = from.lock_type_;
+  // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockTxRangeLock)
+}
+
+void BedRockTxRangeLock::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockTxRangeLock_proxy_2eproto.base);
+  start_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  end_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  lock_type_ = 0;
+}
+
+BedRockTxRangeLock::~BedRockTxRangeLock() {
+  // @@protoc_insertion_point(destructor:bedrock.proxy.BedRockTxRangeLock)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void BedRockTxRangeLock::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  start_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  end_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void BedRockTxRangeLock::ArenaDtor(void* object) {
+  BedRockTxRangeLock* _this = reinterpret_cast< BedRockTxRangeLock* >(object);
+  (void)_this;
+}
+void BedRockTxRangeLock::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BedRockTxRangeLock::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const BedRockTxRangeLock& BedRockTxRangeLock::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BedRockTxRangeLock_proxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void BedRockTxRangeLock::Clear() {
+// @@protoc_insertion_point(message_clear_start:bedrock.proxy.BedRockTxRangeLock)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  start_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  end_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  lock_type_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BedRockTxRangeLock::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .bedrock.proxy.BedRockTxLockType lock_type = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_lock_type(static_cast<::bedrock::proxy::BedRockTxLockType>(val));
+        } else goto handle_unusual;
+        continue;
+      // bytes start_key = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_start_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes end_key = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_end_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* BedRockTxRangeLock::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockTxRangeLock)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .bedrock.proxy.BedRockTxLockType lock_type = 1;
+  if (this->lock_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_lock_type(), target);
+  }
+
+  // bytes start_key = 2;
+  if (this->start_key().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_start_key(), target);
+  }
+
+  // bytes end_key = 3;
+  if (this->end_key().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_end_key(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bedrock.proxy.BedRockTxRangeLock)
+  return target;
+}
+
+size_t BedRockTxRangeLock::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bedrock.proxy.BedRockTxRangeLock)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes start_key = 2;
+  if (this->start_key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_start_key());
+  }
+
+  // bytes end_key = 3;
+  if (this->end_key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_end_key());
+  }
+
+  // .bedrock.proxy.BedRockTxLockType lock_type = 1;
+  if (this->lock_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_lock_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BedRockTxRangeLock::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bedrock.proxy.BedRockTxRangeLock)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BedRockTxRangeLock* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BedRockTxRangeLock>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bedrock.proxy.BedRockTxRangeLock)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bedrock.proxy.BedRockTxRangeLock)
+    MergeFrom(*source);
+  }
+}
+
+void BedRockTxRangeLock::MergeFrom(const BedRockTxRangeLock& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bedrock.proxy.BedRockTxRangeLock)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.start_key().size() > 0) {
+    _internal_set_start_key(from._internal_start_key());
+  }
+  if (from.end_key().size() > 0) {
+    _internal_set_end_key(from._internal_end_key());
+  }
+  if (from.lock_type() != 0) {
+    _internal_set_lock_type(from._internal_lock_type());
+  }
+}
+
+void BedRockTxRangeLock::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bedrock.proxy.BedRockTxRangeLock)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BedRockTxRangeLock::CopyFrom(const BedRockTxRangeLock& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bedrock.proxy.BedRockTxRangeLock)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BedRockTxRangeLock::IsInitialized() const {
+  return true;
+}
+
+void BedRockTxRangeLock::InternalSwap(BedRockTxRangeLock* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  start_key_.Swap(&other->start_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  end_key_.Swap(&other->end_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(lock_type_, other->lock_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BedRockTxRangeLock::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void BedRockStartTxRequest::InitAsDefaultInstance() {
 }
 class BedRockStartTxRequest::_Internal {
@@ -6130,18 +7029,25 @@ class BedRockStartTxRequest::_Internal {
 };
 
 BedRockStartTxRequest::BedRockStartTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  record_locks_(arena),
+  range_locks_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:bedrock.proxy.BedRockStartTxRequest)
 }
 BedRockStartTxRequest::BedRockStartTxRequest(const BedRockStartTxRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      record_locks_(from.record_locks_),
+      range_locks_(from.range_locks_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  storage_id_ = from.storage_id_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockStartTxRequest)
 }
 
 void BedRockStartTxRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BedRockStartTxRequest_proxy_2eproto.base);
+  storage_id_ = 0u;
 }
 
 BedRockStartTxRequest::~BedRockStartTxRequest() {
@@ -6175,6 +7081,9 @@ void BedRockStartTxRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  record_locks_.Clear();
+  range_locks_.Clear();
+  storage_id_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6185,6 +7094,40 @@ const char* BedRockStartTxRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 storage_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .bedrock.proxy.BedRockTxRecordLock record_locks = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_record_locks(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .bedrock.proxy.BedRockTxRangeLock range_locks = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_range_locks(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -6194,6 +7137,8 @@ const char* BedRockStartTxRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6208,6 +7153,28 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockStartTxRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+  }
+
+  // repeated .bedrock.proxy.BedRockTxRecordLock record_locks = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_record_locks_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_record_locks(i), target, stream);
+  }
+
+  // repeated .bedrock.proxy.BedRockTxRangeLock range_locks = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_range_locks_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_range_locks(i), target, stream);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6224,6 +7191,27 @@ size_t BedRockStartTxRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .bedrock.proxy.BedRockTxRecordLock record_locks = 2;
+  total_size += 1UL * this->_internal_record_locks_size();
+  for (const auto& msg : this->record_locks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bedrock.proxy.BedRockTxRangeLock range_locks = 3;
+  total_size += 1UL * this->_internal_range_locks_size();
+  for (const auto& msg : this->range_locks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6256,6 +7244,11 @@ void BedRockStartTxRequest::MergeFrom(const BedRockStartTxRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  record_locks_.MergeFrom(from.record_locks_);
+  range_locks_.MergeFrom(from.range_locks_);
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
+  }
 }
 
 void BedRockStartTxRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6279,6 +7272,9 @@ bool BedRockStartTxRequest::IsInitialized() const {
 void BedRockStartTxRequest::InternalSwap(BedRockStartTxRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  record_locks_.InternalSwap(&other->record_locks_);
+  range_locks_.InternalSwap(&other->range_locks_);
+  swap(storage_id_, other->storage_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockStartTxRequest::GetMetadata() const {
@@ -6303,10 +7299,16 @@ BedRockStartTxResponse::BedRockStartTxResponse(::PROTOBUF_NAMESPACE_ID::Arena* a
 BedRockStartTxResponse::BedRockStartTxResponse(const BedRockStartTxResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&tx_id_, &from.tx_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&err_) -
+    reinterpret_cast<char*>(&tx_id_)) + sizeof(err_));
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockStartTxResponse)
 }
 
 void BedRockStartTxResponse::SharedCtor() {
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&err_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(err_));
 }
 
 BedRockStartTxResponse::~BedRockStartTxResponse() {
@@ -6340,6 +7342,9 @@ void BedRockStartTxResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&err_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(err_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6350,6 +7355,24 @@ const char* BedRockStartTxResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 tx_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          tx_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .bedrock.proxy.Error err = 255;
+      case 255:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -6359,6 +7382,8 @@ const char* BedRockStartTxResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6373,6 +7398,19 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockStartTxResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint64 tx_id = 1;
+  if (this->tx_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_tx_id(), target);
+  }
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      255, this->_internal_err(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6389,6 +7427,19 @@ size_t BedRockStartTxResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint64 tx_id = 1;
+  if (this->tx_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_tx_id());
+  }
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6421,6 +7472,12 @@ void BedRockStartTxResponse::MergeFrom(const BedRockStartTxResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.tx_id() != 0) {
+    _internal_set_tx_id(from._internal_tx_id());
+  }
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
+  }
 }
 
 void BedRockStartTxResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6444,6 +7501,12 @@ bool BedRockStartTxResponse::IsInitialized() const {
 void BedRockStartTxResponse::InternalSwap(BedRockStartTxResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BedRockStartTxResponse, err_)
+      + sizeof(BedRockStartTxResponse::err_)
+      - PROTOBUF_FIELD_OFFSET(BedRockStartTxResponse, tx_id_)>(
+          reinterpret_cast<char*>(&tx_id_),
+          reinterpret_cast<char*>(&other->tx_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockStartTxResponse::GetMetadata() const {
@@ -6468,10 +7531,16 @@ BedRockCommitTxRequest::BedRockCommitTxRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 BedRockCommitTxRequest::BedRockCommitTxRequest(const BedRockCommitTxRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&tx_id_, &from.tx_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
+    reinterpret_cast<char*>(&tx_id_)) + sizeof(storage_id_));
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockCommitTxRequest)
 }
 
 void BedRockCommitTxRequest::SharedCtor() {
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(storage_id_));
 }
 
 BedRockCommitTxRequest::~BedRockCommitTxRequest() {
@@ -6505,6 +7574,9 @@ void BedRockCommitTxRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(storage_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6515,6 +7587,23 @@ const char* BedRockCommitTxRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 storage_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 tx_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          tx_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -6524,6 +7613,8 @@ const char* BedRockCommitTxRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6538,6 +7629,18 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockCommitTxRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+  }
+
+  // uint64 tx_id = 2;
+  if (this->tx_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_tx_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6554,6 +7657,20 @@ size_t BedRockCommitTxRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint64 tx_id = 2;
+  if (this->tx_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_tx_id());
+  }
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6586,6 +7703,12 @@ void BedRockCommitTxRequest::MergeFrom(const BedRockCommitTxRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.tx_id() != 0) {
+    _internal_set_tx_id(from._internal_tx_id());
+  }
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
+  }
 }
 
 void BedRockCommitTxRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6609,6 +7732,12 @@ bool BedRockCommitTxRequest::IsInitialized() const {
 void BedRockCommitTxRequest::InternalSwap(BedRockCommitTxRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BedRockCommitTxRequest, storage_id_)
+      + sizeof(BedRockCommitTxRequest::storage_id_)
+      - PROTOBUF_FIELD_OFFSET(BedRockCommitTxRequest, tx_id_)>(
+          reinterpret_cast<char*>(&tx_id_),
+          reinterpret_cast<char*>(&other->tx_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockCommitTxRequest::GetMetadata() const {
@@ -6633,10 +7762,12 @@ BedRockCommitTxResponse::BedRockCommitTxResponse(::PROTOBUF_NAMESPACE_ID::Arena*
 BedRockCommitTxResponse::BedRockCommitTxResponse(const BedRockCommitTxResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockCommitTxResponse)
 }
 
 void BedRockCommitTxResponse::SharedCtor() {
+  err_ = 0;
 }
 
 BedRockCommitTxResponse::~BedRockCommitTxResponse() {
@@ -6670,6 +7801,7 @@ void BedRockCommitTxResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6680,6 +7812,17 @@ const char* BedRockCommitTxResponse::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // .bedrock.proxy.Error err = 255;
+      case 255:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -6689,6 +7832,8 @@ const char* BedRockCommitTxResponse::_InternalParse(const char* ptr, ::PROTOBUF_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6703,6 +7848,13 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockCommitTxResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      255, this->_internal_err(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6719,6 +7871,12 @@ size_t BedRockCommitTxResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6751,6 +7909,9 @@ void BedRockCommitTxResponse::MergeFrom(const BedRockCommitTxResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
+  }
 }
 
 void BedRockCommitTxResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6774,6 +7935,7 @@ bool BedRockCommitTxResponse::IsInitialized() const {
 void BedRockCommitTxResponse::InternalSwap(BedRockCommitTxResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockCommitTxResponse::GetMetadata() const {
@@ -6798,10 +7960,16 @@ BedRockRollbackTxRequest::BedRockRollbackTxRequest(::PROTOBUF_NAMESPACE_ID::Aren
 BedRockRollbackTxRequest::BedRockRollbackTxRequest(const BedRockRollbackTxRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&tx_id_, &from.tx_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&storage_id_) -
+    reinterpret_cast<char*>(&tx_id_)) + sizeof(storage_id_));
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockRollbackTxRequest)
 }
 
 void BedRockRollbackTxRequest::SharedCtor() {
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(storage_id_));
 }
 
 BedRockRollbackTxRequest::~BedRockRollbackTxRequest() {
@@ -6835,6 +8003,9 @@ void BedRockRollbackTxRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ::memset(&tx_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&storage_id_) -
+      reinterpret_cast<char*>(&tx_id_)) + sizeof(storage_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6845,6 +8016,23 @@ const char* BedRockRollbackTxRequest::_InternalParse(const char* ptr, ::PROTOBUF
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 storage_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          storage_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 tx_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          tx_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -6854,6 +8042,8 @@ const char* BedRockRollbackTxRequest::_InternalParse(const char* ptr, ::PROTOBUF
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6868,6 +8058,18 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockRollbackTxRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_storage_id(), target);
+  }
+
+  // uint64 tx_id = 2;
+  if (this->tx_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_tx_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6884,6 +8086,20 @@ size_t BedRockRollbackTxRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint64 tx_id = 2;
+  if (this->tx_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_tx_id());
+  }
+
+  // uint32 storage_id = 1;
+  if (this->storage_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_storage_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6916,6 +8132,12 @@ void BedRockRollbackTxRequest::MergeFrom(const BedRockRollbackTxRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.tx_id() != 0) {
+    _internal_set_tx_id(from._internal_tx_id());
+  }
+  if (from.storage_id() != 0) {
+    _internal_set_storage_id(from._internal_storage_id());
+  }
 }
 
 void BedRockRollbackTxRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6939,6 +8161,12 @@ bool BedRockRollbackTxRequest::IsInitialized() const {
 void BedRockRollbackTxRequest::InternalSwap(BedRockRollbackTxRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BedRockRollbackTxRequest, storage_id_)
+      + sizeof(BedRockRollbackTxRequest::storage_id_)
+      - PROTOBUF_FIELD_OFFSET(BedRockRollbackTxRequest, tx_id_)>(
+          reinterpret_cast<char*>(&tx_id_),
+          reinterpret_cast<char*>(&other->tx_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockRollbackTxRequest::GetMetadata() const {
@@ -6963,10 +8191,12 @@ BedRockRollbackTxResponse::BedRockRollbackTxResponse(::PROTOBUF_NAMESPACE_ID::Ar
 BedRockRollbackTxResponse::BedRockRollbackTxResponse(const BedRockRollbackTxResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  err_ = from.err_;
   // @@protoc_insertion_point(copy_constructor:bedrock.proxy.BedRockRollbackTxResponse)
 }
 
 void BedRockRollbackTxResponse::SharedCtor() {
+  err_ = 0;
 }
 
 BedRockRollbackTxResponse::~BedRockRollbackTxResponse() {
@@ -7000,6 +8230,7 @@ void BedRockRollbackTxResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  err_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7010,6 +8241,17 @@ const char* BedRockRollbackTxResponse::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // .bedrock.proxy.Error err = 255;
+      case 255:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_err(static_cast<::bedrock::proxy::Error>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -7019,6 +8261,8 @@ const char* BedRockRollbackTxResponse::_InternalParse(const char* ptr, ::PROTOBU
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -7033,6 +8277,13 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:bedrock.proxy.BedRockRollbackTxResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      255, this->_internal_err(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -7049,6 +8300,12 @@ size_t BedRockRollbackTxResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .bedrock.proxy.Error err = 255;
+  if (this->err() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_err());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -7081,6 +8338,9 @@ void BedRockRollbackTxResponse::MergeFrom(const BedRockRollbackTxResponse& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.err() != 0) {
+    _internal_set_err(from._internal_err());
+  }
 }
 
 void BedRockRollbackTxResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -7104,6 +8364,7 @@ bool BedRockRollbackTxResponse::IsInitialized() const {
 void BedRockRollbackTxResponse::InternalSwap(BedRockRollbackTxResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(err_, other->err_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BedRockRollbackTxResponse::GetMetadata() const {
@@ -7499,6 +8760,9 @@ void ProxyService_Stub::BedRockRollbackTx(::PROTOBUF_NAMESPACE_ID::RpcController
 }  // namespace proxy
 }  // namespace bedrock
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::TxRecord* Arena::CreateMaybeMessage< ::bedrock::proxy::TxRecord >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::TxRecord >(arena);
+}
 template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvGetRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockKvGetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockKvGetRequest >(arena);
 }
@@ -7567,6 +8831,12 @@ template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockKvPair* Arena::CreateMaybe
 }
 template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockDoScanResponse* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockDoScanResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockDoScanResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockTxRecordLock* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockTxRecordLock >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockTxRecordLock >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockTxRangeLock* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockTxRangeLock >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockTxRangeLock >(arena);
 }
 template<> PROTOBUF_NOINLINE ::bedrock::proxy::BedRockStartTxRequest* Arena::CreateMaybeMessage< ::bedrock::proxy::BedRockStartTxRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bedrock::proxy::BedRockStartTxRequest >(arena);

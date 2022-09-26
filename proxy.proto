@@ -3,6 +3,17 @@ syntax = "proto3";
 package bedrock.proxy;
 option cc_generic_services = true;
 
+enum TxStatus {
+    START = 0;
+    FINISHED = 1;
+}
+
+message TxRecord {
+    uint64 tx_id = 1;
+    TxStatus status = 2;
+    uint64 heartbeat_ts = 3;
+}
+
 enum Error {
     OK = 0;
     NO_SUCH_KEY = 1;
