@@ -229,6 +229,25 @@ message CancelTxRequest {
 message CancelTxResponse {
 }
 
+message LockRecordRequest {
+    uint64 tx_id = 1;
+    uint64 shard_id = 2;
+    bytes key = 3;
+}
+
+message LockRecordResponse {
+}
+
+message LockRangeRequest {
+    uint64 tx_id = 1;
+    uint64 shard_id = 2;
+    bytes start_key = 3;
+    bytes end_key = 4;
+}
+
+message LockRangeResponse {
+}
+
 service DataService {
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
     rpc DeleteShard(DeleteShardRequest) returns (google.protobuf.Empty);
@@ -254,6 +273,10 @@ service DataService {
     rpc MigrateShard(stream MigrateShardRequest) returns (MigrateShardResponse);
 
     rpc StartTx(StartTxRequest) returns (StartTxResponse);
+
+    rpc LockRecord(LockRecordRequest) returns (LockRecordResponse);
+    rpc LockRange(LockRangeRequest) returns (LockRangeResponse);
+
     rpc PrepareTx(PrepareTxRequest) returns (PrepareTxResponse);
     rpc CommitTx(CommitTxRequest) returns (CommitTxResponse);
     rpc CancelTx(CancelTxRequest) returns (CancelTxResponse);

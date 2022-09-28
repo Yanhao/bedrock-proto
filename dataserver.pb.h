@@ -51,7 +51,7 @@ struct TableStruct_dataserver_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[54]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[58]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -111,6 +111,18 @@ extern DeleteShardResponseDefaultTypeInternal _DeleteShardResponse_default_insta
 class KeyValue;
 class KeyValueDefaultTypeInternal;
 extern KeyValueDefaultTypeInternal _KeyValue_default_instance_;
+class LockRangeRequest;
+class LockRangeRequestDefaultTypeInternal;
+extern LockRangeRequestDefaultTypeInternal _LockRangeRequest_default_instance_;
+class LockRangeResponse;
+class LockRangeResponseDefaultTypeInternal;
+extern LockRangeResponseDefaultTypeInternal _LockRangeResponse_default_instance_;
+class LockRecordRequest;
+class LockRecordRequestDefaultTypeInternal;
+extern LockRecordRequestDefaultTypeInternal _LockRecordRequest_default_instance_;
+class LockRecordResponse;
+class LockRecordResponseDefaultTypeInternal;
+extern LockRecordResponseDefaultTypeInternal _LockRecordResponse_default_instance_;
 class LockShardRequest;
 class LockShardRequestDefaultTypeInternal;
 extern LockShardRequestDefaultTypeInternal _LockShardRequest_default_instance_;
@@ -242,6 +254,10 @@ template<> ::bedrock::dataserver::DeleteShardReplicaResponse* Arena::CreateMaybe
 template<> ::bedrock::dataserver::DeleteShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::DeleteShardRequest>(Arena*);
 template<> ::bedrock::dataserver::DeleteShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::DeleteShardResponse>(Arena*);
 template<> ::bedrock::dataserver::KeyValue* Arena::CreateMaybeMessage<::bedrock::dataserver::KeyValue>(Arena*);
+template<> ::bedrock::dataserver::LockRangeRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::LockRangeRequest>(Arena*);
+template<> ::bedrock::dataserver::LockRangeResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::LockRangeResponse>(Arena*);
+template<> ::bedrock::dataserver::LockRecordRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::LockRecordRequest>(Arena*);
+template<> ::bedrock::dataserver::LockRecordResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::LockRecordResponse>(Arena*);
 template<> ::bedrock::dataserver::LockShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::LockShardRequest>(Arena*);
 template<> ::bedrock::dataserver::LockShardResponse* Arena::CreateMaybeMessage<::bedrock::dataserver::LockShardResponse>(Arena*);
 template<> ::bedrock::dataserver::MergeShardRequest* Arena::CreateMaybeMessage<::bedrock::dataserver::MergeShardRequest>(Arena*);
@@ -8366,6 +8382,631 @@ class CancelTxResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dataserver_2eproto;
 };
+// -------------------------------------------------------------------
+
+class LockRecordRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.LockRecordRequest) */ {
+ public:
+  inline LockRecordRequest() : LockRecordRequest(nullptr) {};
+  virtual ~LockRecordRequest();
+
+  LockRecordRequest(const LockRecordRequest& from);
+  LockRecordRequest(LockRecordRequest&& from) noexcept
+    : LockRecordRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline LockRecordRequest& operator=(const LockRecordRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LockRecordRequest& operator=(LockRecordRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LockRecordRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LockRecordRequest* internal_default_instance() {
+    return reinterpret_cast<const LockRecordRequest*>(
+               &_LockRecordRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    54;
+
+  friend void swap(LockRecordRequest& a, LockRecordRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LockRecordRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LockRecordRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LockRecordRequest* New() const final {
+    return CreateMaybeMessage<LockRecordRequest>(nullptr);
+  }
+
+  LockRecordRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LockRecordRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LockRecordRequest& from);
+  void MergeFrom(const LockRecordRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LockRecordRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.LockRecordRequest";
+  }
+  protected:
+  explicit LockRecordRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyFieldNumber = 3,
+    kTxIdFieldNumber = 1,
+    kShardIdFieldNumber = 2,
+  };
+  // bytes key = 3;
+  void clear_key();
+  const std::string& key() const;
+  void set_key(const std::string& value);
+  void set_key(std::string&& value);
+  void set_key(const char* value);
+  void set_key(const void* value, size_t size);
+  std::string* mutable_key();
+  std::string* release_key();
+  void set_allocated_key(std::string* key);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_key();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_key(
+      std::string* key);
+  private:
+  const std::string& _internal_key() const;
+  void _internal_set_key(const std::string& value);
+  std::string* _internal_mutable_key();
+  public:
+
+  // uint64 tx_id = 1;
+  void clear_tx_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 tx_id() const;
+  void set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_tx_id() const;
+  void _internal_set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 shard_id = 2;
+  void clear_shard_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 shard_id() const;
+  void set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_shard_id() const;
+  void _internal_set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.LockRecordRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 tx_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 shard_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LockRecordResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.LockRecordResponse) */ {
+ public:
+  inline LockRecordResponse() : LockRecordResponse(nullptr) {};
+  virtual ~LockRecordResponse();
+
+  LockRecordResponse(const LockRecordResponse& from);
+  LockRecordResponse(LockRecordResponse&& from) noexcept
+    : LockRecordResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline LockRecordResponse& operator=(const LockRecordResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LockRecordResponse& operator=(LockRecordResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LockRecordResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LockRecordResponse* internal_default_instance() {
+    return reinterpret_cast<const LockRecordResponse*>(
+               &_LockRecordResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    55;
+
+  friend void swap(LockRecordResponse& a, LockRecordResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LockRecordResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LockRecordResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LockRecordResponse* New() const final {
+    return CreateMaybeMessage<LockRecordResponse>(nullptr);
+  }
+
+  LockRecordResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LockRecordResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LockRecordResponse& from);
+  void MergeFrom(const LockRecordResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LockRecordResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.LockRecordResponse";
+  }
+  protected:
+  explicit LockRecordResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.LockRecordResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LockRangeRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.LockRangeRequest) */ {
+ public:
+  inline LockRangeRequest() : LockRangeRequest(nullptr) {};
+  virtual ~LockRangeRequest();
+
+  LockRangeRequest(const LockRangeRequest& from);
+  LockRangeRequest(LockRangeRequest&& from) noexcept
+    : LockRangeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline LockRangeRequest& operator=(const LockRangeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LockRangeRequest& operator=(LockRangeRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LockRangeRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LockRangeRequest* internal_default_instance() {
+    return reinterpret_cast<const LockRangeRequest*>(
+               &_LockRangeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    56;
+
+  friend void swap(LockRangeRequest& a, LockRangeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LockRangeRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LockRangeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LockRangeRequest* New() const final {
+    return CreateMaybeMessage<LockRangeRequest>(nullptr);
+  }
+
+  LockRangeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LockRangeRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LockRangeRequest& from);
+  void MergeFrom(const LockRangeRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LockRangeRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.LockRangeRequest";
+  }
+  protected:
+  explicit LockRangeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStartKeyFieldNumber = 3,
+    kEndKeyFieldNumber = 4,
+    kTxIdFieldNumber = 1,
+    kShardIdFieldNumber = 2,
+  };
+  // bytes start_key = 3;
+  void clear_start_key();
+  const std::string& start_key() const;
+  void set_start_key(const std::string& value);
+  void set_start_key(std::string&& value);
+  void set_start_key(const char* value);
+  void set_start_key(const void* value, size_t size);
+  std::string* mutable_start_key();
+  std::string* release_start_key();
+  void set_allocated_start_key(std::string* start_key);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_start_key();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_start_key(
+      std::string* start_key);
+  private:
+  const std::string& _internal_start_key() const;
+  void _internal_set_start_key(const std::string& value);
+  std::string* _internal_mutable_start_key();
+  public:
+
+  // bytes end_key = 4;
+  void clear_end_key();
+  const std::string& end_key() const;
+  void set_end_key(const std::string& value);
+  void set_end_key(std::string&& value);
+  void set_end_key(const char* value);
+  void set_end_key(const void* value, size_t size);
+  std::string* mutable_end_key();
+  std::string* release_end_key();
+  void set_allocated_end_key(std::string* end_key);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_end_key();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_end_key(
+      std::string* end_key);
+  private:
+  const std::string& _internal_end_key() const;
+  void _internal_set_end_key(const std::string& value);
+  std::string* _internal_mutable_end_key();
+  public:
+
+  // uint64 tx_id = 1;
+  void clear_tx_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 tx_id() const;
+  void set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_tx_id() const;
+  void _internal_set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 shard_id = 2;
+  void clear_shard_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 shard_id() const;
+  void set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_shard_id() const;
+  void _internal_set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.LockRangeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr end_key_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 tx_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 shard_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LockRangeResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bedrock.dataserver.LockRangeResponse) */ {
+ public:
+  inline LockRangeResponse() : LockRangeResponse(nullptr) {};
+  virtual ~LockRangeResponse();
+
+  LockRangeResponse(const LockRangeResponse& from);
+  LockRangeResponse(LockRangeResponse&& from) noexcept
+    : LockRangeResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline LockRangeResponse& operator=(const LockRangeResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LockRangeResponse& operator=(LockRangeResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LockRangeResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LockRangeResponse* internal_default_instance() {
+    return reinterpret_cast<const LockRangeResponse*>(
+               &_LockRangeResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    57;
+
+  friend void swap(LockRangeResponse& a, LockRangeResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LockRangeResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LockRangeResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LockRangeResponse* New() const final {
+    return CreateMaybeMessage<LockRangeResponse>(nullptr);
+  }
+
+  LockRangeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LockRangeResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LockRangeResponse& from);
+  void MergeFrom(const LockRangeResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LockRangeResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bedrock.dataserver.LockRangeResponse";
+  }
+  protected:
+  explicit LockRangeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dataserver_2eproto);
+    return ::descriptor_table_dataserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:bedrock.dataserver.LockRangeResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dataserver_2eproto;
+};
 // ===================================================================
 
 class DataService_Stub;
@@ -8432,6 +9073,14 @@ class DataService : public ::PROTOBUF_NAMESPACE_ID::Service {
   virtual void StartTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::StartTxRequest* request,
                        ::bedrock::dataserver::StartTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void LockRecord(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::LockRecordRequest* request,
+                       ::bedrock::dataserver::LockRecordResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void LockRange(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::LockRangeRequest* request,
+                       ::bedrock::dataserver::LockRangeResponse* response,
                        ::google::protobuf::Closure* done);
   virtual void PrepareTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::PrepareTxRequest* request,
@@ -8525,6 +9174,14 @@ class DataService_Stub : public DataService {
   void StartTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::StartTxRequest* request,
                        ::bedrock::dataserver::StartTxResponse* response,
+                       ::google::protobuf::Closure* done);
+  void LockRecord(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::LockRecordRequest* request,
+                       ::bedrock::dataserver::LockRecordResponse* response,
+                       ::google::protobuf::Closure* done);
+  void LockRange(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::bedrock::dataserver::LockRangeRequest* request,
+                       ::bedrock::dataserver::LockRangeResponse* response,
                        ::google::protobuf::Closure* done);
   void PrepareTx(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::bedrock::dataserver::PrepareTxRequest* request,
@@ -12348,9 +13005,356 @@ inline void ShardInstallSnapshotRequest::set_last_wal_index(::PROTOBUF_NAMESPACE
 
 // CancelTxResponse
 
+// -------------------------------------------------------------------
+
+// LockRecordRequest
+
+// uint64 tx_id = 1;
+inline void LockRecordRequest::clear_tx_id() {
+  tx_id_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRecordRequest::_internal_tx_id() const {
+  return tx_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRecordRequest::tx_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRecordRequest.tx_id)
+  return _internal_tx_id();
+}
+inline void LockRecordRequest::_internal_set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  tx_id_ = value;
+}
+inline void LockRecordRequest::set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_tx_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRecordRequest.tx_id)
+}
+
+// uint64 shard_id = 2;
+inline void LockRecordRequest::clear_shard_id() {
+  shard_id_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRecordRequest::_internal_shard_id() const {
+  return shard_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRecordRequest::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRecordRequest.shard_id)
+  return _internal_shard_id();
+}
+inline void LockRecordRequest::_internal_set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  shard_id_ = value;
+}
+inline void LockRecordRequest::set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRecordRequest.shard_id)
+}
+
+// bytes key = 3;
+inline void LockRecordRequest::clear_key() {
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& LockRecordRequest::key() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRecordRequest.key)
+  return _internal_key();
+}
+inline void LockRecordRequest::set_key(const std::string& value) {
+  _internal_set_key(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRecordRequest.key)
+}
+inline std::string* LockRecordRequest::mutable_key() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.LockRecordRequest.key)
+  return _internal_mutable_key();
+}
+inline const std::string& LockRecordRequest::_internal_key() const {
+  return key_.Get();
+}
+inline void LockRecordRequest::_internal_set_key(const std::string& value) {
+  
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void LockRecordRequest::set_key(std::string&& value) {
+  
+  key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.LockRecordRequest.key)
+}
+inline void LockRecordRequest::set_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.LockRecordRequest.key)
+}
+inline void LockRecordRequest::set_key(const void* value,
+    size_t size) {
+  
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.LockRecordRequest.key)
+}
+inline std::string* LockRecordRequest::_internal_mutable_key() {
+  
+  return key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* LockRecordRequest::release_key() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.LockRecordRequest.key)
+  return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LockRecordRequest::set_allocated_key(std::string* key) {
+  if (key != nullptr) {
+    
+  } else {
+    
+  }
+  key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.LockRecordRequest.key)
+}
+inline std::string* LockRecordRequest::unsafe_arena_release_key() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.LockRecordRequest.key)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return key_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void LockRecordRequest::unsafe_arena_set_allocated_key(
+    std::string* key) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (key != nullptr) {
+    
+  } else {
+    
+  }
+  key_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      key, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.LockRecordRequest.key)
+}
+
+// -------------------------------------------------------------------
+
+// LockRecordResponse
+
+// -------------------------------------------------------------------
+
+// LockRangeRequest
+
+// uint64 tx_id = 1;
+inline void LockRangeRequest::clear_tx_id() {
+  tx_id_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRangeRequest::_internal_tx_id() const {
+  return tx_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRangeRequest::tx_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRangeRequest.tx_id)
+  return _internal_tx_id();
+}
+inline void LockRangeRequest::_internal_set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  tx_id_ = value;
+}
+inline void LockRangeRequest::set_tx_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_tx_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRangeRequest.tx_id)
+}
+
+// uint64 shard_id = 2;
+inline void LockRangeRequest::clear_shard_id() {
+  shard_id_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRangeRequest::_internal_shard_id() const {
+  return shard_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LockRangeRequest::shard_id() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRangeRequest.shard_id)
+  return _internal_shard_id();
+}
+inline void LockRangeRequest::_internal_set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  shard_id_ = value;
+}
+inline void LockRangeRequest::set_shard_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_shard_id(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRangeRequest.shard_id)
+}
+
+// bytes start_key = 3;
+inline void LockRangeRequest::clear_start_key() {
+  start_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& LockRangeRequest::start_key() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRangeRequest.start_key)
+  return _internal_start_key();
+}
+inline void LockRangeRequest::set_start_key(const std::string& value) {
+  _internal_set_start_key(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRangeRequest.start_key)
+}
+inline std::string* LockRangeRequest::mutable_start_key() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.LockRangeRequest.start_key)
+  return _internal_mutable_start_key();
+}
+inline const std::string& LockRangeRequest::_internal_start_key() const {
+  return start_key_.Get();
+}
+inline void LockRangeRequest::_internal_set_start_key(const std::string& value) {
+  
+  start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void LockRangeRequest::set_start_key(std::string&& value) {
+  
+  start_key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.LockRangeRequest.start_key)
+}
+inline void LockRangeRequest::set_start_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.LockRangeRequest.start_key)
+}
+inline void LockRangeRequest::set_start_key(const void* value,
+    size_t size) {
+  
+  start_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.LockRangeRequest.start_key)
+}
+inline std::string* LockRangeRequest::_internal_mutable_start_key() {
+  
+  return start_key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* LockRangeRequest::release_start_key() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.LockRangeRequest.start_key)
+  return start_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LockRangeRequest::set_allocated_start_key(std::string* start_key) {
+  if (start_key != nullptr) {
+    
+  } else {
+    
+  }
+  start_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), start_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.LockRangeRequest.start_key)
+}
+inline std::string* LockRangeRequest::unsafe_arena_release_start_key() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.LockRangeRequest.start_key)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return start_key_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void LockRangeRequest::unsafe_arena_set_allocated_start_key(
+    std::string* start_key) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (start_key != nullptr) {
+    
+  } else {
+    
+  }
+  start_key_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      start_key, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.LockRangeRequest.start_key)
+}
+
+// bytes end_key = 4;
+inline void LockRangeRequest::clear_end_key() {
+  end_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& LockRangeRequest::end_key() const {
+  // @@protoc_insertion_point(field_get:bedrock.dataserver.LockRangeRequest.end_key)
+  return _internal_end_key();
+}
+inline void LockRangeRequest::set_end_key(const std::string& value) {
+  _internal_set_end_key(value);
+  // @@protoc_insertion_point(field_set:bedrock.dataserver.LockRangeRequest.end_key)
+}
+inline std::string* LockRangeRequest::mutable_end_key() {
+  // @@protoc_insertion_point(field_mutable:bedrock.dataserver.LockRangeRequest.end_key)
+  return _internal_mutable_end_key();
+}
+inline const std::string& LockRangeRequest::_internal_end_key() const {
+  return end_key_.Get();
+}
+inline void LockRangeRequest::_internal_set_end_key(const std::string& value) {
+  
+  end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void LockRangeRequest::set_end_key(std::string&& value) {
+  
+  end_key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:bedrock.dataserver.LockRangeRequest.end_key)
+}
+inline void LockRangeRequest::set_end_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:bedrock.dataserver.LockRangeRequest.end_key)
+}
+inline void LockRangeRequest::set_end_key(const void* value,
+    size_t size) {
+  
+  end_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:bedrock.dataserver.LockRangeRequest.end_key)
+}
+inline std::string* LockRangeRequest::_internal_mutable_end_key() {
+  
+  return end_key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* LockRangeRequest::release_end_key() {
+  // @@protoc_insertion_point(field_release:bedrock.dataserver.LockRangeRequest.end_key)
+  return end_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LockRangeRequest::set_allocated_end_key(std::string* end_key) {
+  if (end_key != nullptr) {
+    
+  } else {
+    
+  }
+  end_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), end_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:bedrock.dataserver.LockRangeRequest.end_key)
+}
+inline std::string* LockRangeRequest::unsafe_arena_release_end_key() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:bedrock.dataserver.LockRangeRequest.end_key)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return end_key_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void LockRangeRequest::unsafe_arena_set_allocated_end_key(
+    std::string* end_key) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (end_key != nullptr) {
+    
+  } else {
+    
+  }
+  end_key_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      end_key, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:bedrock.dataserver.LockRangeRequest.end_key)
+}
+
+// -------------------------------------------------------------------
+
+// LockRangeResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

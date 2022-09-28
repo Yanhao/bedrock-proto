@@ -39,6 +39,8 @@ type DataServiceClient interface {
 	ShardInstallSnapshot(ctx context.Context, opts ...grpc.CallOption) (DataService_ShardInstallSnapshotClient, error)
 	MigrateShard(ctx context.Context, opts ...grpc.CallOption) (DataService_MigrateShardClient, error)
 	StartTx(ctx context.Context, in *StartTxRequest, opts ...grpc.CallOption) (*StartTxResponse, error)
+	LockRecord(ctx context.Context, in *LockRecordRequest, opts ...grpc.CallOption) (*LockRecordResponse, error)
+	LockRange(ctx context.Context, in *LockRangeRequest, opts ...grpc.CallOption) (*LockRangeResponse, error)
 	PrepareTx(ctx context.Context, in *PrepareTxRequest, opts ...grpc.CallOption) (*PrepareTxResponse, error)
 	CommitTx(ctx context.Context, in *CommitTxRequest, opts ...grpc.CallOption) (*CommitTxResponse, error)
 	CancelTx(ctx context.Context, in *CancelTxRequest, opts ...grpc.CallOption) (*CancelTxResponse, error)
@@ -219,6 +221,24 @@ func (c *dataServiceClient) StartTx(ctx context.Context, in *StartTxRequest, opt
 	return out, nil
 }
 
+func (c *dataServiceClient) LockRecord(ctx context.Context, in *LockRecordRequest, opts ...grpc.CallOption) (*LockRecordResponse, error) {
+	out := new(LockRecordResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/LockRecord", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) LockRange(ctx context.Context, in *LockRangeRequest, opts ...grpc.CallOption) (*LockRangeResponse, error) {
+	out := new(LockRangeResponse)
+	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/LockRange", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) PrepareTx(ctx context.Context, in *PrepareTxRequest, opts ...grpc.CallOption) (*PrepareTxResponse, error) {
 	out := new(PrepareTxResponse)
 	err := c.cc.Invoke(ctx, "/bedrock.dataserver.DataService/PrepareTx", in, out, opts...)
@@ -266,6 +286,8 @@ type DataServiceServer interface {
 	ShardInstallSnapshot(DataService_ShardInstallSnapshotServer) error
 	MigrateShard(DataService_MigrateShardServer) error
 	StartTx(context.Context, *StartTxRequest) (*StartTxResponse, error)
+	LockRecord(context.Context, *LockRecordRequest) (*LockRecordResponse, error)
+	LockRange(context.Context, *LockRangeRequest) (*LockRangeResponse, error)
 	PrepareTx(context.Context, *PrepareTxRequest) (*PrepareTxResponse, error)
 	CommitTx(context.Context, *CommitTxRequest) (*CommitTxResponse, error)
 	CancelTx(context.Context, *CancelTxRequest) (*CancelTxResponse, error)
@@ -314,6 +336,12 @@ func (UnimplementedDataServiceServer) MigrateShard(DataService_MigrateShardServe
 }
 func (UnimplementedDataServiceServer) StartTx(context.Context, *StartTxRequest) (*StartTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StartTx not implemented")
+}
+func (UnimplementedDataServiceServer) LockRecord(context.Context, *LockRecordRequest) (*LockRecordResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockRecord not implemented")
+}
+func (UnimplementedDataServiceServer) LockRange(context.Context, *LockRangeRequest) (*LockRangeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LockRange not implemented")
 }
 func (UnimplementedDataServiceServer) PrepareTx(context.Context, *PrepareTxRequest) (*PrepareTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareTx not implemented")
@@ -587,6 +615,42 @@ func _DataService_StartTx_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_LockRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockRecordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).LockRecord(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/LockRecord",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).LockRecord(ctx, req.(*LockRecordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_LockRange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockRangeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).LockRange(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bedrock.dataserver.DataService/LockRange",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).LockRange(ctx, req.(*LockRangeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_PrepareTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareTxRequest)
 	if err := dec(in); err != nil {
@@ -691,6 +755,14 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StartTx",
 			Handler:    _DataService_StartTx_Handler,
+		},
+		{
+			MethodName: "LockRecord",
+			Handler:    _DataService_LockRecord_Handler,
+		},
+		{
+			MethodName: "LockRange",
+			Handler:    _DataService_LockRange_Handler,
 		},
 		{
 			MethodName: "PrepareTx",
