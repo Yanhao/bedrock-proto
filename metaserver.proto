@@ -213,6 +213,7 @@ message GetShardIDByKeyRequest {
 
 message GetShardIDByKeyResponse {
     uint64 shard_id = 1;
+    bytes range_start = 2;
 }
 
 message SyncShardInDataServerRequest {
