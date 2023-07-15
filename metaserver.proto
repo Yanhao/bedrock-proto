@@ -148,6 +148,18 @@ message GetShardRoutesResponse {
     repeated RouteRecord routes = 1;
 }
 
+message GetStorageShardsRequest {
+    uint32 storage_id = 1;
+}
+
+message GetStorageShardsResponse {
+    message ShardIDAndRange {
+        uint64 shard_id = 1;
+        bytes range_start = 2;
+    }
+    repeated ShardIDAndRange shards = 1;
+}
+
 message GetShardRoutesByStorageRequest {
     uint32 storage_id = 1;
     google.protobuf.Timestamp timestamp = 2;
@@ -233,6 +245,7 @@ message AllocateTxIDsResponse {
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
+    rpc GetStorageShards(GetStorageShardsRequest) returns (GetStorageShardsResponse);
     rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
