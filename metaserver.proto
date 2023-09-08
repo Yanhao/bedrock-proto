@@ -41,16 +41,9 @@ message DataServer {
     string idc = 7;
 }
 
-message Replicate {
-    repeated string addrs = 1;
-}
-
 message HeartBeatRequest {
     string addr = 1;
     bool restarting = 2;
-}
-
-message HeartBeatResponse {
 }
 
 message CreateStorageRequest {
@@ -120,55 +113,34 @@ message GetStoragesResponse {
     repeated Storage storages = 1;
 }
 
-message ShardRange {
-    uint64 start_shard_id = 1;
-    uint64 offset = 2;
-}
-
 message RouteRecord {
     uint64 shard_id = 1;
     string leader_addr = 2;
     repeated string addrs = 3;
 }
 
-message ShardList {
-    repeated uint64 shard_ids = 1;
-}
-
 message GetShardRoutesRequest {
-    oneof shards {
-        ShardList shards_list = 1;
-        ShardRange shard_range = 2;
-    }
-
-    google.protobuf.Timestamp timestamp = 3;
+    google.protobuf.Timestamp timestamp = 1;
+    repeated uint64 shard_ids = 2;
 }
 
 message GetShardRoutesResponse {
     repeated RouteRecord routes = 1;
 }
 
-message GetStorageShardsRequest {
+message ScanStorageShardsRequest {
     uint32 storage_id = 1;
+    bytes range_start = 2;
 }
 
-message GetStorageShardsResponse {
+message ScanStorageShardsResponse {
     message ShardIDAndRange {
         uint64 shard_id = 1;
         bytes range_start = 2;
+        bytes range_end = 3;
     }
-    repeated ShardIDAndRange shards = 1;
-}
-
-message GetShardRoutesByStorageRequest {
-    uint32 storage_id = 1;
-    google.protobuf.Timestamp timestamp = 2;
-}
-
-message GetShardRoutesByStorageResponse {
-    repeated RouteRecord routes = 1;
-    google.protobuf.Timestamp timestamp = 2;
-    bool is_full = 3;
+    bool is_end = 1;
+    repeated ShardIDAndRange shards = 2;
 }
 
 message AddDataServerRequest {
@@ -206,16 +178,6 @@ message ShardInfoResponse {
      Shard shard = 1;
 }
 
-message GetShardIDByKeyRequest {
-    uint32 storage_id = 1;
-    bytes key = 2;
-}
-
-message GetShardIDByKeyResponse {
-    uint64 shard_id = 1;
-    bytes range_start = 2;
-}
-
 message SyncShardInDataServerRequest {
     message SyncShardInfo {
         uint64 shard_id = 1;
@@ -246,13 +208,13 @@ message AllocateTxIDsResponse {
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
-    rpc GetStorageShards(GetStorageShardsRequest) returns (GetStorageShardsResponse);
+    rpc ScanStorageShards(ScanStorageShardsRequest) returns (ScanStorageShardsResponse);
     rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
+
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
     rpc RemoveShard(RemoveShardRequest) returns (RemoveShardResponse);
     // rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
-    rpc GetShardIDByKey(GetShardIDByKeyRequest) returns (GetShardIDByKeyResponse);
 
     rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse);
     rpc DeleteStorage (DeleteStorageRequest) returns (DeleteStorageResponse);
