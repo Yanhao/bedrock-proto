@@ -50,8 +50,6 @@ message CreateShardRequest {
     bytes max_key = 8;
 }
 
-message CreateShardResponse {
-}
 message DeleteShardRequest {
     uint64 shard_id = 1;
 }
@@ -73,11 +71,6 @@ message ShardInfoResponse {
     uint64 next_index = 8;
 }
 
-message PullShardDataRequest {
-}
-message PullShardDataResponse {
-}
-
 message MigrateShardRequest {
     enum Direction {
         FROM = 0;
@@ -96,18 +89,6 @@ message MigrateShardRequest {
     repeated Entry entries = 5;
 }
 
-message MigrateShardResponse {
-}
-
-message AddShardReplicaRequest {
-}
-message AddShardReplicaResponse {
-}
-message DeleteShardReplicaRequest {
-}
-message DeleteShardReplicaResponse {
-}
-
 message TransferShardLeaderRequest {
     uint64 shard_id = 1;
     repeated string replicates = 2;
@@ -115,47 +96,6 @@ message TransferShardLeaderRequest {
 }
 
 message TransferShardLeaderResponse {
-}
-
-message LockShardRequest {
-}
-message LockShardResponse {
-}
-message UnlockShardRequest {
-}
-message UnlockShardResponse {
-}
-message ShardReadRequest {
-    uint64 shard_id = 1;
-    bytes key = 2;
-}
-message ShardReadResponse {
-    bytes value = 1;
-}
-message ShardWriteRequest {
-    uint64 shard_id = 1;
-
-    bytes key = 2;
-    bytes value = 3;
-}
-message ShardWriteResponse {
-    bool not_leader = 1;
-}
-
-message ShardScanRequest {
-    uint64 shard_id = 1;
-    bytes start_key = 2;
-    bytes end_key = 3;
-}
-
-message KeyValue {
-    bytes key = 1;
-    bytes value = 2;
-}
-
-message ShardScanResponse {
-    repeated KeyValue kvs = 1;
-    bool no_left = 2;
 }
 
 message ShardAppendLogRequest {
@@ -178,7 +118,6 @@ message ShardAppendLogResponse {
     uint64 next_index = 2;
 }
 
-
 message ShardInstallSnapshotRequest {
     message Entry {
         bytes key = 1;
@@ -192,103 +131,94 @@ message ShardInstallSnapshotRequest {
 message ShardInstallSnapshotResponse {
 }
 
-message ShardWriteReplicaRequest {
-}
-message ShardWriteReplicaResponse {
-}
-message ShardRepairRequest {
-}
-message ShardRepairResponse {
-}
-message DataServerJoinRequest {
-}
-message DataServerJoinResponse {
-}
-message DataServerLeaveRequest {
-}
-message DataServerLeaveResponse {
-}
-
-message StartTxRequest {
-}
-
-message StartTxResponse {
-}
-
-message PrepareTxRequest {
-}
-
-message PrepareTxResponse {
-}
-
-message CommitTxRequest {
-}
-
-message CommitTxResponse {
-}
-
-message CancelTxRequest {
-}
-
-message CancelTxResponse {
-}
-
-message LockRecordRequest {
-    uint64 tx_id = 1;
+message KvGetRequest {
+    uint64 txid = 1;
     uint64 shard_id = 2;
     bytes key = 3;
 }
 
-message LockRecordResponse {
+message KvGetResponse {
+    bytes value = 1;
 }
 
-message LockRangeRequest {
-    uint64 tx_id = 1;
+message KvSetRequest {
+    uint64 txid = 1;
+    uint64 shard_id = 2;
+    bytes key = 3;
+    bytes value = 4;
+}
+
+message KvSetResponse {
+}
+
+message KvScanRequest {
+    uint64 txid = 1;
     uint64 shard_id = 2;
     bytes start_key = 3;
     bytes end_key = 4;
 }
 
-message LockRangeResponse {
+message KeyValue {
+    bytes key = 1;
+    bytes value = 2;
+}
+
+message KvScanResponse {
+    bool no_left = 1;
+    repeated KeyValue kvs = 2;
+}
+
+message ShardLockRequest {
+    message Range {
+        bytes start_key = 1;
+        bytes end_key = 2;
+    }
+
+    uint64 tx_id = 1;
+    uint64 shard_id = 2;
+
+    oneof lock {
+        bytes record = 3;
+        Range range = 4;
+    }
+}
+
+message ShardLockResponse {
+}
+
+message CommitTxRequest {
+    uint64 txid = 1;
+    uint64 shard_id = 2;
+}
+
+message CommitTxResponse {
+}
+
+message AbortTxRequest {
+    uint64 txid = 1;
+    uint64 shard_id = 2;
+}
+message AbortTxResponse {
 }
 
 service DataService {
-    rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
+    rpc CreateShard(CreateShardRequest) returns (google.protobuf.Empty);
     rpc DeleteShard(DeleteShardRequest) returns (google.protobuf.Empty);
+    rpc MigrateShard(stream MigrateShardRequest) returns (google.protobuf.Empty);
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
 
     rpc SplitShard(SplitShardRequest) returns (SplitShardResponse);
     rpc MergeShard(MergeShardRequest) returns (MergeShardResponse);
 
-    // rpc PullShardData(PullShardDataRequest) returns (PullShardDataResponse);
-    // rpc AddShardReplica(AddShardReplicaRequest) returns (AddShardReplicaResponse);
-    // rpc DeleteShardReplica(DeleteShardReplicaRequest) returns (DeleteShardReplicaResponse);
-    rpc TransferShardLeader(TransferShardLeaderRequest) returns (TransferShardLeaderResponse);
-    // rpc LockShard(LockShardRequest) returns (LockShardResponse);
-    // rpc UnlockShard(UnlockShardRequest) returns (UnlockShardResponse);
-
-    rpc ShardRead(ShardReadRequest) returns (ShardReadResponse);
-    rpc ShardWrite(ShardWriteRequest) returns (ShardWriteResponse);
-    rpc ShardScan(ShardScanRequest) returns (ShardScanResponse);
-
     rpc ShardAppendLog(ShardAppendLogRequest) returns (ShardAppendLogResponse);
     rpc ShardInstallSnapshot(stream ShardInstallSnapshotRequest) returns (ShardInstallSnapshotResponse);
+    rpc TransferShardLeader(TransferShardLeaderRequest) returns (TransferShardLeaderResponse);
 
-    rpc MigrateShard(stream MigrateShardRequest) returns (MigrateShardResponse);
+    rpc KvGet(KvGetRequest) returns (KvGetResponse);
+    rpc KvScan(KvScanRequest) returns (KvScanResponse);
+    rpc KvSet(KvSetRequest) returns (KvSetResponse);
 
-    rpc StartTx(StartTxRequest) returns (StartTxResponse);
-
-    rpc LockRecord(LockRecordRequest) returns (LockRecordResponse);
-    rpc LockRange(LockRangeRequest) returns (LockRangeResponse);
-
-    rpc PrepareTx(PrepareTxRequest) returns (PrepareTxResponse);
+    rpc ShardLock(ShardLockRequest) returns (ShardLockResponse);
     rpc CommitTx(CommitTxRequest) returns (CommitTxResponse);
-    rpc CancelTx(CancelTxRequest) returns (CancelTxResponse);
-
-    // rpc ShardWriteReplica(ShardWriteReplicaRequest) returns (ShardWriteReplicaResponse);
-    // rpc ShardInstallSnap(ShardInstallSnapRequest) returns (ShardInstallSnapResponse);
-    // rpc ShardRepair(ShardRepairRequest) returns (ShardRepairResponse);
-
-    // rpc DataServerJoin(DataServerJoinRequest) returns (DataServerJoinResponse);
-    // rpc DataServerLeave(DataServerLeaveRequest) returns (DataServerLeaveResponse);
+    rpc AbortTx(AbortTxRequest) returns (AbortTxResponse); // UnLock
 }
