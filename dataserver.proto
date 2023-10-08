@@ -151,6 +151,17 @@ message KvSetRequest {
 message KvSetResponse {
 }
 
+
+message KvDelRequest {
+    uint64 txid = 1;
+    uint64 shard_id = 2;
+    bytes key = 3;
+}
+
+message KvDelResponse {
+    bytes value = 1;
+}
+
 message KvScanRequest {
     uint64 txid = 1;
     uint64 shard_id = 2;
@@ -226,6 +237,7 @@ service DataService {
     rpc KvGet(KvGetRequest) returns (KvGetResponse);
     rpc KvScan(KvScanRequest) returns (KvScanResponse);
     rpc KvSet(KvSetRequest) returns (KvSetResponse);
+    rpc KvDel(KvDelRequest) returns (KvDelResponse);
 
     rpc ShardLock(ShardLockRequest) returns (ShardLockResponse);
     rpc PrepareTx(PrepareTxRequest) returns (PrepareTxResponse);
