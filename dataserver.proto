@@ -134,7 +134,9 @@ message ShardInstallSnapshotResponse {
 message KvGetRequest {
     uint64 txid = 1;
     uint64 shard_id = 2;
-    bytes key = 3;
+    bool need_lock = 3;
+    bool need_unlock = 4;
+    bytes key = 5;
 }
 
 message KvGetResponse {
@@ -200,7 +202,8 @@ message ShardLockResponse {
 message PrepareTxRequest {
     uint64 txid = 1;
     uint64 shard_id = 2;
-    repeated KeyValue kvs = 3;
+    bool need_lock = 3;
+    repeated KeyValue kvs = 4;
 }
 
 message PrepareTxResponse {
@@ -239,7 +242,7 @@ service DataService {
     rpc KvSet(KvSetRequest) returns (KvSetResponse);
     rpc KvDel(KvDelRequest) returns (KvDelResponse);
 
-    rpc ShardLock(ShardLockRequest) returns (ShardLockResponse);
+    rpc ShardLock(ShardLockRequest) returns (ShardLockResponse); // not being used for now
     rpc PrepareTx(PrepareTxRequest) returns (PrepareTxResponse);
     rpc CommitTx(CommitTxRequest) returns (CommitTxResponse);
     rpc AbortTx(AbortTxRequest) returns (AbortTxResponse); // UnLock
