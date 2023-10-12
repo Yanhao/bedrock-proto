@@ -131,6 +131,7 @@ message GetShardRouteResponse {
 message ScanShardRangeRequest {
     uint32 storage_id = 1;
     bytes range_start = 2;
+    uint32 range_count = 3;
 }
 
 message ScanShardRangeResponse {
