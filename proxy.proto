@@ -75,7 +75,7 @@ message KvDeleteResponse {
 message KvScanRequest {
     uint32 storage_id = 1;
     bytes prefix = 2;
-    int32 limit = 3;
+    uint32 limit = 3;
 }
 
 message KeyValue {

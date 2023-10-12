@@ -167,8 +167,8 @@ message KvDelResponse {
 message KvScanRequest {
     uint64 txid = 1;
     uint64 shard_id = 2;
-    bytes start_key = 3;
-    bytes end_key = 4;
+    bytes prefix = 3;
+    uint64 limit = 4;
 }
 
 message KeyValue {
