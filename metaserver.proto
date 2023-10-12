@@ -104,43 +104,43 @@ message ResizeStorageRequest {
 message ResizeStorageResponse {
 }
 
-message GetStoragesRequest {
+message StorageInfoRequest {
     repeated uint32 ids = 1;
     repeated string names = 2;
 }
 
-message GetStoragesResponse {
+message StorageInfoResponse {
     repeated Storage storages = 1;
 }
 
-message RouteRecord {
+message ShardRoute {
     uint64 shard_id = 1;
     string leader_addr = 2;
     repeated string addrs = 3;
 }
 
-message GetShardRoutesRequest {
+message GetShardRouteRequest {
     google.protobuf.Timestamp timestamp = 1;
     repeated uint64 shard_ids = 2;
 }
 
-message GetShardRoutesResponse {
-    repeated RouteRecord routes = 1;
+message GetShardRouteResponse {
+    repeated ShardRoute routes = 1;
 }
 
-message ScanStorageShardsRequest {
+message ScanShardRangeRequest {
     uint32 storage_id = 1;
     bytes range_start = 2;
 }
 
-message ScanStorageShardsResponse {
-    message ShardIDAndRange {
+message ScanShardRangeResponse {
+    message ShardRange {
         uint64 shard_id = 1;
         bytes range_start = 2;
         bytes range_end = 3;
     }
     bool is_end = 1;
-    repeated ShardIDAndRange shards = 2;
+    repeated ShardRange ranges = 2;
 }
 
 message AddDataServerRequest {
@@ -197,19 +197,19 @@ message SyncShardInDataServerRequest {
 message SyncShardInDataServerResponse {
 }
 
-message AllocateTxIDsRequest {
+message AllocateTxidsRequest {
     uint32 count = 1;
 }
 
-message AllocateTxIDsResponse {
-    repeated uint64 tx_ids  = 1;
+message AllocateTxidsResponse {
+    repeated uint64 txids  = 1;
 }
 
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
 
-    rpc ScanStorageShards(ScanStorageShardsRequest) returns (ScanStorageShardsResponse);
-    rpc GetShardRoutes (GetShardRoutesRequest) returns (GetShardRoutesResponse);
+    rpc ScanShardRange(ScanShardRangeRequest) returns (ScanShardRangeResponse);
+    rpc GetShardRoute (GetShardRouteRequest) returns (GetShardRouteResponse);
 
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
@@ -221,7 +221,7 @@ service MetaService {
     rpc UndeleteStorage (UndeleteStorageRequest) returns (UndeleteStorageResponse);
     rpc RenameStorage (RenameStorageRequest) returns (RenameStorageResponse);
     rpc ResizeStorage (ResizeStorageRequest) returns (ResizeStorageResponse);
-    rpc GetStorages (GetStoragesRequest) returns (GetStoragesResponse);
+    rpc StorageInfo (StorageInfoRequest) returns (StorageInfoResponse);
 
     rpc AddDataServer (AddDataServerRequest) returns (AddDataServerResponse);
     rpc RemoveDataServer (RemoveDataServerRequest) returns (RemoveDataServerResponse);
@@ -229,5 +229,5 @@ service MetaService {
     rpc UpdateDataServer (UpdateDataServerRequest) returns (UpdateDataServerResponse);
     rpc SyncShardInDataServer(stream SyncShardInDataServerRequest) returns (SyncShardInDataServerResponse);
 
-    rpc AllocateTxIDs(AllocateTxIDsRequest) returns (AllocateTxIDsResponse);
+    rpc AllocateTxids(AllocateTxidsRequest) returns (AllocateTxidsResponse);
 }
