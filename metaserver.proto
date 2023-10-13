@@ -206,8 +206,18 @@ message AllocateTxidsResponse {
     repeated uint64 txids  = 1;
 }
 
+message InfoRequest {
+}
+
+message InfoResponse {
+    string leader_addr = 1;
+    repeated string follower_addrs = 2;
+}
+
 service MetaService {
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
+
+    rpc Info(InfoRequest) returns (InfoResponse);
 
     rpc ScanShardRange(ScanShardRangeRequest) returns (ScanShardRangeResponse);
     rpc GetShardRoute (GetShardRouteRequest) returns (GetShardRouteResponse);
