@@ -58,6 +58,8 @@ message CreateStorageResponse {
 message CreateShardRequest {
     uint32 storage_id = 1;
     uint32 shard_isn = 2;
+    bytes range_start = 3;
+    bytes range_end = 4;
 }
 
 message CreateShardResponse {
