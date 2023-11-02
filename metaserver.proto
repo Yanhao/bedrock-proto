@@ -141,6 +141,8 @@ message ScanShardRangeResponse {
         uint64 shard_id = 1;
         bytes range_start = 2;
         bytes range_end = 3;
+        string leader_addr = 4;
+        repeated string addrs = 5;
     }
     bool is_end = 1;
     repeated ShardRange ranges = 2;
