@@ -115,21 +115,6 @@ message StorageInfoResponse {
     repeated Storage storages = 1;
 }
 
-message ShardRoute {
-    uint64 shard_id = 1;
-    string leader_addr = 2;
-    repeated string addrs = 3;
-}
-
-message GetShardRouteRequest {
-    google.protobuf.Timestamp timestamp = 1;
-    repeated uint64 shard_ids = 2;
-}
-
-message GetShardRouteResponse {
-    repeated ShardRoute routes = 1;
-}
-
 message ScanShardRangeRequest {
     uint32 storage_id = 1;
     bytes range_start = 2;
@@ -224,7 +209,6 @@ service MetaService {
     rpc Info(InfoRequest) returns (InfoResponse);
 
     rpc ScanShardRange(ScanShardRangeRequest) returns (ScanShardRangeResponse);
-    rpc GetShardRoute (GetShardRouteRequest) returns (GetShardRouteResponse);
 
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
