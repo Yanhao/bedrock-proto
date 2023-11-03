@@ -42,8 +42,23 @@ message DataServer {
 }
 
 message HeartBeatRequest {
+    message ShardIDAndQps {
+        uint64 shard_id = 1;
+        uint64 qps = 2;
+    };
+
+    message ShardIDAndSize {
+        uint64 shard_id = 1;
+        uint64 size = 2;
+    }
     string addr = 1;
-    bool restarting = 2;
+    google.protobuf.Timestamp timestamp = 2;
+    bool restarting = 3;
+    uint64 free_capacity = 4;
+    float cpu_usage = 5;
+    uint64 qps = 6;
+    repeated ShardIDAndQps hot_shards = 7;
+    repeated ShardIDAndSize big_shards = 8;
 }
 
 message CreateStorageRequest {
@@ -204,29 +219,27 @@ message InfoResponse {
 }
 
 service MetaService {
-    rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty);
+    rpc Info(InfoRequest) returns (InfoResponse); // P0
+    rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty); // P0
+    rpc ScanShardRange(ScanShardRangeRequest) returns (ScanShardRangeResponse); // P0
 
-    rpc Info(InfoRequest) returns (InfoResponse);
-
-    rpc ScanShardRange(ScanShardRangeRequest) returns (ScanShardRangeResponse);
-
-    rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse);
-    rpc CreateShard(CreateShardRequest) returns (CreateShardResponse);
-    rpc RemoveShard(RemoveShardRequest) returns (RemoveShardResponse);
+    rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse); // P1
+    rpc CreateShard(CreateShardRequest) returns (CreateShardResponse); // P2
+    rpc RemoveShard(RemoveShardRequest) returns (RemoveShardResponse); // P2
     // rpc ChangeShardReplicateCount(ChangeShardReplicateCountRequest) returns(ChangeShardReplicateCountResponse);
 
-    rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse);
-    rpc DeleteStorage (DeleteStorageRequest) returns (DeleteStorageResponse);
+    rpc CreateStorage (CreateStorageRequest) returns (CreateStorageResponse); // P0
+    rpc DeleteStorage (DeleteStorageRequest) returns (DeleteStorageResponse); // P0
     rpc UndeleteStorage (UndeleteStorageRequest) returns (UndeleteStorageResponse);
-    rpc RenameStorage (RenameStorageRequest) returns (RenameStorageResponse);
-    rpc ResizeStorage (ResizeStorageRequest) returns (ResizeStorageResponse);
-    rpc StorageInfo (StorageInfoRequest) returns (StorageInfoResponse);
+    rpc RenameStorage (RenameStorageRequest) returns (RenameStorageResponse); // P2
+    rpc ResizeStorage (ResizeStorageRequest) returns (ResizeStorageResponse); // P2
+    rpc StorageInfo (StorageInfoRequest) returns (StorageInfoResponse); // P1
 
-    rpc AddDataServer (AddDataServerRequest) returns (AddDataServerResponse);
-    rpc RemoveDataServer (RemoveDataServerRequest) returns (RemoveDataServerResponse);
-    rpc ListDataServer (ListDataServerRequest) returns (ListDataServerResponse);
-    rpc UpdateDataServer (UpdateDataServerRequest) returns (UpdateDataServerResponse);
-    rpc SyncShardInDataServer(stream SyncShardInDataServerRequest) returns (SyncShardInDataServerResponse);
+    rpc AddDataServer (AddDataServerRequest) returns (AddDataServerResponse); // P0
+    rpc RemoveDataServer (RemoveDataServerRequest) returns (RemoveDataServerResponse); // P0
+    rpc ListDataServer (ListDataServerRequest) returns (ListDataServerResponse); // P1
+    rpc UpdateDataServer (UpdateDataServerRequest) returns (UpdateDataServerResponse); // P2
+    rpc SyncShardInDataServer(stream SyncShardInDataServerRequest) returns (SyncShardInDataServerResponse); // P0
 
-    rpc AllocateTxids(AllocateTxidsRequest) returns (AllocateTxidsResponse);
+    rpc AllocateTxids(AllocateTxidsRequest) returns (AllocateTxidsResponse); // P1
 }
