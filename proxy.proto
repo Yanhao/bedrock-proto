@@ -46,7 +46,7 @@ enum Error {
 message KvGetRequest {
     uint32 storage_id = 1;
     bytes key = 2;
-    bytes read_latest = 3;
+    bool read_latest = 3;
 }
 
 message KvGetResponse {
