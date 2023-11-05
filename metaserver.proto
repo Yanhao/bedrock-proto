@@ -207,7 +207,8 @@ message AllocateTxidsRequest {
 }
 
 message AllocateTxidsResponse {
-    repeated uint64 txids  = 1;
+    uint64 txid_range_start = 1;
+    uint64 txid_range_end = 2;
 }
 
 message InfoRequest {
