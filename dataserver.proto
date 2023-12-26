@@ -115,7 +115,8 @@ message ShardAppendLogRequest {
 
 message ShardAppendLogResponse {
     bool is_old_leader = 1;
-    uint64 next_index = 2;
+    google.protobuf.Timestamp last_leader_change_ts = 2; // only valid if is_old_leader is true
+    uint64 next_index = 3;
 }
 
 message ShardInstallSnapshotRequest {
