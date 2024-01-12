@@ -2,11 +2,13 @@ syntax = "proto3";
 
 package replog_pb;
 
-message Entry {
+message EntryItem {
     string op = 1;
-    uint64 index = 2;
-
-    bytes key = 3;
-    bytes value = 4;
+    bytes key = 2;
+    bytes value = 3;
 }
 
+message Entry {
+    uint64 index = 1;
+    repeated EntryItem items = 2;
+}
