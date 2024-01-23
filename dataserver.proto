@@ -226,6 +226,13 @@ message AbortTxRequest {
 message AbortTxResponse {
 }
 
+message RestartRequest {
+    bool exit_rightnow = 1;
+}
+
+message RestartResponse {
+}
+
 service DataService {
     rpc CreateShard(CreateShardRequest) returns (google.protobuf.Empty);
     rpc DeleteShard(DeleteShardRequest) returns (google.protobuf.Empty);
@@ -248,4 +255,6 @@ service DataService {
     rpc PrepareTx(PrepareTxRequest) returns (PrepareTxResponse);
     rpc CommitTx(CommitTxRequest) returns (CommitTxResponse);
     rpc AbortTx(AbortTxRequest) returns (AbortTxResponse); // UnLock
+
+    rpc Restart(RestartRequest) returns (RestartResponse);
 }
