@@ -8,6 +8,11 @@ option go_package = "sr.ht/moyanhao/bedrock-metaserver/clients/metaserver";
 package bedrock.metaserver;
 option cc_generic_services = true;
 
+enum RouteType {
+    RANGE = 0;
+    HASH = 1;
+}
+
 message Storage {
     uint32 id = 1;
     string name = 2;
@@ -63,7 +68,8 @@ message HeartBeatRequest {
 
 message CreateStorageRequest {
     string name = 1;
-    uint32 initial_range_count = 2;
+    RouteType route_type = 2;
+    uint32 initial_range_count = 3;
 }
 
 message CreateStorageResponse {
@@ -137,10 +143,6 @@ message GetShardRouteRequest {
 }
 
 message GetShardRouteResponse {
-    enum RouteType {
-        RANGE = 0;
-        HASH = 1;
-    }
     message ShardRange {
         uint64 shard_id = 1;
         bytes range_start = 2;
@@ -154,7 +156,7 @@ message GetShardRouteResponse {
         string leader_addr = 3;
         repeated string addrs = 4;
     }
-    RouteType range_type = 1;
+    RouteType route_type = 1;
     google.protobuf.Timestamp route_change_ts = 2;
     bool is_range_end = 3;
     repeated ShardRange ranges = 4;
