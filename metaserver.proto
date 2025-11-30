@@ -130,13 +130,17 @@ message StorageInfoResponse {
     repeated Storage storages = 1;
 }
 
-message ScanShardRangeRequest {
+message GetShardRouteRequest {
     uint32 storage_id = 1;
     bytes range_start = 2;
     uint32 range_count = 3;
 }
 
-message ScanShardRangeResponse {
+message GetShardRouteResponse {
+    enum RouteType {
+        RANGE = 0;
+        HASH = 1;
+    }
     message ShardRange {
         uint64 shard_id = 1;
         bytes range_start = 2;
@@ -144,8 +148,17 @@ message ScanShardRangeResponse {
         string leader_addr = 4;
         repeated string addrs = 5;
     }
-    bool is_end = 1;
-    repeated ShardRange ranges = 2;
+    message Slot {
+        uint64 slot_id = 1;
+        uint64 shard_id = 2;
+        string leader_addr = 3;
+        repeated string addrs = 4;
+    }
+    RouteType range_type = 1;
+    google.protobuf.Timestamp route_change_ts = 2;
+    bool is_range_end = 3;
+    repeated ShardRange ranges = 4;
+    repeated Slot slots = 5;
 }
 
 message AddDataServerRequest {
@@ -222,7 +235,7 @@ message InfoResponse {
 service MetaService {
     rpc Info(InfoRequest) returns (InfoResponse); // P0
     rpc HeartBeat (HeartBeatRequest) returns (google.protobuf.Empty); // P0
-    rpc ScanShardRange(ScanShardRangeRequest) returns (ScanShardRangeResponse); // P0
+    rpc GetShardRoute(GetShardRouteRequest) returns (GetShardRouteResponse); // P0
 
     rpc ShardInfo(ShardInfoRequest) returns (ShardInfoResponse); // P1
     rpc CreateShard(CreateShardRequest) returns (CreateShardResponse); // P2
